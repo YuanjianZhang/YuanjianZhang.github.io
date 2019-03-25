@@ -26,7 +26,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://images.pexels.com/photos/1936936/pexels-photo-1936936.jpeg?&w=1024&h=438">
 <meta property="og:image" content="http://yoursite.com/images/test1.png">
-<meta property="og:updated_time" content="2019-03-22T14:22:57.685Z">
+<meta property="og:updated_time" content="2019-03-25T06:49:34.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录第一次搭建Blog">
 <meta name="twitter:description" content="花了两天把我想了两年的事情给解决了">
@@ -89,13 +89,15 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item " href="/archives">档案</a>
+            <a class="navbar-item " href="/archives">归档</a>
             
-            <a class="navbar-item " href="/categories/LifeStyle">生活</a>
+            <a class="navbar-item " href="/categories">分类</a>
             
-            <a class="navbar-item " href="/categories/Music">音乐</a>
+            <a class="navbar-item " href="/tags">标签</a>
             
             <a class="navbar-item " href="/categories/Technology">技术</a>
+            
+            <a class="navbar-item " href="/categories/LifeStyle">生活</a>
             
             <a class="navbar-item " href="/categories/other">杂项</a>
             
@@ -133,6 +135,11 @@
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             <time datetime="2019-03-20T01:15:05.000Z" itemprop="datePublished">3月 20 2019</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/lifeStyle/">lifeStyle</a>
         </span>
         
         
@@ -193,7 +200,9 @@
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2019/03/25/在hexo上添加Live-2D/">在hexo上添加Live 2D看板娘</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
@@ -391,5 +400,5 @@
 </script>
 <script src="/js/insight.js"></script>
     
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/model","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/model/Kobayaxi/Kobayaxi.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
