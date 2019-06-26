@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>C# ASP.NET发送电子邮件System.Net.Mail - 不知选啥就选C</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="一个记录生活的Blog">
+
+
+
+
+
+    <meta name="description" content="本文转载自-https://www.cnblogs.com/Jeremy2001/p/6870175.html，侵删。">
+<meta name="keywords" content="C#,ASP.NET,System.Net.Mail,邮件发送">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C# ASP.NET发送电子邮件System.Net.Mail">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/C#-ASP.NET发送电子邮件System.Net.Mail/index.html">
+<meta property="og:site_name" content="不知选啥就选C">
+<meta property="og:description" content="本文转载自-https://www.cnblogs.com/Jeremy2001/p/6870175.html，侵删。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-11T14:31:48.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C# ASP.NET发送电子邮件System.Net.Mail">
+<meta name="twitter:description" content="本文转载自-https://www.cnblogs.com/Jeremy2001/p/6870175.html，侵删。">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    Choose C
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item " href="/archives">归档</a>
+            
+            <a class="navbar-item " href="/categories">分类</a>
+            
+            <a class="navbar-item " href="/tags">标签</a>
+            
+            <a class="navbar-item " href="/categories/Technology">技术</a>
+            
+            <a class="navbar-item " href="/categories/LifeStyle">生活</a>
+            
+            <a class="navbar-item " href="/categories/other">杂项</a>
+            
+            <a class="navbar-item " href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" href="https://github.com/yuanjianzhang">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            C# ASP.NET发送电子邮件System.Net.Mail
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2019-04-11T14:24:36.000Z" itemprop="datePublished">4月 11 2019</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Technology/">Technology</a><span>></span><a class="article-category-link" href="/categories/Technology/转载/">转载</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            9 分钟 读完 (约 1303 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <p>&#x672C;&#x6587;&#x8F6C;&#x8F7D;&#x81EA;-<a href="https://www.cnblogs.com/Jeremy2001/p/6870175.html&#xFF0C;&#x4FB5;&#x5220;&#x3002;" target="_blank" rel="noopener">https://www.cnblogs.com/Jeremy2001/p/6870175.html&#xFF0C;&#x4FB5;&#x5220;&#x3002;</a><br><a id="more"></a><br>1.&#x8865;&#x5145;&#x77E5;&#x8BC6;</p>
+<p>&#xFF08;1&#xFF09;POP3&#x548C;SMTP&#x670D;&#x52A1;&#x5668;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>&#x7B80;&#x5355;&#x70B9;&#x6765;&#x8BF4;&#xFF1A;POP3 &#x7528;&#x4E8E;&#x63A5;&#x6536;&#x7535;&#x5B50;&#x90AE;&#x4EF6; &#xFF0C;SMTP &#x7528;&#x4E8E;&#x53D1;&#x9001;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;POP3&#x5177;&#x4F53;&#x6307;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>POP3(Post Office Protocol 3)&#x5373;&#x90AE;&#x5C40;&#x534F;&#x8BAE;&#x7684;&#x7B2C;3&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x5B83;&#x662F;&#x89C4;&#x5B9A;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x5982;&#x4F55;&#x8FDE;&#x63A5;&#x5230;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x7684;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x6536;&#x53D1;&#x90AE;&#x4EF6;&#x7684;&#x534F;&#x8BAE;&#x3002;&#x5B83;&#x662F;&#x56E0;&#x7279;&#x7F51;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x79BB;&#x7EBF;&#x534F;&#x8BAE;&#x6807;&#x51C6;&#xFF0C;POP3&#x534F;&#x8BAE;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x628A;&#x90AE;&#x4EF6;&#x5B58;&#x50A8;&#x5230;&#x672C;&#x5730;&#x4E3B;&#x673A;&#xFF08;&#x5373;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#xFF09;&#x4E0A;&#xFF0C;&#x540C;&#x65F6;&#x6839;&#x636E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x64CD;&#x4F5C;&#x5220;&#x9664;&#x6216;&#x4FDD;&#x5B58;&#x5728;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x90AE;&#x4EF6;&#xFF0C;&#x800C;POP3&#x670D;&#x52A1;&#x5668;&#x5219;&#x662F;&#x9075;&#x5FAA;POP3&#x534F;&#x8BAE;&#x7684;&#x63A5;&#x6536;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x6536;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x7684;&#x3002;POP3&#x534F;&#x8BAE;&#x662F;TCP/IP&#x534F;&#x8BAE;&#x65CF;&#x4E2D;&#x7684;&#x4E00;&#x5458;&#xFF0C;,&#x7531;RFC 1939 &#x5B9A;&#x4E49;</p>
+<p>&#xFF08;2&#xFF09;SMTP&#x5177;&#x4F53;&#x662F;&#x6307;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>SMTP&#x7684;&#x5168;&#x79F0;&#x662F;&#x201D;Simple Mail Transfer Protocol&#x201D;&#xFF0C;&#x5373;&#x7B80;&#x5355;&#x90AE;&#x4EF6;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x7EC4;&#x7528;&#x4E8E;&#x4ECE;&#x6E90;&#x5730;&#x5740;&#x5230;&#x76EE;&#x7684;&#x5730;&#x5740;&#x4F20;&#x8F93;&#x90AE;&#x4EF6;&#x7684;&#x89C4;&#x8303;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x6765;&#x63A7;&#x5236;&#x90AE;&#x4EF6;&#x7684;&#x4E2D;&#x8F6C;&#x65B9;&#x5F0F;&#x3002;SMTP &#x534F;&#x8BAE;&#x5C5E;&#x4E8E; TCP/IP &#x534F;&#x8BAE;&#x7C07;&#xFF0C;&#x5B83;&#x5E2E;&#x52A9;&#x6BCF;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x5728;&#x53D1;&#x9001;&#x6216;&#x4E2D;&#x8F6C;&#x4FE1;&#x4EF6;&#x65F6;&#x627E;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x76EE;&#x7684;&#x5730;&#x3002;SMTP &#x670D;&#x52A1;&#x5668;&#x5C31;&#x662F;&#x9075;&#x5FAA; SMTP &#x534F;&#x8BAE;&#x7684;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p>2.System.Net.Mail</p>
+<p>&#x4F7F;&#x7528;ASP.NET&#x53D1;&#x9001;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5F15;&#x7528;System.Net.Mail&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;System.Net.Mail &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5305;&#x542B;&#x7528;&#x4E8E;&#x5C06;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x53D1;&#x9001;&#x5230;&#x7B80;&#x5355;&#x90AE;&#x4EF6;&#x4F20;&#x8F93;&#x534F;&#x8BAE; (SMTP) &#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4F20;&#x9001;&#x7684;&#x7C7B;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x6709;&#x4E09;&#x4E2A;&#x6BD4;&#x8F83;&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#xFF1A;</p>
+<p>MailMessage:&#x63D0;&#x4F9B;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x90AE;&#x4EF6;&#x6D88;&#x606F;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x90AE;&#x4EF6;&#x5185;&#x5BB9;&#x3002;</p>
+<p>Attachment:&#x63D0;&#x4F9B;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x90AE;&#x4EF6;&#x9644;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x90AE;&#x4EF6;&#x9644;&#x4EF6;&#x3002;</p>
+<p>SmtpClient:&#x5C06;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x4F20;&#x8F93;&#x5230;&#x60A8;&#x6307;&#x5B9A;&#x7528;&#x4E8E;&#x90AE;&#x4EF6;&#x4F20;&#x9001;&#x7684; SMTP &#x4E3B;&#x673A;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;MailMessage&#x7C7B;&#xFF1A;</p>
+<p>From&#xFF1A;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x7684;&#x5730;&#x5740;<br>To&#xFF1A;&#x63A5;&#x6536;&#x90AE;&#x4EF6;&#x7684;&#x5730;&#x5740;<br>Subject&#xFF1A;&#x90AE;&#x4EF6;&#x7684;&#x6807;&#x9898;<br>Priority&#xFF1A;&#x90AE;&#x4EF6;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF08;&#x5206;&#x522B;&#x4E3A;&#x4E3A;High,Low,Normal&#xFF09;<br>Attachments&#xFF1A;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x7684;&#x9644;&#x4EF6;&#x96C6;&#x5408;<br>Bcc&#xFF1A;&#x5BC6;&#x9001;&#x5730;&#x5740;<br>Cc&#xFF1A;&#x6284;&#x9001;&#x5730;&#x5740;<br>Body&#xFF1A;&#x90AE;&#x4EF6;&#x6B63;&#x6587;<br>SubjectEncoding&#xFF1A;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x7684;&#x4E3B;&#x9898;&#x5185;&#x5BB9;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7801;</p>
+<p>IsBodyHtml&#xFF1A;&#x90AE;&#x4EF6;&#x6B63;&#x6587;&#x662F;&#x5426;&#x4E3A; Html &#x683C;&#x5F0F;&#x7684;&#x503C;</p>
+<p>&#x8BE6;&#x7EC6;&#x53C2;&#x8003;&#xFF1A;<a href="http://msdn.microsoft.com/zh-cn/library/system.net.mail.mailmessage(v=vs.100" target="_blank" rel="noopener">MailMessage</a>.aspx)</p>
+<p>&#xFF08;3&#xFF09;Attachment&#x7C7B;&#xFF1A;</p>
+<p>&#x8BE6;&#x7EC6;&#x53C2;&#x8003;&#xFF1A;<a href="http://msdn.microsoft.com/zh-cn/library/system.net.mail.attachment.aspx" target="_blank" rel="noopener">Attachment</a></p>
+<p>&#xFF08;4&#xFF09;SmtpClient&#x7C7B;&#xFF1A;</p>
+<p>DeliveryMethod&#xFF1A;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x5904;&#x7406;&#x5F85;&#x53D1;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;</p>
+<p>Host&#xFF1A;SMTP &#x4E8B;&#x52A1;&#x7684;&#x4E3B;&#x673A;&#x7684;&#x540D;&#x79F0;&#x6216; IP &#x5730;&#x5740;</p>
+<p>Credentials&#xFF1A;&#x8BBE;&#x7F6E;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x53D1;&#x4EF6;&#x4EBA;&#x8EAB;&#x4EFD;&#x7684;&#x51ED;&#x636E;</p>
+<p>&#x8BE6;&#x7EC6;&#x53C2;&#x8003;&#xFF1A;<a href="http://msdn.microsoft.com/zh-cn/library/system.net.mail.smtpclient.aspx" target="_blank" rel="noopener">SmtpClient</a></p>
+<p> 3.ASP.NET&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</p>
+<p>&#xFF08;1&#xFF09;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#x7684;SMTP&#x6765;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</p>
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x6CE8;&#x518C;&#x5BF9;&#x5E94;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#x514D;&#x8D39;&#x90AE;&#x7BB1;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x8981;&#x4F7F;&#x7528;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#x7684;SMTP&#xFF0C;&#x4ED6;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x8EAB;&#x4EFD;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684;&#x5783;&#x573E;&#x90AE;&#x4EF6;&#x3002;</p>
+<p>&#x6709;&#x4E09;&#x4E2A;&#x662F;&#x91CD;&#x8981;&#x7684;&#x4FE1;&#x606F;&#xFF1A;SMTP&#x670D;&#x52A1;&#x5668;&#x3001;&#x7528;&#x6237;&#x540D;&#x3001;&#x5BC6;&#x7801;&#x3002;&#x4ECE;&#x7F51;&#x4E0A;&#x6536;&#x96C6;&#x4E86;&#x51E0;&#x4E2A;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x3002;<br>    </p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#region</span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// &#x53D1;&#x9001;&#x90AE;&#x4EF6;</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;mailTo&quot;&gt;&#x8981;&#x53D1;&#x9001;&#x7684;&#x90AE;&#x7BB1;&lt;/param&gt;</span><br><span class="line">/// &lt;param name=&quot;mailSubject&quot;&gt;&#x90AE;&#x7BB1;&#x4E3B;&#x9898;&lt;/param&gt;</span><br><span class="line">/// &lt;param name=&quot;mailContent&quot;&gt;&#x90AE;&#x7BB1;&#x5185;&#x5BB9;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&#x8FD4;&#x56DE;&#x53D1;&#x9001;&#x90AE;&#x7BB1;&#x7684;&#x7ED3;&#x679C;&lt;/returns&gt;</span><br><span class="line">public static bool SendEmail(string mailTo,string mailSubject,string mailContent)</span><br><span class="line">{</span><br><span class="line">    // &#x8BBE;&#x7F6E;&#x53D1;&#x9001;&#x65B9;&#x7684;&#x90AE;&#x4EF6;&#x4FE1;&#x606F;,&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x7F51;&#x6613;&#x7684;smtp</span><br><span class="line">    string smtpServer = &quot;smtp.163.com&quot;; //SMTP&#x670D;&#x52A1;&#x5668;</span><br><span class="line">    string mailFrom = &quot;XXX@163.com&quot;; //&#x767B;&#x9646;&#x7528;&#x6237;&#x540D;</span><br><span class="line">    string userPassword = &quot;XXX&quot;;//&#x767B;&#x9646;&#x5BC6;&#x7801;</span><br><span class="line"> </span><br><span class="line">    // &#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x8BBE;&#x7F6E;</span><br><span class="line">    SmtpClient smtpClient=new SmtpClient();</span><br><span class="line">    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;//&#x6307;&#x5B9A;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x53D1;&#x9001;&#x65B9;&#x5F0F;</span><br><span class="line">    smtpClient.Host = smtpServer; //&#x6307;&#x5B9A;SMTP&#x670D;&#x52A1;&#x5668;</span><br><span class="line">    smtpClient.Credentials = new System.Net.NetworkCredential(mailFrom, userPassword);//&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;</span><br><span class="line"> </span><br><span class="line">    // &#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x8BBE;&#x7F6E;       </span><br><span class="line">    MailMessage mailMessage = new MailMessage(mailFrom, mailTo); // &#x53D1;&#x9001;&#x4EBA;&#x548C;&#x6536;&#x4EF6;&#x4EBA;</span><br><span class="line">    mailMessage.Subject = mailSubject;//&#x4E3B;&#x9898;</span><br><span class="line">    mailMessage.Body = mailContent;//&#x5185;&#x5BB9;</span><br><span class="line">    mailMessage.BodyEncoding = Encoding.UTF8;//&#x6B63;&#x6587;&#x7F16;&#x7801;</span><br><span class="line">    mailMessage.IsBodyHtml = true;//&#x8BBE;&#x7F6E;&#x4E3A;HTML&#x683C;&#x5F0F;</span><br><span class="line">    mailMessage.Priority = MailPriority.Low;//&#x4F18;&#x5148;&#x7EA7;</span><br><span class="line"> </span><br><span class="line">    try</span><br><span class="line">    {</span><br><span class="line">        smtpClient.Send(mailMessage); // &#x53D1;&#x9001;&#x90AE;&#x4EF6;</span><br><span class="line">        return true;</span><br><span class="line">    }</span><br><span class="line">    catch (SmtpException ex)</span><br><span class="line">    {</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>2&#xFF09;&#x5229;&#x7528;&#x672C;&#x673A;&#x7684;SMTP&#x865A;&#x62DF;&#x670D;&#x52A1;&#x5668;&#x7684;SMTP&#x6765;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</p>
+<p>&#x9700;&#x8981;&#x8FDB;&#x884C;SMTP&#x914D;&#x7F6E;&#xFF0C;&#x8FD8;&#x662F;&#x7B2C;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x5B9E;&#x7528;&#x3002;</p>
+<p>4.&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;&#x5E38;&#x7528;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;</p>
+<p>gmail.com:<br>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop.gmail.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.gmail.com</p>
+<p>qq.com:</p>
+<p>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop.qq.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.qq.com</p>
+<p>163.com:<br>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop.163.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.163.com </p>
+<p>sina.com: </p>
+<p>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop3.sina.com.cn<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.sina.com.cn </p>
+<p>yahoo.com:<br>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop.mail.yahoo.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.mail.yahoo.com </p>
+<p>sohu.com:<br>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop3.sohu.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.sohu.com </p>
+<p>china.com:<br>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop.china.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.china.com </p>
+<p>21cn.com:<br>POP3&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:pop.21cn.com<br>SMTP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:smtp.21cn.com sina.com: </p>
+<p><a href="http://files.cnblogs.com/ForEvErNoME/%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6.rar" target="_blank" rel="noopener">&#x5B9E;&#x4F8B;&#x4E0B;&#x8F7D;</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/C/">#C#</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/ASP-NET/">#ASP.NET</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/System-Net-Mail/">#System.Net.Mail</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/邮件发送/">#邮件发送</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2019/04/16/突发奇想：对于人类进化的优胜劣汰/">突发奇想：对于人类进化的优胜劣汰</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2019/04/10/C#邮件发送问题/">C#邮件发送问题</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+
+    </div>
+</section>
+
+<!-- <script>
+    (function () {
+        if ('{{ page.password }}') {
+            if (prompt('请输入文章密码') !== '{{ page.password }}') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://minos.design"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script> -->
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2019 zhang&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+                    
+                    GitHub
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+      })
+    </script>
+
+    
+    
+
+    
+
+
+<script src="/js/script.js"></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/model","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/model/Kobayaxi/Kobayaxi.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
