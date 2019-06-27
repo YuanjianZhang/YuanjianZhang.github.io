@@ -443,16 +443,33 @@
         <span class="column is-narrow">
             
             
-            几秒 读完 (约 70 字)
+            几秒 读完 (约 60 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h2 id="记录如何然hexo文章支持emoji"><a href="#记录如何然hexo文章支持emoji" class="headerlink" title="记录如何然hexo文章支持emoji"></a>记录如何然hexo文章支持emoji</h2>
-        <p class="article-more-link">
-            <a href="/2019/03/25/在hexo文章里使用emoji/#more">阅读更多</a>
-        </p>
+        <a id="more"></a>
+<h2 id="&#x8BB0;&#x5F55;&#x5982;&#x4F55;&#x7136;hexo&#x6587;&#x7AE0;&#x652F;&#x6301;emoji"><a href="#&#x8BB0;&#x5F55;&#x5982;&#x4F55;&#x7136;hexo&#x6587;&#x7AE0;&#x652F;&#x6301;emoji" class="headerlink" title="&#x8BB0;&#x5F55;&#x5982;&#x4F55;&#x7136;hexo&#x6587;&#x7AE0;&#x652F;&#x6301;emoji"></a>&#x8BB0;&#x5F55;&#x5982;&#x4F55;&#x7136;hexo&#x6587;&#x7AE0;&#x652F;&#x6301;emoji</h2><p>Hexo &#x9ED8;&#x8BA4;&#x7684; markdown &#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x4E0D;&#x652F;&#x6301;&#x5C06; Github emoji &#x6E32;&#x67D3;&#x5230;&#x9759;&#x6001;&#x7684; html &#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6362;&#x4E00;&#x4E2A;&#x652F;&#x6301; emoji &#x7684;&#x5F15;&#x64CE;&#xFF0C;&#x518D;&#x589E;&#x52A0;&#x4E00;&#x4E2A; emoji &#x63D2;&#x4EF6;&#x5373;&#x53EF;.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     
     </div>
     
@@ -801,5 +818,5 @@
 </script>
 <script src="/js/insight.js"></script>
     
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/model","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/model/Kobayaxi/Kobayaxi.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</body>
 </html>
