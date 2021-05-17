@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
 <title>Asp.net MVC在Razor中输出Html的两种方式 - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,17 +16,17 @@
 
 
 
-    <meta name="description" content="Razor&amp;#x4E2D;&amp;#x6240;&amp;#x6709;&amp;#x7684;Html&amp;#x90FD;&amp;#x4F1A;&amp;#x81EA;&amp;#x52A8;&amp;#x7F16;&amp;#x7801;&amp;#xFF0C;&amp;#x8FD9;&amp;#x6837;&amp;#x5C31;&amp;#x4E0D;&amp;#x9700;&amp;#x8981;&amp;#x6211;&amp;#x4EEC;&amp;#x624B;&amp;#x52A8;&amp;#x53BB;&amp;#x7F16;&amp;#x780">
+    <meta name="description" content="Razor中所有的Html都会自动编码，这样就不需要我们手动去编码了（安全），但在需要输出Html时就是已经转义过的Html文本了，如下所示： 1234@{    string thisTest &#x3D; &quot;&lt;span style&#x3D;&#39;color:red;&#39;&gt;测试文字&lt;&#x2F;span&gt;&quot;;}@thisTest;  这样在页面输出的文本就是：&lt;span style&#x3D;&#39;color">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Asp.net MVC在Razor中输出Html的两种方式">
-<meta property="og:url" content="http://yoursite.com/2019/05/07/Asp-net-MVC在Razor中输出Html的两种方式/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/07/Asp-net-MVC%E5%9C%A8Razor%E4%B8%AD%E8%BE%93%E5%87%BAHtml%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="Razor&amp;#x4E2D;&amp;#x6240;&amp;#x6709;&amp;#x7684;Html&amp;#x90FD;&amp;#x4F1A;&amp;#x81EA;&amp;#x52A8;&amp;#x7F16;&amp;#x7801;&amp;#xFF0C;&amp;#x8FD9;&amp;#x6837;&amp;#x5C31;&amp;#x4E0D;&amp;#x9700;&amp;#x8981;&amp;#x6211;&amp;#x4EEC;&amp;#x624B;&amp;#x52A8;&amp;#x53BB;&amp;#x7F16;&amp;#x780">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T06:03:06.610Z">
+<meta property="og:description" content="Razor中所有的Html都会自动编码，这样就不需要我们手动去编码了（安全），但在需要输出Html时就是已经转义过的Html文本了，如下所示： 1234@{    string thisTest &#x3D; &quot;&lt;span style&#x3D;&#39;color:red;&#39;&gt;测试文字&lt;&#x2F;span&gt;&quot;;}@thisTest;  这样在页面输出的文本就是：&lt;span style&#x3D;&#39;color">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-07T02:18:36.000Z">
+<meta property="article:modified_time" content="2019-07-08T11:26:04.478Z">
+<meta property="article:author" content="zhang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Asp.net MVC在Razor中输出Html的两种方式">
-<meta name="twitter:description" content="Razor&amp;#x4E2D;&amp;#x6240;&amp;#x6709;&amp;#x7684;Html&amp;#x90FD;&amp;#x4F1A;&amp;#x81EA;&amp;#x52A8;&amp;#x7F16;&amp;#x7801;&amp;#xFF0C;&amp;#x8FD9;&amp;#x6837;&amp;#x5C31;&amp;#x4E0D;&amp;#x9700;&amp;#x8981;&amp;#x6211;&amp;#x4EEC;&amp;#x624B;&amp;#x52A8;&amp;#x53BB;&amp;#x7F16;&amp;#x780">
 
 
 
@@ -45,7 +45,9 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
 
+
 <link rel="stylesheet" href="/css/style.css">
+
 
 <script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
@@ -65,6 +67,8 @@
 
 
 
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 <body>
     
@@ -87,19 +91,23 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item " href="/archives">归档</a>
+            <a class="navbar-item "
+               href="/archives">归档</a>
             
-            <a class="navbar-item " href="/categories">分类</a>
+            <a class="navbar-item "
+               href="/categories">分类</a>
             
-            <a class="navbar-item " href="/tags">标签</a>
+            <a class="navbar-item "
+               href="/tags">标签</a>
             
-            <a class="navbar-item " href="/categories/Technology">技术</a>
+            <a class="navbar-item "
+               href="/categories/Technology">技术</a>
             
-            <a class="navbar-item " href="/categories/LifeStyle">生活</a>
+            <a class="navbar-item "
+               href="/other">树洞</a>
             
-            <a class="navbar-item " href="/categories/other">杂项</a>
-            
-            <a class="navbar-item " href="/about">关于</a>
+            <a class="navbar-item "
+               href="/about">关于</a>
             
         </div>
         
@@ -111,7 +119,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/yuanjianzhang">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
                 
                 <i class="fab fa-github"></i>
                 
@@ -144,44 +152,24 @@
         <span class="column is-narrow">
             
             
-            1 分钟 读完 (约 152 字)
+            1 分钟 读完 (约 169 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <a id="more"></a>
-<p>Razor&#x4E2D;&#x6240;&#x6709;&#x7684;Html&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x53BB;&#x7F16;&#x7801;&#x4E86;&#xFF08;&#x5B89;&#x5168;&#xFF09;&#xFF0C;&#x4F46;&#x5728;&#x9700;&#x8981;&#x8F93;&#x51FA;Html&#x65F6;&#x5C31;&#x662F;&#x5DF2;&#x7ECF;&#x8F6C;&#x4E49;&#x8FC7;&#x7684;Html&#x6587;&#x672C;&#x4E86;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<p>@{</p>
-<pre><code>string thisTest = &quot;&lt;span style=\&quot;color:#f00;\&quot;&gt;qubernet&lt;/span&gt;&quot;;
-</code></pre><p>}</p>
-<p>@thisTest;</p>
-<p>&#x8FD9;&#x6837;&#x5728;&#x9875;&#x9762;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x672C;&#x5C31;&#x662F;&#xFF1A;<span style="\" color:#f00;\"">qubernet</span>&#x800C;&#x4E0D;&#x662F;&#x7EA2;&#x8272;&#x7684;&#x5B57;&#x4F53;&#x4E86;&#xFF0C;&#x8981;&#x8F93;&#x51FA;&#x7EA2;&#x8272;&#x7684;&#x5B57;&#x4F53;&#xFF0C;&#x6709;&#x4E0B;&#x9762;&#x5E38;&#x7528;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<ol>
-<li>&#x4F7F;&#x7528;Razor&#x4E2D;&#x7684;Html.Raw&#xFF08;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF09;&#xFF1A;<br>@{<br> string thisTest = &#x201C;<span style="\" color:#f00;\"">qubernet</span>&#x201C;;<br>}<br>@Html.Raw(thisTest);</li>
-</ol>
-<ol start="2">
-<li>&#x4F7F;&#x7528;MvcHtmlString&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#xFF1A;<br>@{<br> string thisTest = &#x201C;<span style="\" color:#f00;\"">qubernet</span>&#x201C;;<br> var thisResult = new MvcHtmlString(thisTest);<br>}<br>@thisResult&#x6216;@(new HtmlString(thisTest))</li>
-</ol>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+        <html><head></head><body><span id="more"></span>
+
+<p>Razor中所有的Html都会自动编码，这样就不需要我们手动去编码了（安全），但在需要输出Html时就是已经转义过的Html文本了，如下所示：</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@{</span><br><span class="line">    string thisTest = "&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;";</span><br><span class="line">}</span><br><span class="line">@thisTest;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这样在页面输出的文本就是：<code>&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;</code>而不是红色的字体了，要输出红色的字体，有下面常用的两种方式：</p>
+<p>1、使用Razor中的Html.Raw（推荐使用这种方式）：</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@{</span><br><span class="line">    string thisTest = "&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;";</span><br><span class="line">}</span><br><span class="line">@Html.Raw(thisTest);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>2、使用MvcHtmlString类来实现：</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@{</span><br><span class="line">    string thisTest = "&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;";</span><br><span class="line">    var thisResult = new MvcHtmlString(thisTest);</span><br><span class="line">}</span><br><span class="line">@thisResult 或 @(new HtmlString(thisTest))</span><br></pre></td></tr></tbody></table></figure>
+</body></html>
     
     </div>
     
@@ -189,12 +177,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2019/05/09/jQuery的Ajax的dataType设置问题/">jQuery的Ajax的dataType设置问题</a>
+            <a href="/2019/05/09/jQuery%E7%9A%84Ajax%E7%9A%84dataType%E8%AE%BE%E7%BD%AE%E9%97%AE%E9%A2%98/">jQuery的Ajax的dataType设置问题</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2019/04/26/彻底清除Github上某个文件的历史（对于误传密码等隐私信息等情况）/">&#39;彻底清除Github上某个文件的历史（对于误传密码等隐私信息等情况）&#39;</a>
+            <a href="/2019/04/26/%E5%BD%BB%E5%BA%95%E6%B8%85%E9%99%A4Github%E4%B8%8A%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%88%E5%AF%B9%E4%BA%8E%E8%AF%AF%E4%BC%A0%E5%AF%86%E7%A0%81%E7%AD%89%E9%9A%90%E7%A7%81%E4%BF%A1%E6%81%AF%E7%AD%89%E6%83%85%E5%86%B5%EF%BC%89/">彻底清除Github上某个文件的历史（对于误传密码等隐私信息等情况）</a>
             
         </span>
     </div>
@@ -226,8 +214,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2019 zhang&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                &copy; 2021 zhang&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -236,7 +225,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                     
                     GitHub
                     
@@ -255,7 +244,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -371,14 +360,16 @@
     
 
 
+
 <script src="/js/script.js"></script>
+
 
     
     <div class="searchbox ins-search">
     <div class="searchbox-mask"></div>
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -401,7 +392,9 @@
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
     
 </body>
 </html>

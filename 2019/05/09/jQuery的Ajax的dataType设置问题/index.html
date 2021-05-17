@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
 <title>jQuery的Ajax的dataType设置问题 - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,18 +16,19 @@
 
 
 
-    <meta name="description" content="&amp;#x5728;Asp.Net MVC&amp;#x7684;&amp;#x524D;&amp;#x53F0;&amp;#x9875;&amp;#x9762;&amp;#x4F7F;&amp;#x7528;Ajax&amp;#x83B7;&amp;#x53D6;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x5F53;Ajax&amp;#x65B9;&amp;#x6CD5;&amp;#x4E2D;&amp;#x8BBE;&amp;#x7F6E;&amp;#x4E86;dataType: &amp;quot;json">
-<meta name="keywords" content="Technology,jQuery">
+    <meta name="description" content="在Asp.Net MVC的前台页面使用Ajax获取数据，当Ajax方法中设置了dataType: &quot;json&quot;后，Ajax无法使用data.ret的方式处理数据。Controller.Json Method (Object)Json(Object) 方法返回的是继承自System.Object的类型值System.Web.Mvc.JsonResult在前台获取到的是object，而不是js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery的Ajax的dataType设置问题">
-<meta property="og:url" content="http://yoursite.com/2019/05/09/jQuery的Ajax的dataType设置问题/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/09/jQuery%E7%9A%84Ajax%E7%9A%84dataType%E8%AE%BE%E7%BD%AE%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="&amp;#x5728;Asp.Net MVC&amp;#x7684;&amp;#x524D;&amp;#x53F0;&amp;#x9875;&amp;#x9762;&amp;#x4F7F;&amp;#x7528;Ajax&amp;#x83B7;&amp;#x53D6;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x5F53;Ajax&amp;#x65B9;&amp;#x6CD5;&amp;#x4E2D;&amp;#x8BBE;&amp;#x7F6E;&amp;#x4E86;dataType: &amp;quot;json">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T06:02:29.849Z">
+<meta property="og:description" content="在Asp.Net MVC的前台页面使用Ajax获取数据，当Ajax方法中设置了dataType: &quot;json&quot;后，Ajax无法使用data.ret的方式处理数据。Controller.Json Method (Object)Json(Object) 方法返回的是继承自System.Object的类型值System.Web.Mvc.JsonResult在前台获取到的是object，而不是js">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-09T03:15:40.000Z">
+<meta property="article:modified_time" content="2019-06-26T06:02:29.849Z">
+<meta property="article:author" content="zhang">
+<meta property="article:tag" content="Technology">
+<meta property="article:tag" content="jQuery">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery的Ajax的dataType设置问题">
-<meta name="twitter:description" content="&amp;#x5728;Asp.Net MVC&amp;#x7684;&amp;#x524D;&amp;#x53F0;&amp;#x9875;&amp;#x9762;&amp;#x4F7F;&amp;#x7528;Ajax&amp;#x83B7;&amp;#x53D6;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x5F53;Ajax&amp;#x65B9;&amp;#x6CD5;&amp;#x4E2D;&amp;#x8BBE;&amp;#x7F6E;&amp;#x4E86;dataType: &amp;quot;json">
 
 
 
@@ -46,7 +47,9 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
 
+
 <link rel="stylesheet" href="/css/style.css">
+
 
 <script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
@@ -66,6 +69,8 @@
 
 
 
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 <body>
     
@@ -88,19 +93,23 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item " href="/archives">归档</a>
+            <a class="navbar-item "
+               href="/archives">归档</a>
             
-            <a class="navbar-item " href="/categories">分类</a>
+            <a class="navbar-item "
+               href="/categories">分类</a>
             
-            <a class="navbar-item " href="/tags">标签</a>
+            <a class="navbar-item "
+               href="/tags">标签</a>
             
-            <a class="navbar-item " href="/categories/Technology">技术</a>
+            <a class="navbar-item "
+               href="/categories/Technology">技术</a>
             
-            <a class="navbar-item " href="/categories/LifeStyle">生活</a>
+            <a class="navbar-item "
+               href="/other">树洞</a>
             
-            <a class="navbar-item " href="/categories/other">杂项</a>
-            
-            <a class="navbar-item " href="/about">关于</a>
+            <a class="navbar-item "
+               href="/about">关于</a>
             
         </div>
         
@@ -112,7 +121,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/yuanjianzhang">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
                 
                 <i class="fab fa-github"></i>
                 
@@ -151,30 +160,15 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <a id="more"></a>
-<p>&#x5728;Asp.Net MVC&#x7684;&#x524D;&#x53F0;&#x9875;&#x9762;&#x4F7F;&#x7528;Ajax&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5F53;Ajax&#x65B9;&#x6CD5;&#x4E2D;&#x8BBE;&#x7F6E;&#x4E86;<code>dataType: &quot;json&quot;</code>&#x540E;&#xFF0C;Ajax&#x65E0;&#x6CD5;&#x4F7F;&#x7528;data.ret&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x6570;&#x636E;&#x3002;<br>Controller.Json Method (Object)<br>Json(Object) &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x7EE7;&#x627F;&#x81EA;System.Object&#x7684;&#x7C7B;&#x578B;&#x503C;System.Web.Mvc.JsonResult<br>&#x5728;&#x524D;&#x53F0;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x662F;object&#xFF0C;&#x800C;&#x4E0D;&#x662F;json&#x5B57;&#x7B26;&#x4E32;</p>
+        <html><head></head><body><span id="more"></span>
+
+
+
+<p>在Asp.Net MVC的前台页面使用Ajax获取数据，当Ajax方法中设置了<code>dataType: "json"</code>后，Ajax无法使用data.ret的方式处理数据。<br>Controller.Json Method (Object)<br>Json(Object) 方法返回的是继承自System.Object的类型值System.Web.Mvc.JsonResult<br>在前台获取到的是object，而不是json字符串</p>
 <blockquote>
-<p><a href="http://www.cnblogs.com/zhangcybb/p/6604380.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhangcybb/p/6604380.html</a><br><a href="https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29#see-also" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29#see-also</a><br><a href="https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29</a><br><a href="https://docs.microsoft.com/zh-cn/previous-versions/aspnet/dd470569%28v%3dvs.100%29" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/previous-versions/aspnet/dd470569%28v%3dvs.100%29</a><br><a href="https://www.cnblogs.com/fire-dragon/p/5889400.html" target="_blank" rel="noopener">https://www.cnblogs.com/fire-dragon/p/5889400.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/zhangcybb/p/6604380.html">http://www.cnblogs.com/zhangcybb/p/6604380.html</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29#see-also">https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29#see-also</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29">https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/previous-versions/aspnet/dd470569%28v%3dvs.100%29">https://docs.microsoft.com/zh-cn/previous-versions/aspnet/dd470569%28v%3dvs.100%29</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fire-dragon/p/5889400.html">https://www.cnblogs.com/fire-dragon/p/5889400.html</a></p>
 </blockquote>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+</body></html>
     
     </div>
     
@@ -190,12 +184,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2019/05/20/SQL语句使用技巧/">SQL语句使用技巧</a>
+            <a href="/2019/05/20/SQL%E8%AF%AD%E5%8F%A5%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">SQL语句使用技巧</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2019/05/07/Asp-net-MVC在Razor中输出Html的两种方式/">Asp.net MVC在Razor中输出Html的两种方式</a>
+            <a href="/2019/05/07/Asp-net-MVC%E5%9C%A8Razor%E4%B8%AD%E8%BE%93%E5%87%BAHtml%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">Asp.net MVC在Razor中输出Html的两种方式</a>
             
         </span>
     </div>
@@ -227,8 +221,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2019 zhang&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                &copy; 2021 zhang&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -237,7 +232,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                     
                     GitHub
                     
@@ -256,7 +251,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -372,14 +367,16 @@
     
 
 
+
 <script src="/js/script.js"></script>
+
 
     
     <div class="searchbox ins-search">
     <div class="searchbox-mask"></div>
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -402,7 +399,9 @@
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
     
 </body>
 </html>

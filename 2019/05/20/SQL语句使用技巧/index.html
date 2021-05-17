@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
 <title>SQL语句使用技巧 - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,18 +16,19 @@
 
 
 
-    <meta name="description" content="记录一下自己在使用PL/SQL的编写SQL语句的注意点和技巧">
-<meta name="keywords" content="SQL,Oracle">
+    <meta name="description" content="记录一下自己在使用PL&#x2F;SQL的编写SQL语句的注意点和技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL语句使用技巧">
-<meta property="og:url" content="http://yoursite.com/2019/05/20/SQL语句使用技巧/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/SQL%E8%AF%AD%E5%8F%A5%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="记录一下自己在使用PL/SQL的编写SQL语句的注意点和技巧">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-24T01:17:59.591Z">
+<meta property="og:description" content="记录一下自己在使用PL&#x2F;SQL的编写SQL语句的注意点和技巧">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-20T06:37:23.000Z">
+<meta property="article:modified_time" content="2019-05-24T01:17:59.591Z">
+<meta property="article:author" content="zhang">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="Oracle">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL语句使用技巧">
-<meta name="twitter:description" content="记录一下自己在使用PL/SQL的编写SQL语句的注意点和技巧">
 
 
 
@@ -46,7 +47,9 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
 
+
 <link rel="stylesheet" href="/css/style.css">
+
 
 <script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
@@ -66,6 +69,8 @@
 
 
 
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 <body>
     
@@ -88,19 +93,23 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item " href="/archives">归档</a>
+            <a class="navbar-item "
+               href="/archives">归档</a>
             
-            <a class="navbar-item " href="/categories">分类</a>
+            <a class="navbar-item "
+               href="/categories">分类</a>
             
-            <a class="navbar-item " href="/tags">标签</a>
+            <a class="navbar-item "
+               href="/tags">标签</a>
             
-            <a class="navbar-item " href="/categories/Technology">技术</a>
+            <a class="navbar-item "
+               href="/categories/Technology">技术</a>
             
-            <a class="navbar-item " href="/categories/LifeStyle">生活</a>
+            <a class="navbar-item "
+               href="/other">树洞</a>
             
-            <a class="navbar-item " href="/categories/other">杂项</a>
-            
-            <a class="navbar-item " href="/about">关于</a>
+            <a class="navbar-item "
+               href="/about">关于</a>
             
         </div>
         
@@ -112,7 +121,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/yuanjianzhang">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
                 
                 <i class="fab fa-github"></i>
                 
@@ -151,28 +160,13 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x5728;&#x4F7F;&#x7528;PL/SQL&#x7684;&#x7F16;&#x5199;SQL&#x8BED;&#x53E5;&#x7684;&#x6CE8;&#x610F;&#x70B9;&#x548C;&#x6280;&#x5DE7;<br><a id="more"></a></p>
-<h2 id="&#x8BB0;&#x5F55;&#x5DE5;&#x4F5C;&#x4E2D;&#x9047;&#x5230;&#x7684;"><a href="#&#x8BB0;&#x5F55;&#x5DE5;&#x4F5C;&#x4E2D;&#x9047;&#x5230;&#x7684;" class="headerlink" title="&#x8BB0;&#x5F55;&#x5DE5;&#x4F5C;&#x4E2D;&#x9047;&#x5230;&#x7684;"></a>&#x8BB0;&#x5F55;&#x5DE5;&#x4F5C;&#x4E2D;&#x9047;&#x5230;&#x7684;</h2><pre><code>&#x5728;&#x7EDF;&#x8BA1;&#x4E00;&#x5F20;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E3A;Char(2) &#x7684;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E3A;&#x7A7A;&#x7684;&#x6570;&#x91CF;&#x65F6;&#xFF0C;&#x4F7F;&#x7528; `select count(1) from table1 where EHR_PAT_GEN = &apos;&apos;`&#xFF0C;&#x67E5;&#x8BE2;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x4E3A;0&#xFF08;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6570;&#x636E;&#x5DF2;&#x7ECF;&#x786E;&#x8BA4;&#x6709;&#x7A7A;&#x7684;&#xFF09;&#x3002;
-&#x7136;&#x540E;&#x5C06;&#x8BED;&#x53E5;&#x6362;&#x6210;`select count(1) from table1 where EHR_PAT_GEN &lt;&gt; &apos;&apos;`&#x6267;&#x884C;&#x540E;&#xFF0C;&#x7ED3;&#x679C;&#x4ECD;&#x7136;&#x4E3A;0&#xFF0C;&#x7136;&#x540E;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x53D1;&#x73B0;&#x4E0D;&#x4E3A;&#x7A7A;&#x7684;&#x7684;&#x6570;&#x636E;&#x4E3A;&#x6570;&#x5B57;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;`select count(1) from table1 where EHR_PAT_GEN &gt; 0`&#x67E5;&#x51FA;&#x8BE5;&#x5B57;&#x6BB5;&#x4E0D;&#x4E3A;&#x7A7A;&#x7684;&#x6570;&#x636E;&#x91CF;&#x3002;&#x7136;&#x540E;&#x767E;&#x5EA6;&#x5230;char&#x7C7B;&#x578B;&#x662F;
-</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+        <html><head></head><body><p>记录一下自己在使用PL/SQL的编写SQL语句的注意点和技巧</p>
+<span id="more"></span>
+
+<h2 id="记录工作中遇到的"><a href="#记录工作中遇到的" class="headerlink" title="记录工作中遇到的"></a>记录工作中遇到的</h2><pre><code>在统计一张数据表中一个数据类型为Char(2) 的字段的值为空的数量时，使用 `select count(1) from table1 where EHR_PAT_GEN = ''`，查询出的结果为0（数据库中数据已经确认有空的）。
+然后将语句换成`select count(1) from table1 where EHR_PAT_GEN &lt;&gt; ''`执行后，结果仍然为0，然后查询数据表，发现不为空的的数据为数字时，使用`select count(1) from table1 where EHR_PAT_GEN &gt; 0`查出该字段不为空的数据量。然后百度到char类型是
+</code></pre>
+</body></html>
     
     </div>
     
@@ -188,12 +182,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2019/05/24/对当今教育的一些感想/">对当今教育的一些感想</a>
+            <a href="/2019/05/24/%E5%AF%B9%E5%BD%93%E4%BB%8A%E6%95%99%E8%82%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/">对当今教育的一些感想</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2019/05/09/jQuery的Ajax的dataType设置问题/">jQuery的Ajax的dataType设置问题</a>
+            <a href="/2019/05/09/jQuery%E7%9A%84Ajax%E7%9A%84dataType%E8%AE%BE%E7%BD%AE%E9%97%AE%E9%A2%98/">jQuery的Ajax的dataType设置问题</a>
             
         </span>
     </div>
@@ -225,8 +219,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2019 zhang&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                &copy; 2021 zhang&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -235,7 +230,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                     
                     GitHub
                     
@@ -254,7 +249,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -370,14 +365,16 @@
     
 
 
+
 <script src="/js/script.js"></script>
+
 
     
     <div class="searchbox ins-search">
     <div class="searchbox-mask"></div>
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -400,7 +397,9 @@
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
     
 </body>
 </html>
