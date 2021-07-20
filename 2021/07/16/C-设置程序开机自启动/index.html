@@ -24,7 +24,7 @@
 <meta property="og:description" content="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限） 进入目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 将应用程序快捷方式剪切(或者复制)并粘贴到目录中 应用程序快捷方式加入到了启动项，下次重启电脑之后这个应用程序就会自动开机运行了  如果需要针对个人账户进行配置：Win+R输入命令shell:s">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-16T07:16:22.000Z">
-<meta property="article:modified_time" content="2021-07-20T02:53:04.511Z">
+<meta property="article:modified_time" content="2021-07-20T03:07:28.959Z">
 <meta property="article:author" content="zhang">
 <meta name="twitter:card" content="summary">
 
@@ -178,25 +178,7 @@
 </blockquote>
 <h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ol>
 <li><p>注册表地址<br> 使用代码修改注册表的方式，如果需要查看注册信息，需要确认程序是32-bit还是64-bit。<br> 32位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers ion\Run</code><br> 64位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
-<table>
-<thead>
-<tr>
-<th>操作系统</th>
-<th>64位程序访问的注册表</th>
-<th>32位程序访问的注册表</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>64位系统</td>
-<td>HKEY_LOCAL_MACHINE\SOFTWARE</td>
-<td>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node</td>
-</tr>
-<tr>
-<td>32位系统</td>
-<td>-</td>
-<td>HKEY_LOCAL_MACHINE\SOFTWARE</td>
-</tr>
-</tbody></table>
+<p> 操作系统 | 64位程序访问的注册表 | 32位程序访问的注册表<br> | :—–| —-: | :—-: |<br> 64位系统 | HKEY_LOCAL_MACHINE\SOFTWARE |    HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node<br> 32位系统 | - | HKEY_LOCAL_MACHINE\SOFTWARE</p>
 <p> 参考资料：</p>
 <blockquote>
 <ul>
