@@ -259,7 +259,25 @@
 </blockquote>
 <h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ol>
 <li><p>注册表地址<br> 使用代码修改注册表的方式，如果需要查看注册信息，需要确认程序是32-bit还是64-bit。<br> 32位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers ion\Run</code><br> 64位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
-<p> 操作系统 | 64位程序访问的注册表 | 32位程序访问的注册表<br> |—–|——|——|<br> 64位系统|HKEY_LOCAL_MACHINE\SOFTWARE|HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node<br> 32位系统| - |HKEY_LOCAL_MACHINE\SOFTWARE</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作系统</th>
+<th align="center">64位程序访问的注册表</th>
+<th align="center">32位程序访问的注册表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">64位系统</td>
+<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE</td>
+<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node</td>
+</tr>
+<tr>
+<td align="left">32位系统</td>
+<td align="center">-</td>
+<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE</td>
+</tr>
+</tbody></table>
 <p> 参考资料：</p>
 <blockquote>
 <ul>
