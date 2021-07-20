@@ -179,7 +179,7 @@
         <span class="column is-narrow">
             
             
-            1 分钟 读完 (约 128 字)
+            1 分钟 读完 (约 130 字)
         </span>
         
     </div>
@@ -187,7 +187,7 @@
     
         <html><head></head><body><p>使用互斥锁，实现只有一个程序</p>
 <p>代码：</p>
-<figure class="highlight csharp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line"><span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment">//启动程序</span></span><br><span class="line">    Application.Run(<span class="hljs-keyword">new</span> Form1());  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight csharp hljs"><figcaption><span>code.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line"><span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment">//启动程序</span></span><br><span class="line">    Application.Run(<span class="hljs-keyword">new</span> Form1());  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>运行环境</p>
 <blockquote>
@@ -240,7 +240,7 @@
 <li>应用程序快捷方式加入到了启动项，下次重启电脑之后这个应用程序就会自动开机运行了</li>
 </ol>
 <p>如果需要针对个人账户进行配置：<code>Win+R</code>输入命令<code>shell:startup</code> ,会直接弹出启动项对应的目录，然后像前面方法一样把应用程序快捷方式复制到启动目录</p>
-<h2 id="方法二：修改计算机注册表的方式（需要管理员权限）"><a href="#方法二：修改计算机注册表的方式（需要管理员权限）" class="headerlink" title="方法二：修改计算机注册表的方式（需要管理员权限）"></a>方法二：修改计算机注册表的方式（需要管理员权限）</h2><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h3 id="Windows自启动原理"><a href="#Windows自启动原理" class="headerlink" title="Windows自启动原理"></a>Windows自启动原理</h3><p>在Windows操作系统下，主要有2个文件夹和8个注册表键项控制程序的自启动，通过修改“Run”键值实现自启动程序是比较常见的方法。<br>具体的位置是：<code>HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Run</code>  </p>
+<h2 id="方法二：修改计算机注册表的方式（需要管理员权限）"><a href="#方法二：修改计算机注册表的方式（需要管理员权限）" class="headerlink" title="方法二：修改计算机注册表的方式（需要管理员权限）"></a>方法二：修改计算机注册表的方式（需要管理员权限）</h2><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="Windows自启动原理"><a href="#Windows自启动原理" class="headerlink" title="Windows自启动原理"></a>Windows自启动原理</h4><p>在Windows操作系统下，主要有2个文件夹和8个注册表键项控制程序的自启动，通过修改“Run”键值实现自启动程序是比较常见的方法。<br>具体的位置是：<code>HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Run</code>  </p>
 <ul>
 <li>参考资料：<blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fukajg/archive/2012/08/10/2631250.html">Windows程序自启动原理</a></p>
@@ -259,7 +259,7 @@
 </blockquote>
 <h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ol>
 <li><p>注册表地址<br> 使用代码修改注册表的方式，如果需要查看注册信息，需要确认程序是32-bit还是64-bit。<br> 32位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers ion\Run</code><br> 64位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
-<p> 操作系统 | 64位程序访问的注册表 | 32位程序访问的注册表<br> | :—–| —-: | :—-: |<br> 64位系统 | HKEY_LOCAL_MACHINE\SOFTWARE |    HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node<br> 32位系统 | - | HKEY_LOCAL_MACHINE\SOFTWARE</p>
+<p> 操作系统 | 64位程序访问的注册表 | 32位程序访问的注册表<br> |:—–|:——:|——:|<br> 64位系统|HKEY_LOCAL_MACHINE\SOFTWARE|HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node<br> 32位系统| - |HKEY_LOCAL_MACHINE\SOFTWARE</p>
 <p> 参考资料：</p>
 <blockquote>
 <ul>
