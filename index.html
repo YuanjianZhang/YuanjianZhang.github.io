@@ -134,6 +134,183 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
+            <a href="/2021/07/20/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%EF%BC%88%E4%B8%8D%E9%9C%80%E8%A6%81%E7%99%BB%E5%BD%95%EF%BC%89/" itemprop="url">服务器设置系统启动时程序自动运行（不需要登录）</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-07-20T03:03:40.000Z" itemprop="datePublished">7月 20 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            几秒 读完 (约 0 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/" itemprop="url">C#代码确保应用程序只有一个实例</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-07-20T02:22:58.000Z" itemprop="datePublished">7月 20 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 读完 (约 128 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>使用互斥锁，实现只有一个程序</p>
+<p>代码：</p>
+<figure class="highlight csharp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line"><span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment">//启动程序</span></span><br><span class="line">    Application.Run(<span class="hljs-keyword">new</span> Form1());  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>运行环境</p>
+<blockquote>
+<p>Win10<br>.NET Framework 4.5<br>VS2019</p>
+</blockquote>
+<p>参考资料：</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/229565/what-is-a-good-pattern-for-using-a-global-mutex-in-c">What is a good pattern for using a Global Mutex in C#?</a></li>
+<li><a target="_blank" rel="noopener" href="https://odetocode.com/blogs/scott/archive/2004/08/20/the-misunderstood-mutex.aspx">The Misunderstood Mutex</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/answers/questions/221210/c-prevent-multiple-instance-of-console-application.html">C# prevent multiple instance of console application running</a></li>
+</ul>
+</blockquote>
+</body></html>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" itemprop="url">C#设置程序开机自启动</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-07-16T07:16:22.000Z" itemprop="datePublished">7月 16 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            8 分钟 读完 (约 1187 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><h2 id="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"><a href="#方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）" class="headerlink" title="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"></a>方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）</h2><ol>
+<li>进入目录：<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code></li>
+<li>将应用程序快捷方式剪切(或者复制)并粘贴到目录中</li>
+<li>应用程序快捷方式加入到了启动项，下次重启电脑之后这个应用程序就会自动开机运行了</li>
+</ol>
+<p>如果需要针对个人账户进行配置：<code>Win+R</code>输入命令<code>shell:startup</code> ,会直接弹出启动项对应的目录，然后像前面方法一样把应用程序快捷方式复制到启动目录</p>
+<h2 id="方法二：修改计算机注册表的方式（需要管理员权限）"><a href="#方法二：修改计算机注册表的方式（需要管理员权限）" class="headerlink" title="方法二：修改计算机注册表的方式（需要管理员权限）"></a>方法二：修改计算机注册表的方式（需要管理员权限）</h2><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h3 id="Windows自启动原理"><a href="#Windows自启动原理" class="headerlink" title="Windows自启动原理"></a>Windows自启动原理</h3><p>在Windows操作系统下，主要有2个文件夹和8个注册表键项控制程序的自启动，通过修改“Run”键值实现自启动程序是比较常见的方法。<br>具体的位置是：<code>HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Run</code>  </p>
+<ul>
+<li>参考资料：<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fukajg/archive/2012/08/10/2631250.html">Windows程序自启动原理</a></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>在知道注册表中自启动位置所在后，只需要将需要启动的程序路径添加至指定路径中就可以实现开机自启动功能。</p>
+<figure class="highlight csharp hljs"><figcaption><span>Program.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> 应用程序的主入口点。</span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="hljs-meta">STAThread</span>]</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)</span></span><br><span class="line">{</span><br><span class="line">    Application.EnableVisualStyles();</span><br><span class="line">    Application.SetCompatibleTextRenderingDefault(<span class="hljs-literal">false</span>);</span><br><span class="line">    <span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line">    <span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-comment">//判断是否开启自启动</span></span><br><span class="line">        <span class="hljs-built_in">string</span> strFilePath = Application.ExecutablePath;</span><br><span class="line">        <span class="hljs-built_in">string</span> strFileName = System.IO.Path.GetFileName(strFilePath);</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-comment">//自启动功能是否开启</span></span><br><span class="line">            <span class="hljs-keyword">var</span> AutoRunFlag = ConfigurationManager.AppSettings[<span class="hljs-string">"AutoRunFlag"</span>] == <span class="hljs-string">"1"</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-comment">//自启动是否已经存在</span></span><br><span class="line">            <span class="hljs-keyword">var</span> flag = SystemHelper.IsAutoRun(strFilePath, strFileName);</span><br><span class="line">            <span class="hljs-keyword">if</span> (AutoRunFlag != flag)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-meta">#<span class="hljs-meta-keyword">region</span> 获取管理员权限，进行注册表写入操作</span></span><br><span class="line">                <span class="hljs-comment">//当前用户是管理员的时候，直接启动应用程序并且写入注册表</span></span><br><span class="line">                <span class="hljs-comment">//如果不是管理员，则使用启动对象启动程序，以确保使用管理员身份运行</span></span><br><span class="line">                <span class="hljs-comment">//获得当前登录的Windows用户标示</span></span><br><span class="line">                WindowsIdentity identity = WindowsIdentity.GetCurrent();</span><br><span class="line">                WindowsPrincipal principal = <span class="hljs-keyword">new</span> WindowsPrincipal(identity);</span><br><span class="line">                <span class="hljs-comment">//判断当前登录用户是否为管理员</span></span><br><span class="line">                <span class="hljs-keyword">if</span> (principal.IsInRole(WindowsBuiltInRole.Administrator))</span><br><span class="line">                {</span><br><span class="line">                    <span class="hljs-keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        <span class="hljs-comment">//如果是管理员，注册自启动代码</span></span><br><span class="line">                        SystemHelper.SetAutoRun(strFilePath, strFileName, AutoRunFlag);</span><br><span class="line">                    }</span><br><span class="line">                    catch(Exception ex)</span><br><span class="line">                    {</span><br><span class="line">                        MessageBox.Show( ex.Message, <span class="hljs-string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    <span class="hljs-comment">//创建启动对象</span></span><br><span class="line">                    System.Diagnostics.ProcessStartInfo startInfo = <span class="hljs-keyword">new</span> System.Diagnostics.ProcessStartInfo();</span><br><span class="line">                    startInfo.UseShellExecute = <span class="hljs-literal">true</span>;</span><br><span class="line">                    startInfo.WorkingDirectory = Environment.CurrentDirectory;</span><br><span class="line">                    startInfo.FileName = Application.ExecutablePath;</span><br><span class="line">                    <span class="hljs-comment">//设置启动动作,确保以管理员身份运行</span></span><br><span class="line">                    startInfo.Verb = <span class="hljs-string">"runas"</span>;</span><br><span class="line">                    <span class="hljs-keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        System.Diagnostics.Process.Start(startInfo);</span><br><span class="line">                    }</span><br><span class="line">                    catch</span><br><span class="line">                    {</span><br><span class="line">                        <span class="hljs-keyword">return</span>;</span><br><span class="line">                    }</span><br><span class="line">                    <span class="hljs-comment">//退出</span></span><br><span class="line">                    Application.Exit();</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-meta">#<span class="hljs-meta-keyword">endregion</span></span></span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-comment">//启动程序</span></span><br><span class="line">            Application.Run(<span class="hljs-keyword">new</span> Form1());</span><br><span class="line">        }</span><br><span class="line">        catch(Exception ex)</span><br><span class="line">        {</span><br><span class="line">            MessageBox.Show(ex.Message, <span class="hljs-string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">            <span class="hljs-comment">//return;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>SystemHelper.cs</code> 参考自：<a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/n2d913xQdD/">C# winform程序实现开机自启动，并且识别是开机启动还是双击启动</a></p>
+<figure class="highlight csharp hljs"><figcaption><span>SystemHelper.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title">SystemHelper</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SystemHelper</span>(<span class="hljs-params"></span>)</span> { }</span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> 设置程序开机启动</span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppPath"&gt;</span>应用程序exe所在文件夹<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppName"&gt;</span>应用程序exe名称<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="bIsAutoRun"&gt;</span>自动运行状态<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetAutoRun</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> strAppPath, <span class="hljs-built_in">string</span> strAppName, <span class="hljs-built_in">bool</span> bIsAutoRun</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">string</span>.IsNullOrWhiteSpace(strAppPath)</span><br><span class="line">                || <span class="hljs-built_in">string</span>.IsNullOrWhiteSpace(strAppName))</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">"应用程序路径或名称为空！"</span>);</span><br><span class="line">            }</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey run = reg.CreateSubKey(<span class="hljs-string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="hljs-keyword">if</span> (bIsAutoRun)</span><br><span class="line">            {</span><br><span class="line">                run.SetValue(strAppName, strAppPath);</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != run.GetValue(strAppName))</span><br><span class="line">                {</span><br><span class="line">                    run.DeleteValue(strAppName);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            run.Close();</span><br><span class="line">            reg.Close();</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> 判断是否开机启动</span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppPath"&gt;</span>应用程序路径<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppName"&gt;</span>应用程序名称<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;returns&gt;</span><span class="hljs-doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">bool</span> <span class="hljs-title">IsAutoRun</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> strAppPath, <span class="hljs-built_in">string</span> strAppName</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey software = reg.OpenSubKey(<span class="hljs-string">@"SOFTWARE"</span>);</span><br><span class="line">            RegistryKey run = reg.OpenSubKey(<span class="hljs-string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="hljs-built_in">object</span> key = run.GetValue(strAppName);</span><br><span class="line">            software.Close();</span><br><span class="line">            run.Close();</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> == key || !strAppPath.Equals(key.ToString()))</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>运行环境</p>
+<blockquote>
+<p>Win10<br>.NET Framework4.5<br>VS2019</p>
+</blockquote>
+<h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ol>
+<li><p>注册表地址<br> 使用代码修改注册表的方式，如果需要查看注册信息，需要确认程序是32-bit还是64-bit。<br> 32位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers ion\Run</code><br> 64位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>64位程序访问的注册表</th>
+<th>32位程序访问的注册表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>64位系统</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node</td>
+</tr>
+<tr>
+<td>32位系统</td>
+<td>-</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE</td>
+</tr>
+</tbody></table>
+<p> 参考资料：</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/read-32bit-registry-from-x64-process.html">.NET/C# 在 64 位进程中读取 32 位进程重定向后的注册表</a></li>
+<li><a target="_blank" rel="noopener" href="https://guoliliang.github.io/2017/10/%E5%85%B3%E4%BA%8E-WOW6432Node/">关于WOW6432Node</a></li>
+</ul>
+</blockquote>
+</li>
+<li><p>以管理员权限打开程序：<br>参考资料：</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/start-process-in-a-specific-trust-level">Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/windows-user-account-control.html">Windows 中的 UAC 用户账户控制</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Interkey/p/RunAsAdmin.html">C#程序以管理员权限运行</a></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</body></html>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
             <a href="/2021/05/17/%E4%B8%80%E5%8F%A5%E8%AF%9D/" itemprop="url">一句话</a>
         
     </h1>
@@ -490,126 +667,6 @@
     
         <html><head></head><body><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wanshutao/p/4128016.html">https://www.cnblogs.com/wanshutao/p/4128016.html</a></p>
 </body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/12/10/%E5%85%B3%E4%BA%8Ejson-stringfy%E4%B8%8D%E5%85%BC%E5%AE%B9ie8%E6%93%8D%E4%BD%9C/" itemprop="url">关于json.stringfy不兼容ie8操作</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-12-10T08:11:10.000Z" itemprop="datePublished">12月 10 2019</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            几秒 读完 (约 66 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><span id="more"></span>
-
-
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/caelan/p/10372811.html">IE低版本 JSON.parse 和stringify 的兼容 （IE8以下）</a><br><a target="_blank" rel="noopener" href="http://www.fly63.com/article/detial/778?type=1">解决IE8以下低版本实现JSON.parse()与JSON.stringify()的兼容</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44550490/article/details/103380629">关于 json.stringfy不兼容ie8操作</a></p>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/12/05/%E5%89%8D%E5%8F%B0%E5%8A%A0%E5%AF%863DES-C#%E5%90%8E%E5%8F%B0%E8%A7%A3%E5%AF%86/" itemprop="url">前台加密3DES-C#后台解密</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-12-05T07:38:19.000Z" itemprop="datePublished">12月 5 2019</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 读完 (约 228 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><span id="more"></span>
-
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/danqingcheng/article/details/80811599">js的3des加解密和c#.net后台解密</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/iJoeychang/Des-3DesDemo">Des-3DesDemo</a> </p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zlj-rechio/p/4250216.html">C# 3Des加密解密</a></p>
-<p>前台使用cryptojs加密解密时，一定要注意。方法会自动处理key，以凑齐24位。（key不足24位自动以0(最小位数是0)补齐,如果多余24位,则截取前24位,后面多余则舍弃掉）</p>
-<p>但C#生成是是允许使用16位字符和24位字符加密的。具体参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/starfd/article/details/78783709">3DES将16位秘钥升级为24位</a></p>
-<p>按3DES规范要求，的确其秘钥应该是24位而不是16位的，但16位秘钥可以按 前8位+后8位+前8位 的规则来升级成24位的秘钥。<br>所以C#的key实际上也是24位，它将16位的key转换成了24位。<br>服了，真是个大坑</p>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/11/18/sqlserver%E6%9F%A5%E8%AF%A2%E4%BD%BF%E7%94%A8with-nolock/" itemprop="url">sqlserver查询使用with(nolock)</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-11-18T02:45:16.000Z" itemprop="datePublished">11月 18 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Technology/">Technology</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 读完 (约 225 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>sqlserver中，一张表会因为频繁的进行select、delete、insert操作而导致死锁。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2019/11/18/sqlserver%E6%9F%A5%E8%AF%A2%E4%BD%BF%E7%94%A8with-nolock/#more">阅读更多</a>
-        </p>
     
     </div>
     
