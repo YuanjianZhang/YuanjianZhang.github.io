@@ -134,6 +134,62 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
+            <a href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/" itemprop="url">C#穿透session隔离———Windows服务启动UI交互程序</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-07-21T03:28:37.000Z" itemprop="datePublished">7月 21 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            9 分钟 读完 (约 1296 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><span id="more"></span>
+
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>一开始是因为服务器经常会出现断电、系统崩溃的情况，导致一些正常运行的winform程序在系统故障重启后，每次都需要手动登录触发事件让程序自启。然后想利用windows服务在开启时就会自启来实现开机启动Winform程序。<br>但是因为从Vista 开始引入了 Session 0 隔离机制，导致windows服务无法直接进行界面交互操作。</p>
+<p><strong>注意：</strong><br>使用CreateProcessAsUser与界面交互需要Session Id &gt;0 ，<strong>用户会话的必须存在</strong>，如果存在服务器重启、注销后，重新开机导致系统只有Session 0存在，此时服务调用后的程序是不会显示界面的。<br>所以到头来还是没能实现我的想法。。。淦</p>
+<h3 id="Session-0-隔离原理"><a href="#Session-0-隔离原理" class="headerlink" title="Session 0 隔离原理"></a>Session 0 隔离原理</h3><p>参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/07/session0-isolation-part1.html">穿透Session 0 隔离（一）</a><br>摘录<br><a target="_blank" rel="noopener" href="https://www.daimajiaoliu.com/daima/476136b999003e8">用户界面特权隔离</a></p>
+<blockquote>
+<p>在早期的Windows操作系统中，在同一用户下运行的所有进程有着相同的安全等级，拥有相同的权限。例如，一个进程可以自由地发送一个Windows消息到另外一个进程的窗口。从Windows Vista开始，当然也包括Windows 7、Windows 10，对于某些Windows消息，这一方式再也行不通了。进程(或者其他的对象)开始拥有一个新的属性——特权等级(Privilege Level)。一个特权等级较低的进程不再可以向一个特权等级较高的进程发送消息，虽然他们在相同的用户权限下运行。这就是所谓的用户界面特权隔离(User Interface Privilege Isolation ，UIPI)。</p>
+<p>UIPI的引入，最大的目的是防止恶意代码发送消息给那些拥有较高权限的窗口以对其进行攻击，从而获取较高的权限等等，在计算机系统中，这却是一种维护系统安全的合适方式。</p>
+</blockquote>
+</blockquote>
+<h3 id="windows服务启动UI程序、"><a href="#windows服务启动UI程序、" class="headerlink" title="windows服务启动UI程序、"></a>windows服务启动UI程序、</h3><p>对于简单的交互，服务可以通过WTSSendMessage 函数，在用户Session 上显示消息窗口。对于一些复杂的UI 交互，必须调用CreateProcessAsUser 或其他方法（WCF、.NET远程处理等）进行跨Session 通信，在桌面用户上创建一个应用程序界面。</p>
+<p>解决思路是：window service创建一个和与当前登陆用户可以交互的进程，这个进程运行在admin权限下，能够调起应用程序的UI</p>
+<p>具体的做法是：widow service复制winlogon.exe进程句柄，然后通过调用api函数CreateProcessAsUser（）以winlogon.exe权限创建新进程，新创建的进程有winlogon.exe的权限（winlogon.exe运行在system权限下），负责调用程序。</p>
+<blockquote>
+<p>作者原文：</p>
+<p>First, we are going to create a Windows Service that runs under the System account. This service will be responsible for spawning an interactive process within the currently active User’s Session. This newly created process will display a UI and run with full admin rights. When the first User logs on to the computer, this service will be started and will be running in Session0; however the process that this service spawns will be running on the desktop of the currently logged on User. We will refer to this service as the LoaderService.</p>
+<p>Next, the winlogon.exe process is responsible for managing User login and logout procedures. We know that every User who logs on to the computer will have a unique Session ID and a corresponding winlogon.exe process associated with their Session. Now, we mentioned above, the LoaderService runs under the System account. We also confirmed that each winlogon.exe process on the computer runs under the System account. Because the System account is the owner of both the LoaderService and the winlogon.exe processes, our LoaderService can copy the access token (and Session ID) of the winlogon.exe process and then call the Win32 API function CreateProcessAsUser to launch a process into the currently active Session of the logged on User. Since the Session ID located within the access token of the copied winlogon.exe process is greater than 0, we can launch an interactive process using that token.</p>
+</blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/win32/services/interactive-services?redirectedfrom=MSDN">交互式服务</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wyy1234/p/10191958.html">C#开发Windows服务详细流程</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CityOfThousandFires/p/10375242.html">C#穿透session隔离———Windows服务启动UI交互程序</a><br><a target="_blank" rel="noopener" href="https://www.codeproject.com/Articles/35773/Subverting-Vista-UAC-in-Both-32-and-64-bit-Archite">Subverting Vista UAC in Both 32 and 64 bit Architectures</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>windows服务启动winform程序不显示UI问题解决<br>原因：<br>xp系统的用户和window service运行在一个session下，在xp以后，windows系统改变了用户会话管理的策略，window service独立运行在session0下，依次给后续的登录用户分配sessionX(X =1,2,3…)，session0没有权限运行UI。所以在window xp以后的系统下，window service调用有UI的application时只能看到程序进程但不能运行程序的UI。</p>
+<p>参考：<br><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/buli93/p/7086440.html">C# windows服务启动winform程序不显示UI问题解决</a></strong><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/267838/how-can-a-windows-service-execute-a-gui-application">How can a Windows service execute a GUI application?</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/08/session0-isolation-part2.html">穿透Session 0 隔离（二）</a></p>
+</body></html>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
             <a href="/2021/07/20/Win1020H2%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E4%B8%8B%E6%B7%BB%E5%8A%A0%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/" itemprop="url">Win10中文语言下添加美式键盘</a>
         
     </h1>
@@ -146,32 +202,16 @@
         <span class="column is-narrow">
             
             
-            1 分钟 读完 (约 218 字)
+            1 分钟 读完 (约 219 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>个人操作习惯使用Ctrl+Shift切换键盘布局，但是win10的更新会经常性导致输入法的问题出现。下面是一些平时收集到的方法。</p>
-<h3 id="20H2版本"><a href="#20H2版本" class="headerlink" title="20H2版本"></a>20H2版本</h3><p>无法通过修改注册表实现添加美式键盘，目前使用<a target="_blank" rel="noopener" href="https://www.mympc.org/">Silence的工具箱</a>博主开发的工具进行修改</p>
-<table>
-<thead>
-<tr>
-<th>日期</th>
-<th>使用版本</th>
-<th>链接</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2021-7-20</td>
-<td>V0.9.2.0</td>
-<td><a target="_blank" rel="noopener" href="https://www.mympc.org/index.php/2021/07/16/tsftool-v0-9-2-0-%e8%be%93%e5%85%a5%e6%b3%95%e8%ae%be%e7%bd%ae%e5%b7%a5%e5%85%b7/">TSFTool V0.9.2.0 输入法设置工具</a></td>
-</tr>
-</tbody></table>
-<h3 id="20H2以前的版本"><a href="#20H2以前的版本" class="headerlink" title="20H2以前的版本"></a>20H2以前的版本</h3><p>通过注册表可以正常添加美式键盘布局。</p>
-<p>来源：<a target="_blank" rel="noopener" href="https://www.itsk.com/thread-413229-1-1.html">https://www.itsk.com/thread-413229-1-1.html</a></p>
-<figure class="highlight plaintext hljs"><figcaption><span>2021-7-20.reg</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Keyboard Layout\Preload]</span><br><span class="line">"1"="00000804"</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Keyboard Layout\Substitutes]</span><br><span class="line">"00000804"="00000409"</span><br><span class="line"></span><br><span class="line">[HKEY_USERS\.DEFAULT\Keyboard Layout\Preload]</span><br><span class="line">"1"="00000804"</span><br><span class="line"></span><br><span class="line">[HKEY_USERS\.DEFAULT\Keyboard Layout\Substitutes]</span><br><span class="line">"00000804"="00000409"</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Control Panel\International\User Profile]</span><br><span class="line">"InputMethodOverride"="0804:00000409"</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Control Panel\International\User Profile\zh-Hans-CN]</span><br><span class="line">"0804:00000409"=dword:00000001</span><br></pre></td></tr></tbody></table></figure>
-</body></html>
+        <html><head></head><body><p>个人操作习惯使用Ctrl+Shift切换键盘布局，但是win10的更新会经常性导致输入法的问题出现。下面是一些平时收集到的方法。</p></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/20/Win1020H2%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E4%B8%8B%E6%B7%BB%E5%8A%A0%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -198,16 +238,18 @@
         <span class="column is-narrow">
             
             
-            2 分钟 读完 (约 249 字)
+            3 分钟 读完 (约 506 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><h2 id="1-通过组策略设置脚本随服务器启动"><a href="#1-通过组策略设置脚本随服务器启动" class="headerlink" title="1. 通过组策略设置脚本随服务器启动"></a>1. 通过组策略设置脚本随服务器启动</h2><p>打开组策略编辑器</p>
+        <html><head></head><body><span id="more"></span>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本方法不适用于winform、WPF等UI程序。涉及到windows系统的用户会话管理的策略。<br><strong>Windows系统中存在一个特殊的 Session，其 Session ID 为 0。这通常称为 Session0。所有 Windows 服务都在 Session0 中运行，并且 Session0 是非交互式的。非交互式意味着无法启动 UI 应用程序；</strong></p>
+<h2 id="1-通过组策略设置脚本随服务器启动"><a href="#1-通过组策略设置脚本随服务器启动" class="headerlink" title="1. 通过组策略设置脚本随服务器启动"></a>1. 通过组策略设置脚本随服务器启动</h2><p>打开组策略编辑器</p>
 <ol>
 <li>找到 <code>计算机配置-&gt;Windows设置-&gt;脚本（启动/关机）</code></li>
-<li>选中<code>启动</code> </li>
+<li>选中<code>启动</code></li>
 <li>将下列脚本添加进去，配置好启动程序路径的参数：</li>
 </ol>
 <figure class="highlight plaintext hljs"><figcaption><span>start.bat</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">REM 声明采用UTF-8编码</span><br><span class="line">chcp 65001</span><br><span class="line">@REM pause</span><br><span class="line">set input=%1%</span><br><span class="line">echo 自启动程序路径参数:%input%</span><br><span class="line">start %input%</span><br></pre></td></tr></tbody></table></figure>
@@ -215,12 +257,24 @@
 <h2 id="2-使用任务计划程序"><a href="#2-使用任务计划程序" class="headerlink" title="2. 使用任务计划程序"></a>2. 使用任务计划程序</h2><p>需要注意的时，在选择用户执行时，如果创建任务的用户为<code>Administrator</code>，需要注意执行时的用户账户，如果是需要在服务器启动时运行，就不应该为<code>Administrator</code>，而是应该为<code>SYSTEM</code>。</p>
 <p>参考资料：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/rickyfang/1127574">Windows Server 2012的服务管理自动化</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/1906859953Lucas/p/10967573.html">windows2008服务器设置系统启动时程序自动运行</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.51cto.com/rickyfang/1127574">Windows Server 2012的服务管理自动化</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/1906859953Lucas/p/10967573.html">windows2008服务器设置系统启动时程序自动运行</a></li>
+</ul>
 </blockquote>
 <p>碰见的问题：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://serverfault.com/questions/382079/windows-scheduled-task-error-2147943711-for-on-startup-task">Windows Scheduled Task - Error 2147943711 for “on startup” task</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://serverfault.com/questions/382079/windows-scheduled-task-error-2147943711-for-on-startup-task">Windows Scheduled Task - Error 2147943711 for “on startup” task</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/65942789/task-scheduler-cant-show-gui-of-the-application-after-login-run-whether-user-i">Task scheduler can’t show GUI of the application after login (Run whether user is logged on or not mode) - How bypass it with C#</a></li>
+</ul>
 </blockquote>
+<p>界面显示问题：</p>
+<p>According to <a target="_blank" rel="noopener" href="https://technet.microsoft.com/en-us/library/cc722152.aspx">Microsoft</a> (emphasis added):</p>
+<blockquote>
+<p>You can specify that a task should run even if the account under which the task is scheduled to run is not logged on when the task is triggered. To do this, select the radio button labeled Run whether user is logged on or not . If this radio button is selected, tasks will not run interactively. To make a task run interactively, select the Run only when user is logged on radio button.</p>
+</blockquote>
+<p>Essentially, if you select ‘Run whether user is logged on or not’, the process will not start a UI.</p>
 </body></html>
     
     </div>
@@ -248,29 +302,16 @@
         <span class="column is-narrow">
             
             
-            1 分钟 读完 (约 130 字)
+            1 分钟 读完 (约 131 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>使用互斥锁，实现只有一个程序</p>
-<p>代码：</p>
-<figure class="highlight csharp hljs"><figcaption><span>code.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line"><span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment">//启动程序</span></span><br><span class="line">    Application.Run(<span class="hljs-keyword">new</span> Form1());  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>运行环境</p>
-<blockquote>
-<p>Win10<br>.NET Framework 4.5<br>VS2019</p>
-</blockquote>
-<p>参考资料：</p>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/229565/what-is-a-good-pattern-for-using-a-global-mutex-in-c">What is a good pattern for using a Global Mutex in C#?</a></li>
-<li><a target="_blank" rel="noopener" href="https://odetocode.com/blogs/scott/archive/2004/08/20/the-misunderstood-mutex.aspx">The Misunderstood Mutex</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/answers/questions/221210/c-prevent-multiple-instance-of-console-application.html">C# prevent multiple instance of console application running</a></li>
-</ul>
-</blockquote>
-</body></html>
+        <html><head></head><body><p>使用互斥锁，实现只有一个程序</p></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -285,7 +326,7 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" itemprop="url">C#设置程序开机自启动</a>
+            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" itemprop="url">C#设置程序开机自启动[需登录]</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -297,13 +338,15 @@
         <span class="column is-narrow">
             
             
-            8 分钟 读完 (约 1187 字)
+            8 分钟 读完 (约 1242 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><h2 id="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"><a href="#方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）" class="headerlink" title="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"></a>方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）</h2><ol>
+        <html><head></head><body><span id="more"></span>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本来是想在服务器上实现服务器崩溃或者更新后，可以自动启动winform程序，但是以下方法还是需要有用户登录进去。</p>
+<h2 id="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"><a href="#方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）" class="headerlink" title="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"></a>方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）</h2><ol>
 <li>进入目录：<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code></li>
 <li>将应用程序快捷方式剪切(或者复制)并粘贴到目录中</li>
 <li>应用程序快捷方式加入到了启动项，下次重启电脑之后这个应用程序就会自动开机运行了</li>
@@ -659,49 +702,6 @@
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/08/07/%E6%8B%96%E5%BB%B6%E7%97%87%E7%9A%84%E6%94%B9%E5%96%84-%E4%B8%80/" itemprop="url">拖延症的改善(一)</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-08-07T00:37:33.000Z" itemprop="datePublished">8月 7 2020</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 分钟 读完 (约 389 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><h2 id="拖延症"><a href="#拖延症" class="headerlink" title="拖延症"></a>拖延症</h2><pre><code>在意识到拖延症已经严重影响到了生活后，我开始尝试改善这个十几年的毛病。
-</code></pre>
-<h2 id="养成一个小习惯"><a href="#养成一个小习惯" class="headerlink" title="养成一个小习惯"></a>养成一个小习惯</h2><pre><code>改善拖延症，尝试过制定每天的行程，通过闹钟严格控制自己。刚开始的时候确实有成效，但都坚持不了几周，自己慢慢失去动力。这种方式的中，人是被动的。
-</code></pre>
-<h2 id="健身-拖延"><a href="#健身-拖延" class="headerlink" title="健身 拖延"></a>健身 拖延</h2><pre><code>一个很简单只需要花费几分钟的动作，在坚持一到两天就能看到效果，或者感受到效果。这会给与我一个很强大的正反馈。付出和收获反馈很及时，这会在一定程度上，促使我主动去做，以为在我潜意识里只要我今天做了这个动作，我明天身体的某块地方就会改变，并且能被我感受到，捕捉到这个变化，一个很健康的正反馈循环会是我转守为攻，自己会监督自己去每天做这个动作。它在很大程度上改善了我的拖延。
-这样的习惯养成后，能改善我自身的思维和心态。它会促使我潜意识觉得，每天坚持做一些事情，是会有益与我的，自身能接受的付出和收获的间隔长度也会慢慢变长。
-
-健身改善了我的生活。
-[EOF]
-</code></pre>
-</body></html>
     
     </div>
     
