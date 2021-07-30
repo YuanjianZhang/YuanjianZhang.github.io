@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
+<html>
 <head>
-    <meta charset="utf-8">
-<title>C#设置程序开机自启动[需登录] - 不知选啥就选C</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+  
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-
-
-
-<meta name="description" content="一个记录生活的Blog">
-
-
-
-
-
-    <meta name="description" content="写在前面本来是想在服务器上实现服务器崩溃或者更新后，可以自动启动winform程序，但是以下方法还是需要有用户登录进去。 方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限） 进入目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 将应用程序快捷方式剪切(或者复制)并粘贴到目录中 应用程序快捷方式加入">
+  
+  <title>C#设置程序开机自启动[需登录] | 不知选啥就选C</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写在前面本来是想在服务器上实现服务器崩溃或者更新后，可以自动启动winform程序，但是以下方法还是需要有用户登录进去。 方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限） 进入目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 将应用程序快捷方式剪切(或者复制)并粘贴到目录中 应用程序快捷方式加入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#设置程序开机自启动[需登录]">
 <meta property="og:url" content="http://yoursite.com/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/index.html">
@@ -27,133 +18,79 @@
 <meta property="article:modified_time" content="2021-07-21T06:06:33.313Z">
 <meta property="article:author" content="zhang">
 <meta name="twitter:card" content="summary">
-
-
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-
-
+  
+    <link rel="alternate" href="/atom.xml" title="不知选啥就选C" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
 <link rel="stylesheet" href="/css/style.css">
-
-
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
-<body>
-    
-<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item navbar-logo" href="/">
-                
-                    
-                    Choose C
-                    
-                
-            </a>
-            <div class="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        
-        <div class="navbar-menu navbar-start">
-            
-            <a class="navbar-item "
-               href="/archives">归档</a>
-            
-            <a class="navbar-item "
-               href="/categories">分类</a>
-            
-            <a class="navbar-item "
-               href="/tags">标签</a>
-            
-            <a class="navbar-item "
-               href="/categories/Technology">技术</a>
-            
-            <a class="navbar-item "
-               href="/other">树洞</a>
-            
-            <a class="navbar-item "
-               href="/about">关于</a>
-            
-        </div>
-        
-        <div class="navbar-menu navbar-end">
-            
-            <a class="navbar-item search" title="搜索" href="javascript:;">
-                <i class="fas fa-search"></i>
-            </a>
-            
-            
-            
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
-            
-        </div>
-    </div>
-</nav>
 
-    <section class="section">
-    <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            C#设置程序开机自启动[需登录]
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-07-16T07:16:22.000Z" itemprop="datePublished">7月 16 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            8 分钟 读完 (约 1242 字)
-        </span>
-        
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">不知选啥就选C</a>
+      </h1>
+      
     </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C-设置程序开机自启动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" class="article-date">
+  <time datetime="2021-07-16T07:16:22.000Z" itemprop="datePublished">2021-07-16</time>
+</a>
     
-        <html><head></head><body><span id="more"></span>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#设置程序开机自启动[需登录]
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本来是想在服务器上实现服务器崩溃或者更新后，可以自动启动winform程序，但是以下方法还是需要有用户登录进去。</p>
 <h2 id="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"><a href="#方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）" class="headerlink" title="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"></a>方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）</h2><ol>
 <li>进入目录：<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code></li>
@@ -169,10 +106,10 @@
 </li>
 </ul>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>在知道注册表中自启动位置所在后，只需要将需要启动的程序路径添加至指定路径中就可以实现开机自启动功能。</p>
-<figure class="highlight csharp hljs"><figcaption><span>Program.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> 应用程序的主入口点。</span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="hljs-meta">STAThread</span>]</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)</span></span><br><span class="line">{</span><br><span class="line">    Application.EnableVisualStyles();</span><br><span class="line">    Application.SetCompatibleTextRenderingDefault(<span class="hljs-literal">false</span>);</span><br><span class="line">    <span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line">    <span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-comment">//判断是否开启自启动</span></span><br><span class="line">        <span class="hljs-built_in">string</span> strFilePath = Application.ExecutablePath;</span><br><span class="line">        <span class="hljs-built_in">string</span> strFileName = System.IO.Path.GetFileName(strFilePath);</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-comment">//自启动功能是否开启</span></span><br><span class="line">            <span class="hljs-keyword">var</span> AutoRunFlag = ConfigurationManager.AppSettings[<span class="hljs-string">"AutoRunFlag"</span>] == <span class="hljs-string">"1"</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-comment">//自启动是否已经存在</span></span><br><span class="line">            <span class="hljs-keyword">var</span> flag = SystemHelper.IsAutoRun(strFilePath, strFileName);</span><br><span class="line">            <span class="hljs-keyword">if</span> (AutoRunFlag != flag)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-meta">#<span class="hljs-meta-keyword">region</span> 获取管理员权限，进行注册表写入操作</span></span><br><span class="line">                <span class="hljs-comment">//当前用户是管理员的时候，直接启动应用程序并且写入注册表</span></span><br><span class="line">                <span class="hljs-comment">//如果不是管理员，则使用启动对象启动程序，以确保使用管理员身份运行</span></span><br><span class="line">                <span class="hljs-comment">//获得当前登录的Windows用户标示</span></span><br><span class="line">                WindowsIdentity identity = WindowsIdentity.GetCurrent();</span><br><span class="line">                WindowsPrincipal principal = <span class="hljs-keyword">new</span> WindowsPrincipal(identity);</span><br><span class="line">                <span class="hljs-comment">//判断当前登录用户是否为管理员</span></span><br><span class="line">                <span class="hljs-keyword">if</span> (principal.IsInRole(WindowsBuiltInRole.Administrator))</span><br><span class="line">                {</span><br><span class="line">                    <span class="hljs-keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        <span class="hljs-comment">//如果是管理员，注册自启动代码</span></span><br><span class="line">                        SystemHelper.SetAutoRun(strFilePath, strFileName, AutoRunFlag);</span><br><span class="line">                    }</span><br><span class="line">                    catch(Exception ex)</span><br><span class="line">                    {</span><br><span class="line">                        MessageBox.Show( ex.Message, <span class="hljs-string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    <span class="hljs-comment">//创建启动对象</span></span><br><span class="line">                    System.Diagnostics.ProcessStartInfo startInfo = <span class="hljs-keyword">new</span> System.Diagnostics.ProcessStartInfo();</span><br><span class="line">                    startInfo.UseShellExecute = <span class="hljs-literal">true</span>;</span><br><span class="line">                    startInfo.WorkingDirectory = Environment.CurrentDirectory;</span><br><span class="line">                    startInfo.FileName = Application.ExecutablePath;</span><br><span class="line">                    <span class="hljs-comment">//设置启动动作,确保以管理员身份运行</span></span><br><span class="line">                    startInfo.Verb = <span class="hljs-string">"runas"</span>;</span><br><span class="line">                    <span class="hljs-keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        System.Diagnostics.Process.Start(startInfo);</span><br><span class="line">                    }</span><br><span class="line">                    catch</span><br><span class="line">                    {</span><br><span class="line">                        <span class="hljs-keyword">return</span>;</span><br><span class="line">                    }</span><br><span class="line">                    <span class="hljs-comment">//退出</span></span><br><span class="line">                    Application.Exit();</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-meta">#<span class="hljs-meta-keyword">endregion</span></span></span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-comment">//启动程序</span></span><br><span class="line">            Application.Run(<span class="hljs-keyword">new</span> Form1());</span><br><span class="line">        }</span><br><span class="line">        catch(Exception ex)</span><br><span class="line">        {</span><br><span class="line">            MessageBox.Show(ex.Message, <span class="hljs-string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">            <span class="hljs-comment">//return;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight csharp"><figcaption><span>Program.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 应用程序的主入口点。</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="meta">STAThread</span>]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line">{</span><br><span class="line">    Application.EnableVisualStyles();</span><br><span class="line">    Application.SetCompatibleTextRenderingDefault(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="keyword">typeof</span>(GuidAttribute), <span class="literal">false</span>).GetValue(<span class="number">0</span>)).Value;</span><br><span class="line">    <span class="keyword">using</span> (Mutex mutex = <span class="keyword">new</span> Mutex(<span class="literal">false</span>, <span class="string">"Global\\"</span> + appGuid))</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (!mutex.WaitOne(<span class="number">0</span>, <span class="literal">false</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//判断是否开启自启动</span></span><br><span class="line">        <span class="built_in">string</span> strFilePath = Application.ExecutablePath;</span><br><span class="line">        <span class="built_in">string</span> strFileName = System.IO.Path.GetFileName(strFilePath);</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="comment">//自启动功能是否开启</span></span><br><span class="line">            <span class="keyword">var</span> AutoRunFlag = ConfigurationManager.AppSettings[<span class="string">"AutoRunFlag"</span>] == <span class="string">"1"</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">//自启动是否已经存在</span></span><br><span class="line">            <span class="keyword">var</span> flag = SystemHelper.IsAutoRun(strFilePath, strFileName);</span><br><span class="line">            <span class="keyword">if</span> (AutoRunFlag != flag)</span><br><span class="line">            {</span><br><span class="line">                <span class="meta">#<span class="meta-keyword">region</span> 获取管理员权限，进行注册表写入操作</span></span><br><span class="line">                <span class="comment">//当前用户是管理员的时候，直接启动应用程序并且写入注册表</span></span><br><span class="line">                <span class="comment">//如果不是管理员，则使用启动对象启动程序，以确保使用管理员身份运行</span></span><br><span class="line">                <span class="comment">//获得当前登录的Windows用户标示</span></span><br><span class="line">                WindowsIdentity identity = WindowsIdentity.GetCurrent();</span><br><span class="line">                WindowsPrincipal principal = <span class="keyword">new</span> WindowsPrincipal(identity);</span><br><span class="line">                <span class="comment">//判断当前登录用户是否为管理员</span></span><br><span class="line">                <span class="keyword">if</span> (principal.IsInRole(WindowsBuiltInRole.Administrator))</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        <span class="comment">//如果是管理员，注册自启动代码</span></span><br><span class="line">                        SystemHelper.SetAutoRun(strFilePath, strFileName, AutoRunFlag);</span><br><span class="line">                    }</span><br><span class="line">                    catch(Exception ex)</span><br><span class="line">                    {</span><br><span class="line">                        MessageBox.Show( ex.Message, <span class="string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    <span class="comment">//创建启动对象</span></span><br><span class="line">                    System.Diagnostics.ProcessStartInfo startInfo = <span class="keyword">new</span> System.Diagnostics.ProcessStartInfo();</span><br><span class="line">                    startInfo.UseShellExecute = <span class="literal">true</span>;</span><br><span class="line">                    startInfo.WorkingDirectory = Environment.CurrentDirectory;</span><br><span class="line">                    startInfo.FileName = Application.ExecutablePath;</span><br><span class="line">                    <span class="comment">//设置启动动作,确保以管理员身份运行</span></span><br><span class="line">                    startInfo.Verb = <span class="string">"runas"</span>;</span><br><span class="line">                    <span class="keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        System.Diagnostics.Process.Start(startInfo);</span><br><span class="line">                    }</span><br><span class="line">                    catch</span><br><span class="line">                    {</span><br><span class="line">                        <span class="keyword">return</span>;</span><br><span class="line">                    }</span><br><span class="line">                    <span class="comment">//退出</span></span><br><span class="line">                    Application.Exit();</span><br><span class="line">                }</span><br><span class="line">                <span class="meta">#<span class="meta-keyword">endregion</span></span></span><br><span class="line">            }</span><br><span class="line">            <span class="comment">//启动程序</span></span><br><span class="line">            Application.Run(<span class="keyword">new</span> Form1());</span><br><span class="line">        }</span><br><span class="line">        catch(Exception ex)</span><br><span class="line">        {</span><br><span class="line">            MessageBox.Show(ex.Message, <span class="string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">            <span class="comment">//return;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p><code>SystemHelper.cs</code> 参考自：<a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/n2d913xQdD/">C# winform程序实现开机自启动，并且识别是开机启动还是双击启动</a></p>
-<figure class="highlight csharp hljs"><figcaption><span>SystemHelper.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title">SystemHelper</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SystemHelper</span>(<span class="hljs-params"></span>)</span> { }</span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> 设置程序开机启动</span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppPath"&gt;</span>应用程序exe所在文件夹<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppName"&gt;</span>应用程序exe名称<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="bIsAutoRun"&gt;</span>自动运行状态<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetAutoRun</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> strAppPath, <span class="hljs-built_in">string</span> strAppName, <span class="hljs-built_in">bool</span> bIsAutoRun</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">string</span>.IsNullOrWhiteSpace(strAppPath)</span><br><span class="line">                || <span class="hljs-built_in">string</span>.IsNullOrWhiteSpace(strAppName))</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">"应用程序路径或名称为空！"</span>);</span><br><span class="line">            }</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey run = reg.CreateSubKey(<span class="hljs-string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="hljs-keyword">if</span> (bIsAutoRun)</span><br><span class="line">            {</span><br><span class="line">                run.SetValue(strAppName, strAppPath);</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != run.GetValue(strAppName))</span><br><span class="line">                {</span><br><span class="line">                    run.DeleteValue(strAppName);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            run.Close();</span><br><span class="line">            reg.Close();</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> 判断是否开机启动</span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppPath"&gt;</span>应用程序路径<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppName"&gt;</span>应用程序名称<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;returns&gt;</span><span class="hljs-doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">bool</span> <span class="hljs-title">IsAutoRun</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> strAppPath, <span class="hljs-built_in">string</span> strAppName</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey software = reg.OpenSubKey(<span class="hljs-string">@"SOFTWARE"</span>);</span><br><span class="line">            RegistryKey run = reg.OpenSubKey(<span class="hljs-string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="hljs-built_in">object</span> key = run.GetValue(strAppName);</span><br><span class="line">            software.Close();</span><br><span class="line">            run.Close();</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> == key || !strAppPath.Equals(key.ToString()))</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight csharp"><figcaption><span>SystemHelper.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">SystemHelper</span></span><br><span class="line">{</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SystemHelper</span>(<span class="params"></span>)</span> { }</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 设置程序开机启动</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppPath"&gt;</span>应用程序exe所在文件夹<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppName"&gt;</span>应用程序exe名称<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="bIsAutoRun"&gt;</span>自动运行状态<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetAutoRun</span>(<span class="params"><span class="built_in">string</span> strAppPath, <span class="built_in">string</span> strAppName, <span class="built_in">bool</span> bIsAutoRun</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">string</span>.IsNullOrWhiteSpace(strAppPath)</span><br><span class="line">                || <span class="built_in">string</span>.IsNullOrWhiteSpace(strAppName))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"应用程序路径或名称为空！"</span>);</span><br><span class="line">            }</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey run = reg.CreateSubKey(<span class="string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="keyword">if</span> (bIsAutoRun)</span><br><span class="line">            {</span><br><span class="line">                run.SetValue(strAppName, strAppPath);</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> (<span class="literal">null</span> != run.GetValue(strAppName))</span><br><span class="line">                {</span><br><span class="line">                    run.DeleteValue(strAppName);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            run.Close();</span><br><span class="line">            reg.Close();</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 判断是否开机启动</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppPath"&gt;</span>应用程序路径<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppName"&gt;</span>应用程序名称<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">IsAutoRun</span>(<span class="params"><span class="built_in">string</span> strAppPath, <span class="built_in">string</span> strAppName</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey software = reg.OpenSubKey(<span class="string">@"SOFTWARE"</span>);</span><br><span class="line">            RegistryKey run = reg.OpenSubKey(<span class="string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="built_in">object</span> key = run.GetValue(strAppName);</span><br><span class="line">            software.Close();</span><br><span class="line">            run.Close();</span><br><span class="line">            <span class="keyword">if</span> (<span class="literal">null</span> == key || !strAppPath.Equals(key.ToString()))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>运行环境</p>
 <blockquote>
@@ -217,232 +154,152 @@
 </blockquote>
 </li>
 </ol>
-</body></html>
-    
+
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" data-id="ckrpowxhy002k3kvrb0bmfp4q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
     
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/">C#代码确保应用程序只有一个实例</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/2021/05/17/%E4%B8%80%E5%8F%A5%E8%AF%9D/">一句话</a>
-            
-        </span>
-    </div>
-    
+<nav id="article-nav">
+  
+    <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C#代码确保应用程序只有一个实例
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/17/%E4%B8%80%E5%8F%A5%E8%AF%9D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">一句话</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-
-
-
-
-    </div>
 </section>
-
-<!-- <script>
-    (function () {
-        if ('{{ page.password }}') {
-            if (prompt('请输入文章密码') !== '{{ page.password }}') {
-                alert('密码错误！');
-                if (history.length === 1) {
-                    location.replace("https://minos.design"); // 这里替换成你的首页
-                } else {
-                    history.back();
-                }
-            }
-        }
-    })();
-</script> -->
-    <footer class="footer">
-    <div class="container">
-        <div class="columns content">
-            <div class="column is-narrow has-text-centered">
-                &copy; 2021 zhang&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
-            </div>
-            <div class="column is-hidden-mobile"></div>
-
-            
-            <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                
-                    
-                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
-                    
-                    GitHub
-                    
-                </a>
-                
-                </div>
-            </div>
-            
-            
-        </div>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/%E8%BD%AC%E8%BD%BD/">转载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/lifeStyle/">lifeStyle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/other/%E8%BD%AC%E8%BD%BD/">转载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></li></ul>
     </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-Net-MVC/" rel="tag">-ASP.Net MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gmail/" rel="tag">Gmail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mail/" rel="tag">Mail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postman/" rel="tag">Postman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/System-Net-Mail/" rel="tag">System.Net.Mail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Technology/" rel="tag">Technology</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emoji/" rel="tag">emoji</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live2d/" rel="tag">live2d</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlserver/" rel="tag">sqlserver</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" rel="tag">发送邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%90%E6%A7%BD/" rel="tag">吐槽</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E9%95%BF/" rel="tag">成长</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%AD%E5%BB%BABlog/" rel="tag">搭建Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E8%82%B2/" rel="tag">教育</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91%E6%B4%9E/" rel="tag">树洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%BB%E9%94%81/" rel="tag">死锁</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%9F%E8%83%BD%E9%87%8F/" rel="tag">负能量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7/" rel="tag">软件版本号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" rel="tag">邮件发送</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASP-Net-MVC/" style="font-size: 10px;">-ASP.Net MVC</a> <a href="/tags/ASP-NET/" style="font-size: 10px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/Gmail/" style="font-size: 10px;">Gmail</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Mail/" style="font-size: 10px;">Mail</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Postman/" style="font-size: 10px;">Postman</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/System-Net-Mail/" style="font-size: 10px;">System.Net.Mail</a> <a href="/tags/Technology/" style="font-size: 10px;">Technology</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/live2d/" style="font-size: 10px;">live2d</a> <a href="/tags/sqlserver/" style="font-size: 10px;">sqlserver</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" style="font-size: 10px;">发送邮件</a> <a href="/tags/%E5%90%90%E6%A7%BD/" style="font-size: 10px;">吐槽</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 20px;">命令行</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 10px;">感想</a> <a href="/tags/%E6%88%90%E9%95%BF/" style="font-size: 10px;">成长</a> <a href="/tags/%E6%90%AD%E5%BB%BABlog/" style="font-size: 10px;">搭建Blog</a> <a href="/tags/%E6%95%99%E8%82%B2/" style="font-size: 10px;">教育</a> <a href="/tags/%E6%A0%91%E6%B4%9E/" style="font-size: 10px;">树洞</a> <a href="/tags/%E6%AD%BB%E9%94%81/" style="font-size: 10px;">死锁</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a> <a href="/tags/%E8%B4%9F%E8%83%BD%E9%87%8F/" style="font-size: 10px;">负能量</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7/" style="font-size: 10px;">软件版本号</a> <a href="/tags/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" style="font-size: 10px;">邮件发送</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 20px;">配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/07/29/Kettle/">Kettle（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/sqlite/">SQLite学习【一】</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/">C#穿透session隔离———Windows服务启动UI交互程序</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/20/Win1020H2%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E4%B8%8B%E6%B7%BB%E5%8A%A0%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/">Win10中文语言下添加美式键盘</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/20/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%EF%BC%88%E4%B8%8D%E9%9C%80%E8%A6%81%E7%99%BB%E5%BD%95%EF%BC%89/">服务器设置系统启动时程序自动运行（不需要登录）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
 </footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
-
-<!-- test if the browser is outdated -->
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // plugin function, place inside DOM ready function
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        })
-    });
-</script>
-
-<script>
-    window.FontAwesomeConfig = {
-        searchPseudoElements: true
-    }
-    moment.locale("zh-CN");
-</script>
-
-
-    
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
-    });
-</script>
-
-    
-    
-    
-    
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
-<script>
-    (function ($) {
-        $(document).ready(function () {
-            if (typeof($.fn.lightGallery) === 'function') {
-                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof($.fn.justifiedGallery) === 'function') {
-                $('.justified-gallery').justifiedGallery();
-            }
-        });
-    })(jQuery);
-</script>
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <style>
-        .hljs {
-            position: relative;
-        }
-
-        .hljs .clipboard-btn {
-            float: right;
-            color: #9a9a9a;
-            background: none;
-            border: none;
-        }
-
-        .hljs > .clipboard-btn {
-            display: none;
-            position: absolute;
-            right: 4px;
-            top: 4px;
-        }
-
-        .hljs:hover > .clipboard-btn {
-            display: inline;
-        }
-
-        .hljs > figcaption > .clipboard-btn {
-            margin-right: 4px;
-        }
-    </style>
-    <script>
-      $(document).ready(function () {
-        $('figure.hljs').each(function(i, figure) {
-          var codeId = 'code-' + i;
-          var code = figure.querySelector('.code');
-          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
-          code.id = codeId;
-          copyButton.addClass('clipboard-btn');
-          copyButton.attr('data-clipboard-target-id', codeId);
-
-          var figcaption = figure.querySelector('figcaption');
-
-          if (figcaption) {
-            figcaption.append(copyButton[0]);
-          } else {
-            figure.prepend(copyButton[0]);
-          }
-        })
-
-        var clipboard = new ClipboardJS('.clipboard-btn', {
-          target: function(trigger) {
-            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
-          }
-        });
-      })
-    </script>
-
-    
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
 
-    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
 
 
 
 <script src="/js/script.js"></script>
 
 
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-mask"></div>
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
 
-<script src="/js/insight.js"></script>
 
-    
+  </div>
 </body>
 </html>
