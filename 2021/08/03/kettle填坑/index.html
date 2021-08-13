@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>C#代码确保应用程序只有一个实例 - 不知选啥就选C</title>
+<title>kettle填坑 - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -16,16 +16,16 @@
 
 
 
-    <meta name="description" content="使用互斥锁，实现只有一个程序">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C#代码确保应用程序只有一个实例">
-<meta property="og:url" content="http://yoursite.com/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="kettle填坑">
+<meta property="og:url" content="http://yoursite.com/2021/08/03/kettle%E5%A1%AB%E5%9D%91/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="使用互斥锁，实现只有一个程序">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/default.jpeg">
-<meta property="article:published_time" content="2021-07-20T02:22:58.000Z">
-<meta property="article:modified_time" content="2021-08-06T02:01:20.790Z">
+<meta property="og:image" content="http://yoursite.com/2021/08/03/kettle%E5%A1%AB%E5%9D%91/job.jpg">
+<meta property="og:image" content="http://yoursite.com/2021/08/03/kettle%E5%A1%AB%E5%9D%91/trans.jpg">
+<meta property="article:published_time" content="2021-08-03T09:32:04.000Z">
+<meta property="article:modified_time" content="2021-08-13T15:16:48.813Z">
 <meta property="article:author" content="zhang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/default.jpeg">
@@ -137,43 +137,61 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            C#代码确保应用程序只有一个实例
+            kettle填坑
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2021-07-20T02:22:58.000Z" itemprop="datePublished">7月 20 2021</time>
+            <time datetime="2021-08-03T09:32:04.000Z" itemprop="datePublished">8月 3 2021</time>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            1 分钟 读完 (约 131 字)
+            6 分钟 读完 (约 861 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default">
-使用互斥锁，实现只有一个程序
 <span id="more"></span>
-代码：
 
-<figure class="highlight csharp hljs"><figcaption><span>code.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line"><span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment">//启动程序</span></span><br><span class="line">    Application.Run(<span class="hljs-keyword">new</span> Form1());  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>运行环境</p>
-<blockquote>
-<p>Win10<br>.NET Framework 4.5<br>VS2019</p>
-</blockquote>
-<p>参考资料：</p>
-<blockquote>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>为了将MSSqlserver数据传输至MySql数据库，一开始的选择有很多,类似<code>DataX</code>、<code>ES</code>，但是碍于运行环境是windows server 2012,且服务器环境不方便更改，查阅一番后，决定使用kettle进行数据的同步。</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/229565/what-is-a-good-pattern-for-using-a-global-mutex-in-c">What is a good pattern for using a Global Mutex in C#?</a></li>
-<li><a target="_blank" rel="noopener" href="https://odetocode.com/blogs/scott/archive/2004/08/20/the-misunderstood-mutex.aspx">The Misunderstood Mutex</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/answers/questions/221210/c-prevent-multiple-instance-of-console-application.html">C# prevent multiple instance of console application running</a></li>
+<li>环境<ul>
+<li>系统：windows server 2012R2  64位</li>
+<li>内存：8GB</li>
+<li>JDK：1.8</li>
 </ul>
-</blockquote>
+</li>
+</ul>
+<h2 id="kettle配置作业、转换"><a href="#kettle配置作业、转换" class="headerlink" title="kettle配置作业、转换"></a>kettle配置作业、转换</h2><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013468915/article/details/82629260">Kettle—使用手册</a></p>
+<p>在配置完成后,执行作业的方式有两种：</p>
+<ul>
+<li><strong>使用spoon.bat打开UI程序进行执行</strong><ul>
+<li>优点：作业执行很稳定，不会异常退出。</li>
+<li>缺点：吃内存，配置不高的服务器可能压力大。懂不懂1GB起步。😓</li>
+</ul>
+</li>
+<li><strong>使用Kitchen.bat脚本执行作业</strong><ul>
+<li>优点：可以结合windows的任务执行计划程序进行定时启动作业，占用内存少，完成后自动退出。</li>
+<li>缺点：一些耗时长的任务会有闪退的情况，或者数据量太大，执行时只取了一部分，会造成数据丢失。</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置重抽作业的逻辑"><a href="#配置重抽作业的逻辑" class="headerlink" title="配置重抽作业的逻辑"></a>配置重抽作业的逻辑</h3><p>初始化时在作业里设置开始时间、结束时间变量值，执行转换前判断变量值，未到时间点，执行转换。执行一次转换后，更新变量，循环判断，实现重抽的需求。<br>作业流程配置:</p>
+<p><img src="job.jpg" alt="重抽作业流程"><br>转换流程配置：</p>
+<p><img src="trans.jpg" alt="数据转换流程"></p>
+<p>更新时间变量JavaScript代码：</p>
+<figure class="highlight javascript hljs"><figcaption><span>updatetime.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//Script here</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//var st =getVariable("StTime",'2021-01-01')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//var end =getVariable("End",'2021-7-27')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Alert("st:"+st+"end:"+end)</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> stDate =StTime;<span class="hljs-comment">// str2date(st,'yyyy-MM-dd')</span></span><br><span class="line"><span class="hljs-keyword">var</span> endDate =End;<span class="hljs-comment">// str2date(end,'yyyy-MM-dd')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span>(stDate==<span class="hljs-literal">null</span>|| endDate==<span class="hljs-literal">null</span>) {</span><br><span class="line">  <span class="hljs-comment">//Alert("error")</span></span><br><span class="line">   <span class="hljs-literal">false</span>;</span><br><span class="line">}<span class="hljs-keyword">else</span>{</span><br><span class="line"><span class="hljs-keyword">var</span> diff = dateDiff(stDate,endDate,<span class="hljs-string">'d'</span>)</span><br><span class="line"><span class="hljs-keyword">var</span> flag = <span class="hljs-literal">false</span>;</span><br><span class="line"><span class="hljs-keyword">if</span>(diff&gt;=<span class="hljs-number">1</span>){</span><br><span class="line">  <span class="hljs-keyword">var</span> nextDate =dateAdd(stDate,<span class="hljs-string">'d'</span>,<span class="hljs-number">1</span>);</span><br><span class="line">  <span class="hljs-comment">//Alert("next:"+nextDate)</span></span><br><span class="line">  <span class="hljs-keyword">var</span> strDate=date2str(stDate,<span class="hljs-string">'yyyy-MM-dd'</span>);</span><br><span class="line">  <span class="hljs-keyword">var</span> strNextDate = date2str(nextDate,<span class="hljs-string">'yyyy-MM-dd'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-comment">//setVariable("StTime",strNextDate,‘p’)</span></span><br><span class="line">  <span class="hljs-comment">//Alert("开始时间:"+strDate+"结束时间:"+strNextDate)</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span></span><br><span class="line">}<span class="hljs-keyword">else</span> {</span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="定时启动无界面kettle任务"><a href="#定时启动无界面kettle任务" class="headerlink" title="定时启动无界面kettle任务"></a>定时启动无界面kettle任务</h3><p>使用CMD脚本+windows任务计划程序实现定时启动作业执行。<strong>耗时在2小时以内的作业可以使用脚本方式，执行时间长的作业最好使用spoon窗口程序执行，不会存在执行一半退出的情况。</strong><br><strong>bat文件保存要按ANSI编码进行保存</strong></p>
+<figure class="highlight bash hljs"><figcaption><span>Task.bat</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@REM @<span class="hljs-built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">@REM <span class="hljs-keyword">if</span> <span class="hljs-string">"%1"</span> == <span class="hljs-string">"h"</span> goto begin</span><br><span class="line">@REM mshta vbscript:createobject(<span class="hljs-string">"wscript.shell"</span>).run(<span class="hljs-string">"%~nx0 h"</span>,0)(window.close)&amp;&amp;<span class="hljs-built_in">exit</span></span><br><span class="line">@REM :begin</span><br><span class="line"></span><br><span class="line">:: Kitchen.bat所在路径盘符?</span><br><span class="line">D:</span><br><span class="line">:: Kitchen.bat所在目录? ? ?</span><br><span class="line"><span class="hljs-built_in">cd</span> D:\PDI\data-integration\</span><br><span class="line"></span><br><span class="line">:: 作业（job）文件路径和日志文件路径</span><br><span class="line">:: 执行kitchen执行job，并写入日志</span><br><span class="line">Kitchen.bat /file:F:\pdi-ce-9.1.0.0-324\WorkSpace\测试.kjb /level:Base &gt;F:\pdi-ce-9.1.0.0-324\Log</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Kitchen.bat参数详细说明：<a target="_blank" rel="noopener" href="https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Use_Command_Line_Tools_to_Run_Transformations_and_Jobs">https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Use_Command_Line_Tools_to_Run_Transformations_and_Jobs</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://www.staroon.dev/2018/07/18/KettleDoc-1/">Kettle系列教程-第一章</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/shuaishuai1234/article/details/103005023">kettle-数据同步比较数据（删除更新）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22310551/article/details/115163517">Kettle之定时运行Job</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904021824634893">kettle教程—kettle作业调度，根据更新时间增量更新</a><br><a target="_blank" rel="noopener" href="https://ask.hellobi.com/blog/hql15/5038">Kettle实现循环增量抽取数据</a><br><a target="_blank" rel="noopener" href="https://help.pentaho.com/Documentation/8.1/Products/Data_Integration/PDI_Client">Learn About the PDI Client (Spoon)-官方文档</a><br><a target="_blank" rel="noopener" href="https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Use_Command_Line_Tools_to_Run_Transformations_and_Jobs">Use Command Line Tools to Run Transformations and Jobs</a></p>
 </body></html>
     
     </div>
@@ -182,12 +200,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2021/07/20/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%EF%BC%88%E4%B8%8D%E9%9C%80%E8%A6%81%E7%99%BB%E5%BD%95%EF%BC%89/">服务器设置系统启动时程序自动运行（不需要登录）</a>
+            <a href="/2021/08/13/docker%E5%88%9D%E8%AF%86/">docker初识</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/">C#设置程序开机自启动[需登录]</a>
+            <a href="/2021/07/29/Kettle/">PDI【Kettle】（一）</a>
             
         </span>
     </div>

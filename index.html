@@ -134,7 +134,79 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2021/07/29/Kettle/" itemprop="url">Kettle（一）</a>
+            <a href="/2021/08/13/docker%E5%88%9D%E8%AF%86/" itemprop="url">docker初识</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-08-13T15:17:18.000Z" itemprop="datePublished">8月 13 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 读完 (约 200 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/08/13/docker%E5%88%9D%E8%AF%86/#more">阅读更多</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2021/08/03/kettle%E5%A1%AB%E5%9D%91/" itemprop="url">kettle填坑</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-08-03T09:32:04.000Z" itemprop="datePublished">8月 3 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            6 分钟 读完 (约 861 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/08/03/kettle%E5%A1%AB%E5%9D%91/#more">阅读更多</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2021/07/29/Kettle/" itemprop="url">PDI【Kettle】（一）</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -146,492 +218,16 @@
         <span class="column is-narrow">
             
             
-            36 分钟 读完 (约 5355 字)
+            36 分钟 读完 (约 5358 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><span id="more"></span>
-
-<h2 id="转换组件-脚本-JavaScript"><a href="#转换组件-脚本-JavaScript" class="headerlink" title="转换组件-脚本-JavaScript"></a>转换组件-脚本-JavaScript</h2><p>我们在使用JavaScript组件的时候,在左侧核心树对象栏中可以看到Kettle为我们提供了很多简洁强大的内置函数,帮助我们在写脚本的时候对数据、参数变量等能很轻松的做处理,体验编码的感觉.本篇将详细介绍JavaScript组件中的函数功能</p>
-<p>脚本组件包含的函数主要包括六大类,分别是：</p>
-<ul>
-<li>字符串类型的函数(String Functions)</li>
-<li>浮点型的函数(Numeric Functions)</li>
-<li>日期类型函数(Date Functions)</li>
-<li>逻辑判断型函数(Logic Functions)</li>
-<li>特殊的函数(Special Functions)</li>
-<li>文件处理类函数(File Functions)</li>
-</ul>
-<h2 id="字符串类型函数-String-Functions"><a href="#字符串类型函数-String-Functions" class="headerlink" title="字符串类型函数(String Functions)"></a>字符串类型函数(String Functions)</h2><p>顾名思义,字符串类型的函数肯定是针对字符串类型的参数、变量进行处理操作的函数</p>
-<h3 id="日期转字符串-date2str"><a href="#日期转字符串-date2str" class="headerlink" title="日期转字符串(date2str)"></a>日期转字符串(<code>date2str</code>)</h3><p>日期转字符串函数<code>date2str</code>主要有4个方法,分别是：</p>
-<ul>
-<li><code>date2str(date)</code>:传入日期实例,转换成字符串类型</li>
-<li><code>date2str(date,format)</code>:传入日期和格式化参数,进行格式化转换</li>
-<li><code>date2str(date,format,iso)</code>:传入日期和参数格式化及ISO代码进行转换,(DE = German, EN = English, FR = France, …)</li>
-<li><code>date2str(date,format,iso,zone)</code>:传入时区进行格式化,例如北京时区(GMT+8)</li>
-</ul>
-<p>日期格式化参数format参数类型供参考：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yy / yyyy - <span class="hljs-number">06</span> / <span class="hljs-number">2006</span></span><br><span class="line">MM / MMM / MMMMM - <span class="hljs-number">11</span> / Nov / November</span><br><span class="line">d / dd  - <span class="hljs-number">1</span> / <span class="hljs-number">01</span></span><br><span class="line">E / EEEE - Tue / Tuesday</span><br><span class="line">hh / HH - <span class="hljs-number">11</span> / <span class="hljs-number">23</span></span><br><span class="line">m / mm - <span class="hljs-number">5</span> / <span class="hljs-number">05</span></span><br><span class="line">s / ss - <span class="hljs-number">8</span> / <span class="hljs-number">08</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>代码示例:</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> dValue = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span><br><span class="line">writeToLog(date2str(dValue,<span class="hljs-string">"dd.MM.yyyy"</span>));</span><br><span class="line">writeToLog(date2str(dValue,<span class="hljs-string">"dd.MM.yyyy HH:mm:ss"</span>));</span><br><span class="line">writeToLog(date2str(dValue,<span class="hljs-string">"E.MMM.yyyy"</span>,<span class="hljs-string">"DE"</span>));</span><br><span class="line">writeToLog(date2str(dValue,<span class="hljs-string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="hljs-string">"EN"</span>));</span><br><span class="line">writeToLog(date2str(dValue,<span class="hljs-string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="hljs-string">"ZH"</span>, <span class="hljs-string">"GMT+8"</span>));</span><br><span class="line">writeToLog(date2str(dValue,<span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>,<span class="hljs-string">"ZH"</span>, <span class="hljs-string">"GMT+8"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以上代码在控制台将会输出如下：</p>
-<figure class="highlight properties hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:12:56 - JavaScript代码.0 - 19.08.2019</span></span><br><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:12:56 - JavaScript代码.0 - 19.08.2019 10:12:56</span></span><br><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:12:56 - JavaScript代码.0 - Mo.Aug.2019</span></span><br><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:12:56 - JavaScript代码.0 - 19.08.2019 10:12:56</span></span><br><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:12:56 - JavaScript代码.0 - 19.08.2019 10:12:56</span></span><br><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:12:56 - JavaScript代码.0 - 2019-08-19 10:12:56</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="转义HTMLescapeHtml-html"><a href="#转义HTMLescapeHtml-html" class="headerlink" title="转义HTMLescapeHtml(html)"></a>转义HTML<code>escapeHtml(html)</code></h3><p>代码如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> html=<span class="hljs-string">"&lt;h1&gt;我是H2标题&lt;/h2&gt;"</span>;</span><br><span class="line"></span><br><span class="line">writeToLog(escapeHtml(html))</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终输出</p>
-<figure class="highlight properties hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:16:13 - JavaScript代码.0 - &amp;lt;h1&amp;gt;&amp;#25105;&amp;#26159;H2&amp;#26631;&amp;#39064;&amp;lt;/h2&amp;gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="转义SQL-escapeSQL-var"><a href="#转义SQL-escapeSQL-var" class="headerlink" title="转义SQL(escapeSQL(var))"></a>转义SQL(<code>escapeSQL(var)</code>)</h3><figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"SELECT * FROM CUSTOMER WHERE NAME='"</span> + escapeSQL(<span class="hljs-string">"McHale's Navy"</span>) + <span class="hljs-string">"'"</span>;  </span><br><span class="line">writeToLog(str1)</span><br></pre></td></tr></tbody></table></figure>
-
-<p>该函数会把单引号转成双引号,输出结果如下：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">18</span>:<span class="hljs-number">59</span> - JavaScript代码<span class="hljs-number">.0</span> - SELECT * FROM CUSTOMER WHERE NAME=<span class="hljs-string">'McHale'</span><span class="hljs-string">'s Navy'</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="构造定长字符串-fillString-char-length"><a href="#构造定长字符串-fillString-char-length" class="headerlink" title="构造定长字符串(fillString(char,length))"></a>构造定长字符串(<code>fillString(char,length)</code>)</h3><p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(fillString(<span class="hljs-string">"x"</span>,<span class="hljs-number">10</span>));</span><br><span class="line">writeToLog(fillString(<span class="hljs-string">"A"</span>,<span class="hljs-number">3</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终会输出10个X和3个<code>A</code>,输出结果如下：</p>
-<figure class="highlight properties hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:24:08 - JavaScript代码.0 - xxxxxxxxxx</span></span><br><span class="line"><span class="hljs-meta">2019/08/19</span> <span class="hljs-string">10:24:08 - JavaScript代码.0 - AAA</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>需要注意的是第一个是一个char类型的单字符,不能是字符串</p>
-<h3 id="统计字符串出现频次-getOcuranceString-str-searchStr"><a href="#统计字符串出现频次-getOcuranceString-str-searchStr" class="headerlink" title="统计字符串出现频次(getOcuranceString(str,searchStr))"></a>统计字符串出现频次(<code>getOcuranceString(str,searchStr)</code>)</h3><p>第一个参数是要搜索的完整字符串,第二个参数是要搜索统计的字符串</p>
-<p>代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> sef=<span class="hljs-string">'2007-09-11'</span>;</span><br><span class="line"></span><br><span class="line">writeToLog(getOcuranceString(sef,<span class="hljs-string">'0'</span>))</span><br><span class="line">writeToLog(getOcuranceString(sef,<span class="hljs-string">'00'</span>))</span><br></pre></td></tr></tbody></table></figure>
-
-<p>我们分别统计字符串0和00最终出现的次数,此时,日志最终打印的次数是3和1：</p>
-<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2019/08/19 10:28:45 - JavaScript代码.0 - 3</span><br><span class="line">2019/08/19 10:28:45 - JavaScript代码.0 - 1</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取字符串下标索引-indexOf"><a href="#获取字符串下标索引-indexOf" class="headerlink" title="获取字符串下标索引(indexOf)"></a>获取字符串下标索引(<code>indexOf</code>)</h3><p>获取下标索引主要有2个重构函数,分别是：</p>
-<ul>
-<li><code>indexOf(string,subString)</code>:获取出现字符串的索引开始位置</li>
-<li><code>indexOf(string,subString,fromIndex)</code>；指定开始位置,获取字符串索引开始位置</li>
-</ul>
-<p>代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1= <span class="hljs-string">"Hello Pentaho!"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str2= indexOf(str1, <span class="hljs-string">"Pentaho"</span>);</span><br><span class="line"><span class="hljs-keyword">var</span> str3= indexOf(str1, <span class="hljs-string">"o"</span>, <span class="hljs-number">7</span>);</span><br><span class="line">writeToLog(<span class="hljs-string">"Input : "</span> + str1);</span><br><span class="line">writeToLog(<span class="hljs-string">"Index of 'Pentaho' : "</span> + str2);</span><br><span class="line">writeToLog(<span class="hljs-string">"index of 'o', search from position 7 : "</span> + str3);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">34</span>:<span class="hljs-number">16</span> - JavaScript代码<span class="hljs-number">.0</span> - Input : Hello Pentaho!</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">34</span>:<span class="hljs-number">16</span> - JavaScript代码<span class="hljs-number">.0</span> - Index of <span class="hljs-string">'Pentaho'</span> : <span class="hljs-number">6</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">34</span>:<span class="hljs-number">16</span> - JavaScript代码<span class="hljs-number">.0</span> - index of <span class="hljs-string">'o'</span>, search from position <span class="hljs-number">7</span> : <span class="hljs-number">12</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="首字母大写-initCap"><a href="#首字母大写-initCap" class="headerlink" title="首字母大写(initCap)"></a>首字母大写(<code>initCap</code>)</h3><p>对指定字符串首字母大写处理,来看代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"my home"</span>;      </span><br><span class="line">writeToLog(initCap(str1));</span><br><span class="line">writeToLog(initCap(<span class="hljs-string">'test a aaa cw'</span>));</span><br><span class="line">writeToLog(initCap(<span class="hljs-string">'myhome'</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>此时,最终控制台输出如下：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">41</span>:<span class="hljs-number">27</span> - JavaScript代码<span class="hljs-number">.0</span> - My Home</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">41</span>:<span class="hljs-number">27</span> - JavaScript代码<span class="hljs-number">.0</span> - Test A Aaa Cw</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">41</span>:<span class="hljs-number">27</span> - JavaScript代码<span class="hljs-number">.0</span> - Myhome</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="字符串转小写-lower"><a href="#字符串转小写-lower" class="headerlink" title="字符串转小写(lower)"></a>字符串转小写(<code>lower</code>)</h3><p>将传入字符串全部转小写</p>
-<p>代码如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1= <span class="hljs-string">"Hello World!"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str2= lower(str1);</span><br><span class="line">writeToLog(<span class="hljs-string">"Input:"</span> + str1);</span><br><span class="line">writeToLog(<span class="hljs-string">"Converted to LowerCase:"</span> + str2);</span><br><span class="line">writeToLog(lower(<span class="hljs-string">'DDDHelloSWxss'</span>))</span><br></pre></td></tr></tbody></table></figure>
-
-<p>响应内容</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/<span class="hljs-number">08</span>/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">43</span>:<span class="hljs-number">09</span> - JavaScript代码<span class="hljs-number">.0</span> - Input:Hello World!</span><br><span class="line"><span class="hljs-number">2019</span>/<span class="hljs-number">08</span>/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">43</span>:<span class="hljs-number">09</span> - JavaScript代码<span class="hljs-number">.0</span> - Converted to LowerCase:hello world!</span><br><span class="line"><span class="hljs-number">2019</span>/<span class="hljs-number">08</span>/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">43</span>:<span class="hljs-number">09</span> - JavaScript代码<span class="hljs-number">.0</span> - dddhelloswxss</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="字符串填充左侧-lpad-string-char-length"><a href="#字符串填充左侧-lpad-string-char-length" class="headerlink" title="字符串填充左侧(lpad(string,char,length))"></a>字符串填充左侧(<code>lpad(string,char,length)</code>)</h3><p>用指定长度的给定字符将字符串填充到左侧</p>
-<p>参数定义：</p>
-<ul>
-<li>1：传入字符串</li>
-<li>2：填充单字符</li>
-<li>3：填充单字符长度</li>
-</ul>
-<p>如果length长度超过给定字符串的长度,将对填充字符串做减法，例如：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1= <span class="hljs-string">"Hello World!"</span>; </span><br><span class="line">writeToLog(<span class="hljs-string">"Lpad:"</span> + lpad(str1, <span class="hljs-string">"x"</span>,<span class="hljs-number">20</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>此时,最终输出结果为：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">46</span>:<span class="hljs-number">38</span> - JavaScript代码<span class="hljs-number">.0</span> - Lpad:xxxxxxxxHello World!</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终的完成长度是20个字符长度,因此填充的单字符<code>x</code>并没有填充20次</p>
-<p>如果length长度小于给定字符串的长度,则默认返回原字符串,不做填充,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1= <span class="hljs-string">"Hello World!"</span>; </span><br><span class="line">writeToLog(<span class="hljs-string">"Lpad:"</span> + lpad(str1, <span class="hljs-string">"x"</span>,<span class="hljs-number">5</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>此时最终的输出结果为：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">10</span>:<span class="hljs-number">46</span>:<span class="hljs-number">38</span> - JavaScript代码<span class="hljs-number">.0</span> - Lpad:Hello World!</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="去空字符-ltrim"><a href="#去空字符-ltrim" class="headerlink" title="去空字符(ltrim)"></a>去空字符(<code>ltrim</code>)</h3><p>从左侧开始去除空字符串</p>
-<h3 id="数字转字符串-num2str"><a href="#数字转字符串-num2str" class="headerlink" title="数字转字符串(num2str)"></a>数字转字符串(<code>num2str</code>)</h3><p>给定数字,转换为字符串,主要有3个构造函数：</p>
-<ul>
-<li><code>num2str(num)</code>:转换num数字为字符串</li>
-<li><code>num2str(num,format)</code>:格式化数字为指定字符串</li>
-<li><code>num2str(num,format,iso)</code>:按照本地ISO编码进行格式化</li>
-</ul>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-number">123.40</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> d2 = -<span class="hljs-number">123.40</span>;</span><br><span class="line">writeToLog(num2str(d1));</span><br><span class="line">writeToLog(num2str(d1, <span class="hljs-string">"0.00"</span>));</span><br><span class="line">writeToLog(num2str(d1, <span class="hljs-string">"0.00"</span>, <span class="hljs-string">"EN"</span>));</span><br><span class="line">writeToLog(num2str(d2, <span class="hljs-string">"0.00;(0.00)"</span>, <span class="hljs-string">"EN"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">00</span>:<span class="hljs-number">17</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">123.4</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">00</span>:<span class="hljs-number">17</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">123.40</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">00</span>:<span class="hljs-number">17</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">123.40</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">00</span>:<span class="hljs-number">17</span> - JavaScript代码<span class="hljs-number">.0</span> - (<span class="hljs-number">123.40</span>)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="XML保护标签函数转换-protectXMLCDATA"><a href="#XML保护标签函数转换-protectXMLCDATA" class="headerlink" title="XML保护标签函数转换(protectXMLCDATA)"></a>XML保护标签函数转换(<code>protectXMLCDATA</code>)</h3><p>传入给定字符串,添加标准保护,代码示例</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"my home"</span>;      </span><br><span class="line">writeToLog(protectXMLCDATA(str1));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>此时,将会给变量<code>str1</code>加上保护标签</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">02</span>:09 - JavaScript代码<span class="hljs-number">.0</span> - &lt;![CDATA[my home]]&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="移除字符串中CRLF字符-removeCRLF-str"><a href="#移除字符串中CRLF字符-removeCRLF-str" class="headerlink" title="移除字符串中CRLF字符(removeCRLF(str))"></a>移除字符串中CRLF字符(<code>removeCRLF(str)</code>)</h3><p>给定字符串中删除CR END LF的字符串</p>
-<h3 id="替换字符串-replace"><a href="#替换字符串-replace" class="headerlink" title="替换字符串(replace)"></a>替换字符串(<code>replace</code>)</h3><p>替换字符串主要包括两个构造函数：</p>
-<ul>
-<li><code>replace(str,searchStr,replaceStr)</code>:从指定字符串中查询，然后替换</li>
-<li><code>replace(str,firstSearch,firstReplace,secondSearch,SecondReplace...)</code>：无限查询替换</li>
-</ul>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"Hello World, this is a nice function"</span>;      </span><br><span class="line"><span class="hljs-keyword">var</span> str2 = replace(str1,<span class="hljs-string">"World"</span>, <span class="hljs-string">"Folk"</span>);</span><br><span class="line">writeToLog(str2);</span><br><span class="line"><span class="hljs-keyword">var</span> str2 = replace(str1,<span class="hljs-string">"World"</span>, <span class="hljs-string">"Folk"</span>, <span class="hljs-string">"nice"</span>,<span class="hljs-string">"beautifull"</span>);</span><br><span class="line">writeToLog(str2);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终输出:</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">10</span>:<span class="hljs-number">21</span> - JavaScript代码<span class="hljs-number">.0</span> - Hello Folk, <span class="hljs-keyword">this</span> is a nice function</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">11</span>:<span class="hljs-number">10</span>:<span class="hljs-number">21</span> - JavaScript代码<span class="hljs-number">.0</span> - Hello Folk, <span class="hljs-keyword">this</span> is a beautifull function</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="字符串右侧填充-rpad-string-char-length"><a href="#字符串右侧填充-rpad-string-char-length" class="headerlink" title="字符串右侧填充(rpad(string,char,length))"></a>字符串右侧填充(<code>rpad(string,char,length</code>))</h3><p>使用方法同<code>lpad</code>,只是一个是左侧，一个是右侧</p>
-<h3 id="去除空字符-右侧-rtrim"><a href="#去除空字符-右侧-rtrim" class="headerlink" title="去除空字符(右侧)(rtrim)"></a>去除空字符(右侧)(<code>rtrim</code>)</h3><h3 id="正则切分-str2RegExp"><a href="#正则切分-str2RegExp" class="headerlink" title="正则切分(str2RegExp)"></a>正则切分(<code>str2RegExp</code>)</h3><p>出入一个正则表达式,对string字符串进行Split操作.代码如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> strToMatch = <span class="hljs-string">"info@proconis.de"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> strReg = <span class="hljs-string">"^(\\w+)@([a-zA-Z_]+?)\\.([a-zA-Z]{2,3})$"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> xArr =  str2RegExp(strToMatch, strReg);</span><br><span class="line"><span class="hljs-keyword">if</span> ( xArr != <span class="hljs-literal">null</span> ) {</span><br><span class="line">    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;xArr.length;i++) {</span><br><span class="line">	    writeToLog(xArr[i]);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="hljs-keyword">else</span> {</span><br><span class="line">    writeToLog(<span class="hljs-string">"no match"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">21</span>:<span class="hljs-number">19</span> - JavaScript代码<span class="hljs-number">.0</span> - info</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">21</span>:<span class="hljs-number">19</span> - JavaScript代码<span class="hljs-number">.0</span> - proconis</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">21</span>:<span class="hljs-number">19</span> - JavaScript代码<span class="hljs-number">.0</span> - de</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="字符串截取-substr"><a href="#字符串截取-substr" class="headerlink" title="字符串截取(substr)"></a>字符串截取(<code>substr</code>)</h3><p>通过制定索引开始对字符串进行截取操作,主要有两个重构参数：</p>
-<ul>
-<li><code>substr(string,from)</code>:指定from索引开始截取字符串</li>
-<li><code>substr(string,from,to)</code>:指定开始和截止索引进行截取</li>
-</ul>
-<p>代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1= <span class="hljs-string">"Hello Pentaho!"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str2= substr(str1, <span class="hljs-number">6</span>);</span><br><span class="line"><span class="hljs-keyword">var</span> str3= substr(str1, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>);</span><br><span class="line">writeToLog(<span class="hljs-string">"Input : "</span> + str1);</span><br><span class="line">writeToLog(<span class="hljs-string">"From position 6: "</span> + str2);</span><br><span class="line">writeToLog(<span class="hljs-string">"From position 6 for 7 long : "</span> + str3);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>控制台输出如下：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">31</span>:<span class="hljs-number">20</span> - JavaScript代码<span class="hljs-number">.0</span> - Input : Hello Pentaho!</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">31</span>:<span class="hljs-number">20</span> - JavaScript代码<span class="hljs-number">.0</span> - From position <span class="hljs-number">6</span>: Pentaho!</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">31</span>:<span class="hljs-number">20</span> - JavaScript代码<span class="hljs-number">.0</span> - From position <span class="hljs-number">6</span> <span class="hljs-keyword">for</span> <span class="hljs-number">7</span> <span class="hljs-keyword">long</span> : Pentaho</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="去除左右空格-trim"><a href="#去除左右空格-trim" class="headerlink" title="去除左右空格(trim)"></a>去除左右空格(<code>trim</code>)</h3><h3 id="不转义HTML-unEscapeHtml-html"><a href="#不转义HTML-unEscapeHtml-html" class="headerlink" title="不转义HTML(unEscapeHtml(html))"></a>不转义HTML(<code>unEscapeHtml(html)</code>)</h3><p>针对以转义的HTML字符进行解密,代码如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> w=<span class="hljs-string">'&lt;h2&gt;我是H2标题&lt;/h2&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> esW=escapeHtml(w);</span><br><span class="line"><span class="hljs-keyword">var</span> unesw=unEscapeHtml(esW);</span><br><span class="line"></span><br><span class="line">writeToLog(esW);</span><br><span class="line">writeToLog(unesw);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">38</span>:<span class="hljs-number">16</span> - JavaScript代码<span class="hljs-number">.0</span> - &amp;lt;h2&amp;gt;&amp;#<span class="hljs-number">25105</span>;&amp;#<span class="hljs-number">26159</span>;H2&amp;#<span class="hljs-number">26631</span>;&amp;#<span class="hljs-number">39064</span>;&amp;lt;/h2&amp;gt;</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">38</span>:<span class="hljs-number">16</span> - JavaScript代码<span class="hljs-number">.0</span> - &lt;h2&gt;我是H2标题&lt;/h2&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="解码转义XML-unEscapeXml"><a href="#解码转义XML-unEscapeXml" class="headerlink" title="解码转义XML(unEscapeXml )"></a>解码转义XML(<code>unEscapeXml </code>)</h3><h3 id="字符串转大写-upper"><a href="#字符串转大写-upper" class="headerlink" title="字符串转大写(upper)"></a>字符串转大写(<code>upper</code>)</h3><p>将传入字符串全部转大写.例如:</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str=<span class="hljs-string">"Hello World"</span>;</span><br><span class="line">writeToLog(upper(str));</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="浮点型的函数-Numeric-Functions"><a href="#浮点型的函数-Numeric-Functions" class="headerlink" title="浮点型的函数(Numeric Functions)"></a>浮点型的函数(Numeric Functions)</h2><h3 id="计算绝对值-abs-num"><a href="#计算绝对值-abs-num" class="headerlink" title="计算绝对值(abs(num))"></a>计算绝对值(<code>abs(num)</code>)</h3><p>计算一个数值的绝对值,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = -<span class="hljs-number">1234.01</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> d2 = <span class="hljs-number">1234.01</span>;</span><br><span class="line">writeToLog(abs(d1));</span><br><span class="line">writeToLog(abs(d2));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出为：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">51</span>:<span class="hljs-number">00</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">1234.01</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">51</span>:<span class="hljs-number">00</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">1234.01</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="最小双精度值-ceil-num"><a href="#最小双精度值-ceil-num" class="headerlink" title="最小双精度值(ceil(num))"></a>最小双精度值(<code>ceil(num)</code>)</h3><p>返回最小的双精度值。该值将被四舍五入。代码示例：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = -<span class="hljs-number">1234.01</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> d2 = <span class="hljs-number">1234.01</span>;</span><br><span class="line">writeToLog(ceil(d1));</span><br><span class="line">writeToLog(ceil(d2));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">52</span>:<span class="hljs-number">40</span> - JavaScript代码<span class="hljs-number">.0</span> - -<span class="hljs-number">1234</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">52</span>:<span class="hljs-number">40</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">1235</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="最大数值-floor-num"><a href="#最大数值-floor-num" class="headerlink" title="最大数值(floor(num))"></a>最大数值(<code>floor(num)</code>)</h3><p>返回最大数值,该值将被四舍五入,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = -<span class="hljs-number">1234.01</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> d2 = <span class="hljs-number">1234.01</span>;</span><br><span class="line">writeToLog(floor(d1));</span><br><span class="line">writeToLog(floor(d2));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>运行结果如下：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">55</span>:<span class="hljs-number">13</span> - JavaScript代码<span class="hljs-number">.0</span> - -<span class="hljs-number">1235</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">13</span>:<span class="hljs-number">55</span>:<span class="hljs-number">13</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">1234</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="字符串转数值-str2num-var"><a href="#字符串转数值-str2num-var" class="headerlink" title="字符串转数值(str2num(var))"></a>字符串转数值(<code>str2num(var)</code>)</h3><p>字符串转数值主要包含两个构造函数,分别是</p>
-<ul>
-<li><code>str2num(str)</code>:传入数值字符串,进行格式化转换</li>
-<li><code>str2num(str,format)</code>:通过指定格式进行数值转换</li>
-</ul>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"1.234,56"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str2 = <span class="hljs-string">"12"</span>;</span><br><span class="line">writeToLog((str2num(str1,<span class="hljs-string">"#,##0.00"</span>)));</span><br><span class="line">writeToLog((str2num(str2)));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">19</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">1.234</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">14</span>:<span class="hljs-number">02</span>:<span class="hljs-number">19</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">12</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="截取数值-trunc"><a href="#截取数值-trunc" class="headerlink" title="截取数值(trunc)"></a>截取数值(<code>trunc</code>)</h3><figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trunc(<span class="hljs-number">1234.9</span>); <span class="hljs-comment">// 返回 1234</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="日期类型函数-Date-Functions"><a href="#日期类型函数-Date-Functions" class="headerlink" title="日期类型函数(Date Functions)"></a>日期类型函数(Date Functions)</h2><h3 id="日期相加-dateAdd"><a href="#日期相加-dateAdd" class="headerlink" title="日期相加(dateAdd)"></a>日期相加(<code>dateAdd</code>)</h3><p>针对日期变量进行相应的添加时间,添加频率包括年、月、日、时、分、秒 等等</p>
-<p>函数定义:<code>dateAdd(date,format,plusNum)</code></p>
-<ul>
-<li>date:日期对象</li>
-<li>format:要加的类型</li>
-<li>plusNum:加的数值</li>
-</ul>
-<p>相加类型主要包括：</p>
-<ul>
-<li>y:年</li>
-<li>m：月</li>
-<li>d:日</li>
-<li>w:周</li>
-<li>wd:工作日</li>
-<li>hh:小时</li>
-<li>mi:分钟</li>
-<li>ss:秒</li>
-</ul>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> fmt=<span class="hljs-string">'yyyy-MM-dd HH:mm:ss'</span>;</span><br><span class="line">writeToLog(<span class="hljs-string">"当前时间:"</span>+date2str(d1,fmt));</span><br><span class="line"><span class="hljs-keyword">var</span> py=dateAdd(d1,<span class="hljs-string">'y'</span>,<span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">var</span> fy=date2str(py,fmt);</span><br><span class="line">writeToLog(<span class="hljs-string">"加1年："</span>+fy);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">14</span>:<span class="hljs-number">17</span>:<span class="hljs-number">41</span> - JavaScript代码<span class="hljs-number">.0</span> - 当前时间:<span class="hljs-number">2019</span>-08-<span class="hljs-number">19</span> <span class="hljs-number">14</span>:<span class="hljs-number">17</span>:<span class="hljs-number">41</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">14</span>:<span class="hljs-number">17</span>:<span class="hljs-number">41</span> - JavaScript代码<span class="hljs-number">.0</span> - 加<span class="hljs-number">1</span>年：<span class="hljs-number">2020</span>-08-<span class="hljs-number">19</span> <span class="hljs-number">14</span>:<span class="hljs-number">17</span>:<span class="hljs-number">41</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="日期比较-dateDiff"><a href="#日期比较-dateDiff" class="headerlink" title="日期比较(dateDiff)"></a>日期比较(<code>dateDiff</code>)</h3><p>两个日期相互比较</p>
-<p>函数定义:<code>dateDiff(startDate,endDate,type)</code></p>
-<ul>
-<li>startDate:开始日期</li>
-<li>endDate:截止日期</li>
-<li>type：返回相差数值类型</li>
-</ul>
-<p>类型主要包括：</p>
-<ul>
-<li>y:年</li>
-<li>m：月</li>
-<li>d:日</li>
-<li>w:周</li>
-<li>wd:工作日</li>
-<li>hh:小时</li>
-<li>mi:分钟</li>
-<li>ss:秒</li>
-</ul>
-<h3 id="获取指定日期数值-getDayNumber"><a href="#获取指定日期数值-getDayNumber" class="headerlink" title="获取指定日期数值(getDayNumber)"></a>获取指定日期数值(<code>getDayNumber</code>)</h3><p>根据类型获取指定日期的数值</p>
-<p>函数定义：<code>getDayNumber(date,type)</code></p>
-<ul>
-<li>date:当前日期实例</li>
-<li>type:类别</li>
-</ul>
-<p>类别主要分四类</p>
-<ul>
-<li>y:获取当年的天数</li>
-<li>m:获取当月的天数</li>
-<li>w:获取本周的天数</li>
-<li>wm:获取当月中本周的天数</li>
-</ul>
-<p>代码示例：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> Date();</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="hljs-string">"y"</span>));</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="hljs-string">"m"</span>));</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="hljs-string">"w"</span>));</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="hljs-string">"wm"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="getFiscalDate"><a href="#getFiscalDate" class="headerlink" title="getFiscalDate"></a>getFiscalDate</h3><figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Returns the fiscal Date from the date value,</span></span><br><span class="line"><span class="hljs-comment">// based on a given offset.</span></span><br><span class="line"><span class="hljs-comment">//</span></span><br><span class="line"><span class="hljs-comment">// Usage:</span></span><br><span class="line"><span class="hljs-comment">// getFiscalDate(var);</span></span><br><span class="line"><span class="hljs-comment">// 1: Date - The Variable with the Date.</span></span><br><span class="line"><span class="hljs-comment">// 2: String - The Date/Month which represents</span></span><br><span class="line"><span class="hljs-comment">// the fiscal Start Offset. Format allways "dd.MM.".</span></span><br><span class="line"><span class="hljs-comment">//</span></span><br><span class="line"><span class="hljs-comment">// 2006-11-15</span></span><br><span class="line"><span class="hljs-comment">//</span></span><br><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span><br><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"01.07."</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> str2 = <span class="hljs-string">"10.12."</span>;</span><br><span class="line">Alert(getFiscalDate(d1, str1));</span><br><span class="line">Alert(getFiscalDate(d1, str2));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取下一个工作日日期-getNextWorkingDay"><a href="#获取下一个工作日日期-getNextWorkingDay" class="headerlink" title="获取下一个工作日日期(getNextWorkingDay)"></a>获取下一个工作日日期(<code>getNextWorkingDay</code>)</h3><p>传入当前日期,获取该日期后面一个工作日日期</p>
-<p>函数定义<code>getNextWorkingDay(date)</code></p>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 周1</span></span><br><span class="line"><span class="hljs-keyword">var</span> d2=str2date(<span class="hljs-string">'2019-08-19 16:36:00'</span>,fmt);</span><br><span class="line"><span class="hljs-comment">//周 6</span></span><br><span class="line"><span class="hljs-keyword">var</span> d3=str2date(<span class="hljs-string">'2019-08-17 16:36:00'</span>,fmt);</span><br><span class="line"></span><br><span class="line">writeToLog(date2str(getNextWorkingDay(d1),fmt));</span><br><span class="line">writeToLog(date2str(getNextWorkingDay(d2),fmt));</span><br><span class="line">writeToLog(date2str(getNextWorkingDay(d3),fmt));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>我们这d2和d3变量中定义了不同的日期实例,分别是周1和周6,最终通过<code>getNextWorkingDay</code>能获取得到下一个工作日日期，控制台输出如下：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">16</span>:<span class="hljs-number">37</span>:<span class="hljs-number">38</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">2019</span>-08-<span class="hljs-number">20</span> <span class="hljs-number">16</span>:<span class="hljs-number">37</span>:<span class="hljs-number">38</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">16</span>:<span class="hljs-number">37</span>:<span class="hljs-number">38</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">2019</span>-08-<span class="hljs-number">20</span> <span class="hljs-number">16</span>:<span class="hljs-number">36</span>:<span class="hljs-number">00</span></span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">16</span>:<span class="hljs-number">37</span>:<span class="hljs-number">38</span> - JavaScript代码<span class="hljs-number">.0</span> - <span class="hljs-number">2019</span>-08-<span class="hljs-number">19</span> <span class="hljs-number">16</span>:<span class="hljs-number">36</span>:<span class="hljs-number">00</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取当前月份数值-month-date"><a href="#获取当前月份数值-month-date" class="headerlink" title="获取当前月份数值(month(date))"></a>获取当前月份数值(<code>month(date)</code>)</h3><p>获取当前日期的月份数值,需要注意的是,该值的月份是从0开始的,因此我们最终得到的结果应该+1才是我们的真实月份数值，代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();<span class="hljs-comment">//2019/08/19</span></span><br><span class="line">writeToLog(month(d1)); <span class="hljs-comment">//最终输出为7</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取当前时间的季度值-quarter-date"><a href="#获取当前时间的季度值-quarter-date" class="headerlink" title="获取当前时间的季度值(quarter(date))"></a>获取当前时间的季度值(<code>quarter(date)</code>)</h3><p>根据指定日期获取当前季度数值</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();<span class="hljs-comment">//2019/08/19</span></span><br><span class="line">writeToLog(quarter(d1));<span class="hljs-comment">//最终输出为3(代表第三季度)</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="字符串转日期-str2date"><a href="#字符串转日期-str2date" class="headerlink" title="字符串转日期(str2date)"></a>字符串转日期(<code>str2date</code>)</h3><p>字符串转日期和日期转字符串有点类似,只不过主体对换了一下,但是传入的格式参数都是一样的，主要有4个重载函数:</p>
-<ul>
-<li><code>str2date(str)</code>:默认转换</li>
-<li><code>str2date(str,format)</code>:传入format格式化参数</li>
-<li><code>str2date(str,format,iso)</code>:根据iso编码及格式化参数进行转换</li>
-<li><code>str2date(str,format,iso,timezone)</code>:根据不同时区的iso编码进行格式化转换</li>
-</ul>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(str2date(<span class="hljs-string">"01.12.2006"</span>,<span class="hljs-string">"dd.MM.yyyy"</span>));</span><br><span class="line">writeToLog(str2date(<span class="hljs-string">"01.12.2006 23:23:01"</span>,<span class="hljs-string">"dd.MM.yyyy HH:mm:ss"</span>));</span><br><span class="line">writeToLog(str2date(<span class="hljs-string">"Tue.May.2006"</span>,<span class="hljs-string">"E.MMM.yyyy"</span>,<span class="hljs-string">"EN"</span>));</span><br><span class="line">writeToLog(str2date(<span class="hljs-string">"22.02.2008 23:23:01"</span>,<span class="hljs-string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="hljs-string">"DE"</span>));</span><br><span class="line">writeToLog(str2date(<span class="hljs-string">"22.02.2008 23:23:01"</span>,<span class="hljs-string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="hljs-string">"DE"</span>, <span class="hljs-string">"EST"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="截取日期-truncDate-date-type"><a href="#截取日期-truncDate-date-type" class="headerlink" title="截取日期(truncDate(date,type))"></a>截取日期(<code>truncDate(date,type)</code>)</h3><p>指定截取不同的日期部分,函数定义truncDate(date,type)</p>
-<ul>
-<li>date:当前日期实例</li>
-<li>type:截取类型</li>
-</ul>
-<p>类型主要有6中,分别是整型，从0-5：</p>
-<ul>
-<li>5：截取月份</li>
-<li>4：截取天数</li>
-<li>3:截取小时</li>
-<li>2：截取分钟</li>
-<li>1：截取秒</li>
-<li>0:截取毫秒</li>
-</ul>
-<p>代码示例 如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> dateTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span><br><span class="line"><span class="hljs-keyword">var</span> date0 = truncDate(dateTime, <span class="hljs-number">0</span>); <span class="hljs-comment">// gives back today at yyyy/MM/dd HH:mm:ss.000</span></span><br><span class="line"><span class="hljs-keyword">var</span> date1 = truncDate(dateTime, <span class="hljs-number">1</span>); <span class="hljs-comment">// gives back today at yyyy/MM/dd HH:mm:00.000</span></span><br><span class="line"><span class="hljs-keyword">var</span> date2 = truncDate(dateTime, <span class="hljs-number">2</span>); <span class="hljs-comment">// gives back today at yyyy/MM/dd HH:00:00.000</span></span><br><span class="line"><span class="hljs-keyword">var</span> date3 = truncDate(dateTime, <span class="hljs-number">3</span>); <span class="hljs-comment">// gives back today at yyyy/MM/dd 00:00:00.000</span></span><br><span class="line"><span class="hljs-keyword">var</span> date4 = truncDate(dateTime, <span class="hljs-number">4</span>); <span class="hljs-comment">// gives back today at yyyy/MM/01 00:00:00.000</span></span><br><span class="line"><span class="hljs-keyword">var</span> date5 = truncDate(dateTime, <span class="hljs-number">5</span>); <span class="hljs-comment">// gives back today at yyyy/01/01 00:00:00.000</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取当年的周数-week"><a href="#获取当年的周数-week" class="headerlink" title="获取当年的周数(week)"></a>获取当年的周数(<code>week</code>)</h3><p>获取指定日期的周数,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">//2019/08/19</span></span><br><span class="line"> </span><br><span class="line">writeToLog(week(d1));<span class="hljs-comment">// 返回34</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取年份-year"><a href="#获取年份-year" class="headerlink" title="获取年份(year)"></a>获取年份(<code>year</code>)</h3><p>获取传入日期的年份,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">//2019/08/19</span></span><br><span class="line"> </span><br><span class="line">writeToLog(year(d1));<span class="hljs-comment">// 返回2019</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="逻辑判断型函数-Logic-Functions"><a href="#逻辑判断型函数-Logic-Functions" class="headerlink" title="逻辑判断型函数(Logic Functions)"></a>逻辑判断型函数(Logic Functions)</h2><h3 id="isCodepage"><a href="#isCodepage" class="headerlink" title="isCodepage"></a>isCodepage</h3><p>判断字符串的codepage项,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xStr = <span class="hljs-string">"RÃ©al"</span>;</span><br><span class="line">writeToLog(isCodepage(xStr, <span class="hljs-string">"UTF-8"</span>));<span class="hljs-comment">// true</span></span><br><span class="line">writeToLog(isCodepage(xStr, <span class="hljs-string">"windows-1250"</span>));<span class="hljs-comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="是否日期-isDate-str"><a href="#是否日期-isDate-str" class="headerlink" title="是否日期(isDate(str))"></a>是否日期(<code>isDate(str)</code>)</h3><p>判断当前字符串是否日期</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-string">"Hello World"</span>;      </span><br><span class="line"><span class="hljs-keyword">var</span> d2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span><br><span class="line">writeToLog(isDate(d1));<span class="hljs-comment">//false</span></span><br><span class="line">writeToLog(isDate(d2));<span class="hljs-comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="是否为空-isEmpty-str"><a href="#是否为空-isEmpty-str" class="headerlink" title="是否为空(isEmpty(str))"></a>是否为空(<code>isEmpty(str)</code>)</h3><p>判断字符串是否为空</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d = <span class="hljs-string">"Hello World"</span>;      </span><br><span class="line">Alert(isEmpty(d));<span class="hljs-comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="判断字符串是否为邮箱标准格式-isMailValid-str"><a href="#判断字符串是否为邮箱标准格式-isMailValid-str" class="headerlink" title="判断字符串是否为邮箱标准格式(isMailValid(str))"></a>判断字符串是否为邮箱标准格式(<code>isMailValid(str)</code>)</h3><p>判断一个字符串是否是邮箱</p>
-<h3 id="判断是否是数值-isNum-str"><a href="#判断是否是数值-isNum-str" class="headerlink" title="判断是否是数值(isNum(str))"></a>判断是否是数值(<code>isNum(str)</code>)</h3><p>判断一个字符串是否是数值</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"Hello World"</span>;      </span><br><span class="line"><span class="hljs-keyword">var</span> str2 = <span class="hljs-number">123456</span>;</span><br><span class="line">Alert(isNum(str1));<span class="hljs-comment">//false</span></span><br><span class="line">Alert(isNum(str2));<span class="hljs-comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="是否正则匹配-isRegExp"><a href="#是否正则匹配-isRegExp" class="headerlink" title="是否正则匹配(isRegExp)"></a>是否正则匹配(<code>isRegExp</code>)</h3><p>判断给定的正则表达式是否匹配当前的字符串，主要有2个函数定义：</p>
-<ul>
-<li>isRegExp(str,reg):给定正则判断字符串是否匹配</li>
-<li>isRegExp(str,reg1,reg2,reg3…)；可以递归判断正则匹配</li>
-</ul>
-<p>最终返回的是匹配的次数数值,如果不匹配,返回-1</p>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> email1 =<span class="hljs-string">"info@proconis.de"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> email2= <span class="hljs-string">"support@proconis.co.uk"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> email3= <span class="hljs-string">"HelloWorld@x"</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> reg1=<span class="hljs-string">"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> reg2=<span class="hljs-string">"^[\\w-\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"</span>;</span><br><span class="line"></span><br><span class="line">writeToLog(isRegExp(email1, reg1,reg2) + <span class="hljs-string">" Matches"</span>); <span class="hljs-comment">//1</span></span><br><span class="line">writeToLog(isRegExp(email2, reg1,reg2) + <span class="hljs-string">" Matches"</span>);  <span class="hljs-comment">//2</span></span><br><span class="line">writeToLog(isRegExp(email3, reg1,reg2) + <span class="hljs-string">" Matches"</span>);<span class="hljs-comment">// 1</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="是否工作日-isWorkingDay-date"><a href="#是否工作日-isWorkingDay-date" class="headerlink" title="是否工作日(isWorkingDay(date))"></a>是否工作日(<code>isWorkingDay(date)</code>)</h3><p>判断某日期是否是工作日,代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();<span class="hljs-comment">//周1</span></span><br><span class="line"><span class="hljs-keyword">var</span> d2=str2date(<span class="hljs-string">'2019-08-17'</span>,<span class="hljs-string">'yyyy-MM-dd'</span>) <span class="hljs-comment">//周六</span></span><br><span class="line">writeToLog(isWorkingDay(d1));<span class="hljs-comment">//true</span></span><br><span class="line">writeToLog(isWorkingDay(d2));<span class="hljs-comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="特殊的函数-Special-Functions"><a href="#特殊的函数-Special-Functions" class="headerlink" title="特殊的函数(Special Functions)"></a>特殊的函数(Special Functions)</h2><h3 id="弹框信息-Alert-msg"><a href="#弹框信息-Alert-msg" class="headerlink" title="弹框信息(Alert(msg))"></a>弹框信息(<code>Alert(msg)</code>)</h3><p>在屏幕前弹出一个信息框</p>
-<h3 id="加载JavaScript文件-LoadScriptFile"><a href="#加载JavaScript文件-LoadScriptFile" class="headerlink" title="加载JavaScript文件(LoadScriptFile)"></a>加载JavaScript文件(<code>LoadScriptFile</code>)</h3><p>将一个javascript文件加载到实际的运行上下文中。应该从定义的StartScript调用此函数，否则，每次处理都会加载javascript文件行。</p>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xPfad = <span class="hljs-string">"F:/bak/Hello.js"</span>;</span><br><span class="line">LoadScriptFile(xPfad);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>此时,我们的外部JS文件仅仅是包含一句简单的输出，如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(<span class="hljs-string">"Hello LoadScriptFile,outSide JS File "</span>);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终运行时,控制台会打印出我们在外部JS中的输出行</p>
-<h3 id="从当前Tab栏加载JS并运行-LoadScriptFromTab"><a href="#从当前Tab栏加载JS并运行-LoadScriptFromTab" class="headerlink" title="从当前Tab栏加载JS并运行(LoadScriptFromTab)"></a>从当前Tab栏加载JS并运行(<code>LoadScriptFromTab</code>)</h3><p>如果我们在当前的JavaScript组件中通过模块化的方式编写了很多脚本代码,我们可以通过<code>LoadScriptFromTab</code>函数进行相互调用,这对于开发抽象来说是很好的,代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(<span class="hljs-string">"外部Tab加载JS-------------------------"</span>)</span><br><span class="line">LoadScriptFromTab(<span class="hljs-string">'Item_1'</span>);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="有效卡号判断-LuhnCheck"><a href="#有效卡号判断-LuhnCheck" class="headerlink" title="有效卡号判断(LuhnCheck)"></a>有效卡号判断(<code>LuhnCheck</code>)</h3><p>如果给定的是一个有效的卡号,则返回true</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"4444333322221111"</span>;      </span><br><span class="line">writeToLog(str1 + <span class="hljs-string">": "</span> + LuhnCheck(str1)); <span class="hljs-comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> str2 = <span class="hljs-string">"4444333322221110"</span>;      </span><br><span class="line">writeToLog(str2 + <span class="hljs-string">": "</span> + LuhnCheck(str2));<span class="hljs-comment">//false</span></span><br><span class="line">      </span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="向文件中追加数据-appendToFile"><a href="#向文件中追加数据-appendToFile" class="headerlink" title="向文件中追加数据(appendToFile)"></a>向文件中追加数据(<code>appendToFile</code>)</h3><p>向指定文件中追加数据,如果文件不存在则创建文件</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> file = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">100</span>;i++){</span><br><span class="line">	appendToFile(file,<span class="hljs-string">'TEST'</span>+i+<span class="hljs-string">"\r\n"</span>);</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>此时,该代码会向<code>log.txt</code>文件输出100条数据行</p>
-<h3 id="decode函数"><a href="#decode函数" class="headerlink" title="decode函数"></a>decode函数</h3><p>decode函数有点类似于<code>IF-THEN-ELSE</code>语句，即表示通过给定查询的字符串是否存在，如果存在，即替换,否则返回默认值</p>
-<p>代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"Hallo"</span>;</span><br><span class="line">writeToLog(decode(str1, <span class="hljs-string">"Hallo"</span>, <span class="hljs-string">"Hello"</span>));</span><br><span class="line">writeToLog(decode(str1, <span class="hljs-string">"1"</span>, <span class="hljs-string">"Mr"</span>, <span class="hljs-string">"2"</span>, <span class="hljs-string">"Mrs"</span>, <span class="hljs-string">"N/A"</span>));</span><br><span class="line">writeToLog(decode(str1, <span class="hljs-string">"1"</span>, <span class="hljs-string">"Mr"</span>, <span class="hljs-string">"2"</span>, <span class="hljs-string">"Mrs"</span>));</span><br><span class="line">str1 = <span class="hljs-string">"Mrs"</span>;</span><br><span class="line">writeToLog(decode(str1, <span class="hljs-string">"1"</span>, <span class="hljs-string">"Mr"</span>, <span class="hljs-string">"2"</span>, <span class="hljs-string">"Mrs"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<p>控制台输出：</p>
-<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">17</span>:<span class="hljs-number">39</span>:<span class="hljs-number">01</span> - JavaScript代码<span class="hljs-number">.0</span> - Hello</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">17</span>:<span class="hljs-number">39</span>:<span class="hljs-number">01</span> - JavaScript代码<span class="hljs-number">.0</span> - N/A</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">17</span>:<span class="hljs-number">39</span>:<span class="hljs-number">01</span> - JavaScript代码<span class="hljs-number">.0</span> - Hallo</span><br><span class="line"><span class="hljs-number">2019</span>/08/<span class="hljs-number">19</span> <span class="hljs-number">17</span>:<span class="hljs-number">39</span>:<span class="hljs-number">01</span> - JavaScript代码<span class="hljs-number">.0</span> - Mrs</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="执行命令-execProcess"><a href="#执行命令-execProcess" class="headerlink" title="执行命令(execProcess)"></a>执行命令(<code>execProcess</code>)</h3><p>代码如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> t=execProcess(<span class="hljs-string">'ping www.baidu.com'</span>);</span><br><span class="line">writeToLog(t)</span><br></pre></td></tr></tbody></table></figure>
-
-<p>调用命令行,ping百度的网址，最终输出返回数据</p>
-<h3 id="执行SQL语句-fireToDB"><a href="#执行SQL语句-fireToDB" class="headerlink" title="执行SQL语句(fireToDB)"></a>执行SQL语句(<code>fireToDB</code>)</h3><p>通过获取数据库连接名称，传递SQL语句,以返回SQL查询的值,函数定义：</p>
-<ul>
-<li>fireToDB(connectionName,SQL)；第一个参数为数据库连接名称，我们在JNDI中定义的名称，第二个参数为SQL语句</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> strConn = <span class="hljs-string">"MY Connection"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> strSQL = <span class="hljs-string">"SELECT COUNT(*) FROM ..."</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> xArr = fireToDB(strConn, strSQL);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="仅仅获取数值-getDigitsOnly"><a href="#仅仅获取数值-getDigitsOnly" class="headerlink" title="仅仅获取数值(getDigitsOnly)"></a>仅仅获取数值(<code>getDigitsOnly</code>)</h3><p>在给定的字符串中仅仅筛选过滤得到数值，代码如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"abc123cde"</span>;      </span><br><span class="line">writeToLog(getDigitsOnly(str1));<span class="hljs-comment">//返回123</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取Kettle环境变量的值-getEnvironmentVar"><a href="#获取Kettle环境变量的值-getEnvironmentVar" class="headerlink" title="获取Kettle环境变量的值(getEnvironmentVar)"></a>获取Kettle环境变量的值(<code>getEnvironmentVar</code>)</h3><p>获取在Kettle中的环境变量的值</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(getEnvironmentVar(<span class="hljs-string">"user.dir"</span>));</span><br><span class="line">writeToLog(getEnvironmentVar(<span class="hljs-string">"user.name"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取当前进程的受影响行数-getProcessCount-type"><a href="#获取当前进程的受影响行数-getProcessCount-type" class="headerlink" title="获取当前进程的受影响行数(getProcessCount(type))"></a>获取当前进程的受影响行数(<code>getProcessCount(type)</code>)</h3><p>根据类型获取当前进程的受影响行数，类型如下：</p>
-<ul>
-<li>u:更新行数</li>
-<li>i:插入行数</li>
-<li>w:写入行数</li>
-<li>r:读取行数</li>
-<li>o:输出行数</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(getProcessCount(<span class="hljs-string">"u"</span>));</span><br><span class="line">writeToLog(getProcessCount(<span class="hljs-string">"r"</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取当前转换名称-getTransformationName"><a href="#获取当前转换名称-getTransformationName" class="headerlink" title="获取当前转换名称(getTransformationName)"></a>获取当前转换名称(<code>getTransformationName</code>)</h3><p>获取当前的转换名称</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xTranName = getTransformationName();</span><br><span class="line">writeToLog(xTranName);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取Kettle环境中的变量值-getVariable"><a href="#获取Kettle环境中的变量值-getVariable" class="headerlink" title="获取Kettle环境中的变量值(getVariable)"></a>获取Kettle环境中的变量值(<code>getVariable</code>)</h3><p>从当前的Kettle环境中获取指定的变量值,目前函数有2个重载：</p>
-<ul>
-<li>getVariable(varName)；根据变量名称获取变量值</li>
-<li>getVariable(varName,defaultValue):根据变量名获取值,如果不存在则使用默认值</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> strVarName=<span class="hljs-string">"getVariableTest"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> strVarValue=<span class="hljs-string">"123456"</span>;</span><br><span class="line">Alert(getVariable(strVarName, <span class="hljs-string">""</span>));</span><br><span class="line">setVariable(strVarName,strVarValue, <span class="hljs-string">"r"</span>);</span><br><span class="line">Alert(getVariable(strVarName, <span class="hljs-string">""</span>));</span><br><span class="line">strVarValue=<span class="hljs-string">"654321"</span>;</span><br><span class="line">setVariable(strVarName,strVarValue, <span class="hljs-string">"r"</span>);</span><br><span class="line">Alert(getVariable(strVarName, <span class="hljs-string">""</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="控制台打印-println"><a href="#控制台打印-println" class="headerlink" title="控制台打印(println)"></a>控制台打印(<code>println</code>)</h3><figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str = <span class="hljs-string">"Hello World!"</span>;</span><br><span class="line">print(str);</span><br><span class="line">      </span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="移除数值-removeDigits"><a href="#移除数值-removeDigits" class="headerlink" title="移除数值(removeDigits)"></a>移除数值(<code>removeDigits</code>)</h3><p>移除给定字符串中的数值，代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> str1 = <span class="hljs-string">"abc123cde"</span>; </span><br><span class="line"></span><br><span class="line">writeToLog(removeDigits(str1));<span class="hljs-comment">//返回abccde</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h3><h3 id="设置环境变量-setEnvironmentVar"><a href="#设置环境变量-setEnvironmentVar" class="headerlink" title="设置环境变量(setEnvironmentVar)"></a>设置环境变量(<code>setEnvironmentVar</code>)</h3><p>通过在Script脚本组件中调用函数重新设置Kettle的环境变量</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> strVarName=<span class="hljs-string">"setEnvTest"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> strVarValue=<span class="hljs-string">"123456"</span>;</span><br><span class="line">Alert(getEnvironmentVar(strVarName));</span><br><span class="line">setEnvironmentVar(strVarName,strVarValue);</span><br><span class="line">Alert(getEnvironmentVar(strVarName));</span><br><span class="line">strVarValue=<span class="hljs-string">"654321"</span>;</span><br><span class="line">setEnvironmentVar(strVarName,strVarValue);</span><br><span class="line">Alert(getEnvironmentVar(strVarName));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="设置变量-setVariable"><a href="#设置变量-setVariable" class="headerlink" title="设置变量(setVariable)"></a>设置变量(<code>setVariable</code>)</h3><p>通过<code>setVariable</code>函数设置环境变量,该用途可以用于重新赋值Kettle环境中已经存在的变量值或者重新生成变量值</p>
-<p>函数定义<code>setVariable(key,value,level)</code></p>
-<ul>
-<li>key:变量名称</li>
-<li>value:变量值</li>
-<li>level:级别,主要包括s(system)、r(root)、p(parent)、g(grandparent)四种类别</li>
-</ul>
-<p>代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> strVarName=<span class="hljs-string">"setEnvTest"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> strVarValue=<span class="hljs-string">"123456"</span>;</span><br><span class="line">Alert(getVariable(strVarName, <span class="hljs-string">""</span>));</span><br><span class="line">setVariable(strVarName,strVarValue, <span class="hljs-string">"r"</span>);</span><br><span class="line">Alert(getVariable(strVarName, <span class="hljs-string">""</span>));</span><br><span class="line">strVarValue=<span class="hljs-string">"654321"</span>;</span><br><span class="line">setVariable(strVarName,strVarValue, <span class="hljs-string">"r"</span>);</span><br><span class="line">Alert(getVariable(strVarName, <span class="hljs-string">""</span>));</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="写入日志-writeToLog"><a href="#写入日志-writeToLog" class="headerlink" title="写入日志(writeToLog)"></a>写入日志(<code>writeToLog</code>)</h3><p>打印并写入日志信息,该函数可能是我们用到的最多的函数,可以帮助我们调试信息,主要有两个重载：</p>
-<ul>
-<li>writeToLog(msg):写入msg日志信息</li>
-<li>writeToLog(level,msg)：根据level基本写入msg信息</li>
-</ul>
-<p>关于日志的级别,这里主要是简写的方式,主要如下：</p>
-<ul>
-<li>d(Debug):调试模式</li>
-<li>l(Detailed):详细</li>
-<li>e(Error):错误</li>
-<li>m(Minimal):最小日志</li>
-<li>r(RowLevel):行级日志</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeToLog(<span class="hljs-string">"Hello World!"</span>);</span><br><span class="line">writeToLog(<span class="hljs-string">"r"</span>, <span class="hljs-string">"Hello World!"</span>);</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="文件处理类函数-File-Functions"><a href="#文件处理类函数-File-Functions" class="headerlink" title="文件处理类函数(File Functions)"></a>文件处理类函数(File Functions)</h2><h3 id="复制文件-copyFile"><a href="#复制文件-copyFile" class="headerlink" title="复制文件(copyFile)"></a>复制文件(<code>copyFile</code>)</h3><p>复制一个文件到目标目录,函数定义如下：</p>
-<p><code>copyFile(sourceFile,targetFile,overwrite)</code></p>
-<ul>
-<li>sourceFile:源文件</li>
-<li>targetFile:目标文件</li>
-<li>overWrite:是否覆盖,如果目标文件存在的话,布尔类型</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> targetFile=<span class="hljs-string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"></span><br><span class="line">copyFile(file1,targetFile,<span class="hljs-literal">false</span>)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="创建文件夹-createFolder"><a href="#创建文件夹-createFolder" class="headerlink" title="创建文件夹(createFolder)"></a>创建文件夹(<code>createFolder</code>)</h3><p>创建一个文件夹,代码示例如下：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> strFolder = <span class="hljs-string">"F:/bak/createFolder"</span>;</span><br><span class="line">createFolder(strFolder);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="删除文件-deleteFile"><a href="#删除文件-deleteFile" class="headerlink" title="删除文件(deleteFile)"></a>删除文件(<code>deleteFile</code>)</h3><p>删除一个文件(不能删除文件夹)</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> targetFile=<span class="hljs-string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"> </span><br><span class="line">deleteFile(targetFile);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="判断文件是否存在-fileExists"><a href="#判断文件是否存在-fileExists" class="headerlink" title="判断文件是否存在(fileExists())"></a>判断文件是否存在(<code>fileExists()</code>)</h3><p>判断文件是否存在</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> targetFile=<span class="hljs-string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"> </span><br><span class="line">fileExists(targetFile);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取文件扩展名-getFileExtension"><a href="#获取文件扩展名-getFileExtension" class="headerlink" title="获取文件扩展名(getFileExtension)"></a>获取文件扩展名(<code>getFileExtension</code>)</h3><p>如果文件不存在,则返回null,代码示例</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">var</span> ext=getFileExtension(file1);</span><br><span class="line">writeToLog(<span class="hljs-string">"扩展名："</span>+ext)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取文件大小-getFileSize"><a href="#获取文件大小-getFileSize" class="headerlink" title="获取文件大小(getFileSize)"></a>获取文件大小(<code>getFileSize</code>)</h3><p>获取文件大小,结果是一个long类型的长整型数值</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">var</span> ext=getFileSize(file1);</span><br><span class="line">writeToLog(<span class="hljs-string">"大小："</span>+ext)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取文件最后修改日期-getLastModifiedTime"><a href="#获取文件最后修改日期-getLastModifiedTime" class="headerlink" title="获取文件最后修改日期(getLastModifiedTime)"></a>获取文件最后修改日期(<code>getLastModifiedTime</code>)</h3><p>获取文件最后修改日期,函数定义：</p>
-<p><code>getLastModifiedTime(filePath,format)</code></p>
-<ul>
-<li>filePath:文件路径</li>
-<li>format：日期格式化</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">var</span> ext=getLastModifiedTime(file1,<span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取文件的父文件夹名称-getParentFoldername"><a href="#获取文件的父文件夹名称-getParentFoldername" class="headerlink" title="获取文件的父文件夹名称(getParentFoldername)"></a>获取文件的父文件夹名称(<code>getParentFoldername</code>)</h3><p>获取文件的父文件夹名称</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> parentFolder=getParentFoldername(file1);</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="获取文件简称-getShortName"><a href="#获取文件简称-getShortName" class="headerlink" title="获取文件简称(getShortName)"></a>获取文件简称(<code>getShortName</code>)</h3><p>获取文件简称</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> shortName=getShortFilename(file1);</span><br><span class="line"></span><br><span class="line">writeToLog(<span class="hljs-string">"简单名称:"</span>+shortName)<span class="hljs-comment">//返回log.txt</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="判断是否是一个文件-isFile"><a href="#判断是否是一个文件-isFile" class="headerlink" title="判断是否是一个文件(isFile)"></a>判断是否是一个文件(<code>isFile</code>)</h3><p>判断是否是一个文件</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> flag=isFile(file1) <span class="hljs-comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="判断是否是一个文件夹-isFolder"><a href="#判断是否是一个文件夹-isFolder" class="headerlink" title="判断是否是一个文件夹(isFolder)"></a>判断是否是一个文件夹(<code>isFolder</code>)</h3><p>判断是否是一个文件夹</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> flag=isFolder(file1) <span class="hljs-comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="加载一个文件的内容-loadFileContent"><a href="#加载一个文件的内容-loadFileContent" class="headerlink" title="加载一个文件的内容(loadFileContent)"></a>加载一个文件的内容(<code>loadFileContent</code>)</h3><p>从指定文件中加载内容,主要有两个重载函数：</p>
-<ul>
-<li>loadFileContent(filePath):默认加载文件</li>
-<li>loadFileContent(filePath,encoding):指定编码加载文件内容</li>
-</ul>
-<p>代码示例：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> content=loadFileContent(file1);</span><br><span class="line"><span class="hljs-keyword">var</span> c1=loadFileContent(file1,<span class="hljs-string">"UTF-8"</span>)</span><br><span class="line">writeToLog(content)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="移动文件-moveFile"><a href="#移动文件-moveFile" class="headerlink" title="移动文件(moveFile)"></a>移动文件(<code>moveFile</code>)</h3><p>移动指定文件，函数定义moveFile(source,target,overWrite)</p>
-<ul>
-<li>source:源文件</li>
-<li>target:目标文件</li>
-<li>overWrite；是否覆盖,如果目标文件存在,布尔类型值</li>
-</ul>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> file1 = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> targetFile=<span class="hljs-string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"></span><br><span class="line">moveFile(file1,targetFile,<span class="hljs-literal">false</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="创建一个空文件-touch"><a href="#创建一个空文件-touch" class="headerlink" title="创建一个空文件(touch)"></a>创建一个空文件(<code>touch</code>)</h3><p>创建一个空文件</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> strFile = <span class="hljs-string">"F:/bak/log.txt"</span>;</span><br><span class="line">touch(strFile);</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是Kettle 8.3版本中的内置函数方法,方法很多,写这篇博客也是很累,算是全部都学习了一遍,脑子里已经记忆了一遍,但是我们也不需要死记硬背,就和我们学些Linux命令一样,如果你知道<code>man</code>命令，对某个命令不是很了解的话直接通过man命令学习即可.</p>
-<p>Kettle也是如此,对于某个函数不是很了解的话,右键点击该函数,会出现<code>sample</code>字样菜单,点击该菜单即可弹出该函数的介绍和使用信息,里面包含了该函数的调用示例和函数详细介绍,也是很人性化的.</p>
-</body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/29/Kettle/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -664,9 +260,10 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><span id="more"></span>
-<figure class="highlight sql hljs"><figcaption><span>SQLite学习.sql</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--创建数据库(数据库名可以是任何名字，文件类型始终为sqlite类型)</span></span><br><span class="line">sqlite3 test.sqlite</span><br><span class="line">sqlite3 other.db</span><br><span class="line">sqlite3 db.sqlite3</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--创建数据表 增删改查 SQLite</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> DEPARTMENT(</span><br><span class="line">   ID <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY      <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,</span><br><span class="line">   DEPT           <span class="hljs-type">CHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,</span><br><span class="line">   EMP_ID         <span class="hljs-type">INT</span>      <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span></span><br><span class="line">);</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span>  Test(</span><br><span class="line">   ID <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,</span><br><span class="line">   NAME           TEXT    <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,</span><br><span class="line">   AGE            <span class="hljs-type">INT</span>     <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,</span><br><span class="line">   ADDRESS        <span class="hljs-type">CHAR</span>(<span class="hljs-number">50</span>),</span><br><span class="line">   SALARY         <span class="hljs-type">REAL</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> sqlite_master <span class="hljs-keyword">WHERE</span> type <span class="hljs-operator">=</span> <span class="hljs-string">'table'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span>  DEPARTMENT;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> sqlite_master <span class="hljs-keyword">WHERE</span> type <span class="hljs-operator">=</span> <span class="hljs-string">'table'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--增</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> `Test` (ID, NAME, AGE, ADDRESS, SALARY) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>,<span class="hljs-string">'测试人员'</span>,<span class="hljs-number">35</span>,<span class="hljs-string">'东北那旮瘩'</span>,<span class="hljs-number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> `Test` (ID, NAME, AGE, ADDRESS, SALARY)</span><br><span class="line"><span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>,<span class="hljs-string">'测试人员'</span>,<span class="hljs-number">35</span>,<span class="hljs-string">'东北那旮瘩'</span>,<span class="hljs-number">10000</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> Test ;</span><br><span class="line"><span class="hljs-comment">--删</span></span><br><span class="line"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">from</span> `Test` <span class="hljs-keyword">where</span> ID<span class="hljs-operator">=</span><span class="hljs-string">'1'</span>;</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> Test ;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--改</span></span><br><span class="line">update `Test` <span class="hljs-keyword">set</span> Name <span class="hljs-operator">=</span><span class="hljs-string">'测试人员2'</span> <span class="hljs-keyword">where</span> ID<span class="hljs-operator">=</span><span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> `Test`;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> Test;</span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> sqlite_master <span class="hljs-keyword">WHERE</span> type <span class="hljs-operator">=</span> <span class="hljs-string">'table'</span>;</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-</body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/28/sqlite/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -699,30 +296,10 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><span id="more"></span>
-
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>一开始是因为服务器经常会出现断电、系统崩溃的情况，导致一些正常运行的winform程序在系统故障重启后，每次都需要手动登录触发事件让程序自启。然后想利用windows服务在开启时就会自启来实现开机启动Winform程序。<br>但是因为从Vista 开始引入了 Session 0 隔离机制，导致windows服务无法直接进行界面交互操作。</p>
-<p><strong>注意：</strong><br>使用CreateProcessAsUser与界面交互需要Session Id &gt;0 ，<strong>用户会话的必须存在</strong>，如果存在服务器重启、注销后，重新开机导致系统只有Session 0存在，此时服务调用后的程序是不会显示界面的。<br>所以到头来还是没能实现我的想法。。。淦</p>
-<h3 id="Session-0-隔离原理"><a href="#Session-0-隔离原理" class="headerlink" title="Session 0 隔离原理"></a>Session 0 隔离原理</h3><p>参考：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/07/session0-isolation-part1.html">穿透Session 0 隔离（一）</a><br>摘录<br><a target="_blank" rel="noopener" href="https://www.daimajiaoliu.com/daima/476136b999003e8">用户界面特权隔离</a></p>
-<blockquote>
-<p>在早期的Windows操作系统中，在同一用户下运行的所有进程有着相同的安全等级，拥有相同的权限。例如，一个进程可以自由地发送一个Windows消息到另外一个进程的窗口。从Windows Vista开始，当然也包括Windows 7、Windows 10，对于某些Windows消息，这一方式再也行不通了。进程(或者其他的对象)开始拥有一个新的属性——特权等级(Privilege Level)。一个特权等级较低的进程不再可以向一个特权等级较高的进程发送消息，虽然他们在相同的用户权限下运行。这就是所谓的用户界面特权隔离(User Interface Privilege Isolation ，UIPI)。</p>
-<p>UIPI的引入，最大的目的是防止恶意代码发送消息给那些拥有较高权限的窗口以对其进行攻击，从而获取较高的权限等等，在计算机系统中，这却是一种维护系统安全的合适方式。</p>
-</blockquote>
-</blockquote>
-<h3 id="windows服务启动UI程序、"><a href="#windows服务启动UI程序、" class="headerlink" title="windows服务启动UI程序、"></a>windows服务启动UI程序、</h3><p>对于简单的交互，服务可以通过WTSSendMessage 函数，在用户Session 上显示消息窗口。对于一些复杂的UI 交互，必须调用CreateProcessAsUser 或其他方法（WCF、.NET远程处理等）进行跨Session 通信，在桌面用户上创建一个应用程序界面。</p>
-<p>解决思路是：window service创建一个和与当前登陆用户可以交互的进程，这个进程运行在admin权限下，能够调起应用程序的UI</p>
-<p>具体的做法是：widow service复制winlogon.exe进程句柄，然后通过调用api函数CreateProcessAsUser（）以winlogon.exe权限创建新进程，新创建的进程有winlogon.exe的权限（winlogon.exe运行在system权限下），负责调用程序。</p>
-<blockquote>
-<p>作者原文：</p>
-<p>First, we are going to create a Windows Service that runs under the System account. This service will be responsible for spawning an interactive process within the currently active User’s Session. This newly created process will display a UI and run with full admin rights. When the first User logs on to the computer, this service will be started and will be running in Session0; however the process that this service spawns will be running on the desktop of the currently logged on User. We will refer to this service as the LoaderService.</p>
-<p>Next, the winlogon.exe process is responsible for managing User login and logout procedures. We know that every User who logs on to the computer will have a unique Session ID and a corresponding winlogon.exe process associated with their Session. Now, we mentioned above, the LoaderService runs under the System account. We also confirmed that each winlogon.exe process on the computer runs under the System account. Because the System account is the owner of both the LoaderService and the winlogon.exe processes, our LoaderService can copy the access token (and Session ID) of the winlogon.exe process and then call the Win32 API function CreateProcessAsUser to launch a process into the currently active Session of the logged on User. Since the Session ID located within the access token of the copied winlogon.exe process is greater than 0, we can launch an interactive process using that token.</p>
-</blockquote>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/win32/services/interactive-services?redirectedfrom=MSDN">交互式服务</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wyy1234/p/10191958.html">C#开发Windows服务详细流程</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CityOfThousandFires/p/10375242.html">C#穿透session隔离———Windows服务启动UI交互程序</a><br><a target="_blank" rel="noopener" href="https://www.codeproject.com/Articles/35773/Subverting-Vista-UAC-in-Both-32-and-64-bit-Archite">Subverting Vista UAC in Both 32 and 64 bit Architectures</a></p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>windows服务启动winform程序不显示UI问题解决<br>原因：<br>xp系统的用户和window service运行在一个session下，在xp以后，windows系统改变了用户会话管理的策略，window service独立运行在session0下，依次给后续的登录用户分配sessionX(X =1,2,3…)，session0没有权限运行UI。所以在window xp以后的系统下，window service调用有UI的application时只能看到程序进程但不能运行程序的UI。</p>
-<p>参考：<br><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/buli93/p/7086440.html">C# windows服务启动winform程序不显示UI问题解决</a></strong><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/267838/how-can-a-windows-service-execute-a-gui-application">How can a Windows service execute a GUI application?</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/08/session0-isolation-part2.html">穿透Session 0 隔离（二）</a></p>
-</body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -755,7 +332,8 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>个人操作习惯使用Ctrl+Shift切换键盘布局，但是win10的更新会经常性导致输入法的问题出现。下面是一些平时收集到的方法。</p></body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default">
+个人操作习惯使用Ctrl+Shift切换键盘布局，但是win10的更新会经常性导致输入法的问题出现。下面是一些平时收集到的方法。</body></html>
         <p class="article-more-link">
             <a href="/2021/07/20/Win1020H2%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E4%B8%8B%E6%B7%BB%E5%8A%A0%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/#more">阅读更多</a>
         </p>
@@ -791,38 +369,10 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><span id="more"></span>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本方法不适用于winform、WPF等UI程序。涉及到windows系统的用户会话管理的策略。<br><strong>Windows系统中存在一个特殊的 Session，其 Session ID 为 0。这通常称为 Session0。所有 Windows 服务都在 Session0 中运行，并且 Session0 是非交互式的。非交互式意味着无法启动 UI 应用程序；</strong></p>
-<h2 id="1-通过组策略设置脚本随服务器启动"><a href="#1-通过组策略设置脚本随服务器启动" class="headerlink" title="1. 通过组策略设置脚本随服务器启动"></a>1. 通过组策略设置脚本随服务器启动</h2><p>打开组策略编辑器</p>
-<ol>
-<li>找到 <code>计算机配置-&gt;Windows设置-&gt;脚本（启动/关机）</code></li>
-<li>选中<code>启动</code></li>
-<li>将下列脚本添加进去，配置好启动程序路径的参数：</li>
-</ol>
-<figure class="highlight plaintext hljs"><figcaption><span>start.bat</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">REM 声明采用UTF-8编码</span><br><span class="line">chcp 65001</span><br><span class="line">@REM pause</span><br><span class="line">set input=%1%</span><br><span class="line">echo 自启动程序路径参数:%input%</span><br><span class="line">start %input%</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="2-使用任务计划程序"><a href="#2-使用任务计划程序" class="headerlink" title="2. 使用任务计划程序"></a>2. 使用任务计划程序</h2><p>需要注意的时，在选择用户执行时，如果创建任务的用户为<code>Administrator</code>，需要注意执行时的用户账户，如果是需要在服务器启动时运行，就不应该为<code>Administrator</code>，而是应该为<code>SYSTEM</code>。</p>
-<p>参考资料：</p>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.51cto.com/rickyfang/1127574">Windows Server 2012的服务管理自动化</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/1906859953Lucas/p/10967573.html">windows2008服务器设置系统启动时程序自动运行</a></li>
-</ul>
-</blockquote>
-<p>碰见的问题：</p>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://serverfault.com/questions/382079/windows-scheduled-task-error-2147943711-for-on-startup-task">Windows Scheduled Task - Error 2147943711 for “on startup” task</a></li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/65942789/task-scheduler-cant-show-gui-of-the-application-after-login-run-whether-user-i">Task scheduler can’t show GUI of the application after login (Run whether user is logged on or not mode) - How bypass it with C#</a></li>
-</ul>
-</blockquote>
-<p>界面显示问题：</p>
-<p>According to <a target="_blank" rel="noopener" href="https://technet.microsoft.com/en-us/library/cc722152.aspx">Microsoft</a> (emphasis added):</p>
-<blockquote>
-<p>You can specify that a task should run even if the account under which the task is scheduled to run is not logged on when the task is triggered. To do this, select the radio button labeled Run whether user is logged on or not . If this radio button is selected, tasks will not run interactively. To make a task run interactively, select the Run only when user is logged on radio button.</p>
-</blockquote>
-<p>Essentially, if you select ‘Run whether user is logged on or not’, the process will not start a UI.</p>
-</body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/20/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%EF%BC%88%E4%B8%8D%E9%9C%80%E8%A6%81%E7%99%BB%E5%BD%95%EF%BC%89/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -855,7 +405,8 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>使用互斥锁，实现只有一个程序</p></body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default">
+使用互斥锁，实现只有一个程序</body></html>
         <p class="article-more-link">
             <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/#more">阅读更多</a>
         </p>
@@ -891,71 +442,10 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><span id="more"></span>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本来是想在服务器上实现服务器崩溃或者更新后，可以自动启动winform程序，但是以下方法还是需要有用户登录进去。</p>
-<h2 id="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"><a href="#方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）" class="headerlink" title="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"></a>方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）</h2><ol>
-<li>进入目录：<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code></li>
-<li>将应用程序快捷方式剪切(或者复制)并粘贴到目录中</li>
-<li>应用程序快捷方式加入到了启动项，下次重启电脑之后这个应用程序就会自动开机运行了</li>
-</ol>
-<p>如果需要针对个人账户进行配置：<code>Win+R</code>输入命令<code>shell:startup</code> ,会直接弹出启动项对应的目录，然后像前面方法一样把应用程序快捷方式复制到启动目录</p>
-<h2 id="方法二：修改计算机注册表的方式（需要管理员权限）"><a href="#方法二：修改计算机注册表的方式（需要管理员权限）" class="headerlink" title="方法二：修改计算机注册表的方式（需要管理员权限）"></a>方法二：修改计算机注册表的方式（需要管理员权限）</h2><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="Windows自启动原理"><a href="#Windows自启动原理" class="headerlink" title="Windows自启动原理"></a>Windows自启动原理</h4><p>在Windows操作系统下，主要有2个文件夹和8个注册表键项控制程序的自启动，通过修改“Run”键值实现自启动程序是比较常见的方法。<br>具体的位置是：<code>HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Run</code>  </p>
-<ul>
-<li>参考资料：<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fukajg/archive/2012/08/10/2631250.html">Windows程序自启动原理</a></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>在知道注册表中自启动位置所在后，只需要将需要启动的程序路径添加至指定路径中就可以实现开机自启动功能。</p>
-<figure class="highlight csharp hljs"><figcaption><span>Program.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> 应用程序的主入口点。</span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="hljs-meta">STAThread</span>]</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)</span></span><br><span class="line">{</span><br><span class="line">    Application.EnableVisualStyles();</span><br><span class="line">    Application.SetCompatibleTextRenderingDefault(<span class="hljs-literal">false</span>);</span><br><span class="line">    <span class="hljs-built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="hljs-keyword">typeof</span>(GuidAttribute), <span class="hljs-literal">false</span>).GetValue(<span class="hljs-number">0</span>)).Value;</span><br><span class="line">    <span class="hljs-keyword">using</span> (Mutex mutex = <span class="hljs-keyword">new</span> Mutex(<span class="hljs-literal">false</span>, <span class="hljs-string">"Global\\"</span> + appGuid))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">if</span> (!mutex.WaitOne(<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-comment">//判断是否开启自启动</span></span><br><span class="line">        <span class="hljs-built_in">string</span> strFilePath = Application.ExecutablePath;</span><br><span class="line">        <span class="hljs-built_in">string</span> strFileName = System.IO.Path.GetFileName(strFilePath);</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-comment">//自启动功能是否开启</span></span><br><span class="line">            <span class="hljs-keyword">var</span> AutoRunFlag = ConfigurationManager.AppSettings[<span class="hljs-string">"AutoRunFlag"</span>] == <span class="hljs-string">"1"</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-comment">//自启动是否已经存在</span></span><br><span class="line">            <span class="hljs-keyword">var</span> flag = SystemHelper.IsAutoRun(strFilePath, strFileName);</span><br><span class="line">            <span class="hljs-keyword">if</span> (AutoRunFlag != flag)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-meta">#<span class="hljs-meta-keyword">region</span> 获取管理员权限，进行注册表写入操作</span></span><br><span class="line">                <span class="hljs-comment">//当前用户是管理员的时候，直接启动应用程序并且写入注册表</span></span><br><span class="line">                <span class="hljs-comment">//如果不是管理员，则使用启动对象启动程序，以确保使用管理员身份运行</span></span><br><span class="line">                <span class="hljs-comment">//获得当前登录的Windows用户标示</span></span><br><span class="line">                WindowsIdentity identity = WindowsIdentity.GetCurrent();</span><br><span class="line">                WindowsPrincipal principal = <span class="hljs-keyword">new</span> WindowsPrincipal(identity);</span><br><span class="line">                <span class="hljs-comment">//判断当前登录用户是否为管理员</span></span><br><span class="line">                <span class="hljs-keyword">if</span> (principal.IsInRole(WindowsBuiltInRole.Administrator))</span><br><span class="line">                {</span><br><span class="line">                    <span class="hljs-keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        <span class="hljs-comment">//如果是管理员，注册自启动代码</span></span><br><span class="line">                        SystemHelper.SetAutoRun(strFilePath, strFileName, AutoRunFlag);</span><br><span class="line">                    }</span><br><span class="line">                    catch(Exception ex)</span><br><span class="line">                    {</span><br><span class="line">                        MessageBox.Show( ex.Message, <span class="hljs-string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    <span class="hljs-comment">//创建启动对象</span></span><br><span class="line">                    System.Diagnostics.ProcessStartInfo startInfo = <span class="hljs-keyword">new</span> System.Diagnostics.ProcessStartInfo();</span><br><span class="line">                    startInfo.UseShellExecute = <span class="hljs-literal">true</span>;</span><br><span class="line">                    startInfo.WorkingDirectory = Environment.CurrentDirectory;</span><br><span class="line">                    startInfo.FileName = Application.ExecutablePath;</span><br><span class="line">                    <span class="hljs-comment">//设置启动动作,确保以管理员身份运行</span></span><br><span class="line">                    startInfo.Verb = <span class="hljs-string">"runas"</span>;</span><br><span class="line">                    <span class="hljs-keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        System.Diagnostics.Process.Start(startInfo);</span><br><span class="line">                    }</span><br><span class="line">                    catch</span><br><span class="line">                    {</span><br><span class="line">                        <span class="hljs-keyword">return</span>;</span><br><span class="line">                    }</span><br><span class="line">                    <span class="hljs-comment">//退出</span></span><br><span class="line">                    Application.Exit();</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-meta">#<span class="hljs-meta-keyword">endregion</span></span></span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-comment">//启动程序</span></span><br><span class="line">            Application.Run(<span class="hljs-keyword">new</span> Form1());</span><br><span class="line">        }</span><br><span class="line">        catch(Exception ex)</span><br><span class="line">        {</span><br><span class="line">            MessageBox.Show(ex.Message, <span class="hljs-string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">            <span class="hljs-comment">//return;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>SystemHelper.cs</code> 参考自：<a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/n2d913xQdD/">C# winform程序实现开机自启动，并且识别是开机启动还是双击启动</a></p>
-<figure class="highlight csharp hljs"><figcaption><span>SystemHelper.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title">SystemHelper</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SystemHelper</span>(<span class="hljs-params"></span>)</span> { }</span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> 设置程序开机启动</span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppPath"&gt;</span>应用程序exe所在文件夹<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppName"&gt;</span>应用程序exe名称<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="bIsAutoRun"&gt;</span>自动运行状态<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetAutoRun</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> strAppPath, <span class="hljs-built_in">string</span> strAppName, <span class="hljs-built_in">bool</span> bIsAutoRun</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">string</span>.IsNullOrWhiteSpace(strAppPath)</span><br><span class="line">                || <span class="hljs-built_in">string</span>.IsNullOrWhiteSpace(strAppName))</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">"应用程序路径或名称为空！"</span>);</span><br><span class="line">            }</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey run = reg.CreateSubKey(<span class="hljs-string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="hljs-keyword">if</span> (bIsAutoRun)</span><br><span class="line">            {</span><br><span class="line">                run.SetValue(strAppName, strAppPath);</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != run.GetValue(strAppName))</span><br><span class="line">                {</span><br><span class="line">                    run.DeleteValue(strAppName);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            run.Close();</span><br><span class="line">            reg.Close();</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> 判断是否开机启动</span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppPath"&gt;</span>应用程序路径<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name="strAppName"&gt;</span>应用程序名称<span class="hljs-doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;returns&gt;</span><span class="hljs-doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">bool</span> <span class="hljs-title">IsAutoRun</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> strAppPath, <span class="hljs-built_in">string</span> strAppName</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey software = reg.OpenSubKey(<span class="hljs-string">@"SOFTWARE"</span>);</span><br><span class="line">            RegistryKey run = reg.OpenSubKey(<span class="hljs-string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="hljs-built_in">object</span> key = run.GetValue(strAppName);</span><br><span class="line">            software.Close();</span><br><span class="line">            run.Close();</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> == key || !strAppPath.Equals(key.ToString()))</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">        catch (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>运行环境</p>
-<blockquote>
-<p>Win10<br>.NET Framework4.5<br>VS2019</p>
-</blockquote>
-<h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ol>
-<li><p>注册表地址<br> 使用代码修改注册表的方式，如果需要查看注册信息，需要确认程序是32-bit还是64-bit。<br> 32位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers ion\Run</code><br> 64位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
-<table>
-<thead>
-<tr>
-<th align="left">操作系统</th>
-<th align="center">64位程序访问的注册表</th>
-<th align="center">32位程序访问的注册表</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">64位系统</td>
-<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE</td>
-<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node</td>
-</tr>
-<tr>
-<td align="left">32位系统</td>
-<td align="center">-</td>
-<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE</td>
-</tr>
-</tbody></table>
-<p> 参考资料：</p>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/read-32bit-registry-from-x64-process.html">.NET/C# 在 64 位进程中读取 32 位进程重定向后的注册表</a></li>
-<li><a target="_blank" rel="noopener" href="https://guoliliang.github.io/2017/10/%E5%85%B3%E4%BA%8E-WOW6432Node/">关于WOW6432Node</a></li>
-</ul>
-</blockquote>
-</li>
-<li><p>以管理员权限打开程序：<br>参考资料：</p>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/start-process-in-a-specific-trust-level">Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员）</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/windows-user-account-control.html">Windows 中的 UAC 用户账户控制</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Interkey/p/RunAsAdmin.html">C#程序以管理员权限运行</a></li>
-</ul>
-</blockquote>
-</li>
-</ol>
-</body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/#more">阅读更多</a>
+        </p>
     
     </div>
     
@@ -989,104 +479,6 @@
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
         <html><head></head><body><h3 id="自己下定决心到达成某个目标时，不要和别人说，等自己完成后再说"><a href="#自己下定决心到达成某个目标时，不要和别人说，等自己完成后再说" class="headerlink" title="自己下定决心到达成某个目标时，不要和别人说，等自己完成后再说"></a>自己下定决心到达成某个目标时，不要和别人说，等自己完成后再说</h3></body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/05/11/2020%E4%BA%BA%E5%8F%A3%E6%99%AE%E6%9F%A5%E9%9A%8F%E7%AC%94/" itemprop="url">2020人口普查随笔</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-05-11T05:29:26.000Z" itemprop="datePublished">5月 11 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 读完 (约 259 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>男女比例的不平衡，以及人口出生率的降低，感觉一定程度上可以使用进化论的来解释。<br>从古至今，人类都存在淘汰，野人时期，身体素质不够高，打不到足够的猎物就是饿死，<br>到了封建时期，第一看投胎，第二就看自己够不够努力（只看生存能力,坑蒙拐骗也算本领）。<br>而到了现在也是如此，第一看投胎，第二看自身。自古如此，人类的基因也在随着时间的变化而被筛选，更能适应社会的，能够获取到异性的注意力的人，他们的基因将会更好的流传下去，而一些从经济、思想、为人上无法获取到异性的青睐时，他们的基因从某种意义上来讲，也算是被自然所淘汰。</p>
-<p>没钱的人只能单身</p>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/05/07/CMD-Start-Command/" itemprop="url">CMD start command</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-05-07T06:58:52.000Z" itemprop="datePublished">5月 7 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            3 分钟 读完 (约 429 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>by <a target="_blank" rel="noopener" href="https://www.windows-commandline.com/cmd-start-command/">SRINI</a></p>
-<p>Start command可用于在另一个命令窗口中运行command/batch（批处理文件）或从命令行启动应用程序。您可以在下面找到该命令的语法和一些示例。</p>
-<p>启动另一个命令窗口：</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">start</span> <span class="hljs-built_in">cmd</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>该命令将打开一个新的命令提示符窗口。 在单独的窗口中运行命令</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Start</span> command</span><br></pre></td></tr></tbody></table></figure>
-
-<p>该命令将打开一个新的命令窗口，并运行指定的命令。如果命令是GUI应用程序，则将在没有任何新命令窗口的情况下启动该应用程序。</p>
-<p>例子：<br>启动新的命令窗口并运行dir命令：</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Start</span> <span class="hljs-built_in">dir</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>在另一个窗口中运行命令，并在命令执行后终止：</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">start</span> <span class="hljs-built_in">cmd</span> /c command</span><br><span class="line">````</span><br><span class="line"></span><br><span class="line">例如，要在另一个命令窗口中运行批处理文件并在批处理文件执行完成后关闭该窗口，命令将为：</span><br><span class="line"></span><br><span class="line">``` <span class="hljs-built_in">CMD</span></span><br><span class="line"><span class="hljs-built_in">Start</span> <span class="hljs-built_in">cmd</span> /c  C:\mybatchfile.bat</span><br></pre></td></tr></tbody></table></figure>
-
-<p>在同一窗口中运行命令：</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Start</span> /b command</span><br></pre></td></tr></tbody></table></figure>
-
-<p>像在Linux中使用”&amp;”一样，在后台运行命令：</p>
-<p>在Windows中，我们可以使用start命令执行类似的操作。但是在这里它不是在后台运行的。一个新的命令窗口将执行指定的命令，而当前窗口将返回以提示执行下一个命令。</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Start</span> command</span><br><span class="line">(or)</span><br><span class="line"><span class="hljs-built_in">Start</span> batchfile.bat</span><br></pre></td></tr></tbody></table></figure>
-
-<p>启动GUI应用程序：</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Start</span>  application</span><br></pre></td></tr></tbody></table></figure>
-
-<p>例如，要启动Chrome，我们可以使用以下命令:</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">Start</span> Chrome</span><br></pre></td></tr></tbody></table></figure>
-
-<p>在当前目录中打开Windows资源管理器：:</p>
-<figure class="highlight cmd hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">start</span> .</span><br></pre></td></tr></tbody></table></figure>
-</body></html>
     
     </div>
     

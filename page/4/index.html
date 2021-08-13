@@ -134,6 +134,101 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
+            <a href="/2019/05/09/jQuery%E7%9A%84Ajax%E7%9A%84dataType%E8%AE%BE%E7%BD%AE%E9%97%AE%E9%A2%98/" itemprop="url">jQuery的Ajax的dataType设置问题</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2019-05-09T03:15:40.000Z" itemprop="datePublished">5月 9 2019</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Technology/">Technology</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 读完 (约 140 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><span id="more"></span>
+
+
+
+<p>在Asp.Net MVC的前台页面使用Ajax获取数据，当Ajax方法中设置了<code>dataType: "json"</code>后，Ajax无法使用data.ret的方式处理数据。<br>Controller.Json Method (Object)<br>Json(Object) 方法返回的是继承自System.Object的类型值System.Web.Mvc.JsonResult<br>在前台获取到的是object，而不是json字符串</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/zhangcybb/p/6604380.html">http://www.cnblogs.com/zhangcybb/p/6604380.html</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29#see-also">https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29#see-also</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29">https://docs.microsoft.com/en-us/previous-versions/aspnet/dd504936%28v%3dvs.100%29</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/previous-versions/aspnet/dd470569%28v%3dvs.100%29">https://docs.microsoft.com/zh-cn/previous-versions/aspnet/dd470569%28v%3dvs.100%29</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fire-dragon/p/5889400.html">https://www.cnblogs.com/fire-dragon/p/5889400.html</a></p>
+</blockquote>
+</body></html>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2019/05/07/Asp-net-MVC%E5%9C%A8Razor%E4%B8%AD%E8%BE%93%E5%87%BAHtml%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/" itemprop="url">Asp.net MVC在Razor中输出Html的两种方式</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2019-05-07T02:18:36.000Z" itemprop="datePublished">5月 7 2019</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Technology/">Technology</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 读完 (约 169 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><span id="more"></span>
+
+<p>Razor中所有的Html都会自动编码，这样就不需要我们手动去编码了（安全），但在需要输出Html时就是已经转义过的Html文本了，如下所示：</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@{</span><br><span class="line">    string thisTest = "&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;";</span><br><span class="line">}</span><br><span class="line">@thisTest;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这样在页面输出的文本就是：<code>&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;</code>而不是红色的字体了，要输出红色的字体，有下面常用的两种方式：</p>
+<p>1、使用Razor中的Html.Raw（推荐使用这种方式）：</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@{</span><br><span class="line">    string thisTest = "&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;";</span><br><span class="line">}</span><br><span class="line">@Html.Raw(thisTest);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>2、使用MvcHtmlString类来实现：</p>
+<figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@{</span><br><span class="line">    string thisTest = "&lt;span style='color:red;'&gt;测试文字&lt;/span&gt;";</span><br><span class="line">    var thisResult = new MvcHtmlString(thisTest);</span><br><span class="line">}</span><br><span class="line">@thisResult 或 @(new HtmlString(thisTest))</span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
             <a href="/2019/04/26/%E5%BD%BB%E5%BA%95%E6%B8%85%E9%99%A4Github%E4%B8%8A%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%88%E5%AF%B9%E4%BA%8E%E8%AF%AF%E4%BC%A0%E5%AF%86%E7%A0%81%E7%AD%89%E9%9A%90%E7%A7%81%E4%BF%A1%E6%81%AF%E7%AD%89%E6%83%85%E5%86%B5%EF%BC%89/" itemprop="url">彻底清除Github上某个文件的历史（对于误传密码等隐私信息等情况）</a>
         
     </h1>
@@ -447,90 +542,6 @@
         <html><head></head><body><span id="more"></span>
 <h2 id="记录如何然hexo文章支持emoji"><a href="#记录如何然hexo文章支持emoji" class="headerlink" title="记录如何然hexo文章支持emoji"></a>记录如何然hexo文章支持emoji</h2><p>Hexo 默认的 markdown 渲染引擎不支持将 Github emoji 渲染到静态的 html 页面中，我们换一个支持 emoji 的引擎，再增加一个 emoji 插件即可.</p>
 </body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/03/25/%E5%9C%A8hexo%E4%B8%8A%E6%B7%BB%E5%8A%A0Live-2D/" itemprop="url">在hexo上添加Live 2D看板娘</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-03-25T05:41:23.000Z" itemprop="datePublished">3月 25 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Technology/">Technology</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 读完 (约 594 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img src="/images/kanna.jpg">
-博客美化—给Hexo博客添加萌萌的康娜（Kanna）</body></html>
-        <p class="article-more-link">
-            <a href="/2019/03/25/%E5%9C%A8hexo%E4%B8%8A%E6%B7%BB%E5%8A%A0Live-2D/#more">阅读更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/03/20/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BABlog/" itemprop="url">记录第一次搭建Blog</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-03-20T01:15:05.000Z" itemprop="datePublished">3月 20 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/lifeStyle/">lifeStyle</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 分钟 读完 (约 709 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="沙滩" src="/images/beach.jpeg" alt="沙滩">
-花了两天把我想了两年的事情给解决了</body></html>
-        <p class="article-more-link">
-            <a href="/2019/03/20/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BABlog/#more">阅读更多</a>
-        </p>
     
     </div>
     
