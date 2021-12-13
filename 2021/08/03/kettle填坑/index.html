@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://yoursite.com/2021/08/03/kettle%E5%A1%AB%E5%9D%91/job.jpg">
 <meta property="og:image" content="http://yoursite.com/2021/08/03/kettle%E5%A1%AB%E5%9D%91/trans.jpg">
 <meta property="article:published_time" content="2021-08-03T09:32:04.000Z">
-<meta property="article:modified_time" content="2021-12-13T05:23:10.219Z">
+<meta property="article:modified_time" content="2021-12-13T05:38:57.836Z">
 <meta property="article:author" content="zhang">
 <meta property="article:tag" content="kettle">
 <meta name="twitter:card" content="summary">
@@ -151,7 +151,7 @@
         <span class="column is-narrow">
             
             
-            6 分钟 读完 (约 948 字)
+            10 分钟 读完 (约 1441 字)
         </span>
         
     </div>
@@ -169,7 +169,32 @@
 </ul>
 </li>
 </ul>
-<h2 id="kettle配置统一参数"><a href="#kettle配置统一参数" class="headerlink" title="kettle配置统一参数"></a>kettle配置统一参数</h2><p>参考：<br>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/lsy-blogs/p/8268318.html">Kettle日常使用汇总整理</a><br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/xiezhongkai08/article/details/71244528">Kettle使用统一的数据库配置</a><br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/ZZQHELLO2018/article/details/99693263">kettle学习笔记10—配置文件的使用</a><br>  <a target="_blank" rel="noopener" href="https://www.pianshen.com/article/63971845790/">Kettle环境配置-kettle.properties</a><br>部份配置:<br><img src="config.jpg" alt="部份配置"></p>
+<h2 id="kettle配置统一参数"><a href="#kettle配置统一参数" class="headerlink" title="kettle配置统一参数"></a>kettle配置统一参数</h2><p>一、kettle的常用配置文件说明：</p>
+<ul>
+<li><p><code>${user.home}</code> 表示WINDOWS的当前用户的文档文件夹，在C:\Users文件夹下</p>
+</li>
+<li><p><code>${user.home}/ .kettle /repositories.xml</code>: 该文件保存了用户设置的所有资源库信息,包括资源库名称,资源库需要的数据库连接参数等。该文件中定义的资源库将显示在spoon启动后出现的选择资源库下拉列表中,注意该文件的编码是UTF-8，资源库的名称尽量使用英文。</p>
+</li>
+<li><p><code>${user.home}/ kettle/kettle.properties</code>: 该文件保存了转换或作业中需要的变量, spoon启动后会自动加载该文件里定义的变量。</p>
+</li>
+<li><p><code>${user.home}/.kettle/shared.xml</code>: 该文件里保存了共享对象,共享对象可以是Database connections, Steps,Slave servers ,Partition schemas ,Cluster schemas。对象共享实质上就是将对象序列化的过程, spoon启动时,会加载shared.xml文件中定义的所有对象。</p>
+</li>
+<li><p><code>lib\kettle-engine.jar\kettle-jobs.xml</code>: 该文件中定义了Spoon启动时需要加载的作业项。</p>
+</li>
+</ul>
+<p><code>lib\kettle-engine.jarkettle-partition-plugins.xml</code>: 该文件中定义了Spoon启动时需要加载的分区插件。</p>
+<ul>
+<li><code>lib\kettle-engine.jar\kettle- plugins.xml</code>: 该文件中定义了Spoon启动时步骤和作业项插件的加载路径。</li>
+<li><code>lib\kettle-engine.jar\kettle-steps.xml</code>: 该文件中定义了Spoon启动时需要加载的转换步骤。</li>
+</ul>
+<p>二、修改repositories.xml的位置</p>
+<p>找到kettle所在文件夹下的Spoon.bat 文件,在里面查找出Kettle home所在的代码段,在 <code>cd %KETTLE_DIR%</code>代码上一行加上代码：<code>set KETTLE_HOME=D:/AAA/BBB/CCC</code></p>
+<ul>
+<li>如上，表示把文件重新等位到D:/AAA/BBB/CCC这个文件夹下。(注意:文件夹的斜杠和WINDOWS的目录斜杠是反的）</li>
+<li>复制 <code>${user.home}</code> 文件夹下的 .kettle 文件夹到D:/AAA/BBB/CCC目录下。</li>
+<li>启动kettle程序。</li>
+</ul>
+<p>参考：<br>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/lsy-blogs/p/8268318.html">Kettle日常使用汇总整理</a><br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/xiezhongkai08/article/details/71244528">Kettle使用统一的数据库配置</a><br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/ZZQHELLO2018/article/details/99693263">kettle学习笔记10—配置文件的使用</a><br>  <a target="_blank" rel="noopener" href="https://www.pianshen.com/article/63971845790/">Kettle环境配置-kettle.properties</a><br>部份配置:<br><img src="config.jpg" alt="部份配置"></p>
 <h2 id="kettle配置作业、转换"><a href="#kettle配置作业、转换" class="headerlink" title="kettle配置作业、转换"></a>kettle配置作业、转换</h2><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013468915/article/details/82629260">Kettle—使用手册</a></p>
 <p>在配置完成后,执行作业的方式有两种：</p>
 <ul>
