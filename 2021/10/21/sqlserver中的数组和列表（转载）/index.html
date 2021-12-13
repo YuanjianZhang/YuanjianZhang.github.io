@@ -23,8 +23,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/default.jpeg">
 <meta property="article:published_time" content="2021-10-21T01:39:08.000Z">
-<meta property="article:modified_time" content="2021-12-13T05:15:10.572Z">
+<meta property="article:modified_time" content="2021-12-13T05:22:19.091Z">
 <meta property="article:author" content="zhang">
+<meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/default.jpeg">
 
@@ -229,6 +230,12 @@
 <p>These examples illustrate why there are two columns. If you are going to use the list against a varchar column, you need to use the str column. This is important because of the type-conversion rules in SQL Server. If you mistakenly compare varcharcol to nstr, varcharcol will be converted to nvarchar, and this can render any index on varcharcol ineligible for the query, leading to a performance disaster as the table must be scanned. And conversely, if you have an nvarchar column, you need to compare it to the nvarchar value, since else the result can be incorrect because of the character replacement with the conversion to varchar.</p>
 <p>I like to point out that these functions are by no means cast in stone, but see them as suggestions. Feel free to modify them according to your preferences and needs.</p>
 </body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/sql/">#sql</a></span>
     
     </div>
     

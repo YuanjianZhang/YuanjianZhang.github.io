@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>C#穿透session隔离———Windows服务启动UI交互程序 - 不知选啥就选C</title>
+<title>标签: Docker - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -16,18 +16,15 @@
 
 
 
-    <meta property="og:type" content="article">
-<meta property="og:title" content="C#穿透session隔离———Windows服务启动UI交互程序">
-<meta property="og:url" content="http://yoursite.com/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/index.html">
+    <meta name="description" content="一个记录生活的Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="不知选啥就选C">
+<meta property="og:url" content="http://yoursite.com/tags/Docker/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
+<meta property="og:description" content="一个记录生活的Blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/default.jpeg">
-<meta property="article:published_time" content="2021-07-21T03:28:37.000Z">
-<meta property="article:modified_time" content="2021-12-13T05:23:44.299Z">
 <meta property="article:author" content="zhang">
-<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/default.jpeg">
 
 
 
@@ -131,76 +128,44 @@
     </div>
 </nav>
 
-    <section class="section">
+    <section class="section section-heading">
     <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
+        <div class="content">
+            <h5>#Docker</h5>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            C#穿透session隔离———Windows服务启动UI交互程序
+            <a href="/2021/08/14/Dockerfile%E7%AC%94%E8%AE%B0/" itemprop="url">Dockerfile笔记</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2021-07-21T03:28:37.000Z" itemprop="datePublished">7月 21 2021</time>
+            <time datetime="2021-08-14T04:52:12.000Z" itemprop="datePublished">8月 14 2021</time>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            9 分钟 读完 (约 1296 字)
+            几秒 读完 (约 1 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default">
-<span id="more"></span>
-
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>一开始是因为服务器经常会出现断电、系统崩溃的情况，导致一些正常运行的winform程序在系统故障重启后，每次都需要手动登录触发事件让程序自启。然后想利用windows服务在开启时就会自启来实现开机启动Winform程序。<br>但是因为从Vista 开始引入了 Session 0 隔离机制，导致windows服务无法直接进行界面交互操作。</p>
-<p><strong>注意：</strong><br>使用CreateProcessAsUser与界面交互需要Session Id &gt;0 ，<strong>用户会话的必须存在</strong>，如果存在服务器重启、注销后，重新开机导致系统只有Session 0存在，此时服务调用后的程序是不会显示界面的。<br>所以到头来还是没能实现我的想法。。。淦</p>
-<h3 id="Session-0-隔离原理"><a href="#Session-0-隔离原理" class="headerlink" title="Session 0 隔离原理"></a>Session 0 隔离原理</h3><p>参考：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/07/session0-isolation-part1.html">穿透Session 0 隔离（一）</a><br>摘录<br><a target="_blank" rel="noopener" href="https://www.daimajiaoliu.com/daima/476136b999003e8">用户界面特权隔离</a></p>
-<blockquote>
-<p>在早期的Windows操作系统中，在同一用户下运行的所有进程有着相同的安全等级，拥有相同的权限。例如，一个进程可以自由地发送一个Windows消息到另外一个进程的窗口。从Windows Vista开始，当然也包括Windows 7、Windows 10，对于某些Windows消息，这一方式再也行不通了。进程(或者其他的对象)开始拥有一个新的属性——特权等级(Privilege Level)。一个特权等级较低的进程不再可以向一个特权等级较高的进程发送消息，虽然他们在相同的用户权限下运行。这就是所谓的用户界面特权隔离(User Interface Privilege Isolation ，UIPI)。</p>
-<p>UIPI的引入，最大的目的是防止恶意代码发送消息给那些拥有较高权限的窗口以对其进行攻击，从而获取较高的权限等等，在计算机系统中，这却是一种维护系统安全的合适方式。</p>
-</blockquote>
-</blockquote>
-<h3 id="windows服务启动UI程序、"><a href="#windows服务启动UI程序、" class="headerlink" title="windows服务启动UI程序、"></a>windows服务启动UI程序、</h3><p>对于简单的交互，服务可以通过WTSSendMessage 函数，在用户Session 上显示消息窗口。对于一些复杂的UI 交互，必须调用CreateProcessAsUser 或其他方法（WCF、.NET远程处理等）进行跨Session 通信，在桌面用户上创建一个应用程序界面。</p>
-<p>解决思路是：window service创建一个和与当前登陆用户可以交互的进程，这个进程运行在admin权限下，能够调起应用程序的UI</p>
-<p>具体的做法是：widow service复制winlogon.exe进程句柄，然后通过调用api函数CreateProcessAsUser（）以winlogon.exe权限创建新进程，新创建的进程有winlogon.exe的权限（winlogon.exe运行在system权限下），负责调用程序。</p>
-<blockquote>
-<p>作者原文：</p>
-<p>First, we are going to create a Windows Service that runs under the System account. This service will be responsible for spawning an interactive process within the currently active User’s Session. This newly created process will display a UI and run with full admin rights. When the first User logs on to the computer, this service will be started and will be running in Session0; however the process that this service spawns will be running on the desktop of the currently logged on User. We will refer to this service as the LoaderService.</p>
-<p>Next, the winlogon.exe process is responsible for managing User login and logout procedures. We know that every User who logs on to the computer will have a unique Session ID and a corresponding winlogon.exe process associated with their Session. Now, we mentioned above, the LoaderService runs under the System account. We also confirmed that each winlogon.exe process on the computer runs under the System account. Because the System account is the owner of both the LoaderService and the winlogon.exe processes, our LoaderService can copy the access token (and Session ID) of the winlogon.exe process and then call the Win32 API function CreateProcessAsUser to launch a process into the currently active Session of the logged on User. Since the Session ID located within the access token of the copied winlogon.exe process is greater than 0, we can launch an interactive process using that token.</p>
-</blockquote>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/win32/services/interactive-services?redirectedfrom=MSDN">交互式服务</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wyy1234/p/10191958.html">C#开发Windows服务详细流程</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CityOfThousandFires/p/10375242.html">C#穿透session隔离———Windows服务启动UI交互程序</a><br><a target="_blank" rel="noopener" href="https://www.codeproject.com/Articles/35773/Subverting-Vista-UAC-in-Both-32-and-64-bit-Archite">Subverting Vista UAC in Both 32 and 64 bit Architectures</a></p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>windows服务启动winform程序不显示UI问题解决<br>原因：<br>xp系统的用户和window service运行在一个session下，在xp以后，windows系统改变了用户会话管理的策略，window service独立运行在session0下，依次给后续的登录用户分配sessionX(X =1,2,3…)，session0没有权限运行UI。所以在window xp以后的系统下，window service调用有UI的application时只能看到程序进程但不能运行程序的UI。</p>
-<p>参考：<br><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/buli93/p/7086440.html">C# windows服务启动winform程序不显示UI问题解决</a></strong><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/267838/how-can-a-windows-service-execute-a-gui-application">How can a Windows service execute a GUI application?</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/08/session0-isolation-part2.html">穿透Session 0 隔离（二）</a></p>
-</body></html>
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/08/14/Dockerfile%E7%AC%94%E8%AE%B0/#more">阅读更多</a>
+        </p>
     
     </div>
     
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/C/">#C#</a></span>
-    
-    </div>
-    
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2021/07/28/sqlite/">SQLite学习【一】</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/2021/07/20/Win1020H2%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E4%B8%8B%E6%B7%BB%E5%8A%A0%E7%BE%8E%E5%BC%8F%E9%94%AE%E7%9B%98/">Win10中文语言下添加美式键盘</a>
-            
-        </span>
-    </div>
     
 </article>
 
@@ -208,23 +173,46 @@
 
 
 
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2021/08/13/docker%E5%88%9D%E8%AF%86/" itemprop="url">docker初识</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-08-13T15:17:18.000Z" itemprop="datePublished">8月 13 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 读完 (约 202 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
+        <p class="article-more-link">
+            <a href="/2021/08/13/docker%E5%88%9D%E8%AF%86/#more">阅读更多</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+    
     </div>
 </section>
-
-<!-- <script>
-    (function () {
-        if ('{{ page.password }}') {
-            if (prompt('请输入文章密码') !== '{{ page.password }}') {
-                alert('密码错误！');
-                if (history.length === 1) {
-                    location.replace("https://minos.design"); // 这里替换成你的首页
-                } else {
-                    history.back();
-                }
-            }
-        }
-    })();
-</script> -->
     <footer class="footer">
     <div class="container">
         <div class="columns content">
