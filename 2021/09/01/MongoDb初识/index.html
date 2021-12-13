@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>MongoDb初识 - 不知选啥就选C</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="一个记录生活的Blog">
+
+
+
+
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="MongoDb初识">
+<meta property="og:url" content="http://yoursite.com/2021/09/01/MongoDb%E5%88%9D%E8%AF%86/index.html">
+<meta property="og:site_name" content="不知选啥就选C">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/default.jpeg">
+<meta property="article:published_time" content="2021-09-01T07:51:01.000Z">
+<meta property="article:modified_time" content="2021-12-13T05:15:01.029Z">
+<meta property="article:author" content="zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/default.jpeg">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    Choose C
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">归档</a>
+            
+            <a class="navbar-item "
+               href="/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/tags">标签</a>
+            
+            <a class="navbar-item "
+               href="/categories/Technology">技术</a>
+            
+            <a class="navbar-item "
+               href="/other">树洞</a>
+            
+            <a class="navbar-item "
+               href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            MongoDb初识
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2021-09-01T07:51:01.000Z" itemprop="datePublished">9月 1 2021</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            4 分钟 读完 (约 607 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default">
+<span id="more"></span>
+https://www.cnblogs.com/my-blogs-for-everone/articles/9749842.html
+
+<p>MongoDb 命令查询所有数据库列表</p>
+<figure class="highlight shell hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果想查看当前连接在哪个数据库下面，可以直接输入db<br>db</p>
+<p>切换到test数据库下面<br>use test</p>
+<p>想查看test下有哪些表或者叫collection，可以输入<br>show collections</p>
+<p>想知道mongodb支持哪些命令，可以直接输入help<br>help</p>
+<p>想知道当前数据库支持哪些方法<br>db.help();</p>
+<p>想知道当前数据库下的表或者表collection支持哪些方法，可以使用以下命令<br>db.user.help();  user为表名</p>
+<p>根据条件查找数据<br>通过条件查询： db.foo.find( { x : 77 } , { name : 1 , x : 1 } )  </p>
+<ol>
+<li><p>超级用户相关：  </p>
+<pre><code>  #增加或修改用户密码  
+
+  db.addUser('admin','pwd')  
+
+  #查看用户列表  
+
+  db.system.users.find()  
+
+  #用户认证  
+
+  db.auth('admin','pwd')  
+
+  #删除用户  
+
+  db.removeUser('mongodb')  
+</code></pre>
+<p>#查看所有用户  </p>
+<pre><code>  show users  
+
+  #查看所有数据库  
+
+  show dbs  
+
+  #查看所有的collection  
+
+  show collections  
+
+  #查看各collection的状态  
+
+  db.printCollectionStats()  
+
+  #查看主从复制状态  
+
+  db.printReplicationInfo()  
+
+  #修复数据库  
+
+  db.repairDatabase()  
+
+  #设置记录profiling，0=off 1=slow 2=all  
+
+  db.setProfilingLevel(1)  
+
+  #查看profiling  
+ show profile  
+
+  #拷贝数据库  
+
+  db.copyDatabase('mail_addr','mail_addr_tmp')  
+
+  #删除collection  
+
+  db.mail_addr.drop()  
+
+  #删除当前的数据库  
+
+  db.dropDatabase()  
+</code></pre>
+<ol start="2">
+<li><p>客户端连接  </p>
+<pre><code>/usr/local/mongodb/bin/mongo user_addr -u user -p 'pwd'  
+</code></pre>
+</li>
+<li><p>增删改  </p>
+<pre><code> #存储嵌套的对象  
+
+db.foo.save({'name':'ysz','address':{'city':'beijing','post':100096},'phone':[138,139]})  
+
+#存储数组对象  
+
+db.user_addr.save({'Uid':'yushunzhi@sohu.com','Al':['test-1@sohu.com','test-2@sohu.com']})  
+
+#根据query条件修改，如果不存在则插入，允许修改多条记录  
+</code></pre>
+<p>db.foo.update({‘yy’:5},{‘$set’:{‘xx’:2}},upsert=true,multi=true)  </p>
+<pre><code>#删除yy=5的记录  
+
+db.foo.remove({'yy':5})  
+
+#删除所有的记录  
+</code></pre>
+<p>   db.foo.remove()  </p>
+</li>
+<li><p>索引  </p>
+<pre><code>增加索引：1(ascending),-1(descending)  
+
+db.things.ensureIndex({firstname: 1, lastname: 1}, {unique: true});  
+
+#索引子对象  
+
+db.user_addr.ensureIndex({'Al.Em': 1})  
+
+#查看索引信息  
+
+db.deliver_status.getIndexes()  
+
+db.deliver_status.getIndexKeys()  
+
+#根据索引名删除索引  
+</code></pre>
+<p>db.user_addr.dropIndex(‘Al.Em_1’)  </p>
+</li>
+<li><p>查询  </p>
+<pre><code>查找所有  
+
+db.foo.find()  
+
+#查找一条记录  
+
+db.foo.findOne()  
+
+#根据条件检索10条记录  
+
+db.foo.find({'msg':'Hello 1'}).limit(10)  
+
+#sort排序  
+
+db.deliver_status.find({'From':'yushunzhi@sohu.com'}).sort({'Dt',-1})  
+
+db.deliver_status.find().sort({'Ct':-1}).limit(1)  
+</code></pre>
+<p>   #count操作  </p>
+<p>   db.user_addr.count()  </p>
+<p>   #distinct操作  </p>
+<p>   db.foo.distinct(‘msg’)<br>#&gt;操作  </p>
+<p>   db.foo.find({“timestamp”: {“$gte” : 2}})  </p>
+<p>   #子对象的查找  </p>
+<p>   db.foo.find({‘address.city’:’beijing’})  </p>
+</li>
+<li><p>管理  </p>
+<pre><code>查看collection数据的大小  
+
+db.deliver_status.dataSize()  
+
+#查看colleciont状态  
+
+db.deliver_status.stats()  
+
+#查询所有索引的大小  
+
+db.deliver_status.totalIndexSize()
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</body></html>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2021/10/21/sqlserver%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C%E5%88%97%E8%A1%A8%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/">sql server 中的数组和列表（转载）</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2021/08/14/Dockerfile%E7%AC%94%E8%AE%B0/">Dockerfile笔记</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+
+    </div>
+</section>
+
+<!-- <script>
+    (function () {
+        if ('{{ page.password }}') {
+            if (prompt('请输入文章密码') !== '{{ page.password }}') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://minos.design"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script> -->
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2021 zhang&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                    
+                    GitHub
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
