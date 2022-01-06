@@ -141,6 +141,40 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
+            <a href="/2022/01/06/%E3%80%90Csharp%E3%80%91Thread%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E5%88%9D%E8%AF%86/" itemprop="url">【Csharp】Thread匿名方法初识</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2022-01-06T12:34:29.000Z" itemprop="datePublished">1月 6 2022</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            1 分钟 读完 (约 139 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>片段代码笔记</p>
+<figure class="highlight csharp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> 停止创建运行新任务和新线程，等待所有任务和线程执行完成。</span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StopRuningTaskOrThreadAndExitOrRestart</span>(<span class="hljs-params"><span class="hljs-built_in">bool</span> restartFlag</span>)</span></span><br><span class="line">{</span><br><span class="line">    timer1.Enabled = <span class="hljs-literal">false</span>;<span class="hljs-comment">//停止触发</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (switchstr == <span class="hljs-string">"1"</span> &amp;&amp; threadswitchstr == <span class="hljs-string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="hljs-keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">while</span> (threadUseNum &gt; <span class="hljs-number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                Thread.Sleep(<span class="hljs-number">5000</span>);</span><br><span class="line">                RefreshMsgBox(DateTime.Now.ToString(<span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>) + <span class="hljs-string">$"\t=&gt;\t等待子任务执行完成退出：子任务数量：<span class="hljs-subst">{threadUseNum}</span>"</span>);</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="hljs-number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="hljs-literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (switchstr == <span class="hljs-string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="hljs-keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (taskThread != <span class="hljs-literal">null</span>)</span><br><span class="line">            {</span><br><span class="line">                taskThread.Wait();<span class="hljs-comment">//等待执行完成</span></span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="hljs-number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="hljs-literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></body></html>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
             <a href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/" itemprop="url">【C#】SqlBulkCopy实现SQLSRVER批量插入</a>
         
     </h1>
