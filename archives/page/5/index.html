@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>归档 - 不知选啥就选C</title>
+<title>Archives - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -64,7 +64,6 @@
     
 
 
-
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
@@ -75,9 +74,7 @@
         <div class="navbar-brand">
             <a class="navbar-item navbar-logo" href="/">
                 
-                    
-                    Choose C
-                    
+                <img src="/images/logo.png" alt="" height="28">
                 
             </a>
             <div class="navbar-burger">
@@ -102,7 +99,10 @@
                href="/categories/Technology">技术</a>
             
             <a class="navbar-item "
-               href="/other">树洞</a>
+               href="/categories/LifeStyle">生活</a>
+            
+            <a class="navbar-item "
+               href="/categories/other">杂项</a>
             
             <a class="navbar-item "
                href="/about">关于</a>
@@ -111,7 +111,7 @@
         
         <div class="navbar-menu navbar-end">
             
-            <a class="navbar-item search" title="搜索" href="javascript:;">
+            <a class="navbar-item search" title="Search" href="javascript:;">
                 <i class="fas fa-search"></i>
             </a>
             
@@ -135,6 +135,12 @@
         <div class="archive content">
             <h4 class="title is-4" id="2019">2019</h4>
             <div class="articles">
+            
+                <div class="article content>">
+                    <time class="is-text-small" datetime="2019-05-09T03:15:40.000Z" itemprop="datePublished">
+                        5月 9</time>
+                    <h6 class="title is-6"><a href="/2019/05/09/jQuery%E7%9A%84Ajax%E7%9A%84dataType%E8%AE%BE%E7%BD%AE%E9%97%AE%E9%A2%98/">jQuery的Ajax的dataType设置问题</a></h6>
+                </div>
             
                 <div class="article content>">
                     <time class="is-text-small" datetime="2019-05-07T02:18:36.000Z" itemprop="datePublished">
@@ -190,12 +196,6 @@
                     <h6 class="title is-6"><a href="/2019/03/25/%E5%9C%A8hexo%E6%96%87%E7%AB%A0%E9%87%8C%E4%BD%BF%E7%94%A8emoji/">在hexo文章里使用emoji🤔</a></h6>
                 </div>
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2019-03-25T05:41:23.000Z" itemprop="datePublished">
-                        3月 25</time>
-                    <h6 class="title is-6"><a href="/2019/03/25/%E5%9C%A8hexo%E4%B8%8A%E6%B7%BB%E5%8A%A0Live-2D/">在hexo上添加Live 2D看板娘</a></h6>
-                </div>
-            
             </div>
         </div>
     
@@ -203,10 +203,10 @@
     
 <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
     <div class="pagination-previous">
-        <a href="/archives/page/4/">上一页</a>
+        <a href="/archives/page/4/">Prev</a>
     </div>
     <div class="pagination-next">
-        <a href="/archives/page/6/">下一页</a>
+        <a href="/archives/page/6/">Next</a>
     </div>
     <ul class="pagination-list is-hidden-mobile">
         
@@ -240,7 +240,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
                     
                     GitHub
                     
@@ -287,9 +287,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script>
     MathJax.Hub.Config({
-        "HTML-CSS": {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
     });
 </script>
 
@@ -325,6 +337,11 @@
             color: #9a9a9a;
             background: none;
             border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
         }
 
         .hljs > .clipboard-btn {
@@ -366,6 +383,9 @@
             return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
           }
         });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
       })
     </script>
 
@@ -384,7 +404,7 @@
     <div class="searchbox-mask"></div>
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -396,11 +416,11 @@
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
         };
