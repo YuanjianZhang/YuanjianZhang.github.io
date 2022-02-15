@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>不知选啥就选C</title>
+<title>Category: 前端 - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -19,7 +19,7 @@
     <meta name="description" content="一个记录生活的Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="不知选啥就选C">
-<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
 <meta property="og:description" content="一个记录生活的Blog">
 <meta property="og:locale" content="zh_CN">
@@ -128,77 +128,88 @@
     </div>
 </nav>
 
-    <section class="section">
+    <section class="section section-heading">
+    <div class="container">
+        <div class="content">
+            <h5><i class="far fa-folder"></i>前端</h5>
+        </div>
+    </div>
+</section>
+<section class="section">
     <div class="container">
     
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2019/03/26/%E5%90%84%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7%E7%9A%84%E5%90%AB%E4%B9%89/" itemprop="url">各种软件版本号的含义</a>
+            <a href="/2022/02/15/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%ADwebpack%E3%80%81npm%E3%80%81node%E3%80%81nodejs%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">前端模块化开发中webpack、npm、node、nodejs之间的关系</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2019-03-26T02:45:55.000Z" itemprop="datePublished">3月 26 2019</time>
+            <time datetime="2022-02-15T07:57:23.000Z" itemprop="datePublished">2月 15 2022</time>
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a>
+            <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            20 分钟 read (About 3032 words)
+            14 分钟 read (About 2087 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>　　今天在逛spring的文档repo时，</p></body></html>
-        <p class="article-more-link">
-            <a href="/2019/03/26/%E5%90%84%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7%E7%9A%84%E5%90%AB%E4%B9%89/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
+        <html><head></head><body><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><blockquote>
+<p>Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
+</blockquote>
+<p>webpack是一个工具，这个工具可以帮你处理好各个包/模块之间的依赖关系（modules with dependencies），并将这些复杂依赖关系的静态文件打包成一个或很少的静态文件，提供给浏览器访问使用；除此之外，webpack因为可以提高兼容性，可以将一些浏览器尚不支持的新特性转换为可以支持格式，进而减少由新特性带来的浏览器的兼容性问题</p>
+<p>好，我们通过介绍，我们有个概念，webpack是一个打包工具，可以帮你把你的项目这里的项目其实就是指通过模块化开发的项目 打包为简洁版的浏览器可识别的静态资源</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>介绍了webpack，我们可能会疑问，我的JS，CSS，HTML文件分开写，挺好的呀，为什么要使用webpack工具，进行复杂的各项配置。在传统前端开发模式下，我们确实是按照JS/CSS/HTML文件分开写的模式就可以，但是随着前端的发展，社区的壮大，各种前端的库和框架层出不穷，我们项目中可能会使用很多额外的库，如何有效管理这些引入的库文件是一个大问题，而且我们知道基于在HTML中使用<code>&lt;script&gt;</code>引入的方式，有两个弊端，一个是会重复引入，二是当库文件数量很多时管理成为一个大难题。<br>面对这样的局面，为了简化开发的复杂度，前端社区涌现了很多实践方法。模块化就是其中一项成功实践，而npm就是这样在社区 其实就是node社区中产生的</p>
+<blockquote>
+<p>npm 为你和你的团队打开了连接整个 JavaScript 天才世界的一扇大门。它是世界上最大的软件注册表，每星期大约有 30 亿次的下载量，包含超过 600000 个 包（package） （即，代码模块）。来自各大洲的开源软件开发者使用 npm 互相分享和借鉴。包的结构使您能够轻松跟踪依赖项和版本。<br>npm 由三个独立的部分组成：</p>
+<ul>
+<li>网站</li>
+<li>注册表（registry）</li>
+<li>命令行工具 (CLI)</li>
+</ul>
+<p>网站 是开发者查找包（package）、设置参数以及管理 npm 使用体验的主要途径。<br>注册表 是一个巨大的数据库，保存了每个包（package）的信息。<br>CLI 通过命令行或终端运行。开发者通过 CLI 与 npm 打交道。</p>
+</blockquote>
+<p>这是npm的官方网站给出的介绍，一般来说提起npm有两个含义，一个是说npm官方网站，一个就是说npm包管理工具。npm社区或官网是一个巨大的Node生态系统，社区成员可以随意发布和安装npm生态中的包，也就是不用在重复造轮子了，别人造好了，你直接安装到你的项目中就可以使用，但是因为前面说了，当包引入数量很多时管理就成为了一个问题，这个就是npm为开发者行了方便之处，npm已经为你做好了依赖和版本的控制，也就是说使用npm可以让你从繁杂的依赖安装和版本冲突中解脱出来，进而关注你的业务而不是库的管理。</p>
+<p>而webpack就是将你从npm中安装的包打包成更小的浏览器可读的静态资源，这里需要注意的是，webpack只是一个前端的打包工具，打包的是静态资源，和后台没有关系，虽然webpack依赖于node环境</p>
+<h3 id="what-is-node-or-nodejs？"><a href="#what-is-node-or-nodejs？" class="headerlink" title="what is node or nodejs？"></a>what is node or nodejs？</h3><p>其实node和nodejs两个概念没有太大差别，我个人认为唯一的区别就是，人们说起node的时候语境更多的是再说node环境，而说nodejs时更多的是在说node是一门可以提供后端能力的技术。本质上来说，node就是nodejs，nodejs就是node</p>
+<blockquote>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。<br>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。<br>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行&gt;Javascript的速度非常快，性能非常好。</p>
+</blockquote>
+<p>node环境基于V8引擎提供了一种可以让JS代码跑在后端的能力，这就是node。其实这里的node本身和我们这篇讲的前端模块化没啥关系。但是因为npm是产生与node社区，node中也是通过npm来加载模块的，所以有必要说一下他们之间的关系。</p>
+<blockquote>
+<p>npm 是 Node.js 官方提供的包管理工具，他已经成了 Node.js 包的标准发布平台，用于 Node.js 包的发布、传播、依赖控制</p>
+</blockquote>
+<h3 id="webpack-npm-node之间关系？"><a href="#webpack-npm-node之间关系？" class="headerlink" title="webpack npm node之间关系？"></a>webpack npm node之间关系？</h3><ul>
+<li>webpack是npm生态中的一个模块，我们可以通过全局安装webpack来使用webpack对项目进行打包；</li>
+<li>webpack的运行依赖于node的环境，没有node是不能打包的，但是webpack打包后的项目本身只是前端静态资源和后台没有关系，也就是说不依赖与node，只要有后台能力的都可以部署项目</li>
+<li>npm是于Node社区中产生的，是nodejs的官方包管理工具，当你下载安装好node的时候，npm cli就自动安装好了</li>
+<li>正是因为npm的包管理，使得项目可以模块化的开发，而模块化的开发带来的这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别，而手动处理又是非常繁琐的，这就是webpack工具存在的意义</li>
+</ul>
+<hr>
+<p>参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AngelLover2017/article/details/84801673">前端模块化开发中webpack、npm、node、nodejs之间的关系</a></p>
+</blockquote>
+<p>摘录：<br>Node.js介绍,摘自<a target="_blank" rel="noopener" href="https://nodejs.dev/learn/introduction-to-nodejs">官网</a></p>
+<figure class="highlight plaintext hljs"><figcaption><span>Node.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!</span><br><span class="line"></span><br><span class="line">Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.</span><br><span class="line"></span><br><span class="line">A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.</span><br><span class="line"></span><br><span class="line">When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.</span><br><span class="line"></span><br><span class="line">This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.</span><br><span class="line"></span><br><span class="line">Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write the server-side code in addition to the client-side code without the need to learn a completely different language.</span><br><span class="line"></span><br><span class="line">In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node.js with flags.</span><br></pre></td></tr></tbody></table></figure>
 
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/03/25/%E5%9C%A8hexo%E6%96%87%E7%AB%A0%E9%87%8C%E4%BD%BF%E7%94%A8emoji/" itemprop="url">在hexo文章里使用emoji🤔</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-03-25T05:47:29.000Z" itemprop="datePublished">3月 25 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Blog/">Blog</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            几秒 read (About 60 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><span id="more"></span>
-<h2 id="记录如何然hexo文章支持emoji"><a href="#记录如何然hexo文章支持emoji" class="headerlink" title="记录如何然hexo文章支持emoji"></a>记录如何然hexo文章支持emoji</h2><p>Hexo 默认的 markdown 渲染引擎不支持将 Github emoji 渲染到静态的 html 页面中，我们换一个支持 emoji 的引擎，再增加一个 emoji 插件即可.</p>
+<blockquote>
+<p><strong>Introduction to npm</strong><br>npm is the standard package manager for Node.js.</p>
+<p>In January 2017 over 350000 packages were reported being listed in &gt;the npm registry, making it the biggest single language code &gt;repository on Earth, and you can be sure there is a package for &gt;(almost!) everything.</p>
+<p>It started as a way to download and manage dependencies of Node.js &gt;packages, but it has since become a tool used also in frontend &gt;JavaScript.</p>
+<p>There are many things that npm does.</p>
+<p>Yarn and pnpm are alternatives to npm cli. You can check them out as &gt;well.</p>
+</blockquote>
 </body></html>
     
     </div>
@@ -210,143 +221,6 @@
 
 
     
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/03/25/%E5%9C%A8hexo%E4%B8%8A%E6%B7%BB%E5%8A%A0Live-2D/" itemprop="url">在hexo上添加Live 2D看板娘</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-03-25T05:41:23.000Z" itemprop="datePublished">3月 25 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Blog/">Blog</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 read (About 594 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img src="/images/kanna.jpg">
-博客美化—给Hexo博客添加萌萌的康娜（Kanna）</body></html>
-        <p class="article-more-link">
-            <a href="/2019/03/25/%E5%9C%A8hexo%E4%B8%8A%E6%B7%BB%E5%8A%A0Live-2D/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/03/20/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BABlog/" itemprop="url">记录第一次搭建Blog</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-03-20T01:15:05.000Z" itemprop="datePublished">3月 20 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Blog/">Blog</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 分钟 read (About 711 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="沙滩" src="/images/beach.jpeg" alt="沙滩">
-<br>
-花了两天把我想了两年的事情给解决了</body></html>
-        <p class="article-more-link">
-            <a href="/2019/03/20/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BABlog/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/03/19/%E6%B5%8B%E8%AF%95/" itemprop="url">测试</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-03-19T11:21:18.000Z" itemprop="datePublished">3月 19 2019</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            几秒 read (About 37 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>Welcome to my <a target="_blank" rel="noopener" href="https://yuanjianzhang.github.io/">Blog</a> ! this is a test article ,This blog is built using <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">Hexo</a> and the theme is <a target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">Minos</a> theme .</p>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-    
-        
-<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-    <div class="pagination-previous">
-        <a href="/page/5/">Prev</a>
-    </div>
-    <div class="pagination-next is-invisible is-hidden-mobile">
-        <a href="/page/7/">Next</a>
-    </div>
-    <ul class="pagination-list is-hidden-mobile">
-        
-        <li><a class="pagination-link" href="/">1</a></li>
-        
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        
-        <li><a class="pagination-link" href="/page/5/">5</a></li>
-        
-        <li><a class="pagination-link is-current" href="/page/6/">6</a></li>
-        
-    </ul>
-</nav>
     
     </div>
 </section>
