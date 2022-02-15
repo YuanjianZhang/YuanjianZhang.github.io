@@ -158,15 +158,26 @@
         <span class="column is-narrow">
             
             
-            4 分钟 read (About 664 words)
+            9 分钟 read (About 1368 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>JavaScript 的确是单线程的<br>异步是浏览器的 JavaScript 引擎做的工作</p>
+        <html><head></head><body><p>像java、python这个可以具有多线程的语言。多线程同步模式是这样的，将cpu分成几个线程，每个线程同步运行。</p>
+<p>而node.js采用单线程异步非阻塞模式，也就是说每一个计算独占cpu，遇到I/O请求不阻塞后面的计算，当I/O完成后，以事件的方式通知，继续执行计算2。</p>
+<p>JavaScript是单线程执行【CPU单核】，根本不能进行同步IO操作，所以，JavaScript的这一“缺陷”导致了它只能使用异步IO。</p>
+<p>JavaScript 的确是单线程的<br>异步是浏览器的 JavaScript 引擎做的工作</p>
 <hr>
-<p>问题五、nodejs擅长什么？不擅长什么？<br>Node.js 通过 libuv 来处理与操作系统的交互，并且因此具备了异步、非阻塞、事件驱动的能力。因此，NodeJS能响应大量的并发请求。所以，<strong>NodeJS适合运用在高并发、I/O密集、少量业务逻辑的场景</strong>。</p>
+<h3 id="问题二：nodejs既然是单线程，如何实现异步、非阻塞I-O？"><a href="#问题二：nodejs既然是单线程，如何实现异步、非阻塞I-O？" class="headerlink" title="问题二：nodejs既然是单线程，如何实现异步、非阻塞I/O？"></a>问题二：nodejs既然是单线程，如何实现异步、非阻塞I/O？</h3><p>顺便回答标题nodejs真的是单线程吗？其实只有javascript执行是单线程，I/O显然是其它线程。</p>
+<p>js执行线程是单线程，把需要做的I/O交给libuv，自己马上返回做别的事情，然后libuv在指定的时刻回调就行了。其实简化的流程就是这样子的！</p>
+<p>细化一点，nodejs会先从js代码通过node-bindings调用到C/C++代码，然后通过C/C++代码封装一个叫 “请求对象” 的东西交给libuv，这个请求对象里面无非就是需要执行的功能+回调之类的东西，给libuv执行以及执行完实现回调。</p>
+<p>总结来说，一个异步 I/O 的大致流程如下：</p>
+<p>发起 I/O 调用<br>用户通过 Javascript 代码调用 Node 核心模块，将参数和回调函数传入到核心模块；<br>Node 核心模块会将传入的参数和回调函数封装成一个请求对象；<br>将这个请求对象推入到 I/O 线程池等待执行；<br>Javascript 发起的异步调用结束，Javascript 线程继续执行后续操作。<br>执行回调<br>I/O 操作完成后，会取出之前封装在请求对象中的回调函数，执行这个回调函数，以完成 Javascript 回调的目的。（这里回调的细节下面讲解）</p>
+<p>从这里，我们可以看到，我们其实对 Node.js 的单线程一直有个误会。</p>
+<p>事实上，它的单线程指的是自身 Javascript 运行环境的单线程，Node.js 并没有给 Javascript 执行时创建新线程的能力，最终的实际操作，还是通过 Libuv 以及它的事件循环来执行的。</p>
+<p>这也就是为什么 Javascript 一个单线程的语言，能在 Node.js 里面实现异步操作的原因，两者并不冲突。</p>
+<h3 id="问题五、nodejs擅长什么？不擅长什么？"><a href="#问题五、nodejs擅长什么？不擅长什么？" class="headerlink" title="问题五、nodejs擅长什么？不擅长什么？"></a>问题五、nodejs擅长什么？不擅长什么？</h3><p>Node.js 通过 libuv 来处理与操作系统的交互，并且因此具备了异步、非阻塞、事件驱动的能力。因此，NodeJS能响应大量的并发请求。所以，<strong>NodeJS适合运用在高并发、I/O密集、少量业务逻辑的场景</strong>。</p>
 <p>上面提到，如果是 I/O 任务，Node.js 就把任务交给线程池来异步处理，高效简单，因此 Node.js 适合处理I/O密集型任务。但不是所有的任务都是 I/O 密集型任务，当碰到CPU密集型任务时，即只用CPU计算的操作，比如要对数据加解密(node.bcrypt.js)，数据压缩和解压(node-tar)，这时 Node.js 就会亲自处理，一个一个的计算，前面的任务没有执行完，后面的任务就只能干等着 。</p>
 <p>我们看如下代码：</p>
 <figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> start = <span class="hljs-built_in">Date</span>.now();<span class="hljs-comment">//获取当前时间戳</span></span><br><span class="line"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now() - start);</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000000</span>; i++){<span class="hljs-comment">//执行长循环</span></span><br><span class="line">    }</span><br><span class="line">}, <span class="hljs-number">1000</span>);</span><br><span class="line"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now() - start);</span><br><span class="line">}, <span class="hljs-number">2000</span>);</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
