@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>不知选啥就选C</title>
+<title>当按下回车时发生了什么？ - 不知选啥就选C</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -16,13 +16,15 @@
 
 
 
-    <meta name="description" content="一个记录生活的Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不知选啥就选C">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="当按下回车时发生了什么？&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 这个仓库试图回答一个古老的面试问题：当你在浏览器中输入 google.com 并且按下回车之后发生了什么？ 不过我们不再局限于平常的回答，而是想办法回答地尽可能具体，不遗漏任何细节。 这将是一个协作的过程，所以深入挖掘吧，并且帮助我们一起完善它。仍然有大量的细节等待着你来添加，欢迎向我们发送 Pull Requset！ 这些内容使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="当按下回车时发生了什么？">
+<meta property="og:url" content="http://yoursite.com/2022/02/18/%E5%BD%93%E6%8C%89%E4%B8%8B%E5%9B%9E%E8%BD%A6%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/index.html">
 <meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="一个记录生活的Blog">
+<meta property="og:description" content="当按下回车时发生了什么？&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 这个仓库试图回答一个古老的面试问题：当你在浏览器中输入 google.com 并且按下回车之后发生了什么？ 不过我们不再局限于平常的回答，而是想办法回答地尽可能具体，不遗漏任何细节。 这将是一个协作的过程，所以深入挖掘吧，并且帮助我们一起完善它。仍然有大量的细节等待着你来添加，欢迎向我们发送 Pull Requset！ 这些内容使用">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-18T07:41:39.000Z">
+<meta property="article:modified_time" content="2022-02-18T09:28:06.944Z">
 <meta property="article:author" content="zhang">
 <meta name="twitter:card" content="summary">
 
@@ -130,65 +132,10 @@
 
     <section class="section">
     <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2022/02/18/VUE%E5%88%9D%E5%A7%8B%E3%80%90%E4%BA%8C%E3%80%91/" itemprop="url">VUE初始【二】</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-02-18T07:41:39.000Z" itemprop="datePublished">2月 18 2022</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 read (About 254 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><h4 id="vue全局引入组件Vue-use-与Vue-component-的用法与区别"><a href="#vue全局引入组件Vue-use-与Vue-component-的用法与区别" class="headerlink" title="vue全局引入组件Vue.use()与Vue.component()的用法与区别"></a>vue全局引入组件Vue.use()与Vue.component()的用法与区别</h4><p>main.js全局引入组件的两种方式</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1. Vue.use()</span></span><br><span class="line"><span class="hljs-keyword">import</span> Alert <span class="hljs-keyword">from</span> <span class="hljs-string">'@/components/alert/index.js'</span></span><br><span class="line">Vue.use(Alert)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 2. Vue.component()</span></span><br><span class="line"><span class="hljs-keyword">import</span> Alert <span class="hljs-keyword">from</span> <span class="hljs-string">"@/components/alert/src/main.vue"</span></span><br><span class="line">Vue.component(<span class="hljs-string">'alert'</span>, Alert)</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li><p>ue.component()里面接收两个参数</p>
-<ul>
-<li>第一个参数是自定义元素名称，也就是将来在别的组件中使用这个组件的标签名称。</li>
-<li>第二个参数是将要注册的Vue组件。</li>
-</ul>
-</li>
-<li><p>Vue.use函数内部会调用参数的install方法,并且将Vue实例传入过去</p>
-</li>
-</ul>
-<p>Vue.use 和Vue.component 全局引入组件之间的区别：</p>
-<ul>
-<li>Vue.component 只是单纯的引入组件、不需要额外写支持的js文件</li>
-<li>Vuew.use 除组件外，需要写额外的js实现install方法，但它不仅可以注入组件，还可以注入很多其他东西，比如全局实例属性等。</li>
-</ul>
-<p>参考:</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7021495820130353165">https://juejin.cn/post/7021495820130353165</a><br><a target="_blank" rel="noopener" href="http://www.zuo11.com/blog/2020/7/vue_global_comps.html">http://www.zuo11.com/blog/2020/7/vue_global_comps.html</a></p>
-</blockquote>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/02/18/%E5%BD%93%E6%8C%89%E4%B8%8B%E5%9B%9E%E8%BD%A6%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/" itemprop="url">当按下回车时发生了什么？</a>
+            当按下回车时发生了什么？
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -489,401 +436,24 @@ Connection: close
     </div>
     
     
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/02/15/nodejs%E5%8D%95%E7%BA%BF%E7%A8%8B%EF%BC%9F%E9%9D%9E%E9%98%BB%E5%A1%9EI-O%EF%BC%9F%E5%BC%82%E6%AD%A5%EF%BC%9F/" itemprop="url">nodejs单线程？非阻塞I/O？异步？</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-02-15T08:11:00.000Z" itemprop="datePublished">2月 15 2022</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/node/">node</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
+            <a href="/2022/02/18/VUE%E5%88%9D%E5%A7%8B%E3%80%90%E4%BA%8C%E3%80%91/">VUE初始【二】</a>
             
-            9 分钟 read (About 1368 words)
         </span>
-        
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022/02/15/nodejs%E5%8D%95%E7%BA%BF%E7%A8%8B%EF%BC%9F%E9%9D%9E%E9%98%BB%E5%A1%9EI-O%EF%BC%9F%E5%BC%82%E6%AD%A5%EF%BC%9F/">nodejs单线程？非阻塞I/O？异步？</a>
+            
+        </span>
     </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>像java、python这个可以具有多线程的语言。多线程同步模式是这样的，将cpu分成几个线程，每个线程同步运行。</p>
-<p>而node.js采用单线程异步非阻塞模式，也就是说每一个计算独占cpu，遇到I/O请求不阻塞后面的计算，当I/O完成后，以事件的方式通知，继续执行计算2。</p>
-<p>JavaScript是单线程执行【CPU单核】，根本不能进行同步IO操作，所以，JavaScript的这一“缺陷”导致了它只能使用异步IO。</p>
-<p>JavaScript 的确是单线程的<br>异步是浏览器的 JavaScript 引擎做的工作</p>
-<hr>
-<h3 id="问题二：nodejs既然是单线程，如何实现异步、非阻塞I-O？"><a href="#问题二：nodejs既然是单线程，如何实现异步、非阻塞I-O？" class="headerlink" title="问题二：nodejs既然是单线程，如何实现异步、非阻塞I/O？"></a>问题二：nodejs既然是单线程，如何实现异步、非阻塞I/O？</h3><p>顺便回答标题nodejs真的是单线程吗？其实只有javascript执行是单线程，I/O显然是其它线程。</p>
-<p>js执行线程是单线程，把需要做的I/O交给libuv，自己马上返回做别的事情，然后libuv在指定的时刻回调就行了。其实简化的流程就是这样子的！</p>
-<p>细化一点，nodejs会先从js代码通过node-bindings调用到C/C++代码，然后通过C/C++代码封装一个叫 “请求对象” 的东西交给libuv，这个请求对象里面无非就是需要执行的功能+回调之类的东西，给libuv执行以及执行完实现回调。</p>
-<p>总结来说，一个异步 I/O 的大致流程如下：</p>
-<p>发起 I/O 调用<br>用户通过 Javascript 代码调用 Node 核心模块，将参数和回调函数传入到核心模块；<br>Node 核心模块会将传入的参数和回调函数封装成一个请求对象；<br>将这个请求对象推入到 I/O 线程池等待执行；<br>Javascript 发起的异步调用结束，Javascript 线程继续执行后续操作。<br>执行回调<br>I/O 操作完成后，会取出之前封装在请求对象中的回调函数，执行这个回调函数，以完成 Javascript 回调的目的。（这里回调的细节下面讲解）</p>
-<p>从这里，我们可以看到，我们其实对 Node.js 的单线程一直有个误会。</p>
-<p>事实上，它的单线程指的是自身 Javascript 运行环境的单线程，Node.js 并没有给 Javascript 执行时创建新线程的能力，最终的实际操作，还是通过 Libuv 以及它的事件循环来执行的。</p>
-<p>这也就是为什么 Javascript 一个单线程的语言，能在 Node.js 里面实现异步操作的原因，两者并不冲突。</p>
-<h3 id="问题五、nodejs擅长什么？不擅长什么？"><a href="#问题五、nodejs擅长什么？不擅长什么？" class="headerlink" title="问题五、nodejs擅长什么？不擅长什么？"></a>问题五、nodejs擅长什么？不擅长什么？</h3><p>Node.js 通过 libuv 来处理与操作系统的交互，并且因此具备了异步、非阻塞、事件驱动的能力。因此，NodeJS能响应大量的并发请求。所以，<strong>NodeJS适合运用在高并发、I/O密集、少量业务逻辑的场景</strong>。</p>
-<p>上面提到，如果是 I/O 任务，Node.js 就把任务交给线程池来异步处理，高效简单，因此 Node.js 适合处理I/O密集型任务。但不是所有的任务都是 I/O 密集型任务，当碰到CPU密集型任务时，即只用CPU计算的操作，比如要对数据加解密(node.bcrypt.js)，数据压缩和解压(node-tar)，这时 Node.js 就会亲自处理，一个一个的计算，前面的任务没有执行完，后面的任务就只能干等着 。</p>
-<p>我们看如下代码：</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> start = <span class="hljs-built_in">Date</span>.now();<span class="hljs-comment">//获取当前时间戳</span></span><br><span class="line"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now() - start);</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000000</span>; i++){<span class="hljs-comment">//执行长循环</span></span><br><span class="line">    }</span><br><span class="line">}, <span class="hljs-number">1000</span>);</span><br><span class="line"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>.now() - start);</span><br><span class="line">}, <span class="hljs-number">2000</span>);</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>最终我们的打印结果是：（结果可能因为你的机器而不同）</p>
-<figure class="highlight console hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1000</span><br><span class="line">3738</span><br></pre></td></tr></tbody></table></figure>
-
-<p>对于我们期望2秒后执行的setTimeout函数其实经过了3738毫秒之后才执行，换而言之，因为执行了一个很长的for循环，所以我们整个Node.js主线程被阻塞了，如果在我们处理100个用户请求中，其中第一个有需要这样大量的计算，那么其余99个就都会被延迟执行。如果操作系统本身就是单核，那也就算了，但现在大部分服务器都是多 CPU 或多核的，而 Node.js 只有一个 EventLoop，也就是只占用一个 CPU 内核，当 Node.js 被CPU 密集型任务占用，导致其他任务被阻塞时，却还有 CPU 内核处于闲置状态，造成资源浪费。</p>
-<p>其实虽然Node.js可以处理数以千记的并发，但是一个Node.js进程在某一时刻其实只是在处理一个请求。</p>
-<p>对于非阻塞的IO可以去看Unix网络编程里面定义的几种io模型。</p>
-<p>因此，<strong>Node.js 并不适合 CPU 密集型任务</strong>。</p>
-<p>参考：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45277161/article/details/117331334">nodejs单线程？非阻塞I/O？异步？</a></p>
-</blockquote>
-</body></html>
-    
-    </div>
-    
     
 </article>
 
 
 
 
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/02/15/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%ADwebpack%E3%80%81npm%E3%80%81node%E3%80%81nodejs%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">前端模块化开发中webpack、npm、node、nodejs之间的关系</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-02-15T07:57:23.000Z" itemprop="datePublished">2月 15 2022</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            14 分钟 read (About 2087 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><blockquote>
-<p>Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
-</blockquote>
-<p>webpack是一个工具，这个工具可以帮你处理好各个包/模块之间的依赖关系（modules with dependencies），并将这些复杂依赖关系的静态文件打包成一个或很少的静态文件，提供给浏览器访问使用；除此之外，webpack因为可以提高兼容性，可以将一些浏览器尚不支持的新特性转换为可以支持格式，进而减少由新特性带来的浏览器的兼容性问题</p>
-<p>好，我们通过介绍，我们有个概念，webpack是一个打包工具，可以帮你把你的项目这里的项目其实就是指通过模块化开发的项目 打包为简洁版的浏览器可识别的静态资源</p>
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>介绍了webpack，我们可能会疑问，我的JS，CSS，HTML文件分开写，挺好的呀，为什么要使用webpack工具，进行复杂的各项配置。在传统前端开发模式下，我们确实是按照JS/CSS/HTML文件分开写的模式就可以，但是随着前端的发展，社区的壮大，各种前端的库和框架层出不穷，我们项目中可能会使用很多额外的库，如何有效管理这些引入的库文件是一个大问题，而且我们知道基于在HTML中使用<code>&lt;script&gt;</code>引入的方式，有两个弊端，一个是会重复引入，二是当库文件数量很多时管理成为一个大难题。<br>面对这样的局面，为了简化开发的复杂度，前端社区涌现了很多实践方法。模块化就是其中一项成功实践，而npm就是这样在社区 其实就是node社区中产生的</p>
-<blockquote>
-<p>npm 为你和你的团队打开了连接整个 JavaScript 天才世界的一扇大门。它是世界上最大的软件注册表，每星期大约有 30 亿次的下载量，包含超过 600000 个 包（package） （即，代码模块）。来自各大洲的开源软件开发者使用 npm 互相分享和借鉴。包的结构使您能够轻松跟踪依赖项和版本。<br>npm 由三个独立的部分组成：</p>
-<ul>
-<li>网站</li>
-<li>注册表（registry）</li>
-<li>命令行工具 (CLI)</li>
-</ul>
-<p>网站 是开发者查找包（package）、设置参数以及管理 npm 使用体验的主要途径。<br>注册表 是一个巨大的数据库，保存了每个包（package）的信息。<br>CLI 通过命令行或终端运行。开发者通过 CLI 与 npm 打交道。</p>
-</blockquote>
-<p>这是npm的官方网站给出的介绍，一般来说提起npm有两个含义，一个是说npm官方网站，一个就是说npm包管理工具。npm社区或官网是一个巨大的Node生态系统，社区成员可以随意发布和安装npm生态中的包，也就是不用在重复造轮子了，别人造好了，你直接安装到你的项目中就可以使用，但是因为前面说了，当包引入数量很多时管理就成为了一个问题，这个就是npm为开发者行了方便之处，npm已经为你做好了依赖和版本的控制，也就是说使用npm可以让你从繁杂的依赖安装和版本冲突中解脱出来，进而关注你的业务而不是库的管理。</p>
-<p>而webpack就是将你从npm中安装的包打包成更小的浏览器可读的静态资源，这里需要注意的是，webpack只是一个前端的打包工具，打包的是静态资源，和后台没有关系，虽然webpack依赖于node环境</p>
-<h3 id="what-is-node-or-nodejs？"><a href="#what-is-node-or-nodejs？" class="headerlink" title="what is node or nodejs？"></a>what is node or nodejs？</h3><p>其实node和nodejs两个概念没有太大差别，我个人认为唯一的区别就是，人们说起node的时候语境更多的是再说node环境，而说nodejs时更多的是在说node是一门可以提供后端能力的技术。本质上来说，node就是nodejs，nodejs就是node</p>
-<blockquote>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。<br>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。<br>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行&gt;Javascript的速度非常快，性能非常好。</p>
-</blockquote>
-<p>node环境基于V8引擎提供了一种可以让JS代码跑在后端的能力，这就是node。其实这里的node本身和我们这篇讲的前端模块化没啥关系。但是因为npm是产生与node社区，node中也是通过npm来加载模块的，所以有必要说一下他们之间的关系。</p>
-<blockquote>
-<p>npm 是 Node.js 官方提供的包管理工具，他已经成了 Node.js 包的标准发布平台，用于 Node.js 包的发布、传播、依赖控制</p>
-</blockquote>
-<h3 id="webpack-npm-node之间关系？"><a href="#webpack-npm-node之间关系？" class="headerlink" title="webpack npm node之间关系？"></a>webpack npm node之间关系？</h3><ul>
-<li>webpack是npm生态中的一个模块，我们可以通过全局安装webpack来使用webpack对项目进行打包；</li>
-<li>webpack的运行依赖于node的环境，没有node是不能打包的，但是webpack打包后的项目本身只是前端静态资源和后台没有关系，也就是说不依赖与node，只要有后台能力的都可以部署项目</li>
-<li>npm是于Node社区中产生的，是nodejs的官方包管理工具，当你下载安装好node的时候，npm cli就自动安装好了</li>
-<li>正是因为npm的包管理，使得项目可以模块化的开发，而模块化的开发带来的这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别，而手动处理又是非常繁琐的，这就是webpack工具存在的意义</li>
-</ul>
-<hr>
-<p>参考：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AngelLover2017/article/details/84801673">前端模块化开发中webpack、npm、node、nodejs之间的关系</a></p>
-</blockquote>
-<p>摘录：<br>Node.js介绍,摘自<a target="_blank" rel="noopener" href="https://nodejs.dev/learn/introduction-to-nodejs">官网</a></p>
-<figure class="highlight plaintext hljs"><figcaption><span>Node.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!</span><br><span class="line"></span><br><span class="line">Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.</span><br><span class="line"></span><br><span class="line">A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.</span><br><span class="line"></span><br><span class="line">When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.</span><br><span class="line"></span><br><span class="line">This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.</span><br><span class="line"></span><br><span class="line">Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write the server-side code in addition to the client-side code without the need to learn a completely different language.</span><br><span class="line"></span><br><span class="line">In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node.js with flags.</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p><strong>Introduction to npm</strong><br>npm is the standard package manager for Node.js.</p>
-<p>In January 2017 over 350000 packages were reported being listed in &gt;the npm registry, making it the biggest single language code &gt;repository on Earth, and you can be sure there is a package for &gt;(almost!) everything.</p>
-<p>It started as a way to download and manage dependencies of Node.js &gt;packages, but it has since become a tool used also in frontend &gt;JavaScript.</p>
-<p>There are many things that npm does.</p>
-<p>Yarn and pnpm are alternatives to npm cli. You can check them out as &gt;well.</p>
-</blockquote>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/02/14/VUE%E5%88%9D%E8%AF%86/" itemprop="url">VUE初识</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-02-14T08:54:02.000Z" itemprop="datePublished">2月 14 2022</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/VUE/">VUE</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            5 分钟 read (About 748 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2022/02/14/VUE%E5%88%9D%E8%AF%86/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/01/06/%E3%80%90Csharp%E3%80%91Thread%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E5%88%9D%E8%AF%86/" itemprop="url">【Csharp】Thread匿名方法初识</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-01-06T12:34:29.000Z" itemprop="datePublished">1月 6 2022</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            1 分钟 read (About 139 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>片段代码笔记</p>
-<figure class="highlight csharp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> 停止创建运行新任务和新线程，等待所有任务和线程执行完成。</span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StopRuningTaskOrThreadAndExitOrRestart</span>(<span class="hljs-params"><span class="hljs-built_in">bool</span> restartFlag</span>)</span></span><br><span class="line">{</span><br><span class="line">    timer1.Enabled = <span class="hljs-literal">false</span>;<span class="hljs-comment">//停止触发</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (switchstr == <span class="hljs-string">"1"</span> &amp;&amp; threadswitchstr == <span class="hljs-string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="hljs-keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">while</span> (threadUseNum &gt; <span class="hljs-number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                Thread.Sleep(<span class="hljs-number">5000</span>);</span><br><span class="line">                RefreshMsgBox(DateTime.Now.ToString(<span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>) + <span class="hljs-string">$"\t=&gt;\t等待子任务执行完成退出：子任务数量：<span class="hljs-subst">{threadUseNum}</span>"</span>);</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="hljs-number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="hljs-literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (switchstr == <span class="hljs-string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="hljs-keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (taskThread != <span class="hljs-literal">null</span>)</span><br><span class="line">            {</span><br><span class="line">                taskThread.Wait();<span class="hljs-comment">//等待执行完成</span></span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="hljs-number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="hljs-literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/01/05/redis%E5%88%9D%E8%AF%86/" itemprop="url">redis初识</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-01-05T07:27:05.000Z" itemprop="datePublished">1月 5 2022</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            1 分钟 read (About 151 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><h2 id="Windows安装Redis"><a href="#Windows安装Redis" class="headerlink" title="Windows安装Redis"></a>Windows安装Redis</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis">https://github.com/tporadowski/redis</a></p>
-<h2 id="部署为服务"><a href="#部署为服务" class="headerlink" title="部署为服务"></a>部署为服务</h2><p>命令行进入安装目录/解压目录</p>
-<p>安装服务: redis-server.exe –service-install redis.windows.conf –loglevel verbose</p>
-<p>卸载服务：redis-server –service-uninstall</p>
-<p>开启服务：redis-server –service-start</p>
-<p>停止服务：redis-server –service-stop</p>
-<p>重命名服务：redis-server –service-name name</p>
-<p>以下将会安装并启动三个不同的Redis实例作服务：</p>
-<figure class="highlight bat hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-install --service-name redisService1 --port <span class="hljs-number">10001</span></span><br><span class="line"></span><br><span class="line">redis-server --service-<span class="hljs-built_in">start</span> --service-name redisService1</span><br><span class="line"></span><br><span class="line">redis-server --service-install --service-name redisService2 --port <span class="hljs-number">10002</span></span><br><span class="line"></span><br><span class="line">redis-server --service-<span class="hljs-built_in">start</span> --service-name redisService2</span><br><span class="line"></span><br><span class="line">redis-server --service-install --service-name redisService3 --port <span class="hljs-number">10003</span></span><br><span class="line"></span><br><span class="line">redis-server --service-<span class="hljs-built_in">start</span> --service-name redisService3</span><br></pre></td></tr></tbody></table></figure></body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/" itemprop="url">【C#】SqlBulkCopy实现SQLSRVER批量插入</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-12-10T16:00:48.000Z" itemprop="datePublished">12月 11 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 read (About 534 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/12/01/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%90%E4%B8%80%E3%80%91/" itemprop="url">判断文件类型【一】</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-12-01T08:54:21.000Z" itemprop="datePublished">12月 1 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 read (About 566 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/12/01/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%90%E4%B8%80%E3%80%91/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/10/21/Markdown%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E8%A1%A8/" itemprop="url">Markdown语法速查表</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-10-21T02:31:02.000Z" itemprop="datePublished">10月 21 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 read (About 308 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/10/21/Markdown%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5%E8%A1%A8/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-    
-        
-<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-    <div class="pagination-previous is-invisible is-hidden-mobile">
-        <a href="/page/0/">Prev</a>
-    </div>
-    <div class="pagination-next">
-        <a href="/page/2/">Next</a>
-    </div>
-    <ul class="pagination-list is-hidden-mobile">
-        
-        <li><a class="pagination-link is-current" href="/">1</a></li>
-        
-        <li><a class="pagination-link" href="/page/2/">2</a></li>
-        
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        
-        <li><a class="pagination-link" href="/page/6/">6</a></li>
-        
-    </ul>
-</nav>
-    
     </div>
 </section>
     <footer class="footer">
