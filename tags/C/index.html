@@ -1,640 +1,175 @@
-<!DOCTYPE html>
-<html class="has-navbar-fixed-top">
-<head>
-    <meta charset="utf-8">
-<title>Tag: C# - 不知选啥就选C</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-
-
-
-<meta name="description" content="一个记录生活的Blog">
-
-
-
-
-
-    <meta name="description" content="一个记录生活的Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不知选啥就选C">
-<meta property="og:url" content="http://yoursite.com/tags/C/index.html">
-<meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="一个记录生活的Blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="zhang">
-<meta name="twitter:card" content="summary">
-
-
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-
-<meta name="generator" content="Hexo 5.4.0">
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><title>标签: C# - 不知选啥就选C</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="Choose C"><meta name="msapplication-TileImage" content="/img/favicon.png"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Choose C"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="一个记录生活的Blog"><meta property="og:type" content="blog"><meta property="og:title" content="不知选啥就选C"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="不知选啥就选C"><meta property="og:description" content="一个记录生活的Blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://yoursite.com/img/og_image.png"><meta property="article:author" content="zhang"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com"},"headline":"不知选啥就选C","image":["http://yoursite.com/img/og_image.png"],"author":{"@type":"Person","name":"zhang"},"publisher":{"@type":"Organization","name":"不知选啥就选C","logo":{"@type":"ImageObject","url":{"text":"Choose C"}}},"description":"一个记录生活的Blog"}</script><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-<body>
-    
-<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item navbar-logo" href="/">
-                
-                <img src="/images/logo.png" alt="" height="28">
-                
-            </a>
-            <div class="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        
-        <div class="navbar-menu navbar-start">
-            
-            <a class="navbar-item "
-               href="/archives">归档</a>
-            
-            <a class="navbar-item "
-               href="/categories">分类</a>
-            
-            <a class="navbar-item "
-               href="/tags">标签</a>
-            
-            <a class="navbar-item "
-               href="/categories/Technology">技术</a>
-            
-            <a class="navbar-item "
-               href="/categories/cranky">胡思乱想</a>
-            
-            <a class="navbar-item "
-               href="/other">杂项</a>
-            
-            <a class="navbar-item "
-               href="/about">关于</a>
-            
-        </div>
-        
-        <div class="navbar-menu navbar-end">
-            
-            <a class="navbar-item search" title="Search" href="javascript:;">
-                <i class="fas fa-search"></i>
-            </a>
-            
-            
-            
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
-            
-        </div>
-    </div>
-</nav>
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Choose C</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/categories/Technology">技术</a><a class="navbar-item" href="/other">树洞</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">C#</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-06T12:34:29.000Z" title="2022/1/6 下午8:34:29">2022-01-06</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:27:51.307Z" title="2022/2/23 下午5:27:51">2022-02-23</time>更新</span><span class="level-item">1 分钟读完 (大约140个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/01/06/%E3%80%90Csharp%E3%80%91Thread%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E5%88%9D%E8%AF%86/">【Csharp】Thread匿名方法初识</a></h1><div class="content"><span id="more"></span>
 
-    <section class="section section-heading">
-    <div class="container">
-        <div class="content">
-            <h5>#C#</h5>
-        </div>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022/01/06/%E3%80%90Csharp%E3%80%91Thread%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%E5%88%9D%E8%AF%86/" itemprop="url">【Csharp】Thread匿名方法初识</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-01-06T12:34:29.000Z" itemprop="datePublished">1月 6 2022</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            1 分钟 read (About 139 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>片段代码笔记</p>
-<figure class="highlight csharp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> 停止创建运行新任务和新线程，等待所有任务和线程执行完成。</span></span><br><span class="line"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StopRuningTaskOrThreadAndExitOrRestart</span>(<span class="hljs-params"><span class="hljs-built_in">bool</span> restartFlag</span>)</span></span><br><span class="line">{</span><br><span class="line">    timer1.Enabled = <span class="hljs-literal">false</span>;<span class="hljs-comment">//停止触发</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (switchstr == <span class="hljs-string">"1"</span> &amp;&amp; threadswitchstr == <span class="hljs-string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="hljs-keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">while</span> (threadUseNum &gt; <span class="hljs-number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                Thread.Sleep(<span class="hljs-number">5000</span>);</span><br><span class="line">                RefreshMsgBox(DateTime.Now.ToString(<span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>) + <span class="hljs-string">$"\t=&gt;\t等待子任务执行完成退出：子任务数量：<span class="hljs-subst">{threadUseNum}</span>"</span>);</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="hljs-number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="hljs-literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (switchstr == <span class="hljs-string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="hljs-keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (taskThread != <span class="hljs-literal">null</span>)</span><br><span class="line">            {</span><br><span class="line">                taskThread.Wait();<span class="hljs-comment">//等待执行完成</span></span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">if</span> ((<span class="hljs-built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="hljs-number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="hljs-literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></body></html>
-    
-    </div>
-    
-    
-</article>
+<p>片段代码笔记</p>
+<figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 停止创建运行新任务和新线程，等待所有任务和线程执行完成。</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">StopRuningTaskOrThreadAndExitOrRestart</span>(<span class="params"><span class="built_in">bool</span> restartFlag</span>)</span></span><br><span class="line">{</span><br><span class="line">    timer1.Enabled = <span class="literal">false</span>;<span class="comment">//停止触发</span></span><br><span class="line">    <span class="keyword">if</span> (switchstr == <span class="string">"1"</span> &amp;&amp; threadswitchstr == <span class="string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">while</span> (threadUseNum &gt; <span class="number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                Thread.Sleep(<span class="number">5000</span>);</span><br><span class="line">                RefreshMsgBox(DateTime.Now.ToString(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>) + <span class="string">$"\t=&gt;\t等待子任务执行完成退出：子任务数量：<span class="subst">{threadUseNum}</span>"</span>);</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> ((<span class="built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (switchstr == <span class="string">"1"</span>)</span><br><span class="line">    {</span><br><span class="line">        Thread t = <span class="keyword">new</span> Thread((flag) =&gt;</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (taskThread != <span class="literal">null</span>)</span><br><span class="line">            {</span><br><span class="line">                taskThread.Wait();<span class="comment">//等待执行完成</span></span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> ((<span class="built_in">bool</span>)flag)</span><br><span class="line">            {</span><br><span class="line">                Process.Start(Application.ExecutablePath);</span><br><span class="line">            }</span><br><span class="line">            Environment.Exit(<span class="number">0</span>);</span><br><span class="line">        });</span><br><span class="line">        t.IsBackground = <span class="literal">true</span>;</span><br><span class="line">        t.Start(restartFlag);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/"><img class="fill" src="/images/default.jpeg" alt="【C#】SqlBulkCopy实现SQLSRVER批量插入"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-12-10T16:00:48.000Z" title="2021/12/11 上午12:00:48">2021-12-11</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:22:04.755Z" title="2022/2/23 下午5:22:04">2022-02-23</time>更新</span><span class="level-item">4 分钟读完 (大约534个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/">【C#】SqlBulkCopy实现SQLSRVER批量插入</a></h1><div class="content"><span id="more"></span>
 
+<blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.sqlclient.sqlbulkcopy?view=netframework-4.5"> SqlBulkCopy 类</a><br><a target="_blank" rel="noopener" href="http://raylei.cn/index.php/archives/74/">http://raylei.cn/index.php/archives/74/</a><br><a target="_blank" rel="noopener" href="https://www.cxybb.com/article/weixin_30333885/96361368">https://www.cxybb.com/article/weixin_30333885/96361368</a></p>
+</blockquote>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><p>来自数据源的 Decimal 类型的给定值不能转换为指定目标列的类型 datetime<br>  实际情况可能很复杂，使用的是泛型进行实体类转DataTable,可能会出现各种类型错误提示。<br>  自己使用的是调用Copy()方法。<br>  demo:</p>
+  <figure class="highlight csharp"><figcaption><span>demo.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> TableStruct = dal.GetTableStruct();</span><br><span class="line">DataTable dataTable = TableStruct.Clone();</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> oD.ToList&lt;StdYpkcday&gt;())</span><br><span class="line">{</span><br><span class="line">    DataRow dataRow = dataTable.NewRow();</span><br><span class="line">    dataRow[<span class="string">"id"</span>] = DBNull.Value;<span class="comment">//自增主键。赋值DBNull.Value</span></span><br><span class="line">    dataRow[<span class="string">"code"</span>] = item.Hoscode;</span><br><span class="line">    <span class="keyword">if</span> (item.Gqsj == <span class="literal">null</span> )</span><br><span class="line">    {</span><br><span class="line">        dataRow[<span class="string">"time"</span>] = DBNull.Value;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        dataRow[<span class="string">"time"</span>] = item.Gqsj;</span><br><span class="line">    }</span><br><span class="line">    dataTable.Rows.Add(dataRow);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/18140012/sqlbulkcopy-the-given-value-of-type-string-from-the-data-source-cannot-be-conv">https://stackoverflow.com/questions/18140012/sqlbulkcopy-the-given-value-of-type-string-from-the-data-source-cannot-be-conv</a></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><figure class="highlight csharp"><figcaption><span>删除并批量插入.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 删除并批量插入</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="_Type"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="TableName"&gt;</span>批量插入数据的表名<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="Dt"&gt;</span>批量插入的数据<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="SqlDeleteText"&gt;</span>删除的sql语句<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">DeleteAndBulkCopy</span>(<span class="params"><span class="built_in">string</span> Type,<span class="built_in">string</span> TableName, DataTable Dt, <span class="built_in">string</span> SqlDeleteText,<span class="built_in">bool</span> isIncreaPK</span>)</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">using</span> (SqlConnection conn = <span class="keyword">new</span> SqlConnection(DBUtility.DbCommon.GetConnectString(Type)))</span><br><span class="line">    {</span><br><span class="line">        conn.Open();</span><br><span class="line">        <span class="keyword">using</span> (SqlTransaction transaction = conn.BeginTransaction())</span><br><span class="line">        {</span><br><span class="line">            SqlCommand sqlcom = conn.CreateCommand();</span><br><span class="line">            sqlcom.Transaction = transaction;</span><br><span class="line">            sqlcom.CommandText = SqlDeleteText;</span><br><span class="line">            <span class="keyword">var</span> BulkCopyOptions = SqlBulkCopyOptions.KeepIdentity;</span><br><span class="line">            <span class="comment">//自增主键，使用系统生成主键</span></span><br><span class="line">            <span class="keyword">if</span> (isIncreaPK)</span><br><span class="line">            {</span><br><span class="line">                BulkCopyOptions = SqlBulkCopyOptions.Default;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">using</span> (SqlBulkCopy bulk = <span class="keyword">new</span> SqlBulkCopy(conn, BulkCopyOptions, transaction))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> (Dt.Rows.Count &gt; <span class="number">0</span>)</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; Dt.Columns.Count; i++)</span><br><span class="line">                    {</span><br><span class="line">                        bulk.ColumnMappings.Add(Dt.Columns[i].ColumnName, Dt.Columns[i].ColumnName);</span><br><span class="line">                    }</span><br><span class="line">                    bulk.BatchSize = Dt.Rows.Count;</span><br><span class="line">                    bulk.DestinationTableName = TableName;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                {</span><br><span class="line">                    sqlcom.ExecuteNonQuery();</span><br><span class="line"></span><br><span class="line">                    bulk.WriteToServer(Dt);</span><br><span class="line">                    transaction.Commit();</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">                {</span><br><span class="line">                    transaction.Rollback();</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">finally</span></span><br><span class="line">                {</span><br><span class="line">                    bulk.Close();</span><br><span class="line">                    conn.Close();</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<figure class="highlight csharp"><figcaption><span>批量更新.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">region</span> 批量更新</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 批量更新</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="dataTable"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="crateTemplateSql"&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> eg:</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> [xxx] varchar(255)  NOT NULL,[xxx] varchar(10)  NOT NULL</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="updateSql"&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> eg:</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> UPDATE bulktest  set bulktest.name=Temp.tempname </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> FROM bulktest INNER JOIN #TmpTable Temp </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> ON Temp.temprdn = bulktest.rdn  ; </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> DROP TABLE #TmpTable</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SqlBulkCopyUpdate</span>(<span class="params">DataTable dataTable, <span class="built_in">string</span> crateTemplateSql, <span class="built_in">string</span> updateSql</span>)</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">using</span> (SqlConnection conn = <span class="keyword">new</span> SqlConnection(DBUtility.DbCommon.GetConnectString(DBType)))</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">using</span> (<span class="keyword">var</span> command = <span class="keyword">new</span> SqlCommand(<span class="string">""</span>, conn))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            {</span><br><span class="line">                conn.Open();</span><br><span class="line">                <span class="comment">//数据库并创建一个临时表来保存数据表的数据</span></span><br><span class="line">                command.CommandText = <span class="string">$"  CREATE TABLE #TmpTable (<span class="subst">{crateTemplateSql}</span>)"</span>;</span><br><span class="line">                command.ExecuteNonQuery();</span><br><span class="line"></span><br><span class="line">                <span class="comment">//使用SqlBulkCopy 加载数据到临时表中</span></span><br><span class="line">                <span class="keyword">using</span> (<span class="keyword">var</span> bulkCopy = <span class="keyword">new</span> SqlBulkCopy(conn))</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">foreach</span> (DataColumn dcPrepped <span class="keyword">in</span> dataTable.Columns)</span><br><span class="line">                    {</span><br><span class="line">                        bulkCopy.ColumnMappings.Add(dcPrepped.ColumnName, dcPrepped.ColumnName);</span><br><span class="line">                    }</span><br><span class="line"></span><br><span class="line">                    bulkCopy.BulkCopyTimeout = <span class="number">660</span>;</span><br><span class="line">                    bulkCopy.DestinationTableName = <span class="string">"#TmpTable"</span>;</span><br><span class="line">                    bulkCopy.WriteToServer(dataTable);</span><br><span class="line">                    bulkCopy.Close();</span><br><span class="line">                }</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 执行Command命令 使用临时表的数据去更新目标表中的数据  然后删除临时表</span></span><br><span class="line">                command.CommandTimeout = <span class="number">300</span>;</span><br><span class="line">                command.CommandText = updateSql;</span><br><span class="line">                <span class="built_in">int</span> rows = command.ExecuteNonQuery();</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">catch</span>(Exception ex)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">throw</span> ex;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">finally</span></span><br><span class="line">            {</span><br><span class="line">                conn.Close();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endregion</span></span></span><br></pre></td></tr></tbody></table></figure></div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/12/01/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%90%E4%B8%80%E3%80%91/"><img class="fill" src="/images/default.jpeg" alt="判断文件类型【一】"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-12-01T08:54:21.000Z" title="2021/12/1 下午4:54:21">2021-12-01</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:21:58.662Z" title="2022/2/23 下午5:21:58">2022-02-23</time>更新</span><span class="level-item">4 分钟读完 (大约566个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/12/01/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%90%E4%B8%80%E3%80%91/">判断文件类型【一】</a></h1><div class="content"><span id="more"></span>
 
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/" itemprop="url">【C#】SqlBulkCopy实现SQLSRVER批量插入</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-12-10T16:00:48.000Z" itemprop="datePublished">12月 11 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 read (About 534 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/12/11/SqlBulkCopy%E5%AE%9E%E7%8E%B0SQLSRVER%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
+<p>现有一文件，其扩展名未知或标记错误。假设它是一个正常的、非空的文件，且将扩展名更正后可以正常使用，那么，如何判断它是哪种类型的文件？<br>在后缀未知，或者后缀被修改的文件，依然通过文件头来判断该文件究竟是什么文件类型。</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/58510/using-net-how-can-you-find-the-mime-type-of-a-file-based-on-the-file-signature/13614746#13614746">C#实现参考</a>：</p>
+<figure class="highlight csharp"><figcaption><span>example.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MimeType</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] BMP = { <span class="number">66</span>, <span class="number">77</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] DOC = { <span class="number">208</span>, <span class="number">207</span>, <span class="number">17</span>, <span class="number">224</span>, <span class="number">161</span>, <span class="number">177</span>, <span class="number">26</span>, <span class="number">225</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] EXE_DLL = { <span class="number">77</span>, <span class="number">90</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] GIF = { <span class="number">71</span>, <span class="number">73</span>, <span class="number">70</span>, <span class="number">56</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] ICO = { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] JPG = { <span class="number">255</span>, <span class="number">216</span>, <span class="number">255</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] MP3 = { <span class="number">255</span>, <span class="number">251</span>, <span class="number">48</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] OGG = { <span class="number">79</span>, <span class="number">103</span>, <span class="number">103</span>, <span class="number">83</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] PDF = { <span class="number">37</span>, <span class="number">80</span>, <span class="number">68</span>, <span class="number">70</span>, <span class="number">45</span>, <span class="number">49</span>, <span class="number">46</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] PNG = { <span class="number">137</span>, <span class="number">80</span>, <span class="number">78</span>, <span class="number">71</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">26</span>, <span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">13</span>, <span class="number">73</span>, <span class="number">72</span>, <span class="number">68</span>, <span class="number">82</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] RAR = { <span class="number">82</span>, <span class="number">97</span>, <span class="number">114</span>, <span class="number">33</span>, <span class="number">26</span>, <span class="number">7</span>, <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] SWF = { <span class="number">70</span>, <span class="number">87</span>, <span class="number">83</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] TIFF = { <span class="number">73</span>, <span class="number">73</span>, <span class="number">42</span>, <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] TORRENT = { <span class="number">100</span>, <span class="number">56</span>, <span class="number">58</span>, <span class="number">97</span>, <span class="number">110</span>, <span class="number">110</span>, <span class="number">111</span>, <span class="number">117</span>, <span class="number">110</span>, <span class="number">99</span>, <span class="number">101</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] TTF = { <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] WAV_AVI = { <span class="number">82</span>, <span class="number">73</span>, <span class="number">70</span>, <span class="number">70</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] WMV_WMA = { <span class="number">48</span>, <span class="number">38</span>, <span class="number">178</span>, <span class="number">117</span>, <span class="number">142</span>, <span class="number">102</span>, <span class="number">207</span>, <span class="number">17</span>, <span class="number">166</span>, <span class="number">217</span>, <span class="number">0</span>, <span class="number">170</span>, <span class="number">0</span>, <span class="number">98</span>, <span class="number">206</span>, <span class="number">108</span> };</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">byte</span>[] ZIP_DOCX = { <span class="number">80</span>, <span class="number">75</span>, <span class="number">3</span>, <span class="number">4</span> };</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">GetMimeType</span>(<span class="params"><span class="built_in">byte</span>[] file, <span class="built_in">string</span> fileName</span>)</span></span><br><span class="line">    {</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> mime = <span class="string">"application/octet-stream"</span>; <span class="comment">//DEFAULT UNKNOWN MIME TYPE</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//Ensure that the filename isn't empty or null</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">string</span>.IsNullOrWhiteSpace(fileName))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">return</span> mime;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Get the file extension</span></span><br><span class="line">        <span class="built_in">string</span> extension = Path.GetExtension(fileName) == <span class="literal">null</span></span><br><span class="line">                               ? <span class="built_in">string</span>.Empty</span><br><span class="line">                               : Path.GetExtension(fileName).ToUpper();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Get the MIME Type</span></span><br><span class="line">        <span class="keyword">if</span> (file.Take(<span class="number">2</span>).SequenceEqual(BMP))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"image/bmp"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">8</span>).SequenceEqual(DOC))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/msword"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">2</span>).SequenceEqual(EXE_DLL))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/x-msdownload"</span>; <span class="comment">//both use same mime type</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">4</span>).SequenceEqual(GIF))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"image/gif"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">4</span>).SequenceEqual(ICO))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"image/x-icon"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">3</span>).SequenceEqual(JPG))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"image/jpeg"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">3</span>).SequenceEqual(MP3))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"audio/mpeg"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">14</span>).SequenceEqual(OGG))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (extension == <span class="string">".OGX"</span>)</span><br><span class="line">            {</span><br><span class="line">                mime = <span class="string">"application/ogg"</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (extension == <span class="string">".OGA"</span>)</span><br><span class="line">            {</span><br><span class="line">                mime = <span class="string">"audio/ogg"</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                mime = <span class="string">"video/ogg"</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">7</span>).SequenceEqual(PDF))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/pdf"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">16</span>).SequenceEqual(PNG))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"image/png"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">7</span>).SequenceEqual(RAR))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/x-rar-compressed"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">3</span>).SequenceEqual(SWF))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/x-shockwave-flash"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">4</span>).SequenceEqual(TIFF))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"image/tiff"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">11</span>).SequenceEqual(TORRENT))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/x-bittorrent"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">5</span>).SequenceEqual(TTF))</span><br><span class="line">        {</span><br><span class="line">            mime = <span class="string">"application/x-font-ttf"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">4</span>).SequenceEqual(WAV_AVI))</span><br><span class="line">        {</span><br><span class="line">            mime = extension == <span class="string">".AVI"</span> ? <span class="string">"video/x-msvideo"</span> : <span class="string">"audio/x-wav"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">16</span>).SequenceEqual(WMV_WMA))</span><br><span class="line">        {</span><br><span class="line">            mime = extension == <span class="string">".WMA"</span> ? <span class="string">"audio/x-ms-wma"</span> : <span class="string">"video/x-ms-wmv"</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (file.Take(<span class="number">4</span>).SequenceEqual(ZIP_DOCX))</span><br><span class="line">        {</span><br><span class="line">            mime = extension == <span class="string">".DOCX"</span> ? <span class="string">"application/vnd.openxmlformats-officedocument.wordprocessingml.document"</span> : <span class="string">"application/x-zip-compressed"</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mime;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<p>资料：<br><a target="_blank" rel="noopener" href="https://github.com/Muraad/Mime-Detective">Mime-Detective</a></p>
+<p>文件签名表格：<br><a target="_blank" rel="noopener" href="https://www.garykessler.net/library/file_sigs.html">GCK’S FILE SIGNATURES TABLE</a></p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Magic_number_%28programming%29#In_files">Magic number</a><br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_file_signatures">List of file signatures</a></p>
+</div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/"><img class="fill" src="/images/default.jpeg" alt="C#穿透session隔离———Windows服务启动UI交互程序"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-21T03:28:37.000Z" title="2021/7/21 上午11:28:37">2021-07-21</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:21:12.928Z" title="2022/2/23 下午5:21:12">2022-02-23</time>更新</span><span class="level-item">9 分钟读完 (大约1296个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/">C#穿透session隔离———Windows服务启动UI交互程序</a></h1><div class="content"><span id="more"></span>
 
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>一开始是因为服务器经常会出现断电、系统崩溃的情况，导致一些正常运行的winform程序在系统故障重启后，每次都需要手动登录触发事件让程序自启。然后想利用windows服务在开启时就会自启来实现开机启动Winform程序。<br>但是因为从Vista 开始引入了 Session 0 隔离机制，导致windows服务无法直接进行界面交互操作。</p>
+<p><strong>注意：</strong><br>使用CreateProcessAsUser与界面交互需要Session Id &gt;0 ，<strong>用户会话的必须存在</strong>，如果存在服务器重启、注销后，重新开机导致系统只有Session 0存在，此时服务调用后的程序是不会显示界面的。<br>所以到头来还是没能实现我的想法。。。淦</p>
+<h3 id="Session-0-隔离原理"><a href="#Session-0-隔离原理" class="headerlink" title="Session 0 隔离原理"></a>Session 0 隔离原理</h3><p>参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/07/session0-isolation-part1.html">穿透Session 0 隔离（一）</a><br>摘录<br><a target="_blank" rel="noopener" href="https://www.daimajiaoliu.com/daima/476136b999003e8">用户界面特权隔离</a></p>
+<blockquote>
+<p>在早期的Windows操作系统中，在同一用户下运行的所有进程有着相同的安全等级，拥有相同的权限。例如，一个进程可以自由地发送一个Windows消息到另外一个进程的窗口。从Windows Vista开始，当然也包括Windows 7、Windows 10，对于某些Windows消息，这一方式再也行不通了。进程(或者其他的对象)开始拥有一个新的属性——特权等级(Privilege Level)。一个特权等级较低的进程不再可以向一个特权等级较高的进程发送消息，虽然他们在相同的用户权限下运行。这就是所谓的用户界面特权隔离(User Interface Privilege Isolation ，UIPI)。</p>
+<p>UIPI的引入，最大的目的是防止恶意代码发送消息给那些拥有较高权限的窗口以对其进行攻击，从而获取较高的权限等等，在计算机系统中，这却是一种维护系统安全的合适方式。</p>
+</blockquote>
+</blockquote>
+<h3 id="windows服务启动UI程序、"><a href="#windows服务启动UI程序、" class="headerlink" title="windows服务启动UI程序、"></a>windows服务启动UI程序、</h3><p>对于简单的交互，服务可以通过WTSSendMessage 函数，在用户Session 上显示消息窗口。对于一些复杂的UI 交互，必须调用CreateProcessAsUser 或其他方法（WCF、.NET远程处理等）进行跨Session 通信，在桌面用户上创建一个应用程序界面。</p>
+<p>解决思路是：window service创建一个和与当前登陆用户可以交互的进程，这个进程运行在admin权限下，能够调起应用程序的UI</p>
+<p>具体的做法是：widow service复制winlogon.exe进程句柄，然后通过调用api函数CreateProcessAsUser（）以winlogon.exe权限创建新进程，新创建的进程有winlogon.exe的权限（winlogon.exe运行在system权限下），负责调用程序。</p>
+<blockquote>
+<p>作者原文：</p>
+<p>First, we are going to create a Windows Service that runs under the System account. This service will be responsible for spawning an interactive process within the currently active User’s Session. This newly created process will display a UI and run with full admin rights. When the first User logs on to the computer, this service will be started and will be running in Session0; however the process that this service spawns will be running on the desktop of the currently logged on User. We will refer to this service as the LoaderService.</p>
+<p>Next, the winlogon.exe process is responsible for managing User login and logout procedures. We know that every User who logs on to the computer will have a unique Session ID and a corresponding winlogon.exe process associated with their Session. Now, we mentioned above, the LoaderService runs under the System account. We also confirmed that each winlogon.exe process on the computer runs under the System account. Because the System account is the owner of both the LoaderService and the winlogon.exe processes, our LoaderService can copy the access token (and Session ID) of the winlogon.exe process and then call the Win32 API function CreateProcessAsUser to launch a process into the currently active Session of the logged on User. Since the Session ID located within the access token of the copied winlogon.exe process is greater than 0, we can launch an interactive process using that token.</p>
+</blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/win32/services/interactive-services?redirectedfrom=MSDN">交互式服务</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wyy1234/p/10191958.html">C#开发Windows服务详细流程</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CityOfThousandFires/p/10375242.html">C#穿透session隔离———Windows服务启动UI交互程序</a><br><a target="_blank" rel="noopener" href="https://www.codeproject.com/Articles/35773/Subverting-Vista-UAC-in-Both-32-and-64-bit-Archite">Subverting Vista UAC in Both 32 and 64 bit Architectures</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>windows服务启动winform程序不显示UI问题解决<br>原因：<br>xp系统的用户和window service运行在一个session下，在xp以后，windows系统改变了用户会话管理的策略，window service独立运行在session0下，依次给后续的登录用户分配sessionX(X =1,2,3…)，session0没有权限运行UI。所以在window xp以后的系统下，window service调用有UI的application时只能看到程序进程但不能运行程序的UI。</p>
+<p>参考：<br><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/buli93/p/7086440.html">C# windows服务启动winform程序不显示UI问题解决</a></strong><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/267838/how-can-a-windows-service-execute-a-gui-application">How can a Windows service execute a GUI application?</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gnielee/archive/2010/04/08/session0-isolation-part2.html">穿透Session 0 隔离（二）</a></p>
+</div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/"><img class="fill" src="/images/default.jpeg" alt="C#代码确保应用程序只有一个实例"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-20T02:22:58.000Z" title="2021/7/20 上午10:22:58">2021-07-20</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:20:58.397Z" title="2022/2/23 下午5:20:58">2022-02-23</time>更新</span><span class="level-item">1 分钟读完 (大约131个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/">C#代码确保应用程序只有一个实例</a></h1><div class="content"><p>使用互斥锁，实现只有一个程序</p></div><a class="article-more button is-small is-size-7" href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/"><img class="fill" src="/images/default.jpeg" alt="C#设置程序开机自启动[需登录]"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-16T07:16:22.000Z" title="2021/7/16 下午3:16:22">2021-07-16</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:20:34.292Z" title="2022/2/23 下午5:20:34">2022-02-23</time>更新</span><span class="level-item">8 分钟读完 (大约1242个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/">C#设置程序开机自启动[需登录]</a></h1><div class="content"><span id="more"></span>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本来是想在服务器上实现服务器崩溃或者更新后，可以自动启动winform程序，但是以下方法还是需要有用户登录进去。</p>
+<h2 id="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"><a href="#方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）" class="headerlink" title="方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）"></a>方法一：将软件的快捷方式创建到计算机的自动启动目录下（不需要管理员权限）</h2><ol>
+<li>进入目录：<code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code></li>
+<li>将应用程序快捷方式剪切(或者复制)并粘贴到目录中</li>
+<li>应用程序快捷方式加入到了启动项，下次重启电脑之后这个应用程序就会自动开机运行了</li>
+</ol>
+<p>如果需要针对个人账户进行配置：<code>Win+R</code>输入命令<code>shell:startup</code> ,会直接弹出启动项对应的目录，然后像前面方法一样把应用程序快捷方式复制到启动目录</p>
+<h2 id="方法二：修改计算机注册表的方式（需要管理员权限）"><a href="#方法二：修改计算机注册表的方式（需要管理员权限）" class="headerlink" title="方法二：修改计算机注册表的方式（需要管理员权限）"></a>方法二：修改计算机注册表的方式（需要管理员权限）</h2><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="Windows自启动原理"><a href="#Windows自启动原理" class="headerlink" title="Windows自启动原理"></a>Windows自启动原理</h4><p>在Windows操作系统下，主要有2个文件夹和8个注册表键项控制程序的自启动，通过修改“Run”键值实现自启动程序是比较常见的方法。<br>具体的位置是：<code>HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Run</code>  </p>
+<ul>
+<li>参考资料：<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fukajg/archive/2012/08/10/2631250.html">Windows程序自启动原理</a></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>在知道注册表中自启动位置所在后，只需要将需要启动的程序路径添加至指定路径中就可以实现开机自启动功能。</p>
+<figure class="highlight csharp"><figcaption><span>Program.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 应用程序的主入口点。</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="meta">STAThread</span>]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">{</span><br><span class="line">    Application.EnableVisualStyles();</span><br><span class="line">    Application.SetCompatibleTextRenderingDefault(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">string</span> appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(<span class="keyword">typeof</span>(GuidAttribute), <span class="literal">false</span>).GetValue(<span class="number">0</span>)).Value;</span><br><span class="line">    <span class="keyword">using</span> (Mutex mutex = <span class="keyword">new</span> Mutex(<span class="literal">false</span>, <span class="string">"Global\\"</span> + appGuid))</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (!mutex.WaitOne(<span class="number">0</span>, <span class="literal">false</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//判断是否开启自启动</span></span><br><span class="line">        <span class="built_in">string</span> strFilePath = Application.ExecutablePath;</span><br><span class="line">        <span class="built_in">string</span> strFileName = System.IO.Path.GetFileName(strFilePath);</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="comment">//自启动功能是否开启</span></span><br><span class="line">            <span class="keyword">var</span> AutoRunFlag = ConfigurationManager.AppSettings[<span class="string">"AutoRunFlag"</span>] == <span class="string">"1"</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">//自启动是否已经存在</span></span><br><span class="line">            <span class="keyword">var</span> flag = SystemHelper.IsAutoRun(strFilePath, strFileName);</span><br><span class="line">            <span class="keyword">if</span> (AutoRunFlag != flag)</span><br><span class="line">            {</span><br><span class="line">                <span class="meta">#<span class="keyword">region</span> 获取管理员权限，进行注册表写入操作</span></span><br><span class="line">                <span class="comment">//当前用户是管理员的时候，直接启动应用程序并且写入注册表</span></span><br><span class="line">                <span class="comment">//如果不是管理员，则使用启动对象启动程序，以确保使用管理员身份运行</span></span><br><span class="line">                <span class="comment">//获得当前登录的Windows用户标示</span></span><br><span class="line">                WindowsIdentity identity = WindowsIdentity.GetCurrent();</span><br><span class="line">                WindowsPrincipal principal = <span class="keyword">new</span> WindowsPrincipal(identity);</span><br><span class="line">                <span class="comment">//判断当前登录用户是否为管理员</span></span><br><span class="line">                <span class="keyword">if</span> (principal.IsInRole(WindowsBuiltInRole.Administrator))</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        <span class="comment">//如果是管理员，注册自启动代码</span></span><br><span class="line">                        SystemHelper.SetAutoRun(strFilePath, strFileName, AutoRunFlag);</span><br><span class="line">                    }</span><br><span class="line">                    <span class="keyword">catch</span>(Exception ex)</span><br><span class="line">                    {</span><br><span class="line">                        MessageBox.Show( ex.Message, <span class="string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    <span class="comment">//创建启动对象</span></span><br><span class="line">                    System.Diagnostics.ProcessStartInfo startInfo = <span class="keyword">new</span> System.Diagnostics.ProcessStartInfo();</span><br><span class="line">                    startInfo.UseShellExecute = <span class="literal">true</span>;</span><br><span class="line">                    startInfo.WorkingDirectory = Environment.CurrentDirectory;</span><br><span class="line">                    startInfo.FileName = Application.ExecutablePath;</span><br><span class="line">                    <span class="comment">//设置启动动作,确保以管理员身份运行</span></span><br><span class="line">                    startInfo.Verb = <span class="string">"runas"</span>;</span><br><span class="line">                    <span class="keyword">try</span></span><br><span class="line">                    {</span><br><span class="line">                        System.Diagnostics.Process.Start(startInfo);</span><br><span class="line">                    }</span><br><span class="line">                    <span class="keyword">catch</span></span><br><span class="line">                    {</span><br><span class="line">                        <span class="keyword">return</span>;</span><br><span class="line">                    }</span><br><span class="line">                    <span class="comment">//退出</span></span><br><span class="line">                    Application.Exit();</span><br><span class="line">                }</span><br><span class="line">                <span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line">            }</span><br><span class="line">            <span class="comment">//启动程序</span></span><br><span class="line">            Application.Run(<span class="keyword">new</span> Form1());</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">catch</span>(Exception ex)</span><br><span class="line">        {</span><br><span class="line">            MessageBox.Show(ex.Message, <span class="string">"错误提示"</span>, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">            <span class="comment">//return;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<p><code>SystemHelper.cs</code> 参考自：<a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/n2d913xQdD/">C# winform程序实现开机自启动，并且识别是开机启动还是双击启动</a></p>
+<figure class="highlight csharp"><figcaption><span>SystemHelper.cs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">SystemHelper</span></span><br><span class="line">{</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SystemHelper</span>()</span> { }</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 设置程序开机启动</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppPath"&gt;</span>应用程序exe所在文件夹<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppName"&gt;</span>应用程序exe名称<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="bIsAutoRun"&gt;</span>自动运行状态<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetAutoRun</span>(<span class="params"><span class="built_in">string</span> strAppPath, <span class="built_in">string</span> strAppName, <span class="built_in">bool</span> bIsAutoRun</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">string</span>.IsNullOrWhiteSpace(strAppPath)</span><br><span class="line">                || <span class="built_in">string</span>.IsNullOrWhiteSpace(strAppName))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"应用程序路径或名称为空！"</span>);</span><br><span class="line">            }</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey run = reg.CreateSubKey(<span class="string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="keyword">if</span> (bIsAutoRun)</span><br><span class="line">            {</span><br><span class="line">                run.SetValue(strAppName, strAppPath);</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> (<span class="literal">null</span> != run.GetValue(strAppName))</span><br><span class="line">                {</span><br><span class="line">                    run.DeleteValue(strAppName);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            run.Close();</span><br><span class="line">            reg.Close();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 判断是否开机启动</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppPath"&gt;</span>应用程序路径<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="strAppName"&gt;</span>应用程序名称<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">IsAutoRun</span>(<span class="params"><span class="built_in">string</span> strAppPath, <span class="built_in">string</span> strAppName</span>)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        {</span><br><span class="line">            RegistryKey reg = Registry.LocalMachine;</span><br><span class="line">            RegistryKey software = reg.OpenSubKey(<span class="string">@"SOFTWARE"</span>);</span><br><span class="line">            RegistryKey run = reg.OpenSubKey(<span class="string">@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\"</span>);</span><br><span class="line">            <span class="built_in">object</span> key = run.GetValue(strAppName);</span><br><span class="line">            software.Close();</span><br><span class="line">            run.Close();</span><br><span class="line">            <span class="keyword">if</span> (<span class="literal">null</span> == key || !strAppPath.Equals(key.ToString()))</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(ex.Message, ex);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/12/01/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%90%E4%B8%80%E3%80%91/" itemprop="url">判断文件类型【一】</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-12-01T08:54:21.000Z" itemprop="datePublished">12月 1 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 read (About 566 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/12/01/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E3%80%90%E4%B8%80%E3%80%91/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/" itemprop="url">C#穿透session隔离———Windows服务启动UI交互程序</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-07-21T03:28:37.000Z" itemprop="datePublished">7月 21 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            9 分钟 read (About 1296 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/07/21/C-%E7%A9%BF%E9%80%8Fsession%E9%9A%94%E7%A6%BB%E2%80%94%E2%80%94%E2%80%94Windows%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8UI%E4%BA%A4%E4%BA%92%E7%A8%8B%E5%BA%8F/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/" itemprop="url">C#代码确保应用程序只有一个实例</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-07-20T02:22:58.000Z" itemprop="datePublished">7月 20 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            1 分钟 read (About 131 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default">
-使用互斥锁，实现只有一个程序</body></html>
-        <p class="article-more-link">
-            <a href="/2021/07/20/C-%E4%BB%A3%E7%A0%81%E7%A1%AE%E4%BF%9D%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" itemprop="url">C#设置程序开机自启动[需登录]</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-07-16T07:16:22.000Z" itemprop="datePublished">7月 16 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            8 分钟 read (About 1242 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/07/16/C-%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8F%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/04/11/C#-ASP.NET%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6System.Net.Mail/" itemprop="url">C# ASP.NET发送电子邮件System.Net.Mail</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-04-11T14:24:36.000Z" itemprop="datePublished">4月 11 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            9 分钟 read (About 1303 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>本文转载自-<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Jeremy2001/p/6870175.html%EF%BC%8C%E4%BE%B5%E5%88%A0%E3%80%82">https://www.cnblogs.com/Jeremy2001/p/6870175.html，侵删。</a></p></body></html>
-        <p class="article-more-link">
-            <a href="/2019/04/11/C#-ASP.NET%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6System.Net.Mail/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2019/04/10/C#%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E9%97%AE%E9%A2%98/" itemprop="url">C#邮件发送问题</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2019-04-10T06:52:23.000Z" itemprop="datePublished">4月 10 2019</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            几秒 read (About 37 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><blockquote>
+<p>运行环境</p>
+<blockquote>
+<p>Win10<br>.NET Framework4.5<br>VS2019</p>
+</blockquote>
+<h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ol>
+<li><p>注册表地址<br> 使用代码修改注册表的方式，如果需要查看注册信息，需要确认程序是32-bit还是64-bit。<br> 32位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers ion\Run</code><br> 64位，查看地址为    :<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">操作系统</th>
+<th align="center">64位程序访问的注册表</th>
+<th align="center">32位程序访问的注册表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">64位系统</td>
+<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE</td>
+<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node</td>
+</tr>
+<tr>
+<td align="left">32位系统</td>
+<td align="center">-</td>
+<td align="center">HKEY_LOCAL_MACHINE\SOFTWARE</td>
+</tr>
+</tbody></table>
+<p> 参考资料：</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/read-32bit-registry-from-x64-process.html">.NET/C# 在 64 位进程中读取 32 位进程重定向后的注册表</a></li>
+<li><a target="_blank" rel="noopener" href="https://guoliliang.github.io/2017/10/%E5%85%B3%E4%BA%8E-WOW6432Node/">关于WOW6432Node</a></li>
+</ul>
+</blockquote>
+</li>
+<li><p>以管理员权限打开程序：<br>参考资料：</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/start-process-in-a-specific-trust-level">Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/windows-user-account-control.html">Windows 中的 UAC 用户账户控制</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Interkey/p/RunAsAdmin.html">C#程序以管理员权限运行</a></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-04-11T14:24:36.000Z" title="2019/4/11 下午10:24:36">2019-04-11</time>发表</span><span class="level-item"><time dateTime="2021-10-21T03:00:12.498Z" title="2021/10/21 上午11:00:12">2021-10-21</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="level-item">9 分钟读完 (大约1303个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/04/11/C#-ASP.NET%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6System.Net.Mail/">C# ASP.NET发送电子邮件System.Net.Mail</a></h1><div class="content"><p>本文转载自-<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Jeremy2001/p/6870175.html%EF%BC%8C%E4%BE%B5%E5%88%A0%E3%80%82">https://www.cnblogs.com/Jeremy2001/p/6870175.html，侵删。</a></p></div><a class="article-more button is-small is-size-7" href="/2019/04/11/C#-ASP.NET%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6System.Net.Mail/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-04-10T06:52:23.000Z" title="2019/4/10 下午2:52:23">2019-04-10</time>发表</span><span class="level-item"><time dateTime="2021-10-21T03:00:10.402Z" title="2021/10/21 上午11:00:10">2021-10-21</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="level-item">几秒读完 (大约37个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/04/10/C#%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E9%97%AE%E9%A2%98/">C#邮件发送问题</a></h1><div class="content"><blockquote>
 <p>转自：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qingspace/p/3732675.html">C#邮件发送问题（一）</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qingspace/p/3732677.html">C#邮件发送问题（二）</a></p>
 </blockquote>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-    
-    </div>
-</section>
-    <footer class="footer">
-    <div class="container">
-        <div class="columns content">
-            <div class="column is-narrow has-text-centered">
-                &copy; 2022 zhang&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
-            </div>
-            <div class="column is-hidden-mobile"></div>
-
-            
-            <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                
-                    
-                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
-                    
-                    GitHub
-                    
-                </a>
-                
-                </div>
-            </div>
-            
-            
-        </div>
-    </div>
-</footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
-
-<!-- test if the browser is outdated -->
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // plugin function, place inside DOM ready function
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        })
-    });
-</script>
-
-<script>
-    window.FontAwesomeConfig = {
-        searchPseudoElements: true
-    }
-    moment.locale("zh-CN");
-</script>
-
-
-    
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
-        }
-    });
-</script>
-
-    
-    
-    
-    
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
-<script>
-    (function ($) {
-        $(document).ready(function () {
-            if (typeof($.fn.lightGallery) === 'function') {
-                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Blog/"><span class="level-start"><span class="level-item">Blog</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Technology/"><span class="level-start"><span class="level-item">Technology</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/VUE/"><span class="level-start"><span class="level-item">VUE</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/cranky/"><span class="level-start"><span class="level-item">cranky</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/node/"><span class="level-start"><span class="level-item">node</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%BD%AC%E8%BD%BD/"><span class="level-start"><span class="level-item">转载</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-18T07:41:39.000Z">2022-02-18</time></p><p class="title"><a href="/2022/02/18/VUE%E5%88%9D%E5%A7%8B%E3%80%90%E4%BA%8C%E3%80%91/">VUE初始【二】</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-18T07:41:39.000Z">2022-02-18</time></p><p class="title"><a href="/2022/02/18/%E5%BD%93%E6%8C%89%E4%B8%8B%E5%9B%9E%E8%BD%A6%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/">当按下回车时发生了什么？</a></p><p class="categories"><a href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T08:11:00.000Z">2022-02-15</time></p><p class="title"><a href="/2022/02/15/nodejs%E5%8D%95%E7%BA%BF%E7%A8%8B%EF%BC%9F%E9%9D%9E%E9%98%BB%E5%A1%9EI-O%EF%BC%9F%E5%BC%82%E6%AD%A5%EF%BC%9F/">nodejs单线程？非阻塞I/O？异步？</a></p><p class="categories"><a href="/categories/node/">node</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T07:57:23.000Z">2022-02-15</time></p><p class="title"><a href="/2022/02/15/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%ADwebpack%E3%80%81npm%E3%80%81node%E3%80%81nodejs%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">前端模块化开发中webpack、npm、node、nodejs之间的关系</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/02/14/VUE%E5%88%9D%E8%AF%86/"><img src="/images/default.jpeg" alt="VUE初识"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-02-14T08:54:02.000Z">2022-02-14</time></p><p class="title"><a href="/2022/02/14/VUE%E5%88%9D%E8%AF%86/">VUE初识</a></p><p class="categories"><a href="/categories/VUE/">VUE</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/03/"><span class="level-start"><span class="level-item">三月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/ADO-NET/"><span class="tag">ADO.NET</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ASP-NET/"><span class="tag">ASP.NET</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ASP-Net-MVC/"><span class="tag">ASP.Net MVC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker/"><span class="tag">Docker</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gmail/"><span class="tag">Gmail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mail/"><span class="tag">Mail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Oracle/"><span class="tag">Oracle</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Postman/"><span class="tag">Postman</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQL/"><span class="tag">SQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQLlite/"><span class="tag">SQLlite</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/System-Net-Mail/"><span class="tag">System.Net.Mail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Technology/"><span class="tag">Technology</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/XML/"><span class="tag">XML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/emoji/"><span class="tag">emoji</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jQuery/"><span class="tag">jQuery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kettle/"><span class="tag">kettle</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/live2d/"><span class="tag">live2d</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sqlserver/"><span class="tag">sqlserver</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"><span class="tag">发送邮件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%90%E6%A7%BD/"><span class="tag">吐槽</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="tag">命令行</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%84%9F%E6%83%B3/"><span class="tag">感想</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%88%90%E9%95%BF/"><span class="tag">成长</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%99%E8%82%B2/"><span class="tag">教育</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%BB%E9%94%81/"><span class="tag">死锁</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%B0%E5%BD%95/"><span class="tag">记录</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B4%9F%E8%83%BD%E9%87%8F/"><span class="tag">负能量</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AC%E8%BD%BD/"><span class="tag">转载</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7/"><span class="tag">软件版本号</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/"><span class="tag">速查表</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/"><span class="tag">邮件发送</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%85%8D%E7%BD%AE/"><span class="tag">配置</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Choose C</a><p class="is-size-7"><span>&copy; 2022 zhang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
             }
-            if (typeof($.fn.justifiedGallery) === 'function') {
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
                 $('.justified-gallery').justifiedGallery();
             }
-        });
-    })(jQuery);
-</script>
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <style>
-        .hljs {
-            position: relative;
-        }
-
-        .hljs .clipboard-btn {
-            float: right;
-            color: #9a9a9a;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hljs .clipboard-btn:hover {
-          color: #8a8a8a;
-        }
-
-        .hljs > .clipboard-btn {
-            display: none;
-            position: absolute;
-            right: 4px;
-            top: 4px;
-        }
-
-        .hljs:hover > .clipboard-btn {
-            display: inline;
-        }
-
-        .hljs > figcaption > .clipboard-btn {
-            margin-right: 4px;
-        }
-    </style>
-    <script>
-      $(document).ready(function () {
-        $('figure.hljs').each(function(i, figure) {
-          var codeId = 'code-' + i;
-          var code = figure.querySelector('.code');
-          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
-          code.id = codeId;
-          copyButton.addClass('clipboard-btn');
-          copyButton.attr('data-clipboard-target-id', codeId);
-
-          var figcaption = figure.querySelector('figcaption');
-
-          if (figcaption) {
-            figcaption.append(copyButton[0]);
-          } else {
-            figure.prepend(copyButton[0]);
-          }
-        })
-
-        var clipboard = new ClipboardJS('.clipboard-btn', {
-          target: function(trigger) {
-            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
-          }
-        });
-        clipboard.on('success', function(e) {
-          e.clearSelection();
-        })
-      })
-    </script>
-
-    
-    
-
-    
-
-
-
-<script src="/js/script.js"></script>
-
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-mask"></div>
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-    
-</body>
-</html>
+        });</script><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

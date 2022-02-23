@@ -1,421 +1,598 @@
-<!DOCTYPE html>
-<html class="has-navbar-fixed-top">
-<head>
-    <meta charset="utf-8">
-<title>Tag: kettle - 不知选啥就选C</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
-
-
-
-
-<meta name="description" content="一个记录生活的Blog">
-
-
-
-
-
-    <meta name="description" content="一个记录生活的Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不知选啥就选C">
-<meta property="og:url" content="http://yoursite.com/tags/kettle/index.html">
-<meta property="og:site_name" content="不知选啥就选C">
-<meta property="og:description" content="一个记录生活的Blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="zhang">
-<meta name="twitter:card" content="summary">
-
-
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
-
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-
-<meta name="generator" content="Hexo 5.4.0">
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><title>标签: kettle - 不知选啥就选C</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="Choose C"><meta name="msapplication-TileImage" content="/img/favicon.png"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Choose C"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="一个记录生活的Blog"><meta property="og:type" content="blog"><meta property="og:title" content="不知选啥就选C"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="不知选啥就选C"><meta property="og:description" content="一个记录生活的Blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://yoursite.com/img/og_image.png"><meta property="article:author" content="zhang"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com"},"headline":"不知选啥就选C","image":["http://yoursite.com/img/og_image.png"],"author":{"@type":"Person","name":"zhang"},"publisher":{"@type":"Organization","name":"不知选啥就选C","logo":{"@type":"ImageObject","url":{"text":"Choose C"}}},"description":"一个记录生活的Blog"}</script><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-<body>
-    
-<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item navbar-logo" href="/">
-                
-                <img src="/images/logo.png" alt="" height="28">
-                
-            </a>
-            <div class="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        
-        <div class="navbar-menu navbar-start">
-            
-            <a class="navbar-item "
-               href="/archives">归档</a>
-            
-            <a class="navbar-item "
-               href="/categories">分类</a>
-            
-            <a class="navbar-item "
-               href="/tags">标签</a>
-            
-            <a class="navbar-item "
-               href="/categories/Technology">技术</a>
-            
-            <a class="navbar-item "
-               href="/categories/cranky">胡思乱想</a>
-            
-            <a class="navbar-item "
-               href="/other">杂项</a>
-            
-            <a class="navbar-item "
-               href="/about">关于</a>
-            
-        </div>
-        
-        <div class="navbar-menu navbar-end">
-            
-            <a class="navbar-item search" title="Search" href="javascript:;">
-                <i class="fas fa-search"></i>
-            </a>
-            
-            
-            
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
-            
-        </div>
-    </div>
-</nav>
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Choose C</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/categories/Technology">技术</a><a class="navbar-item" href="/other">树洞</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">kettle</a></li></ul></nav></div></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/08/03/kettle%E5%A1%AB%E5%9D%91/"><img class="fill" src="/images/default.jpeg" alt="kettle填坑"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-03T09:32:04.000Z" title="2021/8/3 下午5:32:04">2021-08-03</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:21:25.766Z" title="2022/2/23 下午5:21:25">2022-02-23</time>更新</span><span class="level-item">10 分钟读完 (大约1441个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/08/03/kettle%E5%A1%AB%E5%9D%91/">kettle填坑</a></h1><div class="content"><span id="more"></span>
 
-    <section class="section section-heading">
-    <div class="container">
-        <div class="content">
-            <h5>#kettle</h5>
-        </div>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/08/03/kettle%E5%A1%AB%E5%9D%91/" itemprop="url">kettle填坑</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-08-03T09:32:04.000Z" itemprop="datePublished">8月 3 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            10 分钟 read (About 1441 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/08/03/kettle%E5%A1%AB%E5%9D%91/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>为了将MSSqlserver数据传输至MySql数据库，一开始的选择有很多,类似<code>DataX</code>、<code>ES</code>，但是碍于运行环境是windows server 2012,且服务器环境不方便更改，查阅一番后，决定使用kettle进行数据的同步。</p>
+<ul>
+<li>环境<ul>
+<li>系统：windows server 2012R2  64位</li>
+<li>内存：8GB</li>
+<li>JDK：1.8</li>
+</ul>
+</li>
+</ul>
+<h2 id="kettle配置统一参数"><a href="#kettle配置统一参数" class="headerlink" title="kettle配置统一参数"></a>kettle配置统一参数</h2><p>一、kettle的常用配置文件说明：</p>
+<ul>
+<li><p><code>${user.home}</code> 表示WINDOWS的当前用户的文档文件夹，在C:\Users文件夹下</p>
+</li>
+<li><p><code>${user.home}/ .kettle /repositories.xml</code>: 该文件保存了用户设置的所有资源库信息,包括资源库名称,资源库需要的数据库连接参数等。该文件中定义的资源库将显示在spoon启动后出现的选择资源库下拉列表中,注意该文件的编码是UTF-8，资源库的名称尽量使用英文。</p>
+</li>
+<li><p><code>${user.home}/ kettle/kettle.properties</code>: 该文件保存了转换或作业中需要的变量, spoon启动后会自动加载该文件里定义的变量。</p>
+</li>
+<li><p><code>${user.home}/.kettle/shared.xml</code>: 该文件里保存了共享对象,共享对象可以是Database connections, Steps,Slave servers ,Partition schemas ,Cluster schemas。对象共享实质上就是将对象序列化的过程, spoon启动时,会加载shared.xml文件中定义的所有对象。</p>
+</li>
+<li><p><code>lib\kettle-engine.jar\kettle-jobs.xml</code>: 该文件中定义了Spoon启动时需要加载的作业项。</p>
+</li>
+</ul>
+<p><code>lib\kettle-engine.jarkettle-partition-plugins.xml</code>: 该文件中定义了Spoon启动时需要加载的分区插件。</p>
+<ul>
+<li><code>lib\kettle-engine.jar\kettle- plugins.xml</code>: 该文件中定义了Spoon启动时步骤和作业项插件的加载路径。</li>
+<li><code>lib\kettle-engine.jar\kettle-steps.xml</code>: 该文件中定义了Spoon启动时需要加载的转换步骤。</li>
+</ul>
+<p>二、修改repositories.xml的位置</p>
+<p>找到kettle所在文件夹下的Spoon.bat 文件,在里面查找出Kettle home所在的代码段,在 <code>cd %KETTLE_DIR%</code>代码上一行加上代码：<code>set KETTLE_HOME=D:/AAA/BBB/CCC</code></p>
+<ul>
+<li>如上，表示把文件重新等位到D:/AAA/BBB/CCC这个文件夹下。(注意:文件夹的斜杠和WINDOWS的目录斜杠是反的）</li>
+<li>复制 <code>${user.home}</code> 文件夹下的 .kettle 文件夹到D:/AAA/BBB/CCC目录下。</li>
+<li>启动kettle程序。</li>
+</ul>
+<p>参考：<br>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/lsy-blogs/p/8268318.html">Kettle日常使用汇总整理</a><br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/xiezhongkai08/article/details/71244528">Kettle使用统一的数据库配置</a><br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/ZZQHELLO2018/article/details/99693263">kettle学习笔记10—配置文件的使用</a><br>  <a target="_blank" rel="noopener" href="https://www.pianshen.com/article/63971845790/">Kettle环境配置-kettle.properties</a><br>部份配置:<br><img src="config.jpg" alt="部份配置"></p>
+<h2 id="kettle配置作业、转换"><a href="#kettle配置作业、转换" class="headerlink" title="kettle配置作业、转换"></a>kettle配置作业、转换</h2><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013468915/article/details/82629260">Kettle—使用手册</a></p>
+<p>在配置完成后,执行作业的方式有两种：</p>
+<ul>
+<li><strong>使用spoon.bat打开UI程序进行执行</strong><ul>
+<li>优点：作业执行很稳定，不会异常退出。</li>
+<li>缺点：吃内存，配置不高的服务器可能压力大。懂不懂1GB起步。😓</li>
+</ul>
+</li>
+<li><strong>使用Kitchen.bat脚本执行作业</strong><ul>
+<li>优点：可以结合windows的任务执行计划程序进行定时启动作业，占用内存少，完成后自动退出。</li>
+<li>缺点：一些耗时长的任务会有闪退的情况，或者数据量太大，执行时只取了一部分，会造成数据丢失。</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置重抽作业的逻辑"><a href="#配置重抽作业的逻辑" class="headerlink" title="配置重抽作业的逻辑"></a>配置重抽作业的逻辑</h3><p>初始化时在作业里设置开始时间、结束时间变量值，执行转换前判断变量值，未到时间点，执行转换。执行一次转换后，更新变量，循环判断，实现重抽的需求。<br>作业流程配置:</p>
+<p><img src="job.jpg" alt="重抽作业流程"><br>转换流程配置：</p>
+<p><img src="trans.jpg" alt="数据转换流程"></p>
+<p>更新时间变量JavaScript代码：</p>
+<figure class="highlight javascript"><figcaption><span>updatetime.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Script here</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//var st =getVariable("StTime",'2021-01-01')</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//var end =getVariable("End",'2021-7-27')</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Alert("st:"+st+"end:"+end)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stDate =<span class="title class_">StTime</span>;<span class="comment">// str2date(st,'yyyy-MM-dd')</span></span><br><span class="line"><span class="keyword">var</span> endDate =<span class="title class_">End</span>;<span class="comment">// str2date(end,'yyyy-MM-dd')</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(stDate==<span class="literal">null</span>|| endDate==<span class="literal">null</span>) {</span><br><span class="line">  <span class="comment">//Alert("error")</span></span><br><span class="line">   <span class="literal">false</span>;</span><br><span class="line">}<span class="keyword">else</span>{</span><br><span class="line"><span class="keyword">var</span> diff = <span class="title function_">dateDiff</span>(stDate,endDate,<span class="string">'d'</span>)</span><br><span class="line"><span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span>(diff&gt;=<span class="number">1</span>){</span><br><span class="line">  <span class="keyword">var</span> nextDate =<span class="title function_">dateAdd</span>(stDate,<span class="string">'d'</span>,<span class="number">1</span>);</span><br><span class="line">  <span class="comment">//Alert("next:"+nextDate)</span></span><br><span class="line">  <span class="keyword">var</span> strDate=<span class="title function_">date2str</span>(stDate,<span class="string">'yyyy-MM-dd'</span>);</span><br><span class="line">  <span class="keyword">var</span> strNextDate = <span class="title function_">date2str</span>(nextDate,<span class="string">'yyyy-MM-dd'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//setVariable("StTime",strNextDate,‘p’)</span></span><br><span class="line">  <span class="comment">//Alert("开始时间:"+strDate+"结束时间:"+strNextDate)</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">}<span class="keyword">else</span> {</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="定时启动无界面kettle任务"><a href="#定时启动无界面kettle任务" class="headerlink" title="定时启动无界面kettle任务"></a>定时启动无界面kettle任务</h3><p>使用CMD脚本+windows任务计划程序实现定时启动作业执行。<strong>耗时在2小时以内的作业可以使用脚本方式，执行时间长的作业最好使用spoon窗口程序执行，不会存在执行一半退出的情况。</strong><br><strong>bat文件保存要按ANSI编码进行保存</strong></p>
+<figure class="highlight bash"><figcaption><span>Task.bat</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@REM @<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">@REM <span class="keyword">if</span> <span class="string">"%1"</span> == <span class="string">"h"</span> goto begin</span><br><span class="line">@REM mshta vbscript:createobject(<span class="string">"wscript.shell"</span>).run(<span class="string">"%~nx0 h"</span>,0)(window.close)&amp;&amp;<span class="built_in">exit</span></span><br><span class="line">@REM :begin</span><br><span class="line"></span><br><span class="line">:: Kitchen.bat所在路径盘符?</span><br><span class="line">D:</span><br><span class="line">:: Kitchen.bat所在目录? ? ?</span><br><span class="line"><span class="built_in">cd</span> D:\PDI\data-integration\</span><br><span class="line"></span><br><span class="line">:: 作业（job）文件路径和日志文件路径</span><br><span class="line">:: 执行kitchen执行job，并写入日志</span><br><span class="line">Kitchen.bat /file:F:\pdi-ce-9.1.0.0-324\WorkSpace\测试.kjb /level:Base &gt;F:\pdi-ce-9.1.0.0-324\Log</span><br></pre></td></tr></tbody></table></figure>
 
+<p>Kitchen.bat参数详细说明：<a target="_blank" rel="noopener" href="https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Use_Command_Line_Tools_to_Run_Transformations_and_Jobs">https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Use_Command_Line_Tools_to_Run_Transformations_and_Jobs</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://www.staroon.dev/2018/07/18/KettleDoc-1/">Kettle系列教程-第一章</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/shuaishuai1234/article/details/103005023">kettle-数据同步比较数据（删除更新）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22310551/article/details/115163517">Kettle之定时运行Job</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904021824634893">kettle教程—kettle作业调度，根据更新时间增量更新</a><br><a target="_blank" rel="noopener" href="https://ask.hellobi.com/blog/hql15/5038">Kettle实现循环增量抽取数据</a><br><a target="_blank" rel="noopener" href="https://help.pentaho.com/Documentation/8.1/Products/Data_Integration/PDI_Client">Learn About the PDI Client (Spoon)-官方文档</a><br><a target="_blank" rel="noopener" href="https://help.hitachivantara.com/Documentation/Pentaho/9.1/Products/Use_Command_Line_Tools_to_Run_Transformations_and_Jobs">Use Command Line Tools to Run Transformations and Jobs</a></p>
+</div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2021/07/29/Kettle/"><img class="fill" src="/images/default.jpeg" alt="PDI【Kettle】（一）"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-29T08:39:12.000Z" title="2021/7/29 下午4:39:12">2021-07-29</time>发表</span><span class="level-item"><time dateTime="2022-02-23T09:21:21.669Z" title="2022/2/23 下午5:21:21">2022-02-23</time>更新</span><span class="level-item">36 分钟读完 (大约5358个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/07/29/Kettle/">PDI【Kettle】（一）</a></h1><div class="content"><span id="more"></span>
 
+<h2 id="转换组件-脚本-JavaScript【Spoon】"><a href="#转换组件-脚本-JavaScript【Spoon】" class="headerlink" title="转换组件-脚本-JavaScript【Spoon】"></a>转换组件-脚本-JavaScript【Spoon】</h2><p>我们在使用JavaScript组件的时候,在左侧核心树对象栏中可以看到Kettle为我们提供了很多简洁强大的内置函数,帮助我们在写脚本的时候对数据、参数变量等能很轻松的做处理,体验编码的感觉.本篇将详细介绍JavaScript组件中的函数功能</p>
+<p>脚本组件包含的函数主要包括六大类,分别是：</p>
+<ul>
+<li>字符串类型的函数(String Functions)</li>
+<li>浮点型的函数(Numeric Functions)</li>
+<li>日期类型函数(Date Functions)</li>
+<li>逻辑判断型函数(Logic Functions)</li>
+<li>特殊的函数(Special Functions)</li>
+<li>文件处理类函数(File Functions)</li>
+</ul>
+<h2 id="字符串类型函数-String-Functions"><a href="#字符串类型函数-String-Functions" class="headerlink" title="字符串类型函数(String Functions)"></a>字符串类型函数(String Functions)</h2><p>顾名思义,字符串类型的函数肯定是针对字符串类型的参数、变量进行处理操作的函数</p>
+<h3 id="日期转字符串-date2str"><a href="#日期转字符串-date2str" class="headerlink" title="日期转字符串(date2str)"></a>日期转字符串(<code>date2str</code>)</h3><p>日期转字符串函数<code>date2str</code>主要有4个方法,分别是：</p>
+<ul>
+<li><code>date2str(date)</code>:传入日期实例,转换成字符串类型</li>
+<li><code>date2str(date,format)</code>:传入日期和格式化参数,进行格式化转换</li>
+<li><code>date2str(date,format,iso)</code>:传入日期和参数格式化及ISO代码进行转换,(DE = German, EN = English, FR = France, …)</li>
+<li><code>date2str(date,format,iso,zone)</code>:传入时区进行格式化,例如北京时区(GMT+8)</li>
+</ul>
+<p>日期格式化参数format参数类型供参考：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yy / yyyy - <span class="number">06</span> / <span class="number">2006</span></span><br><span class="line"><span class="variable constant_">MM</span> / <span class="variable constant_">MMM</span> / <span class="variable constant_">MMMMM</span> - <span class="number">11</span> / <span class="title class_">Nov</span> / <span class="title class_">November</span></span><br><span class="line">d / dd  - <span class="number">1</span> / <span class="number">01</span></span><br><span class="line">E / <span class="variable constant_">EEEE</span> - <span class="title class_">Tue</span> / <span class="title class_">Tuesday</span></span><br><span class="line">hh / <span class="variable constant_">HH</span> - <span class="number">11</span> / <span class="number">23</span></span><br><span class="line">m / mm - <span class="number">5</span> / <span class="number">05</span></span><br><span class="line">s / ss - <span class="number">8</span> / <span class="number">08</span></span><br></pre></td></tr></tbody></table></figure>
 
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2021/07/29/Kettle/" itemprop="url">PDI【Kettle】（一）</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2021-07-29T08:39:12.000Z" itemprop="datePublished">7月 29 2021</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            36 分钟 read (About 5358 words)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><img title="default" src="/images/default.jpeg" alt="default"></body></html>
-        <p class="article-more-link">
-            <a href="/2021/07/29/Kettle/#more">Read More</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
+<p>代码示例:</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dValue = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(dValue,<span class="string">"dd.MM.yyyy"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(dValue,<span class="string">"dd.MM.yyyy HH:mm:ss"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(dValue,<span class="string">"E.MMM.yyyy"</span>,<span class="string">"DE"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(dValue,<span class="string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="string">"EN"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(dValue,<span class="string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="string">"ZH"</span>, <span class="string">"GMT+8"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(dValue,<span class="string">"yyyy-MM-dd HH:mm:ss"</span>,<span class="string">"ZH"</span>, <span class="string">"GMT+8"</span>));</span><br></pre></td></tr></tbody></table></figure>
 
+<p>以上代码在控制台将会输出如下：</p>
+<figure class="highlight properties"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:12:56 - JavaScript代码.0 - 19.08.2019</span></span><br><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:12:56 - JavaScript代码.0 - 19.08.2019 10:12:56</span></span><br><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:12:56 - JavaScript代码.0 - Mo.Aug.2019</span></span><br><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:12:56 - JavaScript代码.0 - 19.08.2019 10:12:56</span></span><br><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:12:56 - JavaScript代码.0 - 19.08.2019 10:12:56</span></span><br><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:12:56 - JavaScript代码.0 - 2019-08-19 10:12:56</span></span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="转义HTMLescapeHtml-html"><a href="#转义HTMLescapeHtml-html" class="headerlink" title="转义HTMLescapeHtml(html)"></a>转义HTML<code>escapeHtml(html)</code></h3><p>代码如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html=<span class="string">"&lt;h1&gt;我是H2标题&lt;/h2&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(escapeHtml(html))</span><br></pre></td></tr></tbody></table></figure>
 
+<p>最终输出</p>
+<figure class="highlight properties"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:16:13 - JavaScript代码.0 - &amp;lt;h1&amp;gt;&amp;#25105;&amp;#26159;H2&amp;#26631;&amp;#39064;&amp;lt;/h2&amp;gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
-    
-    
-    </div>
-</section>
-    <footer class="footer">
-    <div class="container">
-        <div class="columns content">
-            <div class="column is-narrow has-text-centered">
-                &copy; 2022 zhang&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
-            </div>
-            <div class="column is-hidden-mobile"></div>
+<h3 id="转义SQL-escapeSQL-var"><a href="#转义SQL-escapeSQL-var" class="headerlink" title="转义SQL(escapeSQL(var))"></a>转义SQL(<code>escapeSQL(var)</code>)</h3><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"SELECT * FROM CUSTOMER WHERE NAME='"</span> + escapeSQL(<span class="string">"McHale's Navy"</span>) + <span class="string">"'"</span>;  </span><br><span class="line"><span class="title function_">writeToLog</span>(str1)</span><br></pre></td></tr></tbody></table></figure>
 
-            
-            <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                
-                    
-                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/yuanjianzhang">
-                    
-                    GitHub
-                    
-                </a>
-                
-                </div>
-            </div>
-            
-            
-        </div>
-    </div>
-</footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+<p>该函数会把单引号转成双引号,输出结果如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">18</span>:<span class="number">59</span> - JavaScript代码<span class="number">.0</span> - SELECT * FROM CUSTOMER WHERE NAME=<span class="string">'McHale'</span><span class="string">'s Navy'</span></span><br></pre></td></tr></tbody></table></figure>
 
-<!-- test if the browser is outdated -->
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // plugin function, place inside DOM ready function
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        })
-    });
-</script>
+<h3 id="构造定长字符串-fillString-char-length"><a href="#构造定长字符串-fillString-char-length" class="headerlink" title="构造定长字符串(fillString(char,length))"></a>构造定长字符串(<code>fillString(char,length)</code>)</h3><p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">fillString</span>(<span class="string">"x"</span>,<span class="number">10</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">fillString</span>(<span class="string">"A"</span>,<span class="number">3</span>));</span><br></pre></td></tr></tbody></table></figure>
 
-<script>
-    window.FontAwesomeConfig = {
-        searchPseudoElements: true
-    }
-    moment.locale("zh-CN");
-</script>
+<p>最终会输出10个X和3个<code>A</code>,输出结果如下：</p>
+<figure class="highlight properties"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:24:08 - JavaScript代码.0 - xxxxxxxxxx</span></span><br><span class="line"><span class="attr">2019/08/19</span> <span class="string">10:24:08 - JavaScript代码.0 - AAA</span></span><br></pre></td></tr></tbody></table></figure>
 
+<p>需要注意的是第一个是一个char类型的单字符,不能是字符串</p>
+<h3 id="统计字符串出现频次-getOcuranceString-str-searchStr"><a href="#统计字符串出现频次-getOcuranceString-str-searchStr" class="headerlink" title="统计字符串出现频次(getOcuranceString(str,searchStr))"></a>统计字符串出现频次(<code>getOcuranceString(str,searchStr)</code>)</h3><p>第一个参数是要搜索的完整字符串,第二个参数是要搜索统计的字符串</p>
+<p>代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sef=<span class="string">'2007-09-11'</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getOcuranceString</span>(sef,<span class="string">'0'</span>))</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getOcuranceString</span>(sef,<span class="string">'00'</span>))</span><br></pre></td></tr></tbody></table></figure>
 
-    
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
-        }
-    });
-</script>
+<p>我们分别统计字符串0和00最终出现的次数,此时,日志最终打印的次数是3和1：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2019/08/19 10:28:45 - JavaScript代码.0 - 3</span><br><span class="line">2019/08/19 10:28:45 - JavaScript代码.0 - 1</span><br></pre></td></tr></tbody></table></figure>
 
-    
-    
-    
-    
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
-<script>
-    (function ($) {
-        $(document).ready(function () {
-            if (typeof($.fn.lightGallery) === 'function') {
-                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+<h3 id="获取字符串下标索引-indexOf"><a href="#获取字符串下标索引-indexOf" class="headerlink" title="获取字符串下标索引(indexOf)"></a>获取字符串下标索引(<code>indexOf</code>)</h3><p>获取下标索引主要有2个重构函数,分别是：</p>
+<ul>
+<li><code>indexOf(string,subString)</code>:获取出现字符串的索引开始位置</li>
+<li><code>indexOf(string,subString,fromIndex)</code>；指定开始位置,获取字符串索引开始位置</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1= <span class="string">"Hello Pentaho!"</span>;</span><br><span class="line"><span class="keyword">var</span> str2= <span class="title function_">indexOf</span>(str1, <span class="string">"Pentaho"</span>);</span><br><span class="line"><span class="keyword">var</span> str3= <span class="title function_">indexOf</span>(str1, <span class="string">"o"</span>, <span class="number">7</span>);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Input : "</span> + str1);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Index of 'Pentaho' : "</span> + str2);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"index of 'o', search from position 7 : "</span> + str3);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">34</span>:<span class="number">16</span> - JavaScript代码<span class="number">.0</span> - Input : Hello Pentaho!</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">34</span>:<span class="number">16</span> - JavaScript代码<span class="number">.0</span> - Index of <span class="string">'Pentaho'</span> : <span class="number">6</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">34</span>:<span class="number">16</span> - JavaScript代码<span class="number">.0</span> - index of <span class="string">'o'</span>, search from position <span class="number">7</span> : <span class="number">12</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="首字母大写-initCap"><a href="#首字母大写-initCap" class="headerlink" title="首字母大写(initCap)"></a>首字母大写(<code>initCap</code>)</h3><p>对指定字符串首字母大写处理,来看代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"my home"</span>;      </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">initCap</span>(str1));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">initCap</span>(<span class="string">'test a aaa cw'</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">initCap</span>(<span class="string">'myhome'</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时,最终控制台输出如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">41</span>:<span class="number">27</span> - JavaScript代码<span class="number">.0</span> - My Home</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">41</span>:<span class="number">27</span> - JavaScript代码<span class="number">.0</span> - Test A Aaa Cw</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">41</span>:<span class="number">27</span> - JavaScript代码<span class="number">.0</span> - Myhome</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字符串转小写-lower"><a href="#字符串转小写-lower" class="headerlink" title="字符串转小写(lower)"></a>字符串转小写(<code>lower</code>)</h3><p>将传入字符串全部转小写</p>
+<p>代码如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1= <span class="string">"Hello World!"</span>;</span><br><span class="line"><span class="keyword">var</span> str2= <span class="title function_">lower</span>(str1);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Input:"</span> + str1);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Converted to LowerCase:"</span> + str2);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">lower</span>(<span class="string">'DDDHelloSWxss'</span>))</span><br></pre></td></tr></tbody></table></figure>
+
+<p>响应内容</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/<span class="number">08</span>/<span class="number">19</span> <span class="number">10</span>:<span class="number">43</span>:<span class="number">09</span> - <span class="title class_">JavaScript</span>代码<span class="number">.0</span> - <span class="title class_">Input</span>:<span class="title class_">Hello</span> <span class="title class_">World</span>!</span><br><span class="line"><span class="number">2019</span>/<span class="number">08</span>/<span class="number">19</span> <span class="number">10</span>:<span class="number">43</span>:<span class="number">09</span> - <span class="title class_">JavaScript</span>代码<span class="number">.0</span> - <span class="title class_">Converted</span> to <span class="title class_">LowerCase</span>:hello world!</span><br><span class="line"><span class="number">2019</span>/<span class="number">08</span>/<span class="number">19</span> <span class="number">10</span>:<span class="number">43</span>:<span class="number">09</span> - <span class="title class_">JavaScript</span>代码<span class="number">.0</span> - dddhelloswxss</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字符串填充左侧-lpad-string-char-length"><a href="#字符串填充左侧-lpad-string-char-length" class="headerlink" title="字符串填充左侧(lpad(string,char,length))"></a>字符串填充左侧(<code>lpad(string,char,length)</code>)</h3><p>用指定长度的给定字符将字符串填充到左侧</p>
+<p>参数定义：</p>
+<ul>
+<li>1：传入字符串</li>
+<li>2：填充单字符</li>
+<li>3：填充单字符长度</li>
+</ul>
+<p>如果length长度超过给定字符串的长度,将对填充字符串做减法，例如：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1= <span class="string">"Hello World!"</span>; </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Lpad:"</span> + <span class="title function_">lpad</span>(str1, <span class="string">"x"</span>,<span class="number">20</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时,最终输出结果为：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">46</span>:<span class="number">38</span> - JavaScript代码<span class="number">.0</span> - Lpad:xxxxxxxxHello World!</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终的完成长度是20个字符长度,因此填充的单字符<code>x</code>并没有填充20次</p>
+<p>如果length长度小于给定字符串的长度,则默认返回原字符串,不做填充,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1= <span class="string">"Hello World!"</span>; </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Lpad:"</span> + <span class="title function_">lpad</span>(str1, <span class="string">"x"</span>,<span class="number">5</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时最终的输出结果为：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">10</span>:<span class="number">46</span>:<span class="number">38</span> - JavaScript代码<span class="number">.0</span> - Lpad:Hello World!</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="去空字符-ltrim"><a href="#去空字符-ltrim" class="headerlink" title="去空字符(ltrim)"></a>去空字符(<code>ltrim</code>)</h3><p>从左侧开始去除空字符串</p>
+<h3 id="数字转字符串-num2str"><a href="#数字转字符串-num2str" class="headerlink" title="数字转字符串(num2str)"></a>数字转字符串(<code>num2str</code>)</h3><p>给定数字,转换为字符串,主要有3个构造函数：</p>
+<ul>
+<li><code>num2str(num)</code>:转换num数字为字符串</li>
+<li><code>num2str(num,format)</code>:格式化数字为指定字符串</li>
+<li><code>num2str(num,format,iso)</code>:按照本地ISO编码进行格式化</li>
+</ul>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="number">123.40</span>;</span><br><span class="line"><span class="keyword">var</span> d2 = -<span class="number">123.40</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">num2str</span>(d1));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">num2str</span>(d1, <span class="string">"0.00"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">num2str</span>(d1, <span class="string">"0.00"</span>, <span class="string">"EN"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">num2str</span>(d2, <span class="string">"0.00;(0.00)"</span>, <span class="string">"EN"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">00</span>:<span class="number">17</span> - JavaScript代码<span class="number">.0</span> - <span class="number">123.4</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">00</span>:<span class="number">17</span> - JavaScript代码<span class="number">.0</span> - <span class="number">123.40</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">00</span>:<span class="number">17</span> - JavaScript代码<span class="number">.0</span> - <span class="number">123.40</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">00</span>:<span class="number">17</span> - JavaScript代码<span class="number">.0</span> - (<span class="number">123.40</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="XML保护标签函数转换-protectXMLCDATA"><a href="#XML保护标签函数转换-protectXMLCDATA" class="headerlink" title="XML保护标签函数转换(protectXMLCDATA)"></a>XML保护标签函数转换(<code>protectXMLCDATA</code>)</h3><p>传入给定字符串,添加标准保护,代码示例</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"my home"</span>;      </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">protectXMLCDATA</span>(str1));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时,将会给变量<code>str1</code>加上保护标签</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">02</span>:09 - JavaScript代码<span class="number">.0</span> - &lt;![CDATA[my home]]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="移除字符串中CRLF字符-removeCRLF-str"><a href="#移除字符串中CRLF字符-removeCRLF-str" class="headerlink" title="移除字符串中CRLF字符(removeCRLF(str))"></a>移除字符串中CRLF字符(<code>removeCRLF(str)</code>)</h3><p>给定字符串中删除CR END LF的字符串</p>
+<h3 id="替换字符串-replace"><a href="#替换字符串-replace" class="headerlink" title="替换字符串(replace)"></a>替换字符串(<code>replace</code>)</h3><p>替换字符串主要包括两个构造函数：</p>
+<ul>
+<li><code>replace(str,searchStr,replaceStr)</code>:从指定字符串中查询，然后替换</li>
+<li><code>replace(str,firstSearch,firstReplace,secondSearch,SecondReplace...)</code>：无限查询替换</li>
+</ul>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"Hello World, this is a nice function"</span>;      </span><br><span class="line"><span class="keyword">var</span> str2 = <span class="title function_">replace</span>(str1,<span class="string">"World"</span>, <span class="string">"Folk"</span>);</span><br><span class="line"><span class="title function_">writeToLog</span>(str2);</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="title function_">replace</span>(str1,<span class="string">"World"</span>, <span class="string">"Folk"</span>, <span class="string">"nice"</span>,<span class="string">"beautifull"</span>);</span><br><span class="line"><span class="title function_">writeToLog</span>(str2);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终输出:</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">10</span>:<span class="number">21</span> - JavaScript代码<span class="number">.0</span> - Hello Folk, <span class="built_in">this</span> is a nice function</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">11</span>:<span class="number">10</span>:<span class="number">21</span> - JavaScript代码<span class="number">.0</span> - Hello Folk, <span class="built_in">this</span> is a beautifull function</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字符串右侧填充-rpad-string-char-length"><a href="#字符串右侧填充-rpad-string-char-length" class="headerlink" title="字符串右侧填充(rpad(string,char,length))"></a>字符串右侧填充(<code>rpad(string,char,length</code>))</h3><p>使用方法同<code>lpad</code>,只是一个是左侧，一个是右侧</p>
+<h3 id="去除空字符-右侧-rtrim"><a href="#去除空字符-右侧-rtrim" class="headerlink" title="去除空字符(右侧)(rtrim)"></a>去除空字符(右侧)(<code>rtrim</code>)</h3><h3 id="正则切分-str2RegExp"><a href="#正则切分-str2RegExp" class="headerlink" title="正则切分(str2RegExp)"></a>正则切分(<code>str2RegExp</code>)</h3><p>出入一个正则表达式,对string字符串进行Split操作.代码如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> strToMatch = <span class="string">"info@proconis.de"</span>;</span><br><span class="line"><span class="keyword">var</span> strReg = <span class="string">"^(\\w+)@([a-zA-Z_]+?)\\.([a-zA-Z]{2,3})$"</span>;</span><br><span class="line"><span class="keyword">var</span> xArr =  <span class="title function_">str2RegExp</span>(strToMatch, strReg);</span><br><span class="line"><span class="keyword">if</span> ( xArr != <span class="literal">null</span> ) {</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;xArr.<span class="property">length</span>;i++) {</span><br><span class="line">	    <span class="title function_">writeToLog</span>(xArr[i]);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="keyword">else</span> {</span><br><span class="line">    <span class="title function_">writeToLog</span>(<span class="string">"no match"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">21</span>:<span class="number">19</span> - JavaScript代码<span class="number">.0</span> - info</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">21</span>:<span class="number">19</span> - JavaScript代码<span class="number">.0</span> - proconis</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">21</span>:<span class="number">19</span> - JavaScript代码<span class="number">.0</span> - de</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字符串截取-substr"><a href="#字符串截取-substr" class="headerlink" title="字符串截取(substr)"></a>字符串截取(<code>substr</code>)</h3><p>通过制定索引开始对字符串进行截取操作,主要有两个重构参数：</p>
+<ul>
+<li><code>substr(string,from)</code>:指定from索引开始截取字符串</li>
+<li><code>substr(string,from,to)</code>:指定开始和截止索引进行截取</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1= <span class="string">"Hello Pentaho!"</span>;</span><br><span class="line"><span class="keyword">var</span> str2= <span class="title function_">substr</span>(str1, <span class="number">6</span>);</span><br><span class="line"><span class="keyword">var</span> str3= <span class="title function_">substr</span>(str1, <span class="number">6</span>, <span class="number">7</span>);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Input : "</span> + str1);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"From position 6: "</span> + str2);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"From position 6 for 7 long : "</span> + str3);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>控制台输出如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">31</span>:<span class="number">20</span> - JavaScript代码<span class="number">.0</span> - Input : Hello Pentaho!</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">31</span>:<span class="number">20</span> - JavaScript代码<span class="number">.0</span> - From position <span class="number">6</span>: Pentaho!</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">31</span>:<span class="number">20</span> - JavaScript代码<span class="number">.0</span> - From position <span class="number">6</span> <span class="keyword">for</span> <span class="number">7</span> <span class="type">long</span> : Pentaho</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="去除左右空格-trim"><a href="#去除左右空格-trim" class="headerlink" title="去除左右空格(trim)"></a>去除左右空格(<code>trim</code>)</h3><h3 id="不转义HTML-unEscapeHtml-html"><a href="#不转义HTML-unEscapeHtml-html" class="headerlink" title="不转义HTML(unEscapeHtml(html))"></a>不转义HTML(<code>unEscapeHtml(html)</code>)</h3><p>针对以转义的HTML字符进行解密,代码如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> w=<span class="string">'&lt;h2&gt;我是H2标题&lt;/h2&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> esW=escapeHtml(w);</span><br><span class="line"><span class="keyword">var</span> unesw=<span class="title function_">unEscapeHtml</span>(esW);</span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(esW);</span><br><span class="line"><span class="title function_">writeToLog</span>(unesw);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">38</span>:<span class="number">16</span> - JavaScript代码<span class="number">.0</span> - &amp;lt;h2&amp;gt;&amp;#<span class="number">25105</span>;&amp;#<span class="number">26159</span>;H2&amp;#<span class="number">26631</span>;&amp;#<span class="number">39064</span>;&amp;lt;/h2&amp;gt;</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">38</span>:<span class="number">16</span> - JavaScript代码<span class="number">.0</span> - &lt;h2&gt;我是H2标题&lt;/h2&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="解码转义XML-unEscapeXml"><a href="#解码转义XML-unEscapeXml" class="headerlink" title="解码转义XML(unEscapeXml )"></a>解码转义XML(<code>unEscapeXml </code>)</h3><h3 id="字符串转大写-upper"><a href="#字符串转大写-upper" class="headerlink" title="字符串转大写(upper)"></a>字符串转大写(<code>upper</code>)</h3><p>将传入字符串全部转大写.例如:</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"Hello World"</span>;</span><br><span class="line">writeToLog(upper(str));</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="浮点型的函数-Numeric-Functions"><a href="#浮点型的函数-Numeric-Functions" class="headerlink" title="浮点型的函数(Numeric Functions)"></a>浮点型的函数(Numeric Functions)</h2><h3 id="计算绝对值-abs-num"><a href="#计算绝对值-abs-num" class="headerlink" title="计算绝对值(abs(num))"></a>计算绝对值(<code>abs(num)</code>)</h3><p>计算一个数值的绝对值,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = -<span class="number">1234.01</span>;</span><br><span class="line"><span class="keyword">var</span> d2 = <span class="number">1234.01</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">abs</span>(d1));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">abs</span>(d2));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出为：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">51</span>:<span class="number">00</span> - JavaScript代码<span class="number">.0</span> - <span class="number">1234.01</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">51</span>:<span class="number">00</span> - JavaScript代码<span class="number">.0</span> - <span class="number">1234.01</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="最小双精度值-ceil-num"><a href="#最小双精度值-ceil-num" class="headerlink" title="最小双精度值(ceil(num))"></a>最小双精度值(<code>ceil(num)</code>)</h3><p>返回最小的双精度值。该值将被四舍五入。代码示例：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">var</span> <span class="variable">d1</span> <span class="operator">=</span> -<span class="number">1234.01</span>;</span><br><span class="line"><span class="type">var</span> <span class="variable">d2</span> <span class="operator">=</span> <span class="number">1234.01</span>;</span><br><span class="line">writeToLog(ceil(d1));</span><br><span class="line">writeToLog(ceil(d2));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">52</span>:<span class="number">40</span> - JavaScript代码<span class="number">.0</span> - -<span class="number">1234</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">52</span>:<span class="number">40</span> - JavaScript代码<span class="number">.0</span> - <span class="number">1235</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="最大数值-floor-num"><a href="#最大数值-floor-num" class="headerlink" title="最大数值(floor(num))"></a>最大数值(<code>floor(num)</code>)</h3><p>返回最大数值,该值将被四舍五入,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = -<span class="number">1234.01</span>;</span><br><span class="line"><span class="keyword">var</span> d2 = <span class="number">1234.01</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">floor</span>(d1));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">floor</span>(d2));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>运行结果如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">55</span>:<span class="number">13</span> - JavaScript代码<span class="number">.0</span> - -<span class="number">1235</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">13</span>:<span class="number">55</span>:<span class="number">13</span> - JavaScript代码<span class="number">.0</span> - <span class="number">1234</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字符串转数值-str2num-var"><a href="#字符串转数值-str2num-var" class="headerlink" title="字符串转数值(str2num(var))"></a>字符串转数值(<code>str2num(var)</code>)</h3><p>字符串转数值主要包含两个构造函数,分别是</p>
+<ul>
+<li><code>str2num(str)</code>:传入数值字符串,进行格式化转换</li>
+<li><code>str2num(str,format)</code>:通过指定格式进行数值转换</li>
+</ul>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"1.234,56"</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">"12"</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>((<span class="title function_">str2num</span>(str1,<span class="string">"#,##0.00"</span>)));</span><br><span class="line"><span class="title function_">writeToLog</span>((<span class="title function_">str2num</span>(str2)));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">14</span>:<span class="number">02</span>:<span class="number">19</span> - JavaScript代码<span class="number">.0</span> - <span class="number">1.234</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">14</span>:<span class="number">02</span>:<span class="number">19</span> - JavaScript代码<span class="number">.0</span> - <span class="number">12</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="截取数值-trunc"><a href="#截取数值-trunc" class="headerlink" title="截取数值(trunc)"></a>截取数值(<code>trunc</code>)</h3><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">trunc</span>(<span class="number">1234.9</span>); <span class="comment">// 返回 1234</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="日期类型函数-Date-Functions"><a href="#日期类型函数-Date-Functions" class="headerlink" title="日期类型函数(Date Functions)"></a>日期类型函数(Date Functions)</h2><h3 id="日期相加-dateAdd"><a href="#日期相加-dateAdd" class="headerlink" title="日期相加(dateAdd)"></a>日期相加(<code>dateAdd</code>)</h3><p>针对日期变量进行相应的添加时间,添加频率包括年、月、日、时、分、秒 等等</p>
+<p>函数定义:<code>dateAdd(date,format,plusNum)</code></p>
+<ul>
+<li>date:日期对象</li>
+<li>format:要加的类型</li>
+<li>plusNum:加的数值</li>
+</ul>
+<p>相加类型主要包括：</p>
+<ul>
+<li>y:年</li>
+<li>m：月</li>
+<li>d:日</li>
+<li>w:周</li>
+<li>wd:工作日</li>
+<li>hh:小时</li>
+<li>mi:分钟</li>
+<li>ss:秒</li>
+</ul>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fmt=<span class="string">'yyyy-MM-dd HH:mm:ss'</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"当前时间:"</span>+<span class="title function_">date2str</span>(d1,fmt));</span><br><span class="line"><span class="keyword">var</span> py=<span class="title function_">dateAdd</span>(d1,<span class="string">'y'</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> fy=<span class="title function_">date2str</span>(py,fmt);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"加1年："</span>+fy);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">14</span>:<span class="number">17</span>:<span class="number">41</span> - JavaScript代码<span class="number">.0</span> - 当前时间:<span class="number">2019</span>-08-<span class="number">19</span> <span class="number">14</span>:<span class="number">17</span>:<span class="number">41</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">14</span>:<span class="number">17</span>:<span class="number">41</span> - JavaScript代码<span class="number">.0</span> - 加<span class="number">1</span>年：<span class="number">2020</span>-08-<span class="number">19</span> <span class="number">14</span>:<span class="number">17</span>:<span class="number">41</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="日期比较-dateDiff"><a href="#日期比较-dateDiff" class="headerlink" title="日期比较(dateDiff)"></a>日期比较(<code>dateDiff</code>)</h3><p>两个日期相互比较</p>
+<p>函数定义:<code>dateDiff(startDate,endDate,type)</code></p>
+<ul>
+<li>startDate:开始日期</li>
+<li>endDate:截止日期</li>
+<li>type：返回相差数值类型</li>
+</ul>
+<p>类型主要包括：</p>
+<ul>
+<li>y:年</li>
+<li>m：月</li>
+<li>d:日</li>
+<li>w:周</li>
+<li>wd:工作日</li>
+<li>hh:小时</li>
+<li>mi:分钟</li>
+<li>ss:秒</li>
+</ul>
+<h3 id="获取指定日期数值-getDayNumber"><a href="#获取指定日期数值-getDayNumber" class="headerlink" title="获取指定日期数值(getDayNumber)"></a>获取指定日期数值(<code>getDayNumber</code>)</h3><p>根据类型获取指定日期的数值</p>
+<p>函数定义：<code>getDayNumber(date,type)</code></p>
+<ul>
+<li>date:当前日期实例</li>
+<li>type:类别</li>
+</ul>
+<p>类别主要分四类</p>
+<ul>
+<li>y:获取当年的天数</li>
+<li>m:获取当月的天数</li>
+<li>w:获取本周的天数</li>
+<li>wm:获取当月中本周的天数</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">var</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="string">"y"</span>));</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="string">"m"</span>));</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="string">"w"</span>));</span><br><span class="line">writeToLog(getDayNumber(d1, <span class="string">"wm"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="getFiscalDate"><a href="#getFiscalDate" class="headerlink" title="getFiscalDate"></a>getFiscalDate</h3><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Returns the fiscal Date from the date value,</span></span><br><span class="line"><span class="comment">// based on a given offset.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Usage:</span></span><br><span class="line"><span class="comment">// getFiscalDate(var);</span></span><br><span class="line"><span class="comment">// 1: Date - The Variable with the Date.</span></span><br><span class="line"><span class="comment">// 2: String - The Date/Month which represents</span></span><br><span class="line"><span class="comment">// the fiscal Start Offset. Format allways "dd.MM.".</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 2006-11-15</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">"01.07."</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">"10.12."</span>;</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getFiscalDate</span>(d1, str1));</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getFiscalDate</span>(d1, str2));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取下一个工作日日期-getNextWorkingDay"><a href="#获取下一个工作日日期-getNextWorkingDay" class="headerlink" title="获取下一个工作日日期(getNextWorkingDay)"></a>获取下一个工作日日期(<code>getNextWorkingDay</code>)</h3><p>传入当前日期,获取该日期后面一个工作日日期</p>
+<p>函数定义<code>getNextWorkingDay(date)</code></p>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 周1</span></span><br><span class="line"><span class="keyword">var</span> d2=<span class="title function_">str2date</span>(<span class="string">'2019-08-19 16:36:00'</span>,fmt);</span><br><span class="line"><span class="comment">//周 6</span></span><br><span class="line"><span class="keyword">var</span> d3=<span class="title function_">str2date</span>(<span class="string">'2019-08-17 16:36:00'</span>,fmt);</span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(<span class="title function_">getNextWorkingDay</span>(d1),fmt));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(<span class="title function_">getNextWorkingDay</span>(d2),fmt));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">date2str</span>(<span class="title function_">getNextWorkingDay</span>(d3),fmt));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们这d2和d3变量中定义了不同的日期实例,分别是周1和周6,最终通过<code>getNextWorkingDay</code>能获取得到下一个工作日日期，控制台输出如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">16</span>:<span class="number">37</span>:<span class="number">38</span> - JavaScript代码<span class="number">.0</span> - <span class="number">2019</span>-08-<span class="number">20</span> <span class="number">16</span>:<span class="number">37</span>:<span class="number">38</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">16</span>:<span class="number">37</span>:<span class="number">38</span> - JavaScript代码<span class="number">.0</span> - <span class="number">2019</span>-08-<span class="number">20</span> <span class="number">16</span>:<span class="number">36</span>:<span class="number">00</span></span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">16</span>:<span class="number">37</span>:<span class="number">38</span> - JavaScript代码<span class="number">.0</span> - <span class="number">2019</span>-08-<span class="number">19</span> <span class="number">16</span>:<span class="number">36</span>:<span class="number">00</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取当前月份数值-month-date"><a href="#获取当前月份数值-month-date" class="headerlink" title="获取当前月份数值(month(date))"></a>获取当前月份数值(<code>month(date)</code>)</h3><p>获取当前日期的月份数值,需要注意的是,该值的月份是从0开始的,因此我们最终得到的结果应该+1才是我们的真实月份数值，代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>();<span class="comment">//2019/08/19</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">month</span>(d1)); <span class="comment">//最终输出为7</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取当前时间的季度值-quarter-date"><a href="#获取当前时间的季度值-quarter-date" class="headerlink" title="获取当前时间的季度值(quarter(date))"></a>获取当前时间的季度值(<code>quarter(date)</code>)</h3><p>根据指定日期获取当前季度数值</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>();<span class="comment">//2019/08/19</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">quarter</span>(d1));<span class="comment">//最终输出为3(代表第三季度)</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字符串转日期-str2date"><a href="#字符串转日期-str2date" class="headerlink" title="字符串转日期(str2date)"></a>字符串转日期(<code>str2date</code>)</h3><p>字符串转日期和日期转字符串有点类似,只不过主体对换了一下,但是传入的格式参数都是一样的，主要有4个重载函数:</p>
+<ul>
+<li><code>str2date(str)</code>:默认转换</li>
+<li><code>str2date(str,format)</code>:传入format格式化参数</li>
+<li><code>str2date(str,format,iso)</code>:根据iso编码及格式化参数进行转换</li>
+<li><code>str2date(str,format,iso,timezone)</code>:根据不同时区的iso编码进行格式化转换</li>
+</ul>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">str2date</span>(<span class="string">"01.12.2006"</span>,<span class="string">"dd.MM.yyyy"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">str2date</span>(<span class="string">"01.12.2006 23:23:01"</span>,<span class="string">"dd.MM.yyyy HH:mm:ss"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">str2date</span>(<span class="string">"Tue.May.2006"</span>,<span class="string">"E.MMM.yyyy"</span>,<span class="string">"EN"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">str2date</span>(<span class="string">"22.02.2008 23:23:01"</span>,<span class="string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="string">"DE"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">str2date</span>(<span class="string">"22.02.2008 23:23:01"</span>,<span class="string">"dd.MM.yyyy HH:mm:ss"</span>,<span class="string">"DE"</span>, <span class="string">"EST"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="截取日期-truncDate-date-type"><a href="#截取日期-truncDate-date-type" class="headerlink" title="截取日期(truncDate(date,type))"></a>截取日期(<code>truncDate(date,type)</code>)</h3><p>指定截取不同的日期部分,函数定义truncDate(date,type)</p>
+<ul>
+<li>date:当前日期实例</li>
+<li>type:截取类型</li>
+</ul>
+<p>类型主要有6中,分别是整型，从0-5：</p>
+<ul>
+<li>5：截取月份</li>
+<li>4：截取天数</li>
+<li>3:截取小时</li>
+<li>2：截取分钟</li>
+<li>1：截取秒</li>
+<li>0:截取毫秒</li>
+</ul>
+<p>代码示例 如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateTime = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="keyword">var</span> date0 = <span class="title function_">truncDate</span>(dateTime, <span class="number">0</span>); <span class="comment">// gives back today at yyyy/MM/dd HH:mm:ss.000</span></span><br><span class="line"><span class="keyword">var</span> date1 = <span class="title function_">truncDate</span>(dateTime, <span class="number">1</span>); <span class="comment">// gives back today at yyyy/MM/dd HH:mm:00.000</span></span><br><span class="line"><span class="keyword">var</span> date2 = <span class="title function_">truncDate</span>(dateTime, <span class="number">2</span>); <span class="comment">// gives back today at yyyy/MM/dd HH:00:00.000</span></span><br><span class="line"><span class="keyword">var</span> date3 = <span class="title function_">truncDate</span>(dateTime, <span class="number">3</span>); <span class="comment">// gives back today at yyyy/MM/dd 00:00:00.000</span></span><br><span class="line"><span class="keyword">var</span> date4 = <span class="title function_">truncDate</span>(dateTime, <span class="number">4</span>); <span class="comment">// gives back today at yyyy/MM/01 00:00:00.000</span></span><br><span class="line"><span class="keyword">var</span> date5 = <span class="title function_">truncDate</span>(dateTime, <span class="number">5</span>); <span class="comment">// gives back today at yyyy/01/01 00:00:00.000</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取当年的周数-week"><a href="#获取当年的周数-week" class="headerlink" title="获取当年的周数(week)"></a>获取当年的周数(<code>week</code>)</h3><p>获取指定日期的周数,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>(); <span class="comment">//2019/08/19</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">week</span>(d1));<span class="comment">// 返回34</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取年份-year"><a href="#获取年份-year" class="headerlink" title="获取年份(year)"></a>获取年份(<code>year</code>)</h3><p>获取传入日期的年份,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>(); <span class="comment">//2019/08/19</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">year</span>(d1));<span class="comment">// 返回2019</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="逻辑判断型函数-Logic-Functions"><a href="#逻辑判断型函数-Logic-Functions" class="headerlink" title="逻辑判断型函数(Logic Functions)"></a>逻辑判断型函数(Logic Functions)</h2><h3 id="isCodepage"><a href="#isCodepage" class="headerlink" title="isCodepage"></a>isCodepage</h3><p>判断字符串的codepage项,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xStr = <span class="string">"RÃ©al"</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isCodepage</span>(xStr, <span class="string">"UTF-8"</span>));<span class="comment">// true</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isCodepage</span>(xStr, <span class="string">"windows-1250"</span>));<span class="comment">// true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="是否日期-isDate-str"><a href="#是否日期-isDate-str" class="headerlink" title="是否日期(isDate(str))"></a>是否日期(<code>isDate(str)</code>)</h3><p>判断当前字符串是否日期</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="string">"Hello World"</span>;      </span><br><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isDate</span>(d1));<span class="comment">//false</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isDate</span>(d2));<span class="comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="是否为空-isEmpty-str"><a href="#是否为空-isEmpty-str" class="headerlink" title="是否为空(isEmpty(str))"></a>是否为空(<code>isEmpty(str)</code>)</h3><p>判断字符串是否为空</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="string">"Hello World"</span>;      </span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">isEmpty</span>(d));<span class="comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="判断字符串是否为邮箱标准格式-isMailValid-str"><a href="#判断字符串是否为邮箱标准格式-isMailValid-str" class="headerlink" title="判断字符串是否为邮箱标准格式(isMailValid(str))"></a>判断字符串是否为邮箱标准格式(<code>isMailValid(str)</code>)</h3><p>判断一个字符串是否是邮箱</p>
+<h3 id="判断是否是数值-isNum-str"><a href="#判断是否是数值-isNum-str" class="headerlink" title="判断是否是数值(isNum(str))"></a>判断是否是数值(<code>isNum(str)</code>)</h3><p>判断一个字符串是否是数值</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"Hello World"</span>;      </span><br><span class="line"><span class="keyword">var</span> str2 = <span class="number">123456</span>;</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">isNum</span>(str1));<span class="comment">//false</span></span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">isNum</span>(str2));<span class="comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="是否正则匹配-isRegExp"><a href="#是否正则匹配-isRegExp" class="headerlink" title="是否正则匹配(isRegExp)"></a>是否正则匹配(<code>isRegExp</code>)</h3><p>判断给定的正则表达式是否匹配当前的字符串，主要有2个函数定义：</p>
+<ul>
+<li>isRegExp(str,reg):给定正则判断字符串是否匹配</li>
+<li>isRegExp(str,reg1,reg2,reg3…)；可以递归判断正则匹配</li>
+</ul>
+<p>最终返回的是匹配的次数数值,如果不匹配,返回-1</p>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> email1 =<span class="string">"info@proconis.de"</span>;</span><br><span class="line"><span class="keyword">var</span> email2= <span class="string">"support@proconis.co.uk"</span>;</span><br><span class="line"><span class="keyword">var</span> email3= <span class="string">"HelloWorld@x"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg1=<span class="string">"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$"</span>;</span><br><span class="line"><span class="keyword">var</span> reg2=<span class="string">"^[\\w-\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isRegExp</span>(email1, reg1,reg2) + <span class="string">" Matches"</span>); <span class="comment">//1</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isRegExp</span>(email2, reg1,reg2) + <span class="string">" Matches"</span>);  <span class="comment">//2</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isRegExp</span>(email3, reg1,reg2) + <span class="string">" Matches"</span>);<span class="comment">// 1</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="是否工作日-isWorkingDay-date"><a href="#是否工作日-isWorkingDay-date" class="headerlink" title="是否工作日(isWorkingDay(date))"></a>是否工作日(<code>isWorkingDay(date)</code>)</h3><p>判断某日期是否是工作日,代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="title class_">Date</span>();<span class="comment">//周1</span></span><br><span class="line"><span class="keyword">var</span> d2=<span class="title function_">str2date</span>(<span class="string">'2019-08-17'</span>,<span class="string">'yyyy-MM-dd'</span>) <span class="comment">//周六</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isWorkingDay</span>(d1));<span class="comment">//true</span></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">isWorkingDay</span>(d2));<span class="comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="特殊的函数-Special-Functions"><a href="#特殊的函数-Special-Functions" class="headerlink" title="特殊的函数(Special Functions)"></a>特殊的函数(Special Functions)</h2><h3 id="弹框信息-Alert-msg"><a href="#弹框信息-Alert-msg" class="headerlink" title="弹框信息(Alert(msg))"></a>弹框信息(<code>Alert(msg)</code>)</h3><p>在屏幕前弹出一个信息框</p>
+<h3 id="加载JavaScript文件-LoadScriptFile"><a href="#加载JavaScript文件-LoadScriptFile" class="headerlink" title="加载JavaScript文件(LoadScriptFile)"></a>加载JavaScript文件(<code>LoadScriptFile</code>)</h3><p>将一个javascript文件加载到实际的运行上下文中。应该从定义的StartScript调用此函数，否则，每次处理都会加载javascript文件行。</p>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xPfad = <span class="string">"F:/bak/Hello.js"</span>;</span><br><span class="line"><span class="title class_">LoadScriptFile</span>(xPfad);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时,我们的外部JS文件仅仅是包含一句简单的输出，如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Hello LoadScriptFile,outSide JS File "</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终运行时,控制台会打印出我们在外部JS中的输出行</p>
+<h3 id="从当前Tab栏加载JS并运行-LoadScriptFromTab"><a href="#从当前Tab栏加载JS并运行-LoadScriptFromTab" class="headerlink" title="从当前Tab栏加载JS并运行(LoadScriptFromTab)"></a>从当前Tab栏加载JS并运行(<code>LoadScriptFromTab</code>)</h3><p>如果我们在当前的JavaScript组件中通过模块化的方式编写了很多脚本代码,我们可以通过<code>LoadScriptFromTab</code>函数进行相互调用,这对于开发抽象来说是很好的,代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"外部Tab加载JS-------------------------"</span>)</span><br><span class="line"><span class="title class_">LoadScriptFromTab</span>(<span class="string">'Item_1'</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="有效卡号判断-LuhnCheck"><a href="#有效卡号判断-LuhnCheck" class="headerlink" title="有效卡号判断(LuhnCheck)"></a>有效卡号判断(<code>LuhnCheck</code>)</h3><p>如果给定的是一个有效的卡号,则返回true</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"4444333322221111"</span>;      </span><br><span class="line"><span class="title function_">writeToLog</span>(str1 + <span class="string">": "</span> + <span class="title class_">LuhnCheck</span>(str1)); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">"4444333322221110"</span>;      </span><br><span class="line"><span class="title function_">writeToLog</span>(str2 + <span class="string">": "</span> + <span class="title class_">LuhnCheck</span>(str2));<span class="comment">//false</span></span><br><span class="line">      </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="向文件中追加数据-appendToFile"><a href="#向文件中追加数据-appendToFile" class="headerlink" title="向文件中追加数据(appendToFile)"></a>向文件中追加数据(<code>appendToFile</code>)</h3><p>向指定文件中追加数据,如果文件不存在则创建文件</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> file = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++){</span><br><span class="line">	<span class="title function_">appendToFile</span>(file,<span class="string">'TEST'</span>+i+<span class="string">"\r\n"</span>);</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时,该代码会向<code>log.txt</code>文件输出100条数据行</p>
+<h3 id="decode函数"><a href="#decode函数" class="headerlink" title="decode函数"></a>decode函数</h3><p>decode函数有点类似于<code>IF-THEN-ELSE</code>语句，即表示通过给定查询的字符串是否存在，如果存在，即替换,否则返回默认值</p>
+<p>代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"Hallo"</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">decode</span>(str1, <span class="string">"Hallo"</span>, <span class="string">"Hello"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">decode</span>(str1, <span class="string">"1"</span>, <span class="string">"Mr"</span>, <span class="string">"2"</span>, <span class="string">"Mrs"</span>, <span class="string">"N/A"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">decode</span>(str1, <span class="string">"1"</span>, <span class="string">"Mr"</span>, <span class="string">"2"</span>, <span class="string">"Mrs"</span>));</span><br><span class="line">str1 = <span class="string">"Mrs"</span>;</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">decode</span>(str1, <span class="string">"1"</span>, <span class="string">"Mr"</span>, <span class="string">"2"</span>, <span class="string">"Mrs"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>控制台输出：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">17</span>:<span class="number">39</span>:<span class="number">01</span> - JavaScript代码<span class="number">.0</span> - Hello</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">17</span>:<span class="number">39</span>:<span class="number">01</span> - JavaScript代码<span class="number">.0</span> - N/A</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">17</span>:<span class="number">39</span>:<span class="number">01</span> - JavaScript代码<span class="number">.0</span> - Hallo</span><br><span class="line"><span class="number">2019</span>/08/<span class="number">19</span> <span class="number">17</span>:<span class="number">39</span>:<span class="number">01</span> - JavaScript代码<span class="number">.0</span> - Mrs</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="执行命令-execProcess"><a href="#执行命令-execProcess" class="headerlink" title="执行命令(execProcess)"></a>执行命令(<code>execProcess</code>)</h3><p>代码如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t=<span class="title function_">execProcess</span>(<span class="string">'ping www.baidu.com'</span>);</span><br><span class="line"><span class="title function_">writeToLog</span>(t)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>调用命令行,ping百度的网址，最终输出返回数据</p>
+<h3 id="执行SQL语句-fireToDB"><a href="#执行SQL语句-fireToDB" class="headerlink" title="执行SQL语句(fireToDB)"></a>执行SQL语句(<code>fireToDB</code>)</h3><p>通过获取数据库连接名称，传递SQL语句,以返回SQL查询的值,函数定义：</p>
+<ul>
+<li>fireToDB(connectionName,SQL)；第一个参数为数据库连接名称，我们在JNDI中定义的名称，第二个参数为SQL语句</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strConn = <span class="string">"MY Connection"</span>;</span><br><span class="line"><span class="keyword">var</span> strSQL = <span class="string">"SELECT COUNT(*) FROM ..."</span>;</span><br><span class="line"><span class="keyword">var</span> xArr = <span class="title function_">fireToDB</span>(strConn, strSQL);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="仅仅获取数值-getDigitsOnly"><a href="#仅仅获取数值-getDigitsOnly" class="headerlink" title="仅仅获取数值(getDigitsOnly)"></a>仅仅获取数值(<code>getDigitsOnly</code>)</h3><p>在给定的字符串中仅仅筛选过滤得到数值，代码如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"abc123cde"</span>;      </span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getDigitsOnly</span>(str1));<span class="comment">//返回123</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取Kettle环境变量的值-getEnvironmentVar"><a href="#获取Kettle环境变量的值-getEnvironmentVar" class="headerlink" title="获取Kettle环境变量的值(getEnvironmentVar)"></a>获取Kettle环境变量的值(<code>getEnvironmentVar</code>)</h3><p>获取在Kettle中的环境变量的值</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getEnvironmentVar</span>(<span class="string">"user.dir"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getEnvironmentVar</span>(<span class="string">"user.name"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取当前进程的受影响行数-getProcessCount-type"><a href="#获取当前进程的受影响行数-getProcessCount-type" class="headerlink" title="获取当前进程的受影响行数(getProcessCount(type))"></a>获取当前进程的受影响行数(<code>getProcessCount(type)</code>)</h3><p>根据类型获取当前进程的受影响行数，类型如下：</p>
+<ul>
+<li>u:更新行数</li>
+<li>i:插入行数</li>
+<li>w:写入行数</li>
+<li>r:读取行数</li>
+<li>o:输出行数</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getProcessCount</span>(<span class="string">"u"</span>));</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">getProcessCount</span>(<span class="string">"r"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取当前转换名称-getTransformationName"><a href="#获取当前转换名称-getTransformationName" class="headerlink" title="获取当前转换名称(getTransformationName)"></a>获取当前转换名称(<code>getTransformationName</code>)</h3><p>获取当前的转换名称</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xTranName = <span class="title function_">getTransformationName</span>();</span><br><span class="line"><span class="title function_">writeToLog</span>(xTranName);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取Kettle环境中的变量值-getVariable"><a href="#获取Kettle环境中的变量值-getVariable" class="headerlink" title="获取Kettle环境中的变量值(getVariable)"></a>获取Kettle环境中的变量值(<code>getVariable</code>)</h3><p>从当前的Kettle环境中获取指定的变量值,目前函数有2个重载：</p>
+<ul>
+<li>getVariable(varName)；根据变量名称获取变量值</li>
+<li>getVariable(varName,defaultValue):根据变量名获取值,如果不存在则使用默认值</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strVarName=<span class="string">"getVariableTest"</span>;</span><br><span class="line"><span class="keyword">var</span> strVarValue=<span class="string">"123456"</span>;</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getVariable</span>(strVarName, <span class="string">""</span>));</span><br><span class="line"><span class="title function_">setVariable</span>(strVarName,strVarValue, <span class="string">"r"</span>);</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getVariable</span>(strVarName, <span class="string">""</span>));</span><br><span class="line">strVarValue=<span class="string">"654321"</span>;</span><br><span class="line"><span class="title function_">setVariable</span>(strVarName,strVarValue, <span class="string">"r"</span>);</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getVariable</span>(strVarName, <span class="string">""</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="控制台打印-println"><a href="#控制台打印-println" class="headerlink" title="控制台打印(println)"></a>控制台打印(<code>println</code>)</h3><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"Hello World!"</span>;</span><br><span class="line"><span class="title function_">print</span>(str);</span><br><span class="line">      </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="移除数值-removeDigits"><a href="#移除数值-removeDigits" class="headerlink" title="移除数值(removeDigits)"></a>移除数值(<code>removeDigits</code>)</h3><p>移除给定字符串中的数值，代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"abc123cde"</span>; </span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="title function_">removeDigits</span>(str1));<span class="comment">//返回abccde</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h3><h3 id="设置环境变量-setEnvironmentVar"><a href="#设置环境变量-setEnvironmentVar" class="headerlink" title="设置环境变量(setEnvironmentVar)"></a>设置环境变量(<code>setEnvironmentVar</code>)</h3><p>通过在Script脚本组件中调用函数重新设置Kettle的环境变量</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strVarName=<span class="string">"setEnvTest"</span>;</span><br><span class="line"><span class="keyword">var</span> strVarValue=<span class="string">"123456"</span>;</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getEnvironmentVar</span>(strVarName));</span><br><span class="line"><span class="title function_">setEnvironmentVar</span>(strVarName,strVarValue);</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getEnvironmentVar</span>(strVarName));</span><br><span class="line">strVarValue=<span class="string">"654321"</span>;</span><br><span class="line"><span class="title function_">setEnvironmentVar</span>(strVarName,strVarValue);</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getEnvironmentVar</span>(strVarName));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="设置变量-setVariable"><a href="#设置变量-setVariable" class="headerlink" title="设置变量(setVariable)"></a>设置变量(<code>setVariable</code>)</h3><p>通过<code>setVariable</code>函数设置环境变量,该用途可以用于重新赋值Kettle环境中已经存在的变量值或者重新生成变量值</p>
+<p>函数定义<code>setVariable(key,value,level)</code></p>
+<ul>
+<li>key:变量名称</li>
+<li>value:变量值</li>
+<li>level:级别,主要包括s(system)、r(root)、p(parent)、g(grandparent)四种类别</li>
+</ul>
+<p>代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strVarName=<span class="string">"setEnvTest"</span>;</span><br><span class="line"><span class="keyword">var</span> strVarValue=<span class="string">"123456"</span>;</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getVariable</span>(strVarName, <span class="string">""</span>));</span><br><span class="line"><span class="title function_">setVariable</span>(strVarName,strVarValue, <span class="string">"r"</span>);</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getVariable</span>(strVarName, <span class="string">""</span>));</span><br><span class="line">strVarValue=<span class="string">"654321"</span>;</span><br><span class="line"><span class="title function_">setVariable</span>(strVarName,strVarValue, <span class="string">"r"</span>);</span><br><span class="line"><span class="title class_">Alert</span>(<span class="title function_">getVariable</span>(strVarName, <span class="string">""</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="写入日志-writeToLog"><a href="#写入日志-writeToLog" class="headerlink" title="写入日志(writeToLog)"></a>写入日志(<code>writeToLog</code>)</h3><p>打印并写入日志信息,该函数可能是我们用到的最多的函数,可以帮助我们调试信息,主要有两个重载：</p>
+<ul>
+<li>writeToLog(msg):写入msg日志信息</li>
+<li>writeToLog(level,msg)：根据level基本写入msg信息</li>
+</ul>
+<p>关于日志的级别,这里主要是简写的方式,主要如下：</p>
+<ul>
+<li>d(Debug):调试模式</li>
+<li>l(Detailed):详细</li>
+<li>e(Error):错误</li>
+<li>m(Minimal):最小日志</li>
+<li>r(RowLevel):行级日志</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"Hello World!"</span>);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"r"</span>, <span class="string">"Hello World!"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="文件处理类函数-File-Functions"><a href="#文件处理类函数-File-Functions" class="headerlink" title="文件处理类函数(File Functions)"></a>文件处理类函数(File Functions)</h2><h3 id="复制文件-copyFile"><a href="#复制文件-copyFile" class="headerlink" title="复制文件(copyFile)"></a>复制文件(<code>copyFile</code>)</h3><p>复制一个文件到目标目录,函数定义如下：</p>
+<p><code>copyFile(sourceFile,targetFile,overwrite)</code></p>
+<ul>
+<li>sourceFile:源文件</li>
+<li>targetFile:目标文件</li>
+<li>overWrite:是否覆盖,如果目标文件存在的话,布尔类型</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> targetFile=<span class="string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">copyFile</span>(file1,targetFile,<span class="literal">false</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="创建文件夹-createFolder"><a href="#创建文件夹-createFolder" class="headerlink" title="创建文件夹(createFolder)"></a>创建文件夹(<code>createFolder</code>)</h3><p>创建一个文件夹,代码示例如下：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strFolder = <span class="string">"F:/bak/createFolder"</span>;</span><br><span class="line"><span class="title function_">createFolder</span>(strFolder);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="删除文件-deleteFile"><a href="#删除文件-deleteFile" class="headerlink" title="删除文件(deleteFile)"></a>删除文件(<code>deleteFile</code>)</h3><p>删除一个文件(不能删除文件夹)</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> targetFile=<span class="string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title function_">deleteFile</span>(targetFile);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="判断文件是否存在-fileExists"><a href="#判断文件是否存在-fileExists" class="headerlink" title="判断文件是否存在(fileExists())"></a>判断文件是否存在(<code>fileExists()</code>)</h3><p>判断文件是否存在</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> targetFile=<span class="string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title function_">fileExists</span>(targetFile);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取文件扩展名-getFileExtension"><a href="#获取文件扩展名-getFileExtension" class="headerlink" title="获取文件扩展名(getFileExtension)"></a>获取文件扩展名(<code>getFileExtension</code>)</h3><p>如果文件不存在,则返回null,代码示例</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> ext=<span class="title function_">getFileExtension</span>(file1);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"扩展名："</span>+ext)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取文件大小-getFileSize"><a href="#获取文件大小-getFileSize" class="headerlink" title="获取文件大小(getFileSize)"></a>获取文件大小(<code>getFileSize</code>)</h3><p>获取文件大小,结果是一个long类型的长整型数值</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> ext=<span class="title function_">getFileSize</span>(file1);</span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"大小："</span>+ext)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取文件最后修改日期-getLastModifiedTime"><a href="#获取文件最后修改日期-getLastModifiedTime" class="headerlink" title="获取文件最后修改日期(getLastModifiedTime)"></a>获取文件最后修改日期(<code>getLastModifiedTime</code>)</h3><p>获取文件最后修改日期,函数定义：</p>
+<p><code>getLastModifiedTime(filePath,format)</code></p>
+<ul>
+<li>filePath:文件路径</li>
+<li>format：日期格式化</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> ext=<span class="title function_">getLastModifiedTime</span>(file1,<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取文件的父文件夹名称-getParentFoldername"><a href="#获取文件的父文件夹名称-getParentFoldername" class="headerlink" title="获取文件的父文件夹名称(getParentFoldername)"></a>获取文件的父文件夹名称(<code>getParentFoldername</code>)</h3><p>获取文件的父文件夹名称</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="keyword">var</span> parentFolder=<span class="title function_">getParentFoldername</span>(file1);</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取文件简称-getShortName"><a href="#获取文件简称-getShortName" class="headerlink" title="获取文件简称(getShortName)"></a>获取文件简称(<code>getShortName</code>)</h3><p>获取文件简称</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="keyword">var</span> shortName=<span class="title function_">getShortFilename</span>(file1);</span><br><span class="line"></span><br><span class="line"><span class="title function_">writeToLog</span>(<span class="string">"简单名称:"</span>+shortName)<span class="comment">//返回log.txt</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="判断是否是一个文件-isFile"><a href="#判断是否是一个文件-isFile" class="headerlink" title="判断是否是一个文件(isFile)"></a>判断是否是一个文件(<code>isFile</code>)</h3><p>判断是否是一个文件</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="keyword">var</span> flag=<span class="title function_">isFile</span>(file1) <span class="comment">//true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="判断是否是一个文件夹-isFolder"><a href="#判断是否是一个文件夹-isFolder" class="headerlink" title="判断是否是一个文件夹(isFolder)"></a>判断是否是一个文件夹(<code>isFolder</code>)</h3><p>判断是否是一个文件夹</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="keyword">var</span> flag=<span class="title function_">isFolder</span>(file1) <span class="comment">//false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="加载一个文件的内容-loadFileContent"><a href="#加载一个文件的内容-loadFileContent" class="headerlink" title="加载一个文件的内容(loadFileContent)"></a>加载一个文件的内容(<code>loadFileContent</code>)</h3><p>从指定文件中加载内容,主要有两个重载函数：</p>
+<ul>
+<li>loadFileContent(filePath):默认加载文件</li>
+<li>loadFileContent(filePath,encoding):指定编码加载文件内容</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="keyword">var</span> content=<span class="title function_">loadFileContent</span>(file1);</span><br><span class="line"><span class="keyword">var</span> c1=<span class="title function_">loadFileContent</span>(file1,<span class="string">"UTF-8"</span>)</span><br><span class="line"><span class="title function_">writeToLog</span>(content)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="移动文件-moveFile"><a href="#移动文件-moveFile" class="headerlink" title="移动文件(moveFile)"></a>移动文件(<code>moveFile</code>)</h3><p>移动指定文件，函数定义moveFile(source,target,overWrite)</p>
+<ul>
+<li>source:源文件</li>
+<li>target:目标文件</li>
+<li>overWrite；是否覆盖,如果目标文件存在,布尔类型值</li>
+</ul>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file1 = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="keyword">var</span> targetFile=<span class="string">"F:/bak/logTarget.txt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">moveFile</span>(file1,targetFile,<span class="literal">false</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="创建一个空文件-touch"><a href="#创建一个空文件-touch" class="headerlink" title="创建一个空文件(touch)"></a>创建一个空文件(<code>touch</code>)</h3><p>创建一个空文件</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strFile = <span class="string">"F:/bak/log.txt"</span>;</span><br><span class="line"><span class="title function_">touch</span>(strFile);</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是Kettle 8.3版本中的内置函数方法,方法很多,写这篇博客也是很累,算是全部都学习了一遍,脑子里已经记忆了一遍,但是我们也不需要死记硬背,就和我们学些Linux命令一样,如果你知道<code>man</code>命令，对某个命令不是很了解的话直接通过man命令学习即可.</p>
+<p>Kettle也是如此,对于某个函数不是很了解的话,右键点击该函数,会出现<code>sample</code>字样菜单,点击该菜单即可弹出该函数的介绍和使用信息,里面包含了该函数的调用示例和函数详细介绍,也是很人性化的.</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Blog/"><span class="level-start"><span class="level-item">Blog</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Technology/"><span class="level-start"><span class="level-item">Technology</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/VUE/"><span class="level-start"><span class="level-item">VUE</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/cranky/"><span class="level-start"><span class="level-item">cranky</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/node/"><span class="level-start"><span class="level-item">node</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%BD%AC%E8%BD%BD/"><span class="level-start"><span class="level-item">转载</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-18T07:41:39.000Z">2022-02-18</time></p><p class="title"><a href="/2022/02/18/VUE%E5%88%9D%E5%A7%8B%E3%80%90%E4%BA%8C%E3%80%91/">VUE初始【二】</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-18T07:41:39.000Z">2022-02-18</time></p><p class="title"><a href="/2022/02/18/%E5%BD%93%E6%8C%89%E4%B8%8B%E5%9B%9E%E8%BD%A6%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/">当按下回车时发生了什么？</a></p><p class="categories"><a href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T08:11:00.000Z">2022-02-15</time></p><p class="title"><a href="/2022/02/15/nodejs%E5%8D%95%E7%BA%BF%E7%A8%8B%EF%BC%9F%E9%9D%9E%E9%98%BB%E5%A1%9EI-O%EF%BC%9F%E5%BC%82%E6%AD%A5%EF%BC%9F/">nodejs单线程？非阻塞I/O？异步？</a></p><p class="categories"><a href="/categories/node/">node</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T07:57:23.000Z">2022-02-15</time></p><p class="title"><a href="/2022/02/15/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E4%B8%ADwebpack%E3%80%81npm%E3%80%81node%E3%80%81nodejs%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">前端模块化开发中webpack、npm、node、nodejs之间的关系</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/02/14/VUE%E5%88%9D%E8%AF%86/"><img src="/images/default.jpeg" alt="VUE初识"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-02-14T08:54:02.000Z">2022-02-14</time></p><p class="title"><a href="/2022/02/14/VUE%E5%88%9D%E8%AF%86/">VUE初识</a></p><p class="categories"><a href="/categories/VUE/">VUE</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/03/"><span class="level-start"><span class="level-item">三月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/ADO-NET/"><span class="tag">ADO.NET</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ASP-NET/"><span class="tag">ASP.NET</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ASP-Net-MVC/"><span class="tag">ASP.Net MVC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker/"><span class="tag">Docker</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gmail/"><span class="tag">Gmail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mail/"><span class="tag">Mail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Oracle/"><span class="tag">Oracle</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Postman/"><span class="tag">Postman</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQL/"><span class="tag">SQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQLlite/"><span class="tag">SQLlite</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/System-Net-Mail/"><span class="tag">System.Net.Mail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Technology/"><span class="tag">Technology</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/XML/"><span class="tag">XML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/emoji/"><span class="tag">emoji</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jQuery/"><span class="tag">jQuery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kettle/"><span class="tag">kettle</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/live2d/"><span class="tag">live2d</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sqlserver/"><span class="tag">sqlserver</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"><span class="tag">发送邮件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%90%E6%A7%BD/"><span class="tag">吐槽</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="tag">命令行</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%84%9F%E6%83%B3/"><span class="tag">感想</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%88%90%E9%95%BF/"><span class="tag">成长</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%99%E8%82%B2/"><span class="tag">教育</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%BB%E9%94%81/"><span class="tag">死锁</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%B0%E5%BD%95/"><span class="tag">记录</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B4%9F%E8%83%BD%E9%87%8F/"><span class="tag">负能量</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AC%E8%BD%BD/"><span class="tag">转载</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7/"><span class="tag">软件版本号</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/"><span class="tag">速查表</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/"><span class="tag">邮件发送</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%85%8D%E7%BD%AE/"><span class="tag">配置</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Choose C</a><p class="is-size-7"><span>&copy; 2022 zhang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
             }
-            if (typeof($.fn.justifiedGallery) === 'function') {
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
                 $('.justified-gallery').justifiedGallery();
             }
-        });
-    })(jQuery);
-</script>
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <style>
-        .hljs {
-            position: relative;
-        }
-
-        .hljs .clipboard-btn {
-            float: right;
-            color: #9a9a9a;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hljs .clipboard-btn:hover {
-          color: #8a8a8a;
-        }
-
-        .hljs > .clipboard-btn {
-            display: none;
-            position: absolute;
-            right: 4px;
-            top: 4px;
-        }
-
-        .hljs:hover > .clipboard-btn {
-            display: inline;
-        }
-
-        .hljs > figcaption > .clipboard-btn {
-            margin-right: 4px;
-        }
-    </style>
-    <script>
-      $(document).ready(function () {
-        $('figure.hljs').each(function(i, figure) {
-          var codeId = 'code-' + i;
-          var code = figure.querySelector('.code');
-          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
-          code.id = codeId;
-          copyButton.addClass('clipboard-btn');
-          copyButton.attr('data-clipboard-target-id', codeId);
-
-          var figcaption = figure.querySelector('figcaption');
-
-          if (figcaption) {
-            figcaption.append(copyButton[0]);
-          } else {
-            figure.prepend(copyButton[0]);
-          }
-        })
-
-        var clipboard = new ClipboardJS('.clipboard-btn', {
-          target: function(trigger) {
-            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
-          }
-        });
-        clipboard.on('success', function(e) {
-          e.clearSelection();
-        })
-      })
-    </script>
-
-    
-    
-
-    
-
-
-
-<script src="/js/script.js"></script>
-
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-mask"></div>
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-    
-</body>
-</html>
+        });</script><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
