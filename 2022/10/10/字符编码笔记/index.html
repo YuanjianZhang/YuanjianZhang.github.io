@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>字符编码笔记 - 不知选啥就选C</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="Choose C"><meta name="msapplication-TileImage" content="/img/favicon.png"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Choose C"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="字节、字符、字符编码概念 字节：是计算机存储数据的存储单元，是一个8位的二进制数 计算机内部，所有信息最终都是一个二进制值。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从00000000到11111111。   字符：指类字形单位或符"><meta property="og:type" content="blog"><meta property="og:title" content="字符编码笔记"><meta property="og:url" content="https://yuanjianzhang.github.io/2022/10/10/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="不知选啥就选C"><meta property="og:description" content="字节、字符、字符编码概念 字节：是计算机存储数据的存储单元，是一个8位的二进制数 计算机内部，所有信息最终都是一个二进制值。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从00000000到11111111。   字符：指类字形单位或符"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://yuanjianzhang.github.io/images/default.jpeg"><meta property="article:published_time" content="2022-10-10T06:34:04.000Z"><meta property="article:modified_time" content="2022-10-11T05:36:37.437Z"><meta property="article:author" content="zhang"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://yuanjianzhang.github.io/images/default.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://yuanjianzhang.github.io/2022/10/10/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/"},"headline":"字符编码笔记","image":[],"datePublished":"2022-10-10T06:34:04.000Z","dateModified":"2022-10-11T05:36:37.437Z","author":{"@type":"Person","name":"zhang"},"publisher":{"@type":"Organization","name":"不知选啥就选C","logo":{"@type":"ImageObject","url":{"text":"Choose C"}}},"description":"字节、字符、字符编码概念 字节：是计算机存储数据的存储单元，是一个8位的二进制数 计算机内部，所有信息最终都是一个二进制值。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从00000000到11111111。   字符：指类字形单位或符"}</script><link rel="canonical" href="https://yuanjianzhang.github.io/2022/10/10/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Choose C</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/categories/Technology">技术</a><a class="navbar-item" href="/other">树洞</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/default.jpeg" alt="字符编码笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-10-10T06:34:04.000Z" title="2022/10/10 下午2:34:04">2022-10-10</time>发表</span><span class="level-item"><time dateTime="2022-10-11T05:36:37.437Z" title="2022/10/11 下午1:36:37">2022-10-11</time>更新</span><span class="level-item">31 分钟读完 (大约4630个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">字符编码笔记</h1><div class="content"><h2 id="字节、字符、字符编码概念"><a href="#字节、字符、字符编码概念" class="headerlink" title="字节、字符、字符编码概念"></a>字节、字符、字符编码概念</h2><ul>
+<li>字节：是计算机存储数据的存储单元，是一个8位的二进制数<ul>
+<li>计算机内部，所有信息最终都是一个二进制值。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从<code>00000000</code>到<code>11111111</code>。</li>
+</ul>
+</li>
+<li>字符：指类字形单位或符号，包括字母、数字、运算符号、标点符号和其他符号，以及一些功能性符号，比如”1”, “汉”, “お”,”℃”等等。<ul>
+<li>字符是电子计算机或无线电通信中字母、数字、符号的统称，其是数据结构中最小的数据存取单位，<code>通常由8个二进制位(一个字节)来表示一个字符</code>。 字符是计算机中经常用到的二进制编码形式，也是计算机中最常用到的信息形式。</li>
+</ul>
+</li>
+<li>字符编码：是大家对计算机如何使用字节来表示一个字符的约定，可分为ASCII编码，ANSI编码（本地化编码），UNICODE编码（国际化编码）三种。<ul>
+<li>也称字集码，是把字符集中的字符编码为指定集合中某一对象（例如：比特模式、自然数序列、8位组或者电脉冲），以便文本在计算机中存储和通过通信网络的传递。</li>
+</ul>
+</li>
+<li>编码：<code>是信息从一种形式或格式转换为另一种形式的过程</code>，也称为“计算机编程语言的代码”，简称“编码”。<ul>
+<li>用预先规定的方法将文字、数字或其它对象编成数码，或将信息、数据转换成规定的电脉冲信号。</li>
+<li>编码在电子计算机、电视、遥控和通讯等方面广泛使用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="“字节”与“字符”"><a href="#“字节”与“字符”" class="headerlink" title="“字节”与“字符”"></a>“字节”与“字符”</h3><p>它们完全不是一个位面的概念，所以两者之间没有“区别”这个说法。不同编码里，字符和字节的对应关系不同：</p>
+<p>①ASCII码中，一个英文字母（不分大小写）占一个字节的空间，一个中文汉字占两个字节的空间。一个二进制数字序列，在计算机中作为一个数字单元，一般为8位二进制数，换算为十进制。最小值0，最大值255。</p>
+<p>②UTF-8编码中，一个英文字符等于一个字节，一个中文（含繁体）等于三个字节。</p>
+<p>③Unicode编码中，一个英文等于两个字节，一个中文（含繁体）等于两个字节。</p>
+<p>符号：英文标点占一个字节，中文标点占两个字节。举例：英文句号“.”占1个字节的大小，中文句号“。”占2个字节的大小。</p>
+<p>④UTF-16编码中，一个英文字母字符或一个汉字字符存储都需要2个字节（Unicode扩展区的一些汉字存储需要4个字节）。</p>
+<p>⑤UTF-32编码中，世界上任何字符的存储都需要4个字节。</p>
+<p>ANSI编码有很多种，但是都只是规定自己国家的语言，这时候出现了UNICODE编码，该编码类似于ANSI，使用多个字节表示一个字符，UNICODE编码把世界上各种主要语言都进行了编码，当然UNICDOE编码也出现了很多种编码方案，比如使用8个二进制位的UTF8以及使用16个二进制位的UTF16等等。</p>
+<img src="byte_display_utf_8.jpg">
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BC%96%E7%A0%81">编码</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81">字符编码</a></p>
+</blockquote>
+<h2 id="ASCII-码：单字节编码。"><a href="#ASCII-码：单字节编码。" class="headerlink" title="ASCII 码：单字节编码。"></a>ASCII 码：单字节编码。</h2><p>上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之间的关系，做了统一规定。这被称为 ASCII 码，一直沿用至今。</p>
+<p>ASCII 码一共规定了128个字符的编码，比如空格SPACE是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的一位统一规定为0。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ascii-code.com/">ASCII Code - The extended ASCII table</a></p>
+</blockquote>
+<h2 id="非-ASCII-编码：多字节编码。"><a href="#非-ASCII-编码：多字节编码。" class="headerlink" title="非 ASCII 编码：多字节编码。"></a>非 ASCII 编码：多字节编码。</h2><p>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用 ASCII 码表示。于是，一些欧洲国家就决定，利用字节中闲置的最高位编入新的符号。比如，法语中的<code>é</code>的编码为130（二进制<code>10000010</code>）。这样一来，这些欧洲国家使用的编码体系，可以表示最多256个符号。</p>
+<p>但是，这里又出现了新的问题。不同的国家有不同的字母，因此，哪怕它们都使用256个符号的编码方式，代表的字母却不一样。比如，130在法语编码中代表了<code>é</code>，在希伯来语编码中却代表了字母<code>Gimel</code>(<code>ג</code>)，在俄语编码中又会代表另一个符号。但是不管怎样，所有这些编码方式中，<code>0--127表示的符号是一样的</code>，不一样的只是128–255的这一段。</p>
+<p>至于亚洲国家的文字，使用的符号就更多了，汉字就多达10万左右。一个字节只能表示256种符号，肯定是不够的，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是 GB2312，使用两个字节表示一个汉字，所以理论上最多可以表示 256 x 256 = 65536 个符号。</p>
+<h2 id="UNICODE编码：宽字节编码"><a href="#UNICODE编码：宽字节编码" class="headerlink" title="UNICODE编码：宽字节编码"></a>UNICODE编码：宽字节编码</h2><p>正如上一节所说，世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码。为什么电子邮件常常出现乱码？就是因为发信人和收信人使用的编码方式不一样。</p>
+<p>可以想象，如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失。这就是 Unicode，就像它的名字都表示的，这是一种所有符号的编码。</p>
+<p>Unicode 当然是一个很大的集合，现在的规模可以容纳100多万个符号。每个符号的编码都不一样，比如，<code>U+0639</code>表示阿拉伯字母<code>Ain</code>，<code>U+0041</code>表示英语的大写字母<code>A</code>，<code>U+4E25</code>表示汉字<code>严</code>。具体的符号对应表，可以查询<a target="_blank" rel="noopener" href="https://www.unicode.org/">unicode.org</a>，或者专门的汉字对应表。</p>
+<h2 id="Unicode-的问题"><a href="#Unicode-的问题" class="headerlink" title="Unicode 的问题"></a>Unicode 的问题</h2><p>需要注意的是，<strong>Unicode 只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</strong></p>
+<p>比如，汉字<code>严</code>的 Unicode 是十六进制数<code>4E25</code>，转换成二进制数足足有15位（<code>100111000100101</code>），也就是说，这个符号的表示至少需要2个字节。表示其他更大的符号，可能需要3个字节或者4个字节，甚至更多。</p>
+<p>这里就有两个严重的问题，第一个问题是，如何才能区别 Unicode 和 ASCII ？计算机怎么知道三个字节表示一个符号，而不是分别表示三个符号呢？第二个问题是，我们已经知道，英文字母只用一个字节表示就够了，如果 Unicode 统一规定，每个符号用三个或四个字节表示，那么每个英文字母前都必然有二到三个字节是0，这对于存储来说是极大的浪费，文本文件的大小会因此大出二三倍，这是无法接受的。</p>
+<p>它们造成的结果是：</p>
+<ol>
+<li>出现了 Unicode 的多种存储方式，也就是说有许多种不同的二进制格式，可以用来表示 Unicode。</li>
+<li>Unicode 在很长一段时间内无法推广，直到互联网的出现。</li>
+</ol>
+<h2 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h2><p>互联网的普及，强烈要求出现一种统一的编码方式。UTF-8 就是在互联网上使用最广的一种 Unicode 的实现方式。其他实现方式还包括 UTF-16（字符用两个字节或四个字节表示）和 UTF-32（字符用四个字节表示），不过在互联网上基本不用。**<code>重复一遍，这里的关系是，UTF-8 是 Unicode 的实现方式之一。</code>**</p>
+<p>UTF-8 最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</p>
+<p>UTF-8 的编码规则很简单，只有二条：</p>
+<ol>
+<li>对于单字节的符号，字节的第一位设为0，后面7位为这个符号的 Unicode 码。因此对于英语字母，UTF-8 编码和 ASCII 码是相同的。</li>
+<li>对于n字节的符号（n &gt; 1），第一个字节的前n位都设为1，第n + 1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的 Unicode 码。</li>
+</ol>
+<p>下表总结了编码规则，字母x表示可用编码的位。</p>
+<p>Unicode 和 UTF-8 之间的<a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/zh-hans/UTF-8#UTF-8%E7%9A%84%E7%B7%A8%E7%A2%BC%E6%96%B9%E5%BC%8F">转换关系表</a> (字母x表示可用编码的位。 )</p>
+<table>
+<thead>
+<tr>
+<th align="left">码点的位数</th>
+<th align="left">码点起值</th>
+<th align="left">码点终值</th>
+<th align="left">字节序列</th>
+<th align="left">Byte 1</th>
+<th align="left">Byte 2</th>
+<th align="left">Byte 3</th>
+<th align="left">Byte 4</th>
+<th align="left">Byte 5</th>
+<th align="left">Byte 6</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>7</strong></td>
+<td align="left">U+0000</td>
+<td align="left">U+007F</td>
+<td align="left">1</td>
+<td align="left">0xxxxxxx</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>11</strong></td>
+<td align="left">U+0080</td>
+<td align="left">U+07FF</td>
+<td align="left">2</td>
+<td align="left">110xxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>16</strong></td>
+<td align="left">U+0800</td>
+<td align="left">U+FFFF</td>
+<td align="left">3</td>
+<td align="left">1110xxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>21</strong></td>
+<td align="left">U+10000</td>
+<td align="left">U+1FFFFF</td>
+<td align="left">4</td>
+<td align="left">11110xxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>26</strong></td>
+<td align="left">U+200000</td>
+<td align="left">U+3FFFFFF</td>
+<td align="left">5</td>
+<td align="left">111110xx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>31</strong></td>
+<td align="left">U+4000000</td>
+<td align="left">U+7FFFFFFF</td>
+<td align="left">6</td>
+<td align="left">1111110x</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+<td align="left">10xxxxxx</td>
+</tr>
+</tbody></table>
+<ul>
+<li>在ASCII码的范围，用一个位元组表示，超出ASCII码的范围就用位元组表示，这就形成了我们上面看到的UTF-8的表示方法，这样的好处是当UNICODE文件中只有ASCII码时，储存的文件都为一个位元组，所以就是普通的ASCII文件无异，读取的时候也是如此，所以能与以前的ASCII文件相容。</li>
+<li>大于ASCII码的，就会由上面的第一位元组的前几位表示该unicode字元的长度，比如110xxxxx前三位的二进位表示告诉我们这是个2BYTE的UNICODE字元；1110xxxx是个三位的UNICODE字元，依此类推；xxx的位置由字符编码数的二进制表示的位填入。越靠右的x具有越少的特殊意义。只用最短的那个足够表达一个字符编码数的多字节串。注意在多字节串中，第一个字节的开头”1”的数目就是整个串中字节的数目。</li>
+</ul>
+<p>以汉字<code>严</code>为例，演示如何实现 UTF-8 编码。</p>
+<p><code>严</code>的 Unicode 是<code>4E25</code>（<code>100111000100101</code>），根据上表，可以发现<code>4E25</code>处在第三行的范围内（<code>0000 0800 - 0000 FFFF</code>），因此<code>严</code>的 UTF-8 编码需要三个字节，即格式是<code>1110xxxx 10xxxxxx 10xxxxxx</code>。<br>然后，从严的最后一个二进制位开始，依次从后向前填入格式中的x，多出的位补0。这样就得到了，<code>严</code>的 UTF-8 编码是<code>11100100 10111000 10100101</code>，转换成十六进制就是<code>E4B8A5</code>。</p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><ul>
+<li><strong>Unicode编码系统可分为编码方式和实现方式两个层次</strong></li>
+<li><strong>Unicode 只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</strong></li>
+<li>一个字节(byte)由<code>8</code>位二进制数组成</li>
+<li>一个十六进制数可以转成<code>4</code>位二进制数</li>
+<li>Unicode编码方式使用<code>两个字节(byte)</code>进行编码和字符的关联，即<code>4</code>位十六进制数，即<code>16</code>位二进制数，</li>
+<li><strong>UTF-8 是Unicode编码系统的实现方式之一</strong></li>
+</ul>
+<h3 id="拓展知识"><a href="#拓展知识" class="headerlink" title="拓展知识"></a>拓展知识</h3><h4 id="字符编码方案的演变"><a href="#字符编码方案的演变" class="headerlink" title="字符编码方案的演变"></a>字符编码方案的演变</h4><p>摘录：<br>总结字符编码方案的演变，我们大致上可简单地划分为三个阶段：<br>  <strong>① ASCII 编码方案阶段 → ② ANSI 编码方案阶段 → ③ Unicode / UCS 编码方案阶段。</strong></p>
+<p><strong>ASCII 编码</strong>：在第一个阶段的 ASCII 编码方案阶段，ASCII 编码方案主要适用于美国（与美国同文的英国大致上也适用）。</p>
+<p><strong>ASCII 编码（本地化编码）</strong>：后来计算机发展到欧洲各国以及世界各地，开始发展到了作为第二阶段的 ANSI 编码方案阶段，各个国家和地区先后各自制定了既兼容 ASCII 但又互不兼容的 ANSI 编码方案。</p>
+<p><strong>UNICODE编码（国际化编码）</strong>：ANSI 编码方案阶段的各自为政，为世界各个国家和地区基于计算机的信息交流带来了极大的不便，痛定思痛之余，终于通过 Unicode / UCS 编码方案的制定发展到了第三阶段，最终 Unicode 编码方案胜出。</p>
+<p>参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6854573213306290189">字符编码（三：Unicode 编码系统与字节序）</a></p>
+</blockquote>
+<h4 id="Unicode编码系统可分为编码方式和实现方式两个层次"><a href="#Unicode编码系统可分为编码方式和实现方式两个层次" class="headerlink" title="Unicode编码系统可分为编码方式和实现方式两个层次"></a>Unicode编码系统可分为编码方式和实现方式两个层次</h4><p><strong>编码方式</strong>：</p>
+<p>统一码的编码方式与ISO 10646的通用字符集概念相对应。目前实际应用的统一码版本对应于<code>UCS-2</code>，使用16位的编码空间。也就是每个字符占用2个字节。这样理论上一共最多可以表示2^16（即65536）个字符。基本满足各种语言的使用。实际上目前版本的统一码并未完全使用这16位编码，而是保留了大量空间以作为特殊使用或将来扩展。</p>
+<p>上述16位统一码字符构成<code>基本多文种平面</code>。最新（但未实际广泛使用）的统一码版本定义了16个辅助平面，两者合起来至少需要占据21位的编码空间，比3字节略少。但事实上辅助平面字符仍然占用4字节编码空间，与UCS-4保持一致。未来版本会扩充到ISO 10646-1实现级别3，即涵盖UCS-4的所有字符。UCS-4是更大而尚未填充完全的31位字符集，加上恒为0的首位，共需占据32位，即4字节。理论上最多能表示231个字符，完全可以涵盖一切语言所用的符号。</p>
+<p><code>基本多文种平面</code>的字符的编码为<code>U+hhhh</code>，其中每个h代表一个十六进制数字，与UCS-2编码完全相同。而其对应的4字节UCS-4编码后两个字节一致，前两个字节则所有位均为0。</p>
+<p><strong>实现方式</strong>：</p>
+<p>Unicode的实现方式不同于编码方式。一个字符的Unicode编码确定。但是在实际传输过程中，由于不同系统平台的设计不一定一致，以及出于节省空间的目的，对Unicode编码的实现方式有所不同。Unicode的实现方式称为Unicode转换格式（Unicode Transformation Format，简称为<code>UTF</code>）。</p>
+<h4 id="Little-endian-和-Big-endian"><a href="#Little-endian-和-Big-endian" class="headerlink" title="Little endian 和 Big endian"></a>Little endian 和 Big endian</h4><p>上一节已经提到，UCS-2 格式可以存储 Unicode 码（码点不超过<code>0xFFFF</code>）。以汉字<code>严</code>为例，Unicode 码是<code>4E25</code>，需要用两个字节存储，一个字节是<code>4E</code>，另一个字节是<code>25</code>。<br>存储的时候：</p>
+<p><strong><code>4E</code>在前，<code>25</code>在后，这就是 <code>Big endian</code> 方式；</strong></p>
+<p><strong><code>25</code>在前，<code>4E</code>在后，这是 <code>Little endian</code> 方式;</strong></p>
+<p>这两个古怪的名称来自英国作家斯威夫特的《格列佛游记》。在该书中，小人国里爆发了内战，战争起因是人们争论，吃鸡蛋时究竟是从大头(Big-endian)敲开还是从小头(Little-endian)敲开。为了这件事情，前后爆发了六次战争，一个皇帝送了命，另一个皇帝丢了王位。</p>
+<p>第一个字节在前，就是”大头方式”（Big endian），第二个字节在前就是”小头方式”（Little endian）。</p>
+<p>那么很自然的，就会出现一个问题：计算机怎么知道某一个文件到底采用哪一种方式编码？</p>
+<p>Unicode 规范定义，每一个文件的最前面分别加入一个表示编码顺序的字符，这个字符的名字叫做”零宽度非换行空格”（zero width no-break space），用<code>FEFF</code>表示。这正好是两个字节，而且<code>FF</code>比<code>FE</code>大1。</p>
+<p><strong>如果一个文本文件的头两个字节是<code>FE FF</code>，就表示该文件采用大头方式；如果头两个字节是<code>FF FE</code>，就表示该文件采用小头方式。</strong></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/HHTNAN/article/details/78115773">字节码：ASCII编码：单字节编码，ANSI编码：多字节编码，UNICODE编码：宽字节编码</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>字符编码笔记</p><p><a href="https://yuanjianzhang.github.io/2022/10/10/字符编码笔记/">https://yuanjianzhang.github.io/2022/10/10/字符编码笔记/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>zhang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-10-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-10-11</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/10/11/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%AC%94%E8%AE%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">进制转换笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/09/29/%E8%AE%BE%E8%AE%A1%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%A8%A1%E5%9D%97%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"><span class="level-item">设计用户认证模块的最佳实践</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Blog/"><span class="level-start"><span class="level-item">Blog</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Csharp/"><span class="level-start"><span class="level-item">Csharp</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Technology/"><span class="level-start"><span class="level-item">Technology</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/VUE/"><span class="level-start"><span class="level-item">VUE</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/cranky/"><span class="level-start"><span class="level-item">cranky</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/node/"><span class="level-start"><span class="level-item">node</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/other/"><span class="level-start"><span class="level-item">other</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/"><span class="level-start"><span class="level-item">用户认证</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%BD%AC%E8%BD%BD/"><span class="level-start"><span class="level-item">转载</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/2022/10/11/Windows%E6%9C%8D%E5%8A%A1%E5%88%9B%E5%BB%BA%E5%92%8C%E5%8F%91%E5%B8%83%EF%BC%88NET45%EF%BC%89/"><img src="/images/default.jpeg" alt="Windows服务创建和发布（NET45）"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-10-11T06:44:14.000Z">2022-10-11</time></p><p class="title"><a href="/2022/10/11/Windows%E6%9C%8D%E5%8A%A1%E5%88%9B%E5%BB%BA%E5%92%8C%E5%8F%91%E5%B8%83%EF%BC%88NET45%EF%BC%89/">Windows服务创建和发布（NET45）</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/10/11/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%AC%94%E8%AE%B0/"><img src="/images/default.jpeg" alt="进制转换笔记"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-10-11T05:58:08.000Z">2022-10-11</time></p><p class="title"><a href="/2022/10/11/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E7%AC%94%E8%AE%B0/">进制转换笔记</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/10/10/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/"><img src="/images/default.jpeg" alt="字符编码笔记"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-10-10T06:34:04.000Z">2022-10-10</time></p><p class="title"><a href="/2022/10/10/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/">字符编码笔记</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/09/29/%E8%AE%BE%E8%AE%A1%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%A8%A1%E5%9D%97%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"><img src="/images/default.jpeg" alt="设计用户认证模块的最佳实践"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-09-29T02:02:25.000Z">2022-09-29</time></p><p class="title"><a href="/2022/09/29/%E8%AE%BE%E8%AE%A1%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%A8%A1%E5%9D%97%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">设计用户认证模块的最佳实践</a></p><p class="categories"><a href="/categories/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">用户认证</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/09/09/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/"><img src="/images/default.jpeg" alt="服务端性能测试（转载）"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-09-09T01:59:45.000Z">2022-09-09</time></p><p class="title"><a href="/2022/09/09/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/">服务端性能测试（转载）</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/10/"><span class="level-start"><span class="level-item">十月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">九月 2022</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">六月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">五月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">四月 2022</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">九月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/03/"><span class="level-start"><span class="level-item">三月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/ADO-NET/"><span class="tag">ADO.NET</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ASP-NET/"><span class="tag">ASP.NET</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ASP-Net-MVC/"><span class="tag">ASP.Net MVC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker/"><span class="tag">Docker</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gmail/"><span class="tag">Gmail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IIS/"><span class="tag">IIS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mail/"><span class="tag">Mail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Oracle/"><span class="tag">Oracle</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Postman/"><span class="tag">Postman</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SOAP/"><span class="tag">SOAP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQL/"><span class="tag">SQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SQLlite/"><span class="tag">SQLlite</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/System-Net-Mail/"><span class="tag">System.Net.Mail</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Technology/"><span class="tag">Technology</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/XML/"><span class="tag">XML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/css/"><span class="tag">css</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/emoji/"><span class="tag">emoji</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jQuery/"><span class="tag">jQuery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kettle/"><span class="tag">kettle</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/live2d/"><span class="tag">live2d</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/shadowsocks/"><span class="tag">shadowsocks</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql-server/"><span class="tag">sql server</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sqlserver/"><span class="tag">sqlserver</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/v2ray/"><span class="tag">v2ray</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vmess/"><span class="tag">vmess</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/webservice/"><span class="tag">webservice</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"><span class="tag">发送邮件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%90%E6%A7%BD/"><span class="tag">吐槽</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="tag">命令行</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%84%9F%E6%83%B3/"><span class="tag">感想</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%88%90%E9%95%BF/"><span class="tag">成长</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%99%E8%82%B2/"><span class="tag">教育</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%BB%E9%94%81/"><span class="tag">死锁</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%B0%E5%BD%95/"><span class="tag">记录</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B4%9F%E8%83%BD%E9%87%8F/"><span class="tag">负能量</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AC%E8%BD%BD/"><span class="tag">转载</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E5%8F%B7/"><span class="tag">软件版本号</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/"><span class="tag">速查表</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/"><span class="tag">邮件发送</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%85%8D%E7%BD%AE/"><span class="tag">配置</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Choose C</a><p class="is-size-7"><span>&copy; 2022 zhang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
